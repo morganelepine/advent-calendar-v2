@@ -14,6 +14,12 @@ export const DayRoutes = [
         action: "getOne",
     },
     {
+        method: "get",
+        route: "/days/:id/contents",
+        controller: DayController,
+        action: "getDayContents",
+    },
+    {
         method: "post",
         route: "/days",
         controller: DayController,

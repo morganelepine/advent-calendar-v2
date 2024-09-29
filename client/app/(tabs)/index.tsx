@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
     const day = 1000 * 60 * 60 * 24;
-    let today = new Date();
+    const today = new Date();
 
     let christmasDay = new Date(today.getFullYear(), 11, 25);
     // Check if Christmas if passed already
