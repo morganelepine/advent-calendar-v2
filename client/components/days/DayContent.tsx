@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, View, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
 import { useLocalSearchParams } from "expo-router";
+import { Video } from "@/components//content/Video";
+import { Quote } from "@/components/./content/Quote";
+import { Tip } from "@/components//content/Tip";
+import { AudioPlayer } from "@/components/content/Audio";
+import { Collapsible } from "@/components/Collapsible";
 
 interface Content {
     id: number;
@@ -31,13 +34,25 @@ export const DayContent = () => {
             resizeMode="cover"
             style={styles.background}
         >
-            <SafeAreaView style={styles.safeArea}>
-                {contents.map((content) => (
-                    <ThemedText key={content.id}>
-                        {content.textContent}
-                    </ThemedText>
-                ))}
-            </SafeAreaView>
+            {contents.map((content) => (
+                <SafeAreaView style={styles.safeArea} key={content.id}>
+                    <View style={styles.contentsContainer}>
+                        <Quote content={content} />
+                        <Collapsible title="LE SAVIEZ-VOUS ?">
+                            <Tip content={content} />
+                        </Collapsible>
+                        <Collapsible title="UN PETIT CREUX ?">
+                            <Video content={content} />
+                        </Collapsible>
+                        <Collapsible title="EN PRENDRE PLEIN LES YEUX">
+                            <Video content={content} />
+                        </Collapsible>
+                    </View>
+                    <View style={styles.videoContainer}>
+                        <AudioPlayer content={content} />
+                    </View>
+                </SafeAreaView>
+            ))}
         </ImageBackground>
     );
 };
@@ -49,8 +64,18 @@ const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
         backgroundColor: "transparent",
-        justifyContent: "center",
-        alignItems: "center",
+        // borderColor: "white",
+        // borderWidth: 2,
+    },
+    videoContainer: {
+        // borderColor: "white",
+        // borderWidth: 2,
+    },
+    contentsContainer: {
         padding: 20,
+        gap: 30,
+        flexGrow: 1,
+        // borderColor: "white",
+        // borderWidth: 2,
     },
 });
