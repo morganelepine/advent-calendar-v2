@@ -6,7 +6,6 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
 } from "typeorm";
-import { User } from "./user.entity";
 import { Day } from "./day.entity";
 
 @Entity()

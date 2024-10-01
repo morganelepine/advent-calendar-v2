@@ -1,21 +1,44 @@
-import { View, StyleSheet } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/Modal";
+import { ContentButton } from "@/components/content/ContentButton";
 
-interface ContentProps {
+interface QuoteProps {
     content: {
         id: number;
-        type: string;
-        urlContent: string;
-        textContent: string;
+        type: "quote" | "tip" | "recipe" | "video" | "game";
+        title: string;
+        content: string;
     };
 }
 
-export const Quote: React.FC<ContentProps> = ({ content }) => {
+export const Quote: React.FC<QuoteProps> = ({ content }) => {
+    const [modalVisible, setModalVisible] = useState(false);
+
     return (
-        <View>
-            <ThemedText>{content.textContent}</ThemedText>
-        </View>
+        <>
+            <ContentButton
+                content={content}
+                setModalVisible={setModalVisible}
+            />
+            <CustomModal
+                title={content.title}
+                content={content.content}
+                isVisible={modalVisible}
+                onClose={() => setModalVisible(false)}
+            >
+                <ThemedText type="title" style={styles.title}>
+                    Citation du jour
+                </ThemedText>
+            </CustomModal>
+        </>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    title: {
+        color: "#22311d",
+        marginTop: 10,
+    },
+});

@@ -2,16 +2,16 @@ import { StyleSheet, Pressable, ToastAndroid } from "react-native";
 import { router } from "expo-router";
 import { DayNumber } from "./DayNumber";
 
-interface DayProps {
+interface DayButtonProps {
     day: { id: number; dayNumber: number; isOpen: boolean };
 }
 
-export const DayButton: React.FC<DayProps> = ({ day }) => {
+export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
     const handleDayPress = async () => {
         const today = new Date();
         if (day.isOpen) {
             router.push({
-                pathname: "/Day",
+                pathname: "/Days",
                 params: { dayId: day.id },
             });
         } else if (day.dayNumber <= today.getDate()) {
@@ -28,7 +28,7 @@ export const DayButton: React.FC<DayProps> = ({ day }) => {
             }
 
             router.push({
-                pathname: "/Day",
+                pathname: "/Days",
                 params: { dayId: day.id },
             });
         } else {

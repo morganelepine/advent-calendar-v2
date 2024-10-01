@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
       {
         "fontSize": 16,
         "lineHeight": 24,
-        "fontFamily": "SpecialElite",
+        "fontFamily": "AnonymousPro",
       },
       undefined,
       undefined,

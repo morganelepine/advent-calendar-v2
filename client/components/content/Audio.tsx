@@ -1,19 +1,10 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { Audio, AVPlaybackStatus } from "expo-av";
 import { useCallback, useEffect, useState } from "react";
 import { useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-interface ContentProps {
-    content: {
-        id: number;
-        type: string;
-        urlContent: string;
-        textContent: string;
-    };
-}
-
-export const AudioPlayer: React.FC<ContentProps> = ({ content }) => {
+export const AudioPlayer = ({}) => {
     const [sound, setSound] = useState<Audio.Sound | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -66,17 +57,14 @@ export const AudioPlayer: React.FC<ContentProps> = ({ content }) => {
     return (
         <TouchableOpacity onPress={togglePlayPause} style={styles.iconButton}>
             <Ionicons
-                name={isPlaying ? "pause-circle" : "play-circle"}
-                size={50}
-                color="#ffd181"
+                name={isPlaying ? "pause-circle" : "play-circle-outline"}
+                size={40}
+                color="white"
             />
         </TouchableOpacity>
     );
 };
 
 const styles = StyleSheet.create({
-    iconButton: {
-        alignItems: "flex-end",
-        padding: 10,
-    },
+    iconButton: {},
 });

@@ -3,18 +3,21 @@ import { StyleSheet, ImageBackground, View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
-    const day = 1000 * 60 * 60 * 24;
+    const MILLISECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
     const today = new Date();
 
     let christmasDay = new Date(today.getFullYear(), 11, 25);
-    // Check if Christmas if passed already
-    if (today.getMonth() == 11 && today.getDate() > 25) {
+    // Check if Christmas has already passed
+    if (today > christmasDay) {
         christmasDay.setFullYear(christmasDay.getFullYear() + 1);
     }
 
-    const daysToChristmas = Math.round(
-        (christmasDay.getTime() - today.getTime()) / day
-    ).toFixed(0);
+    const daysToChristmas = Math.ceil(
+        (christmasDay.getTime() - today.getTime()) / MILLISECONDS_IN_A_DAY
+    );
+
+    // console.log({ today });
+    // console.log({ christmasDay });
 
     return (
         <ImageBackground

@@ -17,10 +17,10 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
     const colorScheme = useColorScheme();
     const [loaded] = useFonts({
-        SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-        LilitaOne: require("../assets/fonts/LilitaOne-Regular.ttf"),
         SpecialElite: require("../assets/fonts/SpecialElite-Regular.ttf"),
-        Candy: require("../assets/fonts/CandyCane/Candcu__.ttf"),
+        AnonymousPro: require("../assets/fonts/Anonymous/AnonymousPro-Regular.ttf"),
+        AnonymousProBold: require("../assets/fonts/Anonymous/AnonymousPro-Bold.ttf"),
+        AnonymousProItalic: require("../assets/fonts/Anonymous/AnonymousPro-Italic.ttf"),
     });
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function RootLayout() {
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
                 <Stack.Screen
-                    name="Day"
+                    name="Days"
                     options={{
                         title: "Retour au calendrier",
                     }}

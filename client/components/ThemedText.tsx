@@ -36,27 +36,27 @@ export function ThemedText({
 const styles = StyleSheet.create({
     default: {
         fontSize: 20,
-        lineHeight: 24,
-        fontFamily: "SpecialElite",
+        fontFamily: "AnonymousPro",
+        textAlign: "center",
     },
     calendarDay: {
         fontSize: 40,
         fontFamily: "SpecialElite",
+        textAlign: "center",
     },
     title: {
         fontSize: 32,
-        fontFamily: "LilitaOne",
-        lineHeight: 32,
+        fontFamily: "AnonymousProBold",
+        textAlign: "center",
     },
     subtitle: {
-        fontSize: 20,
-        lineHeight: 24,
-        fontFamily: "LilitaOne",
+        fontSize: 22,
+        fontFamily: "AnonymousProBold",
+        textAlign: "center",
     },
     link: {
-        lineHeight: 30,
         fontSize: 16,
         color: "#0a7ea4",
-        fontFamily: "SpecialElite",
+        fontFamily: "AnonymousPro",
     },
 });

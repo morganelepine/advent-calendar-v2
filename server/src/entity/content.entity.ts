@@ -23,10 +23,10 @@ export class Content {
     type: string;
 
     @Column({ nullable: true })
-    urlContent: string;
+    title: string;
 
     @Column({ nullable: true, type: "text" })
-    textContent: string;
+    content: string;
 
     @CreateDateColumn()
     createdAt: Date;

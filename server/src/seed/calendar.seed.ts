@@ -1,7 +1,10 @@
 import { AppDataSource } from "../data-source";
-import { Calendar } from "../entity/Calendar";
+import { Calendar } from "../entity/calendar.entity";
 import { Day } from "../entity/day.entity";
 import { Content } from "../entity/content.entity";
+
+const anecdote =
+    "Les crackers de Noël, ces tubes en papier qui font un 'pop' lorsqu'on les ouvre, sont une invention anglaise du 19ème siècle. Thomas J. Smith, un confiseur, cherchait à populariser ses bonbons en les emballant dans du papier festif. Inspiré par le bruit du bois qui craque dans la cheminée, il a eu l'idée d'ajouter un petit mécanisme explosif pour un effet surprise.";
 
 const quotes = [
     "Noël agite une baguette magique sur ce monde et voici, tout est plus doux et plus beau.",
@@ -48,15 +51,46 @@ async function seedCalendar() {
         day.calendar = calendar;
         day.dayNumber = i;
 
-        const content = new Content();
-        content.day = day;
-        content.type = "quote";
-        content.textContent = quotes[i - 1];
+        const contentQuote = new Content();
+        contentQuote.day = day;
+        contentQuote.type = "quote";
+        contentQuote.content = quotes[i - 1];
+
+        const contentTip = new Content();
+        contentTip.day = day;
+        contentTip.type = "tip";
+        contentTip.title = "L'origine des crackers de Noël";
+        contentTip.content = anecdote;
+
+        const contentVideo = new Content();
+        contentVideo.day = day;
+        contentVideo.type = "video";
+        contentVideo.title = "Christmas Canon - TransSiberian Orchestra";
+        contentVideo.content = "Cm-WAIyBO1A";
+
+        const contentRecipe = new Content();
+        contentRecipe.day = day;
+        contentRecipe.type = "recipe";
+        contentRecipe.title = "Chocolat chaud";
+        contentRecipe.content =
+            "Faites chauffer du lait avec du chocolat noir fondu, ajoutez un peu de sucre et une pincée de cannelle, puis mélangez jusqu'à obtenir une texture onctueuse.";
+
+        const contentGame = new Content();
+        contentGame.day = day;
+        contentGame.type = "game";
+        contentGame.title = "Jeu du pendu";
+        contentGame.content = "Pendu";
 
         await dayRepository.save(day);
-        await contentRepository.save(content);
+        await contentRepository.save(contentQuote);
+        await contentRepository.save(contentTip);
+        await contentRepository.save(contentVideo);
+        await contentRepository.save(contentRecipe);
+        await contentRepository.save(contentGame);
     }
-    console.log("24 days and quotes have been added to the calendar.");
+    console.log(
+        "24 days and 5 contents per day have been added to the calendar."
+    );
 }
 
 AppDataSource.initialize()

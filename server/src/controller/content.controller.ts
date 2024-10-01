@@ -25,7 +25,7 @@ export class ContentController {
     }
 
     async create(request: Request, response: Response, next: NextFunction) {
-        const { type, urlContent, textContent, dayId } = request.body;
+        const { type, content, dayId } = request.body;
 
         const day = await this.dayRepository.findOne({
             where: { id: dayId },
@@ -34,34 +34,32 @@ export class ContentController {
             return response.status(404).json({ message: "Day not found" });
         }
 
-        const content = new Content();
-        content.type = type;
-        content.urlContent = urlContent;
-        content.textContent = textContent;
-        content.day = day;
+        const contentToCreate = new Content();
+        contentToCreate.type = type;
+        contentToCreate.content = content;
+        contentToCreate.day = day;
 
-        await this.contentRepository.save(content);
+        await this.contentRepository.save(contentToCreate);
 
         return response
             .status(200)
-            .json({ message: "Content created successfully", content });
+            .json({ message: "Content created successfully", contentToCreate });
     }
 
     async update(request: Request, response: Response, next: NextFunction) {
         const id = parseInt(request.params.id);
-        const { type, urlContent, textContent } = request.body;
+        const { type, content } = request.body;
 
-        const content = await this.contentRepository.findOne({
+        const contentToUpdate = await this.contentRepository.findOne({
             where: { id },
         });
 
-        content.type = type;
-        content.urlContent = urlContent;
-        content.textContent = textContent;
+        contentToUpdate.type = type;
+        contentToUpdate.content = content;
 
-        await this.contentRepository.save(content);
+        await this.contentRepository.save(contentToUpdate);
 
-        response.status(200).json({ message: "update", content });
+        response.status(200).json({ message: "update", contentToUpdate });
     }
 
     async remove(request: Request, response: Response, next: NextFunction) {

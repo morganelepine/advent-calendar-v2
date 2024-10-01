@@ -1,40 +1,44 @@
-import { View, StyleSheet } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/Modal";
+import { ContentButton } from "@/components/content/ContentButton";
 
-interface ContentProps {
+interface TipProps {
     content: {
         id: number;
-        type: string;
-        urlContent: string;
-        textContent: string;
+        type: "quote" | "tip" | "recipe" | "video" | "game";
+        title: string;
+        content: string;
     };
 }
 
-export const Tip: React.FC<ContentProps> = ({ content }) => {
+export const Tip: React.FC<TipProps> = ({ content }) => {
+    const [modalVisible, setModalVisible] = useState(false);
+
     return (
-        <View>
-            <View style={styles.background}></View>
-            <ThemedText type="subtitle" style={styles.text}>
-                L'origine des crackers de Noël
-            </ThemedText>
-            <ThemedText style={styles.text}>
-                Les crackers de Noël, ces tubes en papier qui font un "pop"
-                lorsqu'on les ouvre, sont une invention anglaise du 19ème
-                siècle. Thomas J. Smith, un confiseur, cherchait à populariser
-                ses bonbons en les emballant dans du papier festif. Inspiré par
-                le bruit du bois qui craque dans la cheminée, il a eu l'idée
-                d'ajouter un petit mécanisme explosif pour un effet surprise.
-            </ThemedText>
-        </View>
+        <>
+            <ContentButton
+                content={content}
+                setModalVisible={setModalVisible}
+            />
+            <CustomModal
+                title={content.title}
+                content={content.content}
+                isVisible={modalVisible}
+                onClose={() => setModalVisible(false)}
+            >
+                <ThemedText type="title" style={styles.title}>
+                    Anecdote du jour
+                </ThemedText>
+            </CustomModal>
+        </>
     );
 };
 
 const styles = StyleSheet.create({
-    background: {
-        ...StyleSheet.absoluteFillObject, // Remplit tout l'espace du parent
-        backgroundColor: "white",
-        opacity: 0.15,
-        borderRadius: 5,
+    title: {
+        color: "#22311d",
+        marginTop: 10,
     },
-    text: { color: "white", padding: 10 },
 });
