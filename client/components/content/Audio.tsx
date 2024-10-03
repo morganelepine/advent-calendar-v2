@@ -3,8 +3,12 @@ import { Audio, AVPlaybackStatus } from "expo-av";
 import { useCallback, useEffect, useState } from "react";
 import { useFocusEffect } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "@/constants/Colors";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 export const AudioPlayer = ({}) => {
+    const colorScheme = useColorScheme();
+
     const [sound, setSound] = useState<Audio.Sound | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -59,7 +63,7 @@ export const AudioPlayer = ({}) => {
             <Ionicons
                 name={isPlaying ? "pause-circle" : "play-circle-outline"}
                 size={40}
-                color="white"
+                color={Colors[colorScheme ?? "light"].tint}
             />
         </TouchableOpacity>
     );

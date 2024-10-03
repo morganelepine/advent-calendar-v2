@@ -4,8 +4,8 @@ import { Content } from "../entity/content.entity";
 import { Day } from "../entity/day.entity";
 
 export class ContentController {
-    private contentRepository = AppDataSource.getRepository(Content);
-    private dayRepository = AppDataSource.getRepository(Day);
+    private readonly contentRepository = AppDataSource.getRepository(Content);
+    private readonly dayRepository = AppDataSource.getRepository(Day);
 
     async getAll(request: Request, response: Response, next: NextFunction) {
         return this.contentRepository.find();
@@ -25,7 +25,8 @@ export class ContentController {
     }
 
     async create(request: Request, response: Response, next: NextFunction) {
-        const { type, content, dayId } = request.body;
+        const { type, content1, content2, content3, content4, dayId } =
+            request.body;
 
         const day = await this.dayRepository.findOne({
             where: { id: dayId },
@@ -36,7 +37,10 @@ export class ContentController {
 
         const contentToCreate = new Content();
         contentToCreate.type = type;
-        contentToCreate.content = content;
+        contentToCreate.content1 = content1;
+        contentToCreate.content2 = content2;
+        contentToCreate.content3 = content3;
+        contentToCreate.content4 = content4;
         contentToCreate.day = day;
 
         await this.contentRepository.save(contentToCreate);
@@ -48,14 +52,17 @@ export class ContentController {
 
     async update(request: Request, response: Response, next: NextFunction) {
         const id = parseInt(request.params.id);
-        const { type, content } = request.body;
+        const { type, content1, content2, content3, content4 } = request.body;
 
         const contentToUpdate = await this.contentRepository.findOne({
             where: { id },
         });
 
         contentToUpdate.type = type;
-        contentToUpdate.content = content;
+        contentToUpdate.content1 = content1;
+        contentToUpdate.content2 = content2;
+        contentToUpdate.content3 = content3;
+        contentToUpdate.content4 = content4;
 
         await this.contentRepository.save(contentToUpdate);
 

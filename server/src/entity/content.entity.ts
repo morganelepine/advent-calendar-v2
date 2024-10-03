@@ -18,7 +18,7 @@ export class Content {
 
     @Column({
         type: "enum",
-        enum: ["image", "video", "music", "quote", "game", "recipe", "tip"],
+        enum: ["image", "idea", "music", "quote", "game", "recipe", "anecdote"],
     })
     type: string;
 
@@ -26,7 +26,16 @@ export class Content {
     title: string;
 
     @Column({ nullable: true, type: "text" })
-    content: string;
+    content1: string;
+
+    @Column({ nullable: true, type: "text" })
+    content2: string;
+
+    @Column({ nullable: true, type: "text" })
+    content3: string;
+
+    @Column({ nullable: true, type: "text" })
+    content4: string;
 
     @CreateDateColumn()
     createdAt: Date;

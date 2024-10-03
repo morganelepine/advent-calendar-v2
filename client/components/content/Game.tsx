@@ -7,9 +7,12 @@ import { ContentButton } from "@/components/content/ContentButton";
 interface GameProps {
     content: {
         id: number;
-        type: "quote" | "tip" | "recipe" | "video" | "game";
+        type: "quote" | "anecdote" | "recipe" | "idea" | "game";
         title: string;
-        content: string;
+        content1: string;
+        content2: string;
+        content3: string;
+        content4: string;
     };
 }
 
@@ -24,7 +27,7 @@ export const Game: React.FC<GameProps> = ({ content }) => {
             />
             <CustomModal
                 title={content.title}
-                content={content.content}
+                content={content.content1}
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
             >

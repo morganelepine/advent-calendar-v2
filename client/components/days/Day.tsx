@@ -6,9 +6,12 @@ import { DayContent } from "@/components/days/DayContent";
 
 interface Content {
     id: number;
-    type: "quote" | "tip" | "recipe" | "video" | "game";
+    type: "quote" | "anecdote" | "recipe" | "idea" | "game";
     title: string;
-    content: string;
+    content1: string;
+    content2: string;
+    content3: string;
+    content4: string;
 }
 
 export const Day = () => {
@@ -20,9 +23,9 @@ export const Day = () => {
     const sortContents = (contents: Content[]) => {
         const priority: { [key in Content["type"]]: number } = {
             quote: 1,
-            tip: 2,
+            anecdote: 2,
             recipe: 3,
-            video: 4,
+            idea: 4,
             game: 5,
         };
 

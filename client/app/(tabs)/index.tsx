@@ -37,6 +37,11 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        width: "100%",
+        height: "100%",
+    },
     safeArea: {
         flex: 1,
         backgroundColor: "transparent",
@@ -44,23 +49,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "column",
     },
-
-    background: {
-        flex: 1,
-        width: "100%",
-        height: "100%",
-    },
-
     text: {
         color: "white",
         fontSize: 50,
         fontFamily: "SpecialElite",
     },
-
     text1: {
         letterSpacing: 8,
     },
-
     text2: {
         letterSpacing: 9,
     },

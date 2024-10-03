@@ -4,9 +4,12 @@ import { ThemedText } from "@/components/ThemedText";
 interface ContentButtonProps {
     content: {
         id: number;
-        type: "quote" | "recipe" | "tip" | "video" | "game";
+        type: "quote" | "recipe" | "anecdote" | "idea" | "game";
         title: string;
-        content: string;
+        content1: string;
+        content2: string;
+        content3: string;
+        content4: string;
     };
     setModalVisible: (visible: boolean) => void;
 }
@@ -18,8 +21,8 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     const imageMap: { [key: string]: any } = {
         quote: require("@/assets/images/pomme-de-pin.jpg"),
         recipe: require("@/assets/images/libby-penner-jnkmQ1cEm7Q-unsplash.jpg"),
-        tip: require("@/assets/images/annie-spratt-UPZ3PpDzk2Y-unsplash.jpg"),
-        video: require("@/assets/images/katie-azi-AHIS5FUW0gk-unsplash.jpg"),
+        anecdote: require("@/assets/images/annie-spratt-UPZ3PpDzk2Y-unsplash.jpg"),
+        idea: require("@/assets/images/katie-azi-AHIS5FUW0gk-unsplash.jpg"),
         game: require("@/assets/images/amy-chen-0JSwEitKjOw-unsplash.jpg"),
         default: require("@/assets/images/sapin-dore.jpg"),
     };
@@ -32,10 +35,10 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
                 return "S'inspirer";
             case "recipe":
                 return "Se régaler";
-            case "tip":
+            case "anecdote":
                 return "S'instuire";
-            case "video":
-                return "Se détendre";
+            case "idea":
+                return "Se divertir";
             case "game":
                 return "S'amuser";
             default:
@@ -55,7 +58,9 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
                 style={[styles.button]}
                 onPress={() => setModalVisible(true)}
             >
-                <ThemedText type="subtitle">{title}</ThemedText>
+                <ThemedText style={[styles.title]} type="subtitle">
+                    {title}
+                </ThemedText>
             </Pressable>
         </ImageBackground>
     );
@@ -64,11 +69,13 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        borderRadius: 50,
     },
     button: {
         padding: 5,
         flexGrow: 1,
         justifyContent: "center",
+    },
+    title: {
+        color: "white",
     },
 });

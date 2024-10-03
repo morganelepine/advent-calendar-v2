@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontFamily: "SpecialElite",
         textAlign: "center",
+        color: "white",
     },
     title: {
         fontSize: 32,

@@ -1,6 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
 
 interface DayProps {
     day: { dayNumber: number; isOpen: boolean };
@@ -9,7 +8,7 @@ interface DayProps {
 export const DayNumber: React.FC<DayProps> = ({ day }) => {
     return (
         <>
-            <ThemedView
+            <View
                 style={[
                     styles.background,
                     { backgroundColor: day.isOpen ? "black" : "white" },

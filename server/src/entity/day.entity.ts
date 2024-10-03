@@ -5,7 +5,7 @@ import {
     PrimaryGeneratedColumn,
     Column,
 } from "typeorm";
-import { Calendar } from "../entity/calendar.entity";
+import { Calendar } from "./calendar.entity";
 import { Content } from "./content.entity";
 
 @Entity()

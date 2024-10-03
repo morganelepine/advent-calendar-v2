@@ -38,6 +38,14 @@ AppDataSource.initialize()
     .then(async () => {
         // create express app
         const app = express();
+
+        const cors = require("cors");
+        app.use(cors());
+        // app.use(cors({
+        //     origin: ['http://localhost:8081'],
+        //     methods: ['GET', 'POST'],
+        // }));
+
         const PORT = process.env.PORT || 3000;
         app.use(bodyParser.json());
 

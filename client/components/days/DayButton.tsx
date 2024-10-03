@@ -51,6 +51,5 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
     },
 });
