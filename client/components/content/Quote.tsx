@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
@@ -25,23 +25,44 @@ export const Quote: React.FC<QuoteProps> = ({ content }) => {
                 content={content}
                 setModalVisible={setModalVisible}
             />
+
             <CustomModal
-                title={content.title}
-                content={content.content1}
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
             >
-                <ThemedText type="title" style={styles.title}>
-                    Citation du jour
-                </ThemedText>
+                <ThemedText type="modalTitle">Citation du jour</ThemedText>
+                <View>
+                    <ThemedText style={[styles.texts, styles.quote]}>
+                        {content.content1}
+                    </ThemedText>
+
+                    <ThemedText style={[styles.texts, styles.author]}>
+                        {content.content2}
+                    </ThemedText>
+
+                    {content.content3 ? (
+                        <ThemedText style={[styles.texts, styles.source]}>
+                            ({content.content3})
+                        </ThemedText>
+                    ) : null}
+                </View>
             </CustomModal>
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    title: {
+    texts: {
         color: "#22311d",
-        marginTop: 10,
     },
+    quote: {
+        marginBottom: 30,
+        fontSize: 28,
+    },
+    author: {
+        marginBottom: 5,
+        fontSize: 20,
+        fontFamily: "AnonymousProItalic",
+    },
+    source: { fontSize: 14, fontFamily: "AnonymousProItalic" },
 });

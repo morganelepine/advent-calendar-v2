@@ -7,11 +7,8 @@ import {
     ImageBackground,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { ThemedText } from "@/components/ThemedText";
 
 interface CustomModalProps {
-    title: string;
-    content: string;
     isVisible: boolean;
     onClose: () => void;
     backgroundImage?: any;
@@ -19,8 +16,6 @@ interface CustomModalProps {
 }
 
 export const CustomModal: React.FC<CustomModalProps> = ({
-    title,
-    content,
     isVisible,
     onClose,
     backgroundImage = require("@/assets/images/sapin-lumineux.jpg"),
@@ -42,24 +37,12 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                     <View style={styles.modalView}>
                         <View style={styles.background} />
 
-                        {/*Catégorie: "Anecdote du jour"*/}
                         {children}
 
-                        <View>
-                            {title ? (
-                                <ThemedText
-                                    type="subtitle"
-                                    style={styles.subTitle}
-                                >
-                                    {title}
-                                </ThemedText>
-                            ) : null}
-
-                            <ThemedText style={styles.content}>
-                                {content}
-                            </ThemedText>
-                        </View>
-                        <TouchableOpacity onPress={onClose}>
+                        <TouchableOpacity
+                            onPress={onClose}
+                            style={styles.closeButton}
+                        >
                             <Ionicons
                                 name={"close-outline"}
                                 size={35}
@@ -85,23 +68,17 @@ const styles = StyleSheet.create({
     background: {
         ...StyleSheet.absoluteFillObject,
         backgroundColor: "white",
-        opacity: 0.6,
+        opacity: 0.75,
         borderRadius: 50,
     },
     modalView: {
-        borderRadius: 50,
         margin: 15,
-        padding: 25,
+        paddingHorizontal: 25,
+        // paddingTop: 20,
+        paddingBottom: 10,
         alignItems: "center",
         justifyContent: "space-between",
         flex: 1,
     },
-    subTitle: {
-        color: "#22311d",
-        marginBottom: 20,
-    },
-    content: {
-        color: "#22311d",
-        marginBottom: 20,
-    },
+    closeButton: { marginTop: 10 },
 });

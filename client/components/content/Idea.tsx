@@ -1,15 +1,10 @@
-import {
-    StyleSheet,
-    View,
-    Modal,
-    ImageBackground,
-    TouchableOpacity,
-} from "react-native";
+import { useState } from "react";
+import { StyleSheet, View, ScrollView, TextStyle } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import YoutubePlayer from "react-native-youtube-iframe";
-import { useCallback, useState } from "react";
+import { CustomModal } from "@/components/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { Video } from "@/components/Video";
+import Markdown from "react-native-markdown-display";
 
 interface IdeaProps {
     content: {
@@ -26,108 +21,79 @@ interface IdeaProps {
 export const Idea: React.FC<IdeaProps> = ({ content }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
-    const [playing, setPlaying] = useState<boolean>(false);
-
-    const onStateChange = useCallback((state: string) => {
-        if (state === "ended") {
-            setPlaying(false);
-        }
-    }, []);
-
     return (
         <>
-            <Modal
-                animationType="fade"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}
-            >
-                <ImageBackground
-                    source={require("@/assets/images/sapin-lumineux.jpg")}
-                    resizeMode="cover"
-                    style={styles.imageBackground}
-                >
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <View style={styles.background} />
-
-                            <ThemedText type="title" style={styles.title}>
-                                Vidéo du jour
-                            </ThemedText>
-
-                            <View>
-                                {content.title ? (
-                                    <ThemedText
-                                        type="subtitle"
-                                        style={styles.subTitle}
-                                    >
-                                        {content.title}
-                                    </ThemedText>
-                                ) : null}
-
-                                <View style={styles.videoPlayer}>
-                                    <YoutubePlayer
-                                        height={160}
-                                        play={playing}
-                                        videoId={content.content4}
-                                        onChangeState={onStateChange}
-                                    />
-                                </View>
-                            </View>
-                            <TouchableOpacity
-                                onPress={() => setModalVisible(false)}
-                            >
-                                <Ionicons
-                                    name={"close-outline"}
-                                    size={35}
-                                    color="#22311d"
-                                />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </ImageBackground>
-            </Modal>
-
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
             />
+            <CustomModal
+                isVisible={modalVisible}
+                onClose={() => setModalVisible(false)}
+            >
+                <ScrollView>
+                    <ThemedText type="modalTitle">Idée du jour</ThemedText>
+
+                    <View>
+                        <ThemedText style={[styles.texts, styles.title]}>
+                            {content.title}
+                        </ThemedText>
+
+                        <Markdown
+                            style={{
+                                body: [
+                                    styles.texts,
+                                    styles.contentTitle,
+                                ] as TextStyle,
+                            }}
+                        >
+                            {content.content1}
+                        </Markdown>
+
+                        {content.content3 ? (
+                            <ThemedText style={[styles.texts, styles.author]}>
+                                de {content.content3}
+                            </ThemedText>
+                        ) : null}
+
+                        <ThemedText style={[styles.texts, styles.description]}>
+                            {content.content2}
+                        </ThemedText>
+
+                        {content.content4 ? (
+                            <View style={styles.video}>
+                                <Video videoId={content.content4} />
+                            </View>
+                        ) : null}
+                    </View>
+                </ScrollView>
+            </CustomModal>
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    imageBackground: {
-        flex: 1,
-    },
-    background: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: "white",
-        opacity: 0.6,
-        borderRadius: 50,
-    },
-    modalView: {
-        borderRadius: 50,
-        margin: 15,
-        padding: 25,
-        alignItems: "center",
-        justifyContent: "space-between",
-        flex: 1,
-    },
-    title: {
+    texts: {
         color: "#22311d",
-        marginTop: 10,
+        textAlign: "left",
+        fontFamily: "AnonymousPro",
     },
-    subTitle: {
-        color: "#22311d",
+    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
+    contentTitle: {
+        marginTop: 20,
+        marginBottom: 5,
+        fontSize: 18,
+    },
+    author: {
         marginBottom: 20,
+        fontSize: 14,
+        fontFamily: "AnonymousProItalic",
     },
-    videoPlayer: {},
+    description: {
+        marginBottom: 5,
+        fontSize: 18,
+    },
+    video: {
+        marginTop: 20,
+    },
 });

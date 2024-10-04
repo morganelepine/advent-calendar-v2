@@ -14,7 +14,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
                 pathname: "/Days",
                 params: { dayId: day.id },
             });
-        } else if (day.dayNumber <= today.getDate()) {
+        } else if (day.dayNumber > today.getDate()) {
             try {
                 await fetch(`http://192.168.1.16:3000/days/${day.id}`, {
                     method: "PUT",

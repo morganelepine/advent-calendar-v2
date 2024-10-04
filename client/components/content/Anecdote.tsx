@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
+import { Video } from "@/components/Video";
 
 interface AnecdoteProps {
     content: {
@@ -26,22 +27,60 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
                 setModalVisible={setModalVisible}
             />
             <CustomModal
-                title={content.title}
-                content={content.content1}
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
             >
-                <ThemedText type="title" style={styles.title}>
-                    Anecdote du jour
-                </ThemedText>
+                <ScrollView>
+                    <ThemedText type="modalTitle">Anecdote du jour</ThemedText>
+
+                    <View>
+                        <ThemedText style={[styles.texts, styles.title]}>
+                            {content.title}
+                        </ThemedText>
+
+                        <ThemedText style={[styles.texts, styles.anecdote]}>
+                            {content.content1}
+                        </ThemedText>
+
+                        {content.content3 ? (
+                            <Video videoId={content.content3} />
+                        ) : null}
+
+                        {content.content4 ? (
+                            <>
+                                <ThemedText
+                                    style={[styles.texts, styles.video2]}
+                                >
+                                    Et en version moins classique...
+                                </ThemedText>
+                                <Video videoId={content.content4} />
+                            </>
+                        ) : null}
+                    </View>
+                </ScrollView>
             </CustomModal>
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    title: {
+    texts: {
         color: "#22311d",
-        marginTop: 10,
+    },
+    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
+    anecdote: {
+        marginVertical: 20,
+        fontSize: 18,
+        textAlign: "left",
+    },
+    author: {
+        marginBottom: 5,
+        fontSize: 20,
+        fontFamily: "AnonymousProItalic",
+    },
+    video2: {
+        fontSize: 15,
+        fontFamily: "AnonymousProItalic",
+        marginVertical: 10,
     },
 });

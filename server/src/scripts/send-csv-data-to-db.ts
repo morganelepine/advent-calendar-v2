@@ -29,3 +29,5 @@ async function importCSV(filePath: string) {
 }
 
 importCSV("src/data/content_migration_data.csv");
+
+// ts-node src/scripts/send-csv-data-to-db.ts

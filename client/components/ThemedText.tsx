@@ -5,7 +5,13 @@ import { useThemeColor } from "@/hooks/useThemeColor";
 export type ThemedTextProps = TextProps & {
     lightColor?: string;
     darkColor?: string;
-    type?: "default" | "calendarDay" | "title" | "subtitle" | "link";
+    type?:
+        | "default"
+        | "calendarDay"
+        | "title"
+        | "subtitle"
+        | "link"
+        | "modalTitle";
 };
 
 export function ThemedText({
@@ -26,6 +32,8 @@ export function ThemedText({
                 type === "title" ? styles.title : undefined,
                 type === "subtitle" ? styles.subtitle : undefined,
                 type === "link" ? styles.link : undefined,
+                type === "modalTitle" ? styles.modalTitle : undefined,
+
                 style,
             ]}
             {...rest}
@@ -59,5 +67,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: "#0a7ea4",
         fontFamily: "AnonymousPro",
+    },
+    modalTitle: {
+        color: "#22311d",
+        fontSize: 32,
+        fontFamily: "AnonymousProBold",
+        textAlign: "center",
+        marginVertical: 20,
     },
 });
