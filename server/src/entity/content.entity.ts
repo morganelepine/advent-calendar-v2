@@ -37,6 +37,9 @@ export class Content {
     @Column({ nullable: true, type: "text" })
     content4: string;
 
+    @Column({ nullable: true, type: "text" })
+    content5: string;
+
     @CreateDateColumn()
     createdAt: Date;
 

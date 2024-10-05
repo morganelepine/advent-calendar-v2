@@ -21,6 +21,7 @@ export default function RootLayout() {
         AnonymousPro: require("../assets/fonts/Anonymous/AnonymousPro-Regular.ttf"),
         AnonymousProBold: require("../assets/fonts/Anonymous/AnonymousPro-Bold.ttf"),
         AnonymousProItalic: require("../assets/fonts/Anonymous/AnonymousPro-Italic.ttf"),
+        AnonymousProBoldItalic: require("../assets/fonts/Anonymous/AnonymousPro-BoldItalic.ttf"),
     });
 
     useEffect(() => {

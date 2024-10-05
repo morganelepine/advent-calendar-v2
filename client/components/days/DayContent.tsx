@@ -1,64 +1,97 @@
 import { StyleSheet, View } from "react-native";
-import { Idea } from "@/components/content/Idea";
 import { Quote } from "@/components/content/Quote";
 import { Recipe } from "@/components/content/Recipe";
 import { Anecdote } from "@/components/content/Anecdote";
+import { Idea } from "@/components/content/Idea";
 import { Game } from "@/components/content/Game";
 
-interface DayContentProps {
-    content: {
-        id: number;
-        type: "quote" | "recipe" | "anecdote" | "idea" | "game";
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-    };
+interface Content {
+    id: number;
+    type: "quote" | "recipe" | "anecdote" | "idea" | "game";
+    title: string;
+    content1: string;
+    content2: string;
+    content3: string;
+    content4: string;
+    content5: string;
 }
 
-export const DayContent: React.FC<DayContentProps> = ({ content }) => {
-    const getWidthValue = (type: string) => {
-        switch (type) {
+interface DayContentProps {
+    contents: Content[];
+}
+
+export const DayContent: React.FC<DayContentProps> = ({ contents }) => {
+    const contentsByType: {
+        quote?: Content;
+        recipe?: Content;
+        anecdote?: Content;
+        ideas: Content[];
+        games: Content[];
+    } = { ideas: [], games: [] };
+
+    contents.forEach((content) => {
+        switch (content.type) {
             case "quote":
-                return "100%";
-            case "anecdote":
-                return "45%";
+                contentsByType.quote = content;
+                break;
             case "recipe":
-                return "55%";
+                contentsByType.recipe = content;
+                break;
+            case "anecdote":
+                contentsByType.anecdote = content;
+                break;
             case "idea":
-                return "60%";
+                contentsByType.ideas.push(content);
+                break;
             case "game":
-                return "40%";
+                contentsByType.games.push(content);
+                break;
         }
-    };
+    });
 
     return (
-        <View
-            style={[
-                styles.contentContainer,
-                { width: getWidthValue(content.type) },
-            ]}
-        >
-            {/* QUOTE */}
-            {content.type === "quote" && <Quote content={content} />}
+        <View style={[styles.contentsContainer]}>
+            {contentsByType.quote && (
+                <View style={[styles.contentContainer, { width: "100%" }]}>
+                    <Quote content={contentsByType.quote} />
+                </View>
+            )}
 
-            {/* TIP */}
-            {content.type === "anecdote" && <Anecdote content={content} />}
+            {contentsByType.anecdote && (
+                <View style={[styles.contentContainer, { width: "45%" }]}>
+                    <Anecdote content={contentsByType.anecdote} />
+                </View>
+            )}
 
-            {/* GAME */}
-            {content.type === "game" && <Game content={content} />}
+            {contentsByType.recipe && (
+                <View style={[styles.contentContainer, { width: "55%" }]}>
+                    <Recipe content={contentsByType.recipe} />
+                </View>
+            )}
 
-            {/* VIDEO */}
-            {content.type === "idea" && <Idea content={content} />}
+            {contentsByType.ideas.length > 0 && (
+                <View style={[styles.contentContainer, { width: "60%" }]}>
+                    <Idea ideas={contentsByType.ideas} />
+                </View>
+            )}
 
-            {/* RECIPE */}
-            {content.type === "recipe" && <Recipe content={content} />}
+            {contentsByType.games.length > 0 && (
+                <View style={[styles.contentContainer, { width: "40%" }]}>
+                    <Game games={contentsByType.games} />
+                </View>
+            )}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    contentsContainer: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        flexGrow: 1,
+        alignContent: "center",
+        marginHorizontal: 10,
+    },
     contentContainer: {
         height: "33%",
         padding: 5,

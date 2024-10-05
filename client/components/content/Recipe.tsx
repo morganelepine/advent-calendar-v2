@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { StyleSheet, View, ScrollView, TextStyle } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/Modal";
+import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import Markdown from "react-native-markdown-display";
 
 interface RecipeProps {
     content: {
         id: number;
-        type: "quote" | "anecdote" | "recipe" | "idea" | "game";
+        type: "quote" | "recipe" | "anecdote" | "idea" | "game";
         title: string;
         content1: string;
         content2: string;
         content3: string;
         content4: string;
+        content5: string;
     };
 }
 

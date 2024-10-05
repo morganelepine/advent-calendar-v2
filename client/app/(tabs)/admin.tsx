@@ -8,8 +8,8 @@ import {
     TouchableOpacity,
     ScrollView,
 } from "react-native";
-import { SparkleWave } from "@/components/SparkleWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { SparkleWave } from "@/components/utils/SparkleWave";
+import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useForm, Controller, Resolver } from "react-hook-form";

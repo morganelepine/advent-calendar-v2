@@ -25,8 +25,15 @@ export class ContentController {
     }
 
     async create(request: Request, response: Response, next: NextFunction) {
-        const { type, content1, content2, content3, content4, dayId } =
-            request.body;
+        const {
+            type,
+            content1,
+            content2,
+            content3,
+            content4,
+            content5,
+            dayId,
+        } = request.body;
 
         const day = await this.dayRepository.findOne({
             where: { id: dayId },
@@ -41,6 +48,7 @@ export class ContentController {
         contentToCreate.content2 = content2;
         contentToCreate.content3 = content3;
         contentToCreate.content4 = content4;
+        contentToCreate.content5 = content5;
         contentToCreate.day = day;
 
         await this.contentRepository.save(contentToCreate);
@@ -52,7 +60,8 @@ export class ContentController {
 
     async update(request: Request, response: Response, next: NextFunction) {
         const id = parseInt(request.params.id);
-        const { type, content1, content2, content3, content4 } = request.body;
+        const { type, content1, content2, content3, content4, content5 } =
+            request.body;
 
         const contentToUpdate = await this.contentRepository.findOne({
             where: { id },
@@ -63,6 +72,7 @@ export class ContentController {
         contentToUpdate.content2 = content2;
         contentToUpdate.content3 = content3;
         contentToUpdate.content4 = content4;
+        contentToUpdate.content5 = content5;
 
         await this.contentRepository.save(contentToUpdate);
 

@@ -18,6 +18,7 @@ async function importCSV(filePath: string) {
             content.content2 = data.content2;
             content.content3 = data.content3;
             content.content4 = data.content4;
+            content.content5 = data.content5;
             content.day = data.dayId;
             contents.push(content);
         })

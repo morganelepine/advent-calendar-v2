@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { DayHeader } from "@/components/days/DayHeader";
 import { DayContent } from "@/components/days/DayContent";
-
 interface Content {
     id: number;
     type: "quote" | "anecdote" | "recipe" | "idea" | "game";
@@ -12,6 +11,7 @@ interface Content {
     content2: string;
     content3: string;
     content4: string;
+    content5: string;
 }
 
 export const Day = () => {
@@ -55,12 +55,7 @@ export const Day = () => {
     return (
         <SafeAreaView style={styles.safeArea}>
             <DayHeader />
-
-            <View style={[styles.contentsContainer]}>
-                {contents.map((content) => (
-                    <DayContent key={content.id} content={content} />
-                ))}
-            </View>
+            <DayContent contents={contents} />
         </SafeAreaView>
     );
 };
@@ -68,12 +63,5 @@ export const Day = () => {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-    },
-    contentsContainer: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        flexGrow: 1,
-        alignContent: "center",
-        marginHorizontal: 10,
     },
 });

@@ -1,35 +1,66 @@
-import { StyleSheet, Pressable, View, ImageBackground } from "react-native";
+import { StyleSheet, Pressable, ImageBackground } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 
+interface Content {
+    id: number;
+    type: "quote" | "recipe" | "anecdote" | "idea" | "game";
+    title: string;
+    content1: string;
+    content2: string;
+    content3: string;
+    content4: string;
+    content5: string;
+}
+
 interface ContentButtonProps {
-    content: {
-        id: number;
-        type: "quote" | "recipe" | "anecdote" | "idea" | "game";
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-    };
+    content?: Content;
+    ideas?: Content[];
+    games?: Content[];
     setModalVisible: (visible: boolean) => void;
 }
 
 export const ContentButton: React.FC<ContentButtonProps> = ({
-    content,
+    content = {
+        id: 0,
+        type: "quote",
+        title: "",
+        content1: "",
+        content2: "",
+        content3: "",
+        content4: "",
+        content5: "",
+    },
+    ideas = [],
+    games = [],
     setModalVisible,
 }) => {
-    const imageMap: { [key: string]: any } = {
-        quote: require("@/assets/images/pomme-de-pin.jpg"),
-        recipe: require("@/assets/images/libby-penner-jnkmQ1cEm7Q-unsplash.jpg"),
-        anecdote: require("@/assets/images/annie-spratt-UPZ3PpDzk2Y-unsplash.jpg"),
-        idea: require("@/assets/images/katie-azi-AHIS5FUW0gk-unsplash.jpg"),
-        game: require("@/assets/images/amy-chen-0JSwEitKjOw-unsplash.jpg"),
-        default: require("@/assets/images/sapin-dore.jpg"),
+    const getImage = (content: Content, ideas: Content[], games: Content[]) => {
+        if (ideas.length > 0) {
+            return require("@/assets/images/katie-azi-AHIS5FUW0gk-unsplash.jpg");
+        }
+        if (games.length > 0) {
+            return require("@/assets/images/amy-chen-0JSwEitKjOw-unsplash.jpg");
+        }
+        switch (content.type) {
+            case "quote":
+                return require("@/assets/images/pomme-de-pin.jpg");
+            case "recipe":
+                return require("@/assets/images/libby-penner-jnkmQ1cEm7Q-unsplash.jpg");
+            case "anecdote":
+                return require("@/assets/images/annie-spratt-UPZ3PpDzk2Y-unsplash.jpg");
+            default:
+                return require("@/assets/images/alisa-anton-ujKXJFlENXg-unsplash.jpg");
+        }
     };
+    const image = getImage(content, ideas, games);
 
-    const image = imageMap[content.type] || imageMap.default;
-
-    const title = (() => {
+    const getTitle = (content: Content, ideas: Content[], games: Content[]) => {
+        if (ideas.length > 0) {
+            return "Se divertir";
+        }
+        if (games.length > 0) {
+            return "S'amuser";
+        }
         switch (content.type) {
             case "quote":
                 return "S'inspirer";
@@ -37,16 +68,10 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
                 return "Se régaler";
             case "anecdote":
                 return "S'instuire";
-            case "idea":
-                return "Se divertir";
-            case "game":
-                return "S'amuser";
             default:
                 return "Contenu du jour";
         }
-    })();
-
-    const colors = ["#95192E", "#DDC9B4", "#136F63"];
+    };
 
     return (
         <ImageBackground
@@ -59,7 +84,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
                 onPress={() => setModalVisible(true)}
             >
                 <ThemedText style={[styles.title]} type="subtitle">
-                    {title}
+                    {getTitle(content, ideas, games)}
                 </ThemedText>
             </Pressable>
         </ImageBackground>

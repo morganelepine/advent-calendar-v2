@@ -73,8 +73,7 @@ const styles = StyleSheet.create({
     },
     modalView: {
         margin: 15,
-        paddingHorizontal: 25,
-        // paddingTop: 20,
+        paddingHorizontal: 20,
         paddingBottom: 10,
         alignItems: "center",
         justifyContent: "space-between",
