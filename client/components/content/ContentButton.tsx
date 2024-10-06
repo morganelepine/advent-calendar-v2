@@ -36,20 +36,18 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
 }) => {
     const getImage = (content: Content, ideas: Content[], games: Content[]) => {
         if (ideas.length > 0) {
-            return require("@/assets/images/katie-azi-AHIS5FUW0gk-unsplash.jpg");
+            return require("@/assets/images/content_background/se-divertir.jpg");
         }
         if (games.length > 0) {
-            return require("@/assets/images/amy-chen-0JSwEitKjOw-unsplash.jpg");
+            return require("@/assets/images/content_background/s-amuser.jpg");
         }
         switch (content.type) {
             case "quote":
-                return require("@/assets/images/pomme-de-pin.jpg");
+                return require("@/assets/images/content_background/s-inspirer.jpg");
             case "recipe":
-                return require("@/assets/images/libby-penner-jnkmQ1cEm7Q-unsplash.jpg");
+                return require("@/assets/images/content_background/se-regaler.jpg");
             case "anecdote":
-                return require("@/assets/images/annie-spratt-UPZ3PpDzk2Y-unsplash.jpg");
-            default:
-                return require("@/assets/images/alisa-anton-ujKXJFlENXg-unsplash.jpg");
+                return require("@/assets/images/content_background/s-instruire.jpg");
         }
     };
     const image = getImage(content, ideas, games);

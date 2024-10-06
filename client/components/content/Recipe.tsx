@@ -4,6 +4,14 @@ import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import Markdown from "react-native-markdown-display";
+import { AdvancedImage } from "cloudinary-react-native";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: "deauthz29",
+    },
+});
 
 interface RecipeProps {
     content: {
@@ -20,6 +28,8 @@ interface RecipeProps {
 
 export const Recipe: React.FC<RecipeProps> = ({ content }) => {
     const [modalVisible, setModalVisible] = useState(false);
+
+    const image = cld.image(content.content3);
 
     return (
         <>
@@ -39,13 +49,31 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
                             {content.title}
                         </ThemedText>
 
-                        <ThemedText style={[styles.texts, styles.recipe]}>
-                            {content.content1}
-                        </ThemedText>
+                        <View>
+                            {content.content3 ? (
+                                <AdvancedImage
+                                    cldImg={image}
+                                    style={styles.image}
+                                />
+                            ) : null}
 
-                        <View style={styles.ingredientsContainer}>
+                            {content.content4 ? (
+                                <Markdown
+                                    style={{
+                                        body: [
+                                            styles.texts,
+                                            styles.sourcePhoto,
+                                        ] as TextStyle,
+                                    }}
+                                >
+                                    {content.content4}
+                                </Markdown>
+                            ) : null}
+                        </View>
+
+                        <View style={styles.contentContainer}>
                             <ThemedText
-                                style={[styles.texts, styles.ingredientsTitle]}
+                                style={[styles.texts, styles.contentTitle]}
                             >
                                 Ingrédients
                             </ThemedText>
@@ -61,18 +89,16 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
                             </Markdown>
                         </View>
 
-                        {content.content4 ? (
-                            <Markdown
-                                style={{
-                                    body: [
-                                        styles.texts,
-                                        styles.sourcePhoto,
-                                    ] as TextStyle,
-                                }}
+                        <View style={styles.contentContainer}>
+                            <ThemedText
+                                style={[styles.texts, styles.contentTitle]}
                             >
-                                {content.content4}
-                            </Markdown>
-                        ) : null}
+                                Recette
+                            </ThemedText>
+                            <ThemedText style={[styles.texts, styles.recipe]}>
+                                {content.content1}
+                            </ThemedText>
+                        </View>
                     </View>
                 </ScrollView>
             </CustomModal>
@@ -85,14 +111,17 @@ const styles = StyleSheet.create({
         color: "#22311d",
         fontFamily: "AnonymousPro",
     },
-    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
+    title: {
+        textAlign: "center",
+        fontFamily: "AnonymousProBold",
+        marginBottom: 20,
+    },
     recipe: {
-        marginVertical: 20,
         fontSize: 18,
         textAlign: "left",
     },
-    ingredientsContainer: { textAlign: "left", marginVertical: 20 },
-    ingredientsTitle: {
+    contentContainer: { textAlign: "left", marginTop: 20 },
+    contentTitle: {
         fontFamily: "AnonymousProBold",
         textAlign: "left",
         marginBottom: 10,
@@ -102,8 +131,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "left",
     },
+    image: {
+        width: "100%",
+        aspectRatio: 1,
+        height: undefined,
+    },
     sourcePhoto: {
         fontSize: 12,
-        marginVertical: 10,
     },
 });
