@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     contentTitle: {
         marginTop: 20,
         marginBottom: 5,
-        fontSize: 18,
+        fontSize: 20,
     },
     author: {
         marginBottom: 20,

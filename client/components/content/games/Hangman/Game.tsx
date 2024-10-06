@@ -1,7 +1,6 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { useEffect, useState } from "react";
-import { Letter } from "@/components/content/games/Hangman/Letter";
 
 interface Content {
     id: number;
@@ -104,8 +103,8 @@ export const Game: React.FC<GameProps> = ({ game }) => {
             </ThemedText>
 
             <View style={styles.alphabet}>
-                {alphabet.map((letter, index) => (
-                    <Pressable key={index} onPress={() => checkLetter(letter)}>
+                {alphabet.map((letter) => (
+                    <Pressable key={letter} onPress={() => checkLetter(letter)}>
                         <ThemedText style={getLetterStyle(letter)}>
                             {letter}
                         </ThemedText>

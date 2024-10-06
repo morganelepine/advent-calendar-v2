@@ -4,7 +4,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Hangman } from "@/components/content/games/Hangman";
-import { Joke } from "@/components/content/games/Joke";
+import { Games } from "@/components/content/games/Games";
 import { Quiz } from "@/components/content/games/Quiz";
 
 interface Content {
@@ -70,7 +70,7 @@ export const Game: React.FC<GameProps> = ({ games }) => {
                             <ThemedText type="modalTitle">
                                 Jeu du jour
                             </ThemedText>
-                            <Joke game={gamesByType.jeu} />
+                            <Games game={gamesByType.jeu} />
                         </>
                     )}
 

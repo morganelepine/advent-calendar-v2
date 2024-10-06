@@ -311,30 +311,43 @@ anecdote,L’origine de la chanson Douce Nuit,"""Douce Nuit"" (en allemand, ""St
 Selon la légende, l'orgue de l'église d'Oberndorf était endommagé juste avant Noël 1818, ce qui a conduit Mohr à demander à Gruber de composer une musique simple pouvant être accompagnée à la guitare. Le 24 décembre 1818, le duo a interprété pour la première fois ""Stille Nacht"" lors de la messe de minuit.  
 
 Cette chanson, à la fois douce et simple, a rapidement gagné en popularité à travers l'Europe, puis dans le monde entier. La version française, ""Douce Nuit"", est l'une des nombreuses traductions, et la chanson est devenue un incontournable des célébrations de Noël, véhiculant un message de paix et de tranquillité.",,UHWymQxzCIQ,z0vjxfsUmSg,image,24
-game,Charade,"Mon premier porte une couronne  
-Mon deuxième sert à tenir les voiles d’un bateau  
-Mon troisième est la fin du mot ""image""  
-Mon tout s’est mis en route le 25 décembre pour apporter des cadeaux à l’enfant Jésus",Rois-mage,roi-mat-ge,,jeu,4
+game,Charade,"Mon premier porte une couronne.  
+
+Mon deuxième sert à tenir les voiles d’un bateau.  
+
+Mon troisième est la fin du mot ""image"".  
+
+Mon tout s’est mis en route le 25 décembre pour apporter des cadeaux à l’enfant Jésus.",Rois-mage,,roi-mat-ge,jeu,4
 game,Enigme,"Lorsque l’hiver arrive, je n’ai presque plus de feuilles.  
+
 Pourtant, je ne suis pas un arbre.  
-Qui suis-je ?",Je suis un calendrier (éphéméride),,,jeu,8
-game,Blague,Comment faire entrer deux Pères Noël dans un frigo ?,"C’est impossible, il n’existe qu’un seul Père Noël !",,,jeu,12
-game,Charade,"Mon premier se jette lorsque vous jouez aux petits chevaux  
-Mon deuxième circule dans vos veines  
-Vous faites mon troisième quand il fait froid  
-C’est pendant mon tout qu’à lieu Noël",Décembre,dé-sang-brrr,,jeu,16
-game,Blague,Que dit un sapin de Noël qui arrive en retard le soir du réveillon ?,"Zut, je vais encore me faire enguirlander !",,,jeu,20
-game,Charade,"Pour fêter la nouvelle année on s’embrasse sous mon premier  
-Mon second est un préfixe qui indique la répétition  
-Mon troisième n’est pas rapide  
-Mon quatrième est le double de 1  
-Mon tout décore le sapin",Guirlande,gui-re-lent-deux,,jeu,23
-game,Enigme,"Dans la nuit du 24 au 25 décembre, le père Noël est capturé par des bandits et devient prisonnier. Ils lui donnent le choix de son supplice :  
+
+Qui suis-je ?",Un calendrier,,(éphéméride),jeu,8
+game,Blague,Comment faire entrer deux Pères Noël dans un frigo ?,,"C’est impossible, il n’existe qu’un seul Père Noël !",,jeu,12
+game,Charade,"Mon premier se jette lorsque vous jouez aux petits chevaux.  
+
+Mon deuxième circule dans vos veines.  
+
+Vous faites mon troisième quand il fait froid.  
+
+C’est pendant mon tout qu’à lieu Noël.",Décembre,,dé-sang-brrr,jeu,16
+game,Blague,Que dit un sapin de Noël qui arrive en retard le soir du réveillon ?,,"Zut, je vais encore me faire enguirlander !",,jeu,20
+game,Charade,"Pour fêter la nouvelle année on s’embrasse sous mon premier.  
+
+Mon second est un préfixe qui indique la répétition.  
+
+Mon troisième n’est pas rapide.  
+
+Mon quatrième est le double de 1.  ",Guirlande,,gui-re-lent-deux,jeu,23
+game,Enigme,"Dans la nuit du 24 au 25 décembre, le père Noël est capturé par des bandits et devient prisonnier.  
+
+Ils lui donnent le choix de son supplice :  
 - Être privé de nourriture pendant un mois
 - Être immédiatement dévoré par un ours brun
 - Se faire lécher les pieds par les rennes pendant 12 heures
 - Être attaché à un sapin de Noël enflammé  
-Quel choix doit-il faire pour s’en sortir et continuer sa tournée de Noël ?","Il doit choisir la deuxième option : se faire dévorer par un ours brun. Durant l’hiver, l’ours brun est en hibernation. Pendant cette période, il ne mange pas. Le Père Noël sera donc sain et sauf et pourra poursuivre sa distribution de cadeaux.",,,jeu,24
+
+Quel choix doit-il faire pour s’en sortir et continuer sa tournée de Noël ?",,Se faire dévorer par un ours brun,"Durant l’hiver, l’ours brun est en hibernation. Pendant cette période, il ne mange pas. Le Père Noël sera donc sain et sauf et pourra poursuivre sa distribution de cadeaux.",jeu,24
 idea,Un cocon de douceur au cœur de l'hiver,[Mon hiver cosy](https://carofromwoodland.com/products/mon-hiver-cosy),"Retrouvez dans 'Mon hiver cosy' tous les préparatifs et rituels de Noël et de l'hiver de Caro from Woodland.  
 
 Imprégnez vous de la magie, de cette douce nostalgie et de cette impatience heureuse qui naissent en nous à cette période afin de passer un hiver enchanté.  
