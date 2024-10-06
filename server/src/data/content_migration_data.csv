@@ -49,7 +49,7 @@ Mélangez tous les ingrédients dans l’eau bouillante et faites infuser le gin
 - 2 c. à s. de vinaigre de cidre
 - 1 c. à s. de miel
 - le jus d’un demi citron
-- 3 tranches de gingembre frais",infusion_gingembre_h9c9sx,,boisson-chaude,13
+- 3 tranches de gingembre frais",infusion_gingembre_h9c9sx,,boisson-chaude,3
 recipe,Cidre chaud épicé,"Versez le cidre de pomme dans une grande casserole et chauffez à feu doux.  
 
 Ajoutez les rondelles d’orange, les bâtons de cannelle, les clous de girofle et l’étoile de badiane.  
@@ -73,7 +73,7 @@ Saupoudrez de cannelle, de spéculoos, de sirop de caramel ou tout ce qui vous f
 recipe,Moon milk,"Le moon milk est un lait végétal chaud infusé avec plein d’épices qui aide à passer ses meilleures nuits.  
 
 Faites chauffer le lait végétal dans une casserole.  
-Quand c’est bien chaud, balancez vos épices et mélangez bien pour éviter les grumeaux.  
+Quand c’est bien chaud, ajoutez vos épices et mélangez bien pour éviter les grumeaux.  
 Laissez ensuite réchauffer à feu moyen-doux pour bien infuser le lait.  
 
 Retirer du feu, laissez un peu refroidir et ajoutez le miel ou le sirop d’érable.  
@@ -86,7 +86,7 @@ Versez dans un mug, buvez et jetez vous dans votre lit !","- 1 tasse de lait d�
 - une pincée de cardamome en poudre (qui régule la flore intestinale et donne bonne haleine)
 - une pincée de noix de muscade en poudre (antibactérienne et anti-douleur)
 - une pincée de poivre noir moulu (qui stimule la production d’endorphine)
-- une ou deux c. à c. de miel ou de sirop d’érable",moon_milk_qsyhwa,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,24
+- une ou deux c. à c. de miel ou de sirop d’érable",moon_milk_qsyhwa,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,13
 recipe,Sangria de Noël,"Dans un grand saladier mélangez tous les ingrédients sauf le champagne.  
   
 Laissez reposer quelques heures au frais.  
@@ -101,7 +101,7 @@ Au moment de servir, ajoutez le champagne et les glaçons.","- 13 clémentines
 - 500 ml de jus de canneberge
 - 375 ml de vodka
 - 750 ml de champagne
-- glaçons",sangria_cdzbdy,Photo de [Frank Zhang](https://unsplash.com/fr/@terasproductions?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,3
+- glaçons",sangria_cdzbdy,Photo de [Frank Zhang](https://unsplash.com/fr/@terasproductions?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,24
 recipe,Smoothie à la poire et aux épices,"Placez tous les ingrédients dans un mixeur puis mixez jusqu'à obtenir une texture lisse.  
 
 Versez dans un verre et saupoudrez de cannelle pour décorer.  
@@ -364,7 +364,7 @@ Leur cordée a l’air si fragile dans ce paysage vertigineux. On dirait six fou
 
 Lou l’ignore encore, mais dès demain ils ne seront plus que cinq.  
 
-Égarés dans une effroyable tempête, terrifiés par la mort de leur compagnon, c’est pour leur propre survie qu’ils vont devoir lutter.",Sandrine Collette,,livre,2
+Égarés dans une effroyable tempête, terrifiés par la mort de leur compagnon, c’est pour leur propre survie qu’ils vont devoir lutter.",Sandrine Collette,six-fourmis-blanche_wscgtn,livre,2
 idea,Un roman pour savourer chaque page,[Noël à la petite boulangerie](https://www.babelio.com/livres/Colgan-Nol-a-la-petite-boulangerie/994347),"La petite boulangerie de Polly Waterford l'occupe du matin au soir, au désespoir d'Huckle, son compagnon, qui rêve de profiter d'une simple grasse matinée avec elle.  
 
 À l'approche des fêtes de fin d'année, Huckle rêve aussi d'un Noël en amoureux, bien au chaud dans leur grand phare, avec leur petit macareux Neil.  
@@ -375,7 +375,7 @@ Jusqu'à présent, Polly a toujours réussi à surmonter les épreuves en cuisin
 Pourtant, cette fois-ci, préparer de bons petits pains risque de ne pas suffire à la sortir d'affaires.  
 
 Polly est-elle prête à affronter son passé ?  
-Réussira-t-elle à remettre sa vie sur de bons rails pour passer un joyeux Noël auprès de ceux qu'elle aime ?",Jenny Colgan,,livre,4
+Réussira-t-elle à remettre sa vie sur de bons rails pour passer un joyeux Noël auprès de ceux qu'elle aime ?",Jenny Colgan,noel-boulangerie_rjqbtr,livre,4
 idea,Un roman pour découvrir l’espoir sous la neige,[Un papillon sous la neige](https://www.babelio.com/livres/Kalotay-Un-papillon-sous-la-neige/214473),"Du Moscou des années 1950 à Boston aujourd'hui, le tumultueux destin d'une ballerine : passions, secrets et trahisons, une belle saga romanesque qui mêle émotions et mystères.  
 
 A Boston, Nina, une ancienne étoile du Bolchoï surnommée Papillon, met aux enchères ses précieux bijoux, emportés lors de son exil.  
@@ -385,14 +385,14 @@ Chassé par la danseuse, Grigori, bien décidé à découvrir la vérité, va fo
 Pourquoi s'est-elle enfuie de son pays ?  
 Quel est le mystère qui entoure la mort de son mari Viktor ?  
 
-En levant peu à peu le voile sur ce terrible destin, Grigori apprendra que la réalité se cache toujours là où on ne l'attend pas…",Daphne Kalotay,,livre,5
+En levant peu à peu le voile sur ce terrible destin, Grigori apprendra que la réalité se cache toujours là où on ne l'attend pas…",Daphne Kalotay,papillon-neige_oryrm0,livre,5
 idea,Un classique pour retrouver l'esprit de Noël,[Un chant de Noël](https://www.babelio.com/livres/Dickens-Un-chant-de-Nol--Histoire-de-fantomes-pour-Nol/151041),"La veille de Noël. tous s’affairent aux préparatifs.  
 Mais, préférant la solitude à ces fêtes joyeuses, Ebenezer Scrooge refuse l’invitation de son neveu et s’enferme chez lui.  
 
 Pour ce vieil homme avare et solitaire, que tous prennent soin d’éviter, Noël se résume à un simple mot : « Sottise ! ».  
 Mais ce soir-là, les esprits de Noël en décident autrement.  
 
-Entraîné tour à tour dans le passé, le présent et le futur, le vieux grincheux reçoit une leçon de vie.",Charles Dickens,,livre,7
+Entraîné tour à tour dans le passé, le présent et le futur, le vieux grincheux reçoit une leçon de vie.",Charles Dickens,chant-noel_gamxa0,livre,7
 idea,Un road-trip glacé vers la survie,[Vongozero](https://www.babelio.com/livres/Vagner-Vongozero/639034),"Anna vit avec son mari Sergueï et leur fils Micha dans une belle maison isolée près de Moscou.  
 Un virus inconnu a commencé à décimer la population.  
 
@@ -407,7 +407,7 @@ Comment sa mère, qui l'a convoquée pour passer Noël dans la maison de son enf
 La voilà donc coincée dans le petit village de Vallenot au coeur des Alpes de Haute-Provence et condamnée à passer la fête qu'elle hait plus que tout, entourée de sa famille pour le moins… haute en couleur !  
 
 Mais les fêtes de famille ont le don de faire rejaillir les secrets enfouis.  
-Les douloureux, ceux qu'on voudrait oublier, mais aussi ceux qui permettent d'avancer…",Clarisse Sabard,,livre,10
+Les douloureux, ceux qu'on voudrait oublier, mais aussi ceux qui permettent d'avancer…",Clarisse Sabard,vie-belle-drole_z5ivmx,livre,10
 idea,Un mystère pour réfléchir en attendant les fêtes,[Le Noël d'Hercule Poirot](https://www.babelio.com/livres/Christie-Le-Nol-dHercule-Poirot/7001),"Pour la première fois depuis vingt ans, le vieux Simeon Lee a décidé de réunir tous ses enfants pour les fêtes de fin d'année. Le 24 décembre, on le trouve sauvagement assassiné dans sa chambre.  
 
 Tout le monde, évidemment, détestait ce vieillard cynique : Alfred et sa femme pour la tyrannie qu'il exerçait sur leur couple, David pour les humiliations dont il a abreuvé sa mère, George pour la rente - trop parcimonieuse à son goût - qu'il lui sert, Harry, le fils prodigue, pour le mépris dans lequel il le tient.  
@@ -554,7 +554,7 @@ Versez le vin blanc sur l’ensemble du plat et enfournez jusqu’à ce que le r
 - 1 reblochon
 - 5 cl de vin blanc sec
 - 4 c. à s. de crème fraiche
-- sel, poivre",,,salé,8
+- sel, poivre",tisane-citron_u6oqad,Photo de [Gaelle Marcel](https://unsplash.com/fr/@gaellemarcel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,8
 recipe,Lasagnes montagnardes,"Préchauffez le four à 190°.  
 
 Étalez les tranches de bacon sur la plaque du four et enfournez-les 6 minutes quand le four est chaud.  
@@ -595,21 +595,15 @@ Servez chaud.","- 300 ml de vin rouge corsé ou de porto
 - Le zeste d'un citron détaillé en lamelles
 - 1/2 c. à c. de cannelle moulue
 - 5 jaunes d'oeufs",,,salé,16
-recipe,Tuiles au chorizo,"Préchauffez le four à 180°.  
+recipe,Tisane citron-menthe-gingembre,"Cette tisane est un classique détoxifiant, parfait pour apaiser le système digestif avant les festivités.  
 
-Mélangez le beurre fondu, la farine et le blanc d’œuf.  
-Réservez 15 minutes au frigidaire.  
+Portez l'eau à ébullition, puis ajoutez le gingembre et laissez infuser pendant 10 minutes.  
 
-Déposez une cuillère à café de pâte sur du papier sulfurisé et étalez-la très finement.  
-
-Saupoudrez de parmesan puis parsemez de dés de chorizo.  
-
-Enfournez 6 minutes.  
-Laissez refroidir quelques minutes avant de les retirer de la plaque.  ","- 50 g de beurre
-- 15 g de farine
-- 1 blanc d’œuf
-- 1/2 de chorizo
-- 10 g de parmesan",,,salé,18
+Ajoutez le jus de citron, la menthe et le miel (si désiré), puis servez chaud ou tiède.","- 1 litre d'eau
+- Le jus d'un citron
+- 1 cm de gingembre râpé
+- Quelques feuilles de menthe fraîche
+- 1 cuillère à café de miel (facultatif)",,,salé,23
 recipe,Camembert feuilleté,"Préchauffez le four à 190°.  
 
 Émincez l’oignon et faites-le revenir 3 minutes dans un filet d’huile d’olive.  
@@ -658,7 +652,7 @@ Saupoudrez de gruyère râpé et enfournez environ 30 minutes.  ","- 1 kg d’é
 - une poignée de noix
 - 1 pâte feuilletée
 - sel, poivre
-- 25 g de gruyère râpé",,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) sur [Unsplash](https://unsplash.com/fr/photos/verre-a-boire-transparent-avec-liquide-bleu-VRmCmwZMyPU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,23
+- 25 g de gruyère râpé",,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) sur [Unsplash](https://unsplash.com/fr/photos/verre-a-boire-transparent-avec-liquide-bleu-VRmCmwZMyPU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,18
 idea,Une romance festive où les contraires s'attirent,Christmas flow,"Dans cette série française, un rappeur célèbre, Marcus, connu pour ses paroles controversées, rencontre Lila, une journaliste féministe passionnée.  
 
 Leur rencontre improbable pendant la période de Noël les pousse à remettre en question leurs différences.  

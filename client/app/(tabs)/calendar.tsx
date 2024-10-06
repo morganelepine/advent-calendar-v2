@@ -82,5 +82,6 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: "space-between",
         margin: 20,
+        flex: 1,
     },
 });

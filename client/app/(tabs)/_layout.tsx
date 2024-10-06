@@ -18,7 +18,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: "Home",
+                    title: "Days to Christmas",
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "gift" : "gift-outline"}
@@ -30,7 +30,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="calendar"
                 options={{
-                    title: "Calendar",
+                    title: "Advent calendar",
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "calendar" : "calendar-outline"}
@@ -39,7 +39,7 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
+            {/* <Tabs.Screen
                 name="admin"
                 options={{
                     title: "Admin",
@@ -54,7 +54,7 @@ export default function TabLayout() {
                         />
                     ),
                 }}
-            />
+            /> */}
         </Tabs>
     );
 }

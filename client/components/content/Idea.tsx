@@ -5,6 +5,14 @@ import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/custom-utils/Video";
 import Markdown from "react-native-markdown-display";
+import { AdvancedImage } from "cloudinary-react-native";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: "deauthz29",
+    },
+});
 
 interface Content {
     id: number;
@@ -67,9 +75,21 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 {idea.content2}
                             </ThemedText>
 
-                            {idea.content4 ? (
+                            {(idea.content5 === "série" ||
+                                idea.content5 === "film") &&
+                            idea.content4 ? (
                                 <View style={styles.video}>
                                     <Video videoId={idea.content4} />
+                                </View>
+                            ) : null}
+
+                            {idea.content5 === "livre" && idea.content4 ? (
+                                <View style={styles.imageContainer}>
+                                    <AdvancedImage
+                                        cldImg={cld.image(idea.content4)}
+                                        style={styles.image}
+                                        resizeMode="contain"
+                                    />
                                 </View>
                             ) : null}
                         </View>
@@ -103,5 +123,15 @@ const styles = StyleSheet.create({
     },
     video: {
         marginTop: 20,
+    },
+    imageContainer: {
+        marginTop: 20,
+        width: "100%",
+        overflow: "hidden",
+    },
+    image: {
+        width: "100%",
+        height: undefined,
+        aspectRatio: 1,
     },
 });
