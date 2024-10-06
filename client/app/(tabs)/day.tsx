@@ -15,7 +15,7 @@ interface Content {
     content5: string;
 }
 
-export const Day = () => {
+export default function DayScreen() {
     const params = useLocalSearchParams();
     const dayId = params.dayId;
 
@@ -59,7 +59,7 @@ export const Day = () => {
             <DayContent contents={contents} />
         </SafeAreaView>
     );
-};
+}
 
 const styles = StyleSheet.create({
     safeArea: {

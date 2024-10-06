@@ -39,6 +39,12 @@ export default function TabLayout() {
                     ),
                 }}
             />
+            <Tabs.Screen
+                name="day"
+                options={{
+                    href: null,
+                }}
+            />
             {/* <Tabs.Screen
                 name="admin"
                 options={{

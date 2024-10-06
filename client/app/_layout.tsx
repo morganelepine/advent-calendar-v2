@@ -41,12 +41,13 @@ export default function RootLayout() {
             <Stack>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
-                <Stack.Screen
+                {/* <Stack.Screen
                     name="Days"
                     options={{
                         title: "Retour au calendrier",
+                        headerShown: false,
                     }}
-                />
+                /> */}
             </Stack>
         </ThemeProvider>
     );

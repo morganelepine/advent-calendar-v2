@@ -11,7 +11,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
         const today = new Date();
         if (day.isOpen) {
             router.push({
-                pathname: "/Days",
+                pathname: "/day",
                 params: { dayId: day.id },
             });
         } else if (day.dayNumber > today.getDate()) {
@@ -28,7 +28,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
             }
 
             router.push({
-                pathname: "/Days",
+                pathname: "/day",
                 params: { dayId: day.id },
             });
         } else {
