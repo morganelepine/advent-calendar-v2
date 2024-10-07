@@ -7,6 +7,7 @@ import { Video } from "@/components/custom-utils/Video";
 import Markdown from "react-native-markdown-display";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { ExternalLink } from "@/components/utils/ExternalLink";
 
 const cld = new Cloudinary({
     cloud: {
@@ -69,11 +70,13 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 </ThemedText>
                             ) : null}
 
-                            <ThemedText
-                                style={[styles.texts, styles.description]}
+                            <Markdown
+                                style={{
+                                    body: [styles.description] as TextStyle,
+                                }}
                             >
                                 {idea.content2}
-                            </ThemedText>
+                            </Markdown>
 
                             {(idea.content5 === "série" ||
                                 idea.content5 === "film") &&
@@ -92,6 +95,19 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                     />
                                 </View>
                             ) : null}
+
+                            {idea.content5 === "autre" && idea.content4 ? (
+                                <ExternalLink
+                                    href={idea.content4}
+                                    style={styles.button}
+                                >
+                                    <ThemedText>
+                                        {idea.title.includes("Bingo")
+                                            ? "Télécharger le bingo"
+                                            : "Voir la playlist"}
+                                    </ThemedText>
+                                </ExternalLink>
+                            ) : null}
                         </View>
                     ))}
                 </ScrollView>
@@ -109,10 +125,10 @@ const styles = StyleSheet.create({
     title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     contentTitle: {
         marginTop: 20,
-        marginBottom: 5,
         fontSize: 20,
     },
     author: {
+        marginTop: 5,
         marginBottom: 20,
         fontSize: 14,
         fontFamily: "AnonymousProItalic",
@@ -120,6 +136,7 @@ const styles = StyleSheet.create({
     description: {
         marginBottom: 5,
         fontSize: 18,
+        fontFamily: "AnonymousPro",
     },
     video: {
         marginTop: 20,
@@ -133,5 +150,12 @@ const styles = StyleSheet.create({
         width: "100%",
         height: undefined,
         aspectRatio: 1,
+    },
+    button: {
+        backgroundColor: "#22311d",
+        paddingVertical: 10,
+        borderRadius: 20,
+        marginVertical: 20,
+        textAlign: "center",
     },
 });
