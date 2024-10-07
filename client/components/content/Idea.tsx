@@ -51,6 +51,10 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 {idea.title}
                             </ThemedText>
 
+                            <ThemedText style={[styles.texts, styles.type]}>
+                                {idea.content5}
+                            </ThemedText>
+
                             <Markdown
                                 style={{
                                     body: [
@@ -72,21 +76,21 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 
                             <Markdown
                                 style={{
-                                    body: [styles.description] as TextStyle,
+                                    body: styles.description as TextStyle,
                                 }}
                             >
                                 {idea.content2}
                             </Markdown>
 
-                            {(idea.content5 === "série" ||
-                                idea.content5 === "film") &&
+                            {(idea.content5 === "Une série" ||
+                                idea.content5 === "Des films") &&
                             idea.content4 ? (
                                 <View style={styles.video}>
                                     <Video videoId={idea.content4} />
                                 </View>
                             ) : null}
 
-                            {idea.content5 === "livre" && idea.content4 ? (
+                            {idea.content5 === "Un livre" && idea.content4 ? (
                                 <View style={styles.imageContainer}>
                                     <AdvancedImage
                                         cldImg={cld.image(idea.content4)}
@@ -96,7 +100,9 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 </View>
                             ) : null}
 
-                            {idea.content5 === "autre" && idea.content4 ? (
+                            {(idea.content5 === "Une playlist" ||
+                                idea.content5 === "Un jeu") &&
+                            idea.content4 ? (
                                 <ExternalLink
                                     href={idea.content4}
                                     style={styles.button}
@@ -123,8 +129,19 @@ const styles = StyleSheet.create({
         fontFamily: "AnonymousPro",
     },
     title: { textAlign: "left", fontFamily: "AnonymousProBold" },
-    contentTitle: {
+    type: {
+        backgroundColor: "#22311d",
+        fontSize: 14,
+        color: "white",
+        paddingVertical: 5,
+        paddingHorizontal: 10,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        textAlign: "center",
         marginTop: 20,
+        alignSelf: "flex-start",
+    },
+    contentTitle: {
         fontSize: 20,
     },
     author: {

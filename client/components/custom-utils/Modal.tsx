@@ -68,11 +68,12 @@ const styles = StyleSheet.create({
     background: {
         ...StyleSheet.absoluteFillObject,
         backgroundColor: "white",
-        opacity: 0.75,
+        opacity: 0.9,
         borderRadius: 50,
     },
     modalView: {
         margin: 15,
+        width: "93%",
         paddingHorizontal: 20,
         paddingBottom: 10,
         alignItems: "center",

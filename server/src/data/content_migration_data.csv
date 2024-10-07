@@ -1,18 +1,20 @@
 type,title,content1,content2,content3,content4,content5,dayId
-anecdote,L’origine du calendrier de l’avent,"L'origine du calendrier de l'Avent remonte au 19e siècle en Allemagne, où les familles protestantes avaient l'habitude de marquer les jours précédant Noël. Chaque jour de décembre, elles traçaient des lignes à la craie sur les murs ou les portes, ou allumaient une bougie, et certaines offraient des images religieuses à leurs enfants pour patienter jusqu'à la veille de Noël.  
+anecdote,L’origine du calendrier de l’avent,"L'origine du calendrier de l'Avent remonte au 19e siècle en Allemagne, où les familles protestantes avaient l'habitude de marquer les jours précédant Noël.  
+
+Chaque jour de décembre, elles traçaient des lignes à la craie sur les murs ou les portes, ou allumaient une bougie, et certaines offraient des images religieuses à leurs enfants pour patienter jusqu'à la veille de Noël.  
 
 Le premier calendrier imprimé serait quant à lui apparu au début du 20e siècle, en 1908, créé par un Allemand nommé Gerhard Lang. Enfant, sa mère lui avait fabriqué un calendrier fait maison avec 24 petits biscuits. Inspiré par cette tradition familiale, il a produit un calendrier commercial avec de petites images derrière des fenêtres à ouvrir chaque jour.  
 
 Plus tard, dans les années 1920, des versions avec des chocolats ou d'autres petites surprises à découvrir derrière les fenêtres ont fait leur apparition, ce qui est devenu le format classique que l'on connaît aujourd'hui.",,,,image,1
-game,À quel film de Noël appartient cette réplique ?,"« Les amis sont comme des étoiles, tu ne les vois pas toujours, mais tu sais qu'ils sont là.&nbsp;»","La vie est belle,Love Actually,Le Pôle Express,Klaus",Klaus,h5gR4vUb2rA&t=7s,quiz-citation,1
+game,À quel film de Noël appartient cette réplique ?,"« Les amis sont comme des étoiles, tu ne les vois pas toujours, mais tu sais qu'ils sont là.&nbsp;»","La vie est belle,Love Actually,Le Pôle Express,Klaus",Klaus,h5gR4vUb2rA,quiz-citation,1
 game,À quel film de Noël appartient cette réplique ?,« Je ne connais personne plus détestable que toi. Mais je t’offre mes voeux de Noël&nbsp;!&nbsp;»,"L’Étrange Noël de Monsieur Jack,Les Cinq légendes,Le Drôle de Noël de Scrooge,Le Grinch",Le Drôle de Noël de Scrooge,PcNLFXSdO5A,quiz-citation,1
 game,À quel film de Noël appartient cette réplique ?,"« Oh, Noël n'est pas qu'un jour, c'est un état d'esprit... et c'est ce qui a changé.&nbsp;»","Love Actually,Miracle sur la 34e rue,La vie est belle,Klaus",Miracle sur la 34e rue,g4XRYgiCr-w,quiz-citation,1
 idea,Un cocon de douceur au coeur de l'hiver,[Mon hiver cosy](https://carofromwoodland.com/products/mon-hiver-cosy),"Retrouvez dans ""Mon hiver cosy"" tous les préparatifs et rituels de Noël et de l'hiver de Caro from Woodland.  
 
 Imprégnez vous de la magie, de cette douce nostalgie et de cette impatience heureuse qui naissent en nous à cette période afin de passer un hiver enchanté.  
 
-A lire ou à picorer dans votre fauteuil préféré auprès du feu, accompagné d'une boisson aux épices pour vous réchauffer !",Caroline Millet,,livre,1
-quote,,L'enfance c'est de croire qu'avec le sapin de Noël et trois flocons de neige toute la Terre est changée.,André Laurendeau,Voyages au pays de l'enfance,,,1
+A lire ou à picorer dans votre fauteuil préféré auprès du feu, accompagné d'une boisson aux épices pour vous réchauffer !",Caroline Millet,hiver-cosy_wgipgn,Un livre,1
+quote,,"L'enfance, c'est de croire qu'avec le sapin de Noël et trois flocons de neige, toute la Terre est changée.",André Laurendeau,Voyages au pays de l'enfance,,,1
 recipe,Chocolat chaud épicé,"Faites chauffer le lait dans une casserole à feu moyen.  
 
 Ajoutez le chocolat coupé en morceaux et remuez jusqu'à ce qu'il soit complètement fondu.  
@@ -24,9 +26,9 @@ Ajustez le sucre selon votre goût.
 Servez chaud avec une touche de crème fouettée si vous le souhaitez.","- 500 ml de lait
 - 100 g de chocolat noir (70%)
 - 1 c. à c. de cannelle
-- une pincée de piment de Cayenne
+- Une pincée de piment de Cayenne
 - 1 c. à s. de sucre (facultatif)
-- crème fouettée (facultatif)",chocolat_chaud_mtlq7a,Photo de [Elena Leya](https://unsplash.com/fr/@foodistika?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,1
+- Crème fouettée (facultatif)",chocolat_chaud_mtlq7a,Photo de [Elena Leya](https://unsplash.com/fr/@foodistika?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,1
 anecdote,La légende du Jólakötturinn,"Le Jólakötturinn est décrit comme un gigantesque chat noir qui rôde à travers les campagnes islandaises pendant la période de Noël. Selon la légende, il dévore ceux qui n’ont pas reçu de nouveaux vêtements avant le réveillon de Noël.  
 
 L'origine de cette légende semble être une manière de motiver les paysans islandais à travailler dur, en particulier pour produire la laine, un matériau crucial en Islande. Ceux qui travaillaient bien recevaient des vêtements en laine comme récompense avant Noël, tandis que ceux qui n'avaient rien fait risquaient d'être pris par le Jólakötturinn.  
@@ -36,6 +38,7 @@ game,Le pendu de Noël,"Lutins,Neige,Traineau,Guirlande",,,,pendu,2
 idea,Envie de pimenter vos Secret Santa ?,,"La saison des calendriers de l’avent est ouverte, et avec elle, celle des Secret Santa !  
 
 Depuis quelques années, pour rendre le jeu plus challengeant, nous avons ajouté une nouvelle règle avec mes amis…  
+
 Le principe : établir une liste de thèmes (un thème par personne participante), piocher chacun·e un thème puis offrir un cadeau qui respecte ce thème !  
 
 Exemples de thèmes :
@@ -44,15 +47,15 @@ Exemples de thèmes :
 - Un cadeau fait main
 - Un cadeau  qui se mange / qui se boit
 - Un cadeau qui brille
-- Un cadeau avec un sapin / un père Noël 
-- Un cadeau écolo
+- Un cadeau avec un sapin
 - Un cadeau à utiliser seulement l'hiver
 - Un cadeau à mettre sur le sapin
 - Un cadeau qui sent bon  
 
 
 Pour aller plus loin, on peut relever le défi d'offrir un cadeau qui combine plusieurs thèmes à la fois (par exemple : un cadeau rouge, qui sent bon et qui se met sur le sapin).  
-Celui ou celle qui réussit à en réunir le plus remporte la place du· de la meilleur·e Secret Santa !",,,autre,2
+
+Celui ou celle qui réussit à en réunir le plus remporte la place du·de la meilleur·e Secret Santa !",,,Une idée,2
 quote,,"Noël agite une baguette magique sur ce monde et voici, tout est plus doux et plus beau.",Norman Vincent Peale,The Power of Positive Thinking,,,2
 recipe,Biscuits sablés à la cannelle,"Mélangez le beurre, le miel et le sucre, puis incorporez l'oeuf.  
 
@@ -70,34 +73,38 @@ Enfournez 9-10 minutes à 180°.","- 125 g de beurre mou
 - 1 c. à c. de levure chimique",sables_r9t4td,Photo de [Konrad Koller](https://unsplash.com/fr/@onetdev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),sucré,2
 anecdote,L’origine du sapin de Noël,"Le sapin de Noël trouve son origine dans les anciennes traditions païennes des peuples germaniques et celtiques, qui décoraient des arbres pour célébrer la vie au moment du solstice d'hiver. Le sapin est un arbre persistant, symbolisant l'éternité et la renaissance.  
 
-Cette tradition a été christianisée au XVIe siècle en Allemagne, où les familles ornaient les sapins de pommes, symbolisant l'arbre du jardin d'Éden.  
+Cette tradition a été christianisée au 16e siècle en Allemagne, où les familles ornaient les sapins de pommes, symbolisant l'arbre du jardin d'Éden.  
 
 Le sapin de Noël s'est répandu en Europe grâce à des figures comme la reine Victoria, et est devenu un symbole central des festivités de Noël, décoré de lumières, d'ornements et de guirlandes.",,,,image,3
 game,Êtes-vous incollable sur Noël ?,Lequel des Rois mages apporte l’encens?,"Gaspard,Melchior,Balthazar",Gaspard,"Selon la tradition chrétienne, les Rois mages, qui viennent d’Orient pour rendre hommage à l’enfant Jésus, apportent chacun des présents symboliques :  
 - Gaspard est souvent associé à l'encens
 - Melchior à l'or
 - et Balthazar à la myrrhe",quiz-noel,3
-game,Êtes-vous incollable sur Noël ?,A quand remonte la tradition des santons de Provence ?,"Au 17e siècle,Au 18e siècle,Au 19e siècle,Au 20e siècle",Au 18e siècle,"À la fin du 18e siècle, un Marseillais, Jean-Louis Lagnel, crée les santons de Provence, pour représenter le ""petit peuple"" du Midi, dans ses habits traditionnels.",quiz-noel,3
+game,Êtes-vous incollable sur Noël ?,A quand remonte la tradition des santons de Provence ?,"Au 17e siècle,Au 18e siècle,Au 19e siècle,Au 20e siècle",Au 18e siècle,"À la fin du 18e siècle, un Marseillais, Jean-Louis Lagnel, crée les santons de Provence, pour représenter le ""petit peuple"" du Midi dans ses habits traditionnels.",quiz-noel,3
 game,Êtes-vous incollable sur Noël ?,"Quelle plante est surnommée ""étoile de Noël"" ?","Le houx,Le poinsettia,Le gui,L'amaryllis",Le poinsettia,"La plante connue sous le nom d'""étoile de Noël"" est le poinsettia, une plante d'origine mexicaine qui fleurit pendant la saison des fêtes. Ses bractées rouges en forme d'étoile symbolisent Noël dans de nombreuses cultures.",quiz-noel,3
-idea,Un roman pour découvrir l’espoir sous la neige,[Un papillon sous la neige](https://www.babelio.com/livres/Kalotay-Un-papillon-sous-la-neige/214473),"Du Moscou des années 1950 à Boston aujourd'hui, le tumultueux destin d'une ballerine : passions, secrets et trahisons, une belle saga romanesque qui mêle émotions et mystères.  
+idea,Un roman pour découvrir l’espoir sous la neige,[Un papillon sous la neige](https://www.babelio.com/livres/Kalotay-Un-papillon-sous-la-neige/214473),"Du Moscou des années 1950 au Boston aujourd'hui, le tumultueux destin d'une ballerine : passions, secrets et trahisons, une belle saga romanesque qui mêle émotions et mystères.  
 
 A Boston, Nina, une ancienne étoile du Bolchoï surnommée Papillon, met aux enchères ses précieux bijoux, emportés lors de son exil.  
+
 C'est alors que Grigori, un homme d'origine russe, la contacte pour lui poser la plus incroyable des questions : est-il l'enfant qu'elle aurait abandonné ?  
 
 Chassé par la danseuse, Grigori, bien décidé à découvrir la vérité, va fouiller dans la vie de Papillon en Russie, un passé fait d'énigmes et de secrets.  
+
 Pourquoi s'est-elle enfuie de son pays ?  
 Quel est le mystère qui entoure la mort de son mari Viktor ?  
 
-En levant peu à peu le voile sur ce terrible destin, Grigori apprendra que la réalité se cache toujours là où on ne l'attend pas…",Daphne Kalotay,papillon-neige_oryrm0,livre,3
+En levant peu à peu le voile sur ce terrible destin, Grigori apprendra que la réalité se cache toujours là où on ne l'attend pas…",Daphne Kalotay,papillon-neige_oryrm0,Un livre,3
 quote,,"Sans les cadeaux, Noël ne serait pas Noël.",Louisa May Alcott,Les Filles du docteur March,,,3
-recipe,Infusion de gingembre,"Vous êtes fatigué⸱e ? épuisé⸱e ? éreinté⸱e ? Buvez ça, allez au lit, ça ira mieux demain&nbsp;!  
+recipe,Infusion de gingembre,"Vous êtes fatigué⸱e ? Buvez ça, allez au lit, ça ira mieux demain !  
 
-Mélangez tous les ingrédients dans l’eau bouillante et faites infuser le gingembre entre 5 et 10 minutes. Buvez-le bien chaud et allez vous coucher.","- 200 ml d’eau bouillante
+Mélangez tous les ingrédients dans l’eau bouillante et faites infuser le gingembre entre 5 et 10 minutes.  
+
+Buvez-le bien chaud et allez vous coucher.","- 200 ml d’eau bouillante
 - 2 c. à s. de vinaigre de cidre
 - 1 c. à s. de miel
-- le jus d’un demi citron
+- Le jus d’un demi citron
 - 3 tranches de gingembre frais",infusion_gingembre_h9c9sx,,boisson-chaude,3
-anecdote,Les toiles d’araignées porte-bonheur en Ukraine,"Vous vous sentiriez chanceux si vous trouviez une toile d’araignée sur votre arbre de Noël ? Probablement pas. Mais les Ukrainiens associent les toiles d’araignée aux heureux présages.  
+anecdote,Les toiles d’araignées porte-bonheur en Ukraine,"Vous sentiriez-vous chanceux⸱se si vous trouviez une toile d’araignée sur votre arbre de Noël ? Probablement pas. Pourtant les Ukrainien⸱ne⸱s associent les toiles d’araignée aux heureux présages.  
 
 Cette légende est en fait tirée d’un conte populaire, dans lequel une famille pauvre faisait pousser un arbre de Noël à partir d’une pomme de pin. Les enfants étaient enthousiastes à l’idée de le décorer, mais la famille n’avait pas les moyens d’acheter des décorations. Sentant le désespoir de la famille, les araignées ont tissé des toiles de soie scintillantes autour de l’arbre, qui se sont transformées en argent et en or lorsque le soleil s’est levé le matin, laissant la famille avec un arbre magnifiquement décoré.  
 
@@ -113,8 +120,9 @@ idea,Une romance festive où les contraires s'attirent,Christmas flow,"Dans cett
 
 Leur rencontre improbable pendant la période de Noël les pousse à remettre en question leurs différences.  
 
-Alors que l'amour commence à naître, ils doivent composer avec leurs divergences sociales et idéologiques dans cette comédie romantique qui explore les préjugés et les oppositions.",,j60c_YoO88M,série,4
-quote,,On dit que la jeunesse ne croit plus à rien. Quelle tristesse... Et si un jour le Père Noël ne croyait plus aux enfants&nbsp;!,Pierre Doris,,,,4
+Alors que l'amour commence à naître, ils doivent composer avec leurs divergences sociales et idéologiques dans cette comédie romantique qui explore les préjugés et les oppositions.",,j60c_YoO88M,Une série,4
+quote,,"On dit que la jeunesse ne croit plus à rien. Quelle tristesse...  
+Et si un jour le Père Noël ne croyait plus aux enfants !",Pierre Doris,,,,4
 recipe,Velouté de potimarron et châtaignes,"Coupez le potimarron en deux, retirez les graines, puis coupez-le en morceaux (pas besoin de l’éplucher, sa peau est fine et devient tendre à la cuisson).  
 
 Dans une grande casserole, faite chauffer l’huile d’olive, puis y faire revenir l’oignon et l’ail émincés jusqu’à ce qu’ils deviennent translucides.  
@@ -132,28 +140,31 @@ Astuce : vous pouvez servir ce velouté avec quelques morceaux de châtaignes gr
 - 1 oignon
 - 1 gousse d'ail
 - 1 litre de bouillon de légumes
-- 20 cl de crème fraîche ou crème végétale
+- 20 cl de crème fraîche ou de crème végétale
 - 1 c. à s. d'huile d'olive
-- sel, poivre
+- Sel, poivre
 - Une pincée de muscade (optionnelle)",veloute_potimarron_eru2qt,Photo de [Mads Eneqvist](https://unsplash.com/fr/@madseneqvist?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,4
-anecdote,La légende de la Nisse,"La Nisse est une créature du folklore scandinave, souvent associée à Noël. Elle est décrite comme un petit être domestique, généralement masculin, ressemblant à un vieil homme de petite taille, portant un bonnet rouge. La Nisse est connue pour veiller sur les fermes et les foyers, protégeant les animaux et aidant dans les tâches quotidiennes, à condition d'être bien traitée. En échange, elle attend des offrandes, comme un bol de porridge au beurre, surtout pendant la période de Noël.  
+anecdote,La légende de la Nisse,"La Nisse est une créature du folklore scandinave, souvent associée à Noël. Elle est décrite comme un petit être domestique, généralement masculin, ressemblant à un vieil homme de petite taille, portant un bonnet rouge.  
+
+La Nisse est connue pour veiller sur les fermes et les foyers, protégeant les animaux et aidant dans les tâches quotidiennes, à condition d'être bien traitée. En échange, elle attend des offrandes, comme un bol de porridge au beurre, surtout pendant la période de Noël.  
 
 Dans certaines traditions, si elle se sent négligée ou insultée, la Nisse peut devenir espiègle ou causer des ennuis.  
 
 Parfois considérée comme une figure bienveillante, mais aussi imprévisible, elle fait partie des légendes nordiques célébrées durant les fêtes de fin d'année, semblable à un esprit gardien.",,,,image,5
 game,À quel film de Noël appartient cette réplique ?,« Les p’tits chanteurs de Noël ... Je déteste les p’tits chanteurs de Noël&nbsp;! Toutes ses voix de faussets qui ne sont que de la graine de drogués&nbsp;!&nbsp;»,"Gremlins,Le père Noël est une ordure,L’Étrange Noël de Monsieur Jack,Le Grinch",Gremlins,QJwYQt8dHi4,quiz-citation,5
-game,À quel film de Noël appartient cette réplique ?,"« - Joyeux Noël.
+game,À quel film de Noël appartient cette réplique ?,"- Joyeux Noël.
 - Joyeuses Pâques.
-- Et n'oubliez pas de vous brossez les dents.&nbsp;»","Les Cinq légendes,Maman j'ai raté l'avion !,Gremlins,Le père Noël est une ordure",Les Cinq légendes,fVlx5D3x_5o,quiz-citation,5
-game,À quel film de Noël appartient cette réplique ?,« Je vais lui péter la figure avec un fer&nbsp;!&nbsp;»,"Maman j'ai raté l'avion !,Le Drôle de Noël de Scrooge,L’Étrange Noël de Monsieur Jack,Le Grinch","Maman, j'ai raté l'avion&nbsp;!",GPtHAQARLdw,quiz-citation,5
-idea,Un road-trip glacé vers la survie,[Vongozero](https://www.babelio.com/livres/Vagner-Vongozero/639034),"Anna vit avec son mari Sergueï et leur fils Micha dans une belle maison isolée près de Moscou.  
-Un virus inconnu a commencé à décimer la population.  
+- Et n'oubliez pas de vous brossez les dents.","Les Cinq légendes,Maman j'ai raté l'avion !,Gremlins,Le père Noël est une ordure",Les Cinq légendes,fVlx5D3x_5o,quiz-citation,5
+game,À quel film de Noël appartient cette réplique ?,« Je vais lui péter la figure avec un fer&nbsp;!&nbsp;»,"Maman j'ai raté l'avion !,Le Drôle de Noël de Scrooge,L’Étrange Noël de Monsieur Jack,Le Grinch",Maman j'ai raté l'avion&nbsp;!,GPtHAQARLdw,quiz-citation,5
+idea,Un road-trip glacé vers la survie,[Vongozero](https://www.babelio.com/livres/Vagner-Vongozero/639034),"Anna vit avec son mari Sergueï et leur fils Micha dans une belle maison isolée près de Moscou alors qu'un virus inconnu a commencé à décimer la population.  
 
 Dans Moscou en quarantaine, la plupart des habitants sont morts et les survivants – porteurs de la maladie ou pillards – risquent de déferler sur les alentours.  
+
 Anna et les siens décident de s’enfuir vers le nord, pour atteindre un refuge de chasse sur un lac à la frontière finlandaise : Vongozero.  
 
 Bientôt vont s’agréger à leur petit groupe des voisins, un couple d’amis, l’ex-femme de Sergueï, un médecin…  
-Le voyage sera long, le froid glacial, chaque village traversé source d’angoisse, l’approvisionnement en carburant une préoccupation constante.",Yana Vagner,,livre,5
+
+Le voyage sera long, le froid glacial, chaque village traversé source d’angoisse, l’approvisionnement en carburant une préoccupation constante.",Yana Vagner,vongozero_ibbbpg,Un livre,5
 quote,,Le meilleur de tous les cadeaux autour de n'importe quel sapin de Noël : la présence d'une famille heureuse tous enveloppés l'un dans l'autre.,Burton Hillis,,,,5
 recipe,Vin chaud aux agrumes,"Versez le vin rouge dans une casserole et chauffez à feu doux.  
 
@@ -184,17 +195,17 @@ Jusqu'à présent, Polly a toujours réussi à surmonter les épreuves en cuisin
 Pourtant, cette fois-ci, préparer de bons petits pains risque de ne pas suffire à la sortir d'affaires.  
 
 Polly est-elle prête à affronter son passé ?  
-Réussira-t-elle à remettre sa vie sur de bons rails pour passer un joyeux Noël auprès de ceux qu'elle aime ?",Jenny Colgan,noel-boulangerie_rjqbtr,livre,6
+Réussira-t-elle à remettre sa vie sur de bons rails pour passer un joyeux Noël auprès de ceux qu'elle aime ?",Jenny Colgan,noel-boulangerie_rjqbtr,Un livre,6
 quote,,J'ai compris que le Père Noël n'existait pas quand j'avais 5 ans. Je suis entrée dans un grand magasin et il m'a demandé un autographe.,Shirley Temple,,,,6
 recipe,Pain d'épices,"Préchauffez le four à 160°C.  
 
-Faites chauffer 250 g de miel à la casserole ou au micro-ondes.  
+Faites chauffer le miel à la casserole ou au micro-ondes.  
 
 Mélangez la farine avec la levure chimique, les deux sucres et les épices.  
 
 Ajoutez le miel chaud (en remuant idéalement avec une cuillère en bois).  
 
-Incorporez petit à petit 2 oeufs, puis un peu de lait juste tiède pour amalgamer le tout.  
+Incorporez petit à petit les oeufs, puis un peu de lait juste tiède pour amalgamer le tout.  
 
 Versez la préparation dans un moule à cake bien beurré et fariné.  
 
@@ -214,28 +225,32 @@ Attendez 24 heures au minimum avant de le déguster.","- 1 c. à c. de quatre-é
 - 1 c. à c. de cannelle en poudre
 - 2 oeufs
 - 10 cl de lait",pain_epices_kxaydr,Photo de [Caroline Hernandez](https://unsplash.com/fr/@carolinehdz?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),sucré,6
-anecdote,L’origine des biscuits de Noël,"Les biscuits de Noël sont une tradition gourmande qui remonte au Moyen  ge en Europe, en particulier dans les régions germanophones.  
+anecdote,L’origine des biscuits de Noël,"Les biscuits de Noël sont une tradition gourmande qui remonte au Moyen Âge en Europe, en particulier dans les régions germanophones.  
 
 Les Lebkuchen allemands, par exemple, sont des biscuits au miel et aux épices qui trouvent leurs origines dans la cuisine médiévale. Ces biscuits, faits à base de farine, d’épices comme la cannelle, le clou de girofle et le gingembre, étaient souvent cuits pour des célébrations religieuses, car les épices étaient alors un luxe rare, associées aux grandes occasions.  
+
 En Scandinavie, les pepparkakor (biscuits au gingembre) et en Belgique, les speculoos sont également des biscuits traditionnels de Noël. Ces derniers sont souvent moulés en forme de figures, comme Saint Nicolas ou d’autres symboles festifs.  
 
 Aux États-Unis, la tradition des biscuits de Noël décorés est fortement influencée par les immigrants européens, en particulier allemands et néerlandais, qui ont apporté leurs recettes avec eux.",,,,image,7
-game,Êtes-vous incollable sur Noël ?,Combien de rennes a le Père Noël ?,"7,8,9,10",8,"En décembre 1823, un poème publié anonymement, ""A Visit from St. Nicholas"", également connu sous le nom de ""The Night Before Christmas"" décrit un vieil homme conduisant un petit traineau tiré par huit petits rennes, et donne un nom à chacun :  
+game,Êtes-vous incollable sur Noël ?,Combien de rennes a le Père Noël ?,"7,8,9,10",8,"En décembre 1823, un poème publié anonymement, ""A Visit from St. Nicholas"", également connu sous le nom de ""The Night Before Christmas"" décrit un vieil homme conduisant un petit traineau tiré par huit petits rennes à qui il donne chacun un nom. 
 
-« But a miniature sleigh, and eight tiny reindeer,  
-With a little old driver, so lively and quick,  
-I knew in a moment it must be St. Nick.  
-More rapid than eagles his coursers they came,  
-And he whistled, and shouted, and call'd them by name:  
-""Now! Dasher, now! Dancer, now! Prancer and Vixen,  
-""On! Comet, on! Cupid, on! Donner and Blitzen; »",quiz-noel,7
+En voici un extrait :  
+
+« Je n'en crus pas mes yeux quand apparut au loin,  
+Un traîneau et huit rennes pas plus gros que le poing,  
+Dirigés par un petit personnage enjoué :  
+C'était le Père Noël je le savais.  
+Ses coursiers volaient comme s'ils avaient des ailes.  
+Et lui chantait, afin de les encourager :  
+« Allez Tornade ! Allez Danseur ! Allez, Furie et Fringuant !  
+En avant Comète et Cupidon ! Allez Éclair et Tonnerre ! »",quiz-noel,7
 game,Êtes-vous incollable sur Noël ?,Quel pays a interdit Noël durant plusieurs années au 17e siècle ?,"France,Espagne,Angleterre,Italie",Angleterre,"Sous le règne de Cromwell, Noël a été interdit en Angleterre dans les années 1640 à 1650, car les Puritains considéraient les festivités comme trop païennes. Cette interdiction a été levée après la restauration de la monarchie.",quiz-noel,7
-game,Êtes-vous incollable sur Noël ?,Quels sont les ingrédients d'un lait de poule ?,"Lait - oeufs - café - miel,Crème - bananes - oeufs - cannelle,Lait - oeufs - sucre - muscade - alcool,Lait - yaourt - vanille - sucre",Lait / oeufs /sucre / muscade / alcool,"Le lait de poule est une boisson traditionnelle de Noël, généralement à base de lait, de crème, d'oeufs, de sucre, de muscade et souvent d'alcool comme le rhum ou le bourbon.",quiz-noel,7
-idea,Une série drôle et touchante pour ceux qui ont du mal à aimer les fêtes,Je déteste Noël,"Gianna, une infirmière italienne trentenaire, se sent acculée lorsqu'elle réalise qu'elle est la seule de son entourage à être célibataire pendant la période de Noël.  
+game,Êtes-vous incollable sur Noël ?,Quels sont les ingrédients d'un lait de poule ?,"Lait - oeufs - café - miel,Crème - bananes - oeufs - cannelle,Lait - oeufs - sucre - muscade - alcool,Lait - yaourt - vanille - sucre",Lait - oeufs - sucre - muscade - alcool,"Le lait de poule est une boisson traditionnelle de Noël, généralement à base de lait, de crème, d'oeufs, de sucre, de muscade et souvent d'alcool comme le rhum ou le bourbon.",quiz-noel,7
+idea,Une série drôle et touchante pour celles et ceux qui ont du mal à aimer les fêtes,Je déteste Noël,"Gianna, une infirmière italienne trentenaire, se sent acculée lorsqu'elle réalise qu'elle est la seule de son entourage à être célibataire pendant la période de Noël.  
 
 Pour éviter les remarques désobligeantes de sa famille, elle décide de trouver un compagnon en seulement quelques jours avant le dîner de Noël.  
 
-Entre quiproquos et découvertes personnelles, cette série mêle humour et romantisme tout en explorant la pression sociale entourant les relations durant les fêtes.",,CI6HuDZ4RHU,série,7
+Entre quiproquos et découvertes personnelles, cette série mêle humour et romantisme tout en explorant la pression sociale entourant les relations durant les fêtes.",,CI6HuDZ4RHU,Une série,7
 quote,,"Noël n'est pas un jour ni une saison, c'est un état d'esprit.",John Calvin Coolidge,,,,7
 recipe,Smoothie à la poire et aux épices,"Placez tous les ingrédients dans un mixeur puis mixez jusqu'à obtenir une texture lisse.  
 
@@ -259,31 +274,38 @@ idea,Un thriller pour frissonner au coeur de l'hiver,[Glacé](https://www.babeli
 
 Ce même jour, une jeune psychologue prend son premier poste dans le centre psychiatrique de haute sécurité qui surplombe la vallée.  
 
-Le commandant Servaz, flic hypocondriaque et intuitif, se voit confier l'enquête la plus étrange de toute sa carrière.",Bernard Minier,,livre,8
+Le commandant Servaz, flic hypocondriaque et intuitif, se voit confier l'enquête la plus étrange de toute sa carrière.",Bernard Minier,glace_zdcqjm,Un livre,8
 quote,,Celui qui n’a pas Noël dans le coeur ne le trouvera jamais au pied d’un arbre.,Roy Lemon Smith,,,,8
-recipe,Poireauflette,"Préchauffez le four à 190°.  
+recipe,Compote de Noël,"Épluchez les pommes et les poires, enlevez les pépins et coupez-les en morceaux.  
 
-Coupez les poireaux en rondelles de tailles égales et faites-les revenir dans une noisette de beurre jusqu’à ce qu’ils deviennent fondant.  
-(Ajoutez de l’eau en court de cuisson si les poireaux accrochent).  
+Zestez et pressez l'orange pour en obtenir le jus.  
 
-Salez et poivrez puis ajoutez la crème et mélangez bien.  
+Dans une casserole, mettez les morceaux de pommes et de poires puis ajoutez le jus d'orange, le zeste, la cannelle, l'anis étoilé, la muscade, et la gousse de vanille fendue.  
 
-Faite revenir les lardons dans une poêle jusqu’à ce qu’ils deviennent grillés.  
+Versez 150 ml d'eau et mélangez bien.  
 
-Coupez le reblochon en lamelles de tailles égales.  
+Portez à ébullition, puis laissez mijoter à feu doux pendant environ 20 à 30 minutes, jusqu'à ce que les fruits soient bien fondants.  
 
-Dans un plat, versez les poireaux cuits puis recouvrez-les avec les lardons et le reblochon.  
+Une fois les fruits cuits, ajoutez le miel ou le sirop d'érable, puis mélangez bien. Laissez mijoter encore 5 minutes.  
 
-Versez le vin blanc sur l’ensemble du plat et enfournez jusqu’à ce que le reblochon soit fondu et grillé.","- 5 poireaux
-- 100g de lardons
-- 1 reblochon
-- 5 cl de vin blanc sec
-- 4 c. à s. de crème fraiche
-- sel, poivre",,,salé,8
-anecdote,Les lumières de Noël,"Les lumières de Noël sont un élément central des décorations de la saison. Leur usage remonte à une ancienne tradition allemande au XVIIe siècle, où l’on plaçait des bougies sur les branches du sapin de Noël pour symboliser la lumière apportée par la naissance de Jésus. Ces bougies représentaient aussi les étoiles dans le ciel de la nuit sainte.  
+Écrasez à la fourchette pour une texture rustique ou mixez pour une texture plus lisse.  
 
-Avec l'invention de l'électricité, les guirlandes électriques ont été créées, rendant la tradition plus sûre et plus accessible à tous. En 1882, Edward Johnson, un associé de Thomas Edison, a été le premier à créer des guirlandes électriques pour un arbre de Noël, avec des ampoules rouges, blanches et bleues.",,,,image,9
-game,À quel film de Noël appartient cette réplique ?,« La magie de Noël est celle que tu crées avec tes propres mains.&nbsp;»,"Miracle sur la 34e rue,Le Pôle Express,Klaus,La vie est belle",Klaus,h5gR4vUb2rA&t=7s,quiz-citation,9
+Retirez la cannelle, la badiane, et la gousse de vanille avant de servir.","- 4 pommes (type Golden ou Reinette)
+- 2 poires
+- 1 orange (zeste + jus)
+- 1 bâton de cannelle
+- 1 étoile de badiane (anis étoilé)
+- 1 pincée de noix de muscade
+- 1 cuillère à soupe de miel ou de sirop d'érable
+- 1 gousse de vanille (ou 1 cuillère à café d'extrait de vanille)
+- 150 ml d'eau",compote_kkgqpd,"Photo de [Rachel Loughman](https://unsplash.com/fr/@rachelloughman?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+  ",sucré,8
+anecdote,Les lumières de Noël,"Les lumières de Noël sont un élément central des décorations de la saison. Leur usage remonte à une ancienne tradition allemande au 17e siècle, où l’on plaçait des bougies sur les branches du sapin de Noël pour symboliser la lumière apportée par la naissance de Jésus. Ces bougies représentaient aussi les étoiles dans le ciel de la nuit sainte.  
+
+Avec l'invention de l'électricité, les guirlandes électriques ont été créées, rendant la tradition plus sûre et plus accessible à tous.  
+
+En 1882, Edward Johnson, un associé de Thomas Edison, a été le premier à créer des guirlandes électriques pour un arbre de Noël, avec des ampoules rouges, blanches et bleues.",,,,image,9
+game,À quel film de Noël appartient cette réplique ?,« La magie de Noël est celle que tu crées avec tes propres mains.&nbsp;»,"Miracle sur la 34e rue,Le Pôle Express,Klaus,La vie est belle",Klaus,h5gR4vUb2rA,quiz-citation,9
 game,À quel film de Noël appartient cette réplique ?,« Les meilleures choses arrivent lorsque vous vous y attendez le moins.&nbsp;»,"The Holidays,Love Actually,Maman j'ai raté l'avion !,La vie est belle",The Holidays,wk9caHO3pW0,quiz-citation,9
 game,À quel film de Noël appartient cette réplique ?,"« Papa Noël va dévorer ces gugusses, comme une assiette de sablés.&nbsp;»","Maman j'ai raté l'avion !,Violent Night,L’Étrange Noël de Monsieur Jack,Le Grinch",Violent Night,V8zP27MbIek,quiz-citation,9
 idea,Le Bingo des téléfilms de Noël,,"Vous adorez les téléfilms de Noël avec leurs histoires prévisibles, mais réconfortantes, où l’esprit de Noël est toujours au rendez-vous ?  
@@ -296,7 +318,7 @@ Le principe est simple :
 - À chaque fois qu’une des situations se produit (comme ""Un personnage revient dans sa ville natale"" ou ""Une tempête de neige empêche le personnage de rentrer""), cochez la case correspondante.
 
 
-Évidemment, plus vous cochez de cases, plus le téléfilm a de chance d’atteindre le sommet du chef-d'oeuvre de Noël !",,https://www.canva.com/design/DAF1_-dc8LQ/OoZGyz2ncaAIbB9dNnTHhw/view?utm_content=DAF1_-dc8LQ&utm_campaign=designshare&utm_medium=link&utm_source=editor,autre,9
+Évidemment, plus vous cochez de cases, plus le téléfilm a de chance d’atteindre le sommet du chef-d'oeuvre de Noël !",,https://www.canva.com/design/DAF1_-dc8LQ/OoZGyz2ncaAIbB9dNnTHhw/view?utm_content=DAF1_-dc8LQ&utm_campaign=designshare&utm_medium=link&utm_source=editor,Un jeu,9
 quote,,"Pour préparer un arbre de Noël, il faut trois choses, outre les ornements et l’arbre, la foi dans les beaux jours à venir.",ZahradDe Zahrad,Un Arbre de Noël,,,9
 recipe,Lait de poule,"Dans un bol, fouettez les jaunes d'oeufs avec le sucre jusqu'à ce que le mélange devienne pâle et mousseux.  
 
@@ -315,9 +337,10 @@ Servez tiède avec une pincée de muscade sur le dessus.","- 500 ml de lait
 - 1/2 c. à c. de muscade râpée
 - 100 ml de crème liquide
 - 30 ml de rhum ou de whisky (facultatif)",lait_poule_hbbbek,Photo de [Misunderstood Whiskey](https://unsplash.com/fr/@misunderstoodwhiskey?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,9
-anecdote,Rudolph le renne au nez rouge,"Rudolph a été créé en 1939 par Robert L. May, un rédacteur pour la chaîne de magasins Montgomery Ward. À l'époque, la société voulait offrir un livre de Noël aux enfants de ses clients et a demandé à Robert May de créer une histoire originale. C’est ainsi qu’est né Rudolph, le petit renne au nez rouge. Le livre a été distribué à environ 2,4 millions d'exemplaires en cette première année&nbsp;!  
+anecdote,Rudolph le renne au nez rouge,"Rudolph a été créé en 1939 par Robert L. May, un rédacteur pour la chaîne de magasins Montgomery Ward. À l'époque, la société voulait offrir un livre de Noël aux enfants de ses clients et a demandé à Robert May de créer une histoire originale. C’est ainsi qu’est né Rudolph, le petit renne au nez rouge. Le livre a été distribué à environ 2,4 millions d'exemplaires en cette première année.  
 
 L'histoire raconte comment Rudolph, dont le nez rouge luisant le faisait moquer par les autres rennes, a guidé le traîneau du Père Noël lors d'une nuit brumeuse, devenant ainsi un héros.  
+
 Ce conte est devenu mondialement célèbre grâce à la chanson de 1949, popularisée par Gene Autry, et fait désormais partie intégrante du folklore de Noël.",,,,image,10
 game,Le pendu de Noël,"Etoile,Houx,Festivites,Rennes",,,,pendu,10
 idea,Un roman pour sourire et s'émouvoir,[La vie est belle et drôle à la fois](https://www.babelio.com/livres/Sabard-La-vie-est-belle-et-drole-a-la-fois/1086746),"Léna n'en revient pas.  
@@ -325,37 +348,41 @@ Comment sa mère, qui l'a convoquée pour passer Noël dans la maison de son enf
 
 La voilà donc coincée dans le petit village de Vallenot au coeur des Alpes de Haute-Provence et condamnée à passer la fête qu'elle hait plus que tout, entourée de sa famille pour le moins… haute en couleur !  
 
-Mais les fêtes de famille ont le don de faire rejaillir les secrets enfouis.  
-Les douloureux, ceux qu'on voudrait oublier, mais aussi ceux qui permettent d'avancer…",Clarisse Sabard,vie-belle-drole_z5ivmx,livre,10
-quote,,"Tout ce que je veux pour Noël, c'est un autre film avec Audrey Hepburn&nbsp;!",Cary Grant,,,,10
-recipe,Moelleux aux pommes allégé en beurre et en sucre,"Battre les oeufs en omelette.  
+Mais les fêtes de famille ont le don de faire rejaillir les secrets enfouis. Les douloureux, ceux qu'on voudrait oublier, mais aussi ceux qui permettent d'avancer…",Clarisse Sabard,vie-belle-drole_z5ivmx,Un livre,10
+quote,,"Tout ce que je veux pour Noël, c'est un autre film avec Audrey Hepburn !",Cary Grant,,,,10
+recipe,Moelleux aux pommes allégé en beurre et en sucre,"Battez les oeufs en omelette.  
 
-Ajouter la farine, le sucre et la levure puis mélanger.  
+Ajoutez la farine, le sucre et la levure puis mélangez.  
 
-Ajouter le beurre fondu puis mélanger.  
+Ajoutez le beurre fondu puis mélangez.  
 
-Éplucher les pommes et les incorporer dans la pâte en petits morceaux.  
+Épluchez les pommes et incorporez-les dans la pâte en petits morceaux.  
 
-Faire cuire une vingtaine de minutes à 180°.","- 6 pommes
+Enfournez une vingtaine de minutes à 180°.","- 6 pommes
 - 2 oeufs entiers
 - 50 g de beurre
 - 120 g de farine
 - 2 c. à s. de miel ou de sirop d’agave
 - 1 sachet de levure chimique",moelleux_pommes_xzbwqk,Photo de [Lina Volkmann](https://unsplash.com/fr/@linavolkmann?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),sucré,10
-anecdote,L’amour du livre en Islande,Les Islandais cultivent une grande passion pour les livres. Une coutume veut que chaque personne reçoive au moins un livre sous son sapin à Noël. Il s’avère même que l’Islande publie plus de livres par habitant que n’importe quel autre pays&nbsp;!,,,,image,11
-game,Êtes-vous incollable sur Noël ?,Quelle chanson de Noël a été numéro 1 au Royaume-Uni en 1984 ?,"Do They Know It's Christmas?,Last Christmas,Merry Christmas Everyone,Jingle Bell Rock",Do They Know It's Christmas?,,quiz-noel,11
-game,Êtes-vous incollable sur Noël ?,"Dans ""Maman, j’ai raté l’avion"", comment s’appellent les cambrioleurs?","Kevin et Frank,Harry et Marvin,Kevin et Harry,Frank et Marvin",Harry et Marvin,"Dans le film “Maman, j’ai raté l’avion”, les cambrioleurs qui essaient de cambrioler la maison de Kevin McCallister sont Harry Lyme (interprété par Joe Pesci) et Marvin Murchins (interprété par Daniel Stern). Ils sont souvent appelés ""les Wet Bandits"".",quiz-noel,11
-game,Êtes-vous incollable sur Noël ?,Quel chanteur a rendu célèbre la chanson “Petit papa Noël” ?,"Tino Rossi,Yves Montand,Charles Trenet,Jacques Brel",Tino Rossi,"Vendu à plus de 30 millions d'exemplaires depuis sa sortie en 1946, Petit papa Noël est devenu un hymne du réveillon immortalisé par Tino Rossi.",quiz-noel,11
-idea,Un mystère pour réfléchir en attendant les fêtes,[Le Noël d'Hercule Poirot](https://www.babelio.com/livres/Christie-Le-Nol-dHercule-Poirot/7001),"Pour la première fois depuis vingt ans, le vieux Simeon Lee a décidé de réunir tous ses enfants pour les fêtes de fin d'année. Le 24 décembre, on le trouve sauvagement assassiné dans sa chambre.  
+anecdote,L’amour du livre en Islande,"""Jólabókaflóð"" (""inondation de livres de Noël"") est une coutume très ancrée en Islande qui veut que chaque personne reçoive au moins un livre sous son sapin à Noël. Les Islandais passent souvent la soirée du 24 décembre à lire, blottis dans un fauteuil ou au lit, tout en dégustant du chocolat chaud.  
+
+Jólabókaflóð prend ses racines pendant la Seconde Guerre mondiale, lorsque les importations de nombreux biens étaient restreintes, alors que le papier n'était pas rationné. Cela a encouragé la production et l'échange de livres comme cadeaux de Noël.  
+
+L'Islande, avec une population d'environ 370 000 habitants, est l'un des pays où le ratio de livres publiés par habitant est le plus élevé au monde. Environ 1 Islandais sur 10 a déjà publié un livre au cours de sa vie !  
+
+Chaque année, en novembre, Bókatíðindi, un catalogue recensant tous les nouveaux livres publiés en Islande, est envoyé gratuitement à chaque foyer du pays, permettant aux familles de choisir leurs cadeaux littéraires pour Noël.  ",,,,image,11
+game,Êtes-vous incollable sur Noël ?,Quelle chanson de Noël a été numéro 1 au Royaume-Uni en 1984 ?,"Do They Know It's Christmas?,Last Christmas,Merry Christmas Everyone,Jingle Bell Rock",Do They Know It's Christmas?,,quiz-noel,12
+game,Êtes-vous incollable sur Noël ?,"Dans ""Maman, j’ai raté l’avion"", comment s’appellent les cambrioleurs?","Kevin et Frank,Harry et Marvin,Kevin et Harry,Frank et Marvin",Harry et Marvin,"Dans le film “Maman, j’ai raté l’avion”, les cambrioleurs qui essaient de cambrioler la maison de Kevin McCallister sont Harry Lyme (interprété par Joe Pesci) et Marvin Murchins (interprété par Daniel Stern). Ils sont souvent appelés ""les Wet Bandits"".",quiz-noel,12
+game,Êtes-vous incollable sur Noël ?,Quel chanteur a rendu célèbre la chanson “Petit papa Noël” ?,"Tino Rossi,Yves Montand,Charles Trenet,Jacques Brel",Tino Rossi,"Vendu à plus de 30 millions d'exemplaires depuis sa sortie en 1946, Petit papa Noël est devenu un hymne du réveillon immortalisé par Tino Rossi.",quiz-noel,12
+idea,Un mystère pour réfléchir en attendant les fêtes,[Le Noël d'Hercule Poirot](https://www.babelio.com/livres/Christie-Le-Nol-dHercule-Poirot/7001),"Pour la première fois depuis vingt ans, le vieux Simeon Lee a décidé de réunir tous ses enfants pour les fêtes de fin d'année. Mais le 24 décembre, on le trouve sauvagement assassiné dans sa chambre.  
 
 Tout le monde, évidemment, détestait ce vieillard cynique : Alfred et sa femme pour la tyrannie qu'il exerçait sur leur couple, David pour les humiliations dont il a abreuvé sa mère, George pour la rente - trop parcimonieuse à son goût - qu'il lui sert, Harry, le fils prodigue, pour le mépris dans lequel il le tient.  
 
 Et puis il y a ce mystérieux M. Farr qui vient d'Afrique du Sud.  
 Et la jeune Pilar, la petite-fille espagnole, n'a-t-elle pas déclaré froidement que, si elle avait un ennemi, elle n'hésiterait pas à lui trancher la gorge ?  
 
-Vraiment, le vieux Simeon n'aurait pas dû faire part devant tout le monde de son intention de modifier son testament, il n'aurait pas dû faire cette scène détestable à ses enfants réunis, il n'aurait peut-être pas dû faire devant Pilar étalage de ses diamants.",Agatha Christie,,livre,11
-quote,,"Quand on mange au chaud le gâteau (de Noël)  
-On mange les oeufs (de Pâques) derrière le fourneau.",Dicton français,,,,11
+Vraiment, le vieux Simeon n'aurait pas dû faire part devant tout le monde de son intention de modifier son testament, il n'aurait pas dû faire cette scène détestable à ses enfants réunis, il n'aurait peut-être pas dû faire devant Pilar étalage de ses diamants...",Agatha Christie,noel-hercule_ehj1rt,Un livre,11
+quote,,"Quand on mange au chaud le gâteau (de Noël), on mange les oeufs (de Pâques) derrière le fourneau.",Dicton français,,,,11
 recipe,Mojito à la canneberge,"Dans un verre, écrasez les feuilles de menthe avec le sucre.  
 
 Ajoutez le rhum et le jus de canneberge.  
@@ -365,24 +392,26 @@ Complétez avec de l'eau gazeuse et remuez.
 Ajoutez des glaçons et décorez avec quelques canneberges fraîches.","- 50 ml de rhum blanc
 - 50 ml de jus de canneberge
 - 1 c. à s. de sucre
-- feuilles de menthe fraîche
-- eau gazeuse
-- canneberges fraîches pour la décoration",mojito_fgnrf2,Photo de [Evan Wise](https://unsplash.com/fr/@evanthewise?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,11
+- Feuilles de menthe fraîche
+- Eau gazeuse
+- Canneberges fraîches pour la décoration",mojito_fgnrf2,Photo de [Evan Wise](https://unsplash.com/fr/@evanthewise?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,11
 anecdote,Les 12 jours de Noël,"Les 12 jours de Noël (ou Twelve Days of Christmas) représentent la période entre le 25 décembre (jour de Noël) et le 6 janvier (jour de l’Épiphanie). Cette période marque la fin des festivités de Noël et le début de la célébration de l’Épiphanie, moment où les Rois Mages arrivent à Bethléem pour rendre hommage à l’enfant Jésus.  
 
 Historiquement, ces 12 jours étaient remplis de festivités, de danses et de jeux dans plusieurs cultures européennes. Chaque jour pouvait être associé à des célébrations ou des repas spécifiques. Le douzième jour, appelé la Fête des Rois, est particulièrement important dans des pays comme l’Espagne et la France, où l’on mange traditionnellement la galette des rois pour fêter la venue des Rois Mages.  
 
-La célèbre chanson ""The Twelve Days of Christmas"", écrite au XVIIIe siècle, fait référence à cette période. Chaque jour, un cadeau est offert par un mystérieux ""true love"". Les cadeaux mentionnés dans la chanson sont souvent interprétés comme ayant des significations symboliques religieuses, bien que leur origine exacte reste floue. Par exemple, les ""partridge in a pear tree"" (perdrix dans un poirier) symboliseraient Jésus, tandis que les ""five golden rings"" (cinq anneaux dorés) rappelleraient l’Ancien Testament.",,1UHmQANFtNs,,image,12
-game,Blague,Comment faire entrer deux Pères Noël dans un frigo ?,,"C’est impossible, il n’existe qu’un seul Père Noël&nbsp;!",,jeu,12
+La célèbre chanson ""The Twelve Days of Christmas"", écrite au 18e siècle, fait référence à cette période. Chaque jour, un cadeau est offert par un mystérieux ""true love"". Les cadeaux mentionnés dans la chanson sont souvent interprétés comme ayant des significations symboliques religieuses, bien que leur origine exacte reste floue.  
+
+Par exemple, les ""partridge in a pear tree"" (perdrix dans un poirier) symboliseraient Jésus, tandis que les ""five golden rings"" (cinq anneaux dorés) rappelleraient l’Ancien Testament.",,1UHmQANFtNs,,image,12
+game,Blague,Comment faire entrer deux Pères Noël dans un frigo ?,,"C’est impossible, il n’existe qu’un seul Père Noël !",,jeu,11
 idea,Un conte de Noël moderne pour les romantiques invétérés,Dash & Lily,"Dash, un adolescent cynique, découvre un carnet mystérieux rempli de défis dans une librairie de New York pendant les fêtes.  
 
 Lily, l'optimiste créatrice du carnet, cherche quelqu'un qui partage son amour de Noël.  
 
 À travers des énigmes et des défis qu'ils se lancent par le biais du carnet, Dash et Lily apprennent à se connaître, découvrant peu à peu leurs personnalités opposées et ce qu'ils veulent vraiment.  
 
-Une comédie romantique pleine de magie des fêtes.",,lpRY4vKvMZs,série,12
+Une comédie romantique pleine de magie des fêtes.",,lpRY4vKvMZs,Une série,12
 quote,,"Vous connaissez la différence entre Dieu et le père Noël ?  
-Et bien c'est que le père Noël c'est vrai&nbsp;!",Coluche,,,,12
+Et bien c'est que le père Noël c'est vrai !",Coluche,,,,12
 recipe,Lasagnes montagnardes,"Préchauffez le four à 190°.  
 
 Étalez les tranches de bacon sur la plaque du four et enfournez-les 6 minutes quand le four est chaud.  
@@ -406,17 +435,17 @@ Enfournez 30 minutes. ","- 6 pâtes à lasagnes fraiches
 - 1 gros oignon
 - 6 tranches de bacon
 - 50 g de crème fraiche épaisse",lasagnes_lmjhob,Photo de [Kristine Tumanyan](https://unsplash.com/fr/@krstne?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,12
-anecdote,Le Christmas Pickle,"Le Christmas Pickle est une tradition insolite, principalement observée aux États-Unis, mais dont l'origine reste un peu mystérieuse.  
+anecdote,Le cornichon de Noël,"Le ""Christmas Pickle"" est une tradition insolite, principalement observée aux États-Unis, mais dont l'origine reste un peu mystérieuse.  
 
 Elle consiste à cacher une petite décoration en forme de cornichon, souvent en verre, dans les branches du sapin de Noël. Le matin de Noël, les enfants (ou les membres de la famille) doivent chercher cet ""ornement cornichon"". La personne qui le trouve en premier reçoit soit un petit cadeau supplémentaire, soit la promesse de bonne chance pour l'année à venir.  
 
-Bien que cette coutume soit généralement attribuée à l'Allemagne, il semble qu'elle ne soit en réalité pas couramment pratiquée dans ce pays. Certains suggèrent qu'il pourrait s'agir d'une invention marketing datant du 19ème siècle, destinée à promouvoir les ornements en verre soufflé fabriqués en Allemagne et vendus aux États-Unis.  
+Bien que cette coutume soit généralement attribuée à l'Allemagne, il semble qu'elle ne soit en réalité pas couramment pratiquée dans ce pays. Certains suggèrent qu'il pourrait s'agir d'une invention marketing datant du 19e siècle, destinée à promouvoir les ornements en verre soufflé fabriqués en Allemagne et vendus aux États-Unis.  
 
 Malgré l'incertitude autour de son origine, le Christmas Pickle est devenu une tradition amusante pour de nombreuses familles américaines, ajoutant une petite touche de mystère à la matinée de Noël.",,,,image,13
 game,À quel film de Noël appartient cette réplique ?,« Je vais voler Noël&nbsp;!&nbsp;»,"L’Étrange Noël de Monsieur Jack,Le Grinch,Les Cinq légendes,The Holidays",Le Grinch,uSmnMc8zawg,quiz-citation,13
-game,À quel film de Noël appartient cette réplique ?,"« - Joyeux Noël quand même&nbsp;!  
+game,À quel film de Noël appartient cette réplique ?,"- Joyeux Noël quand même&nbsp;!  
 - Y'a pas d'mal.&nbsp;»","Le père Noël est une ordure,Gremlins,The Holidays,Le Grinch",Le père Noël est une ordure,cm8Bk3TbSnQ,quiz-citation,13
-game,À quel film de Noël appartient cette réplique ?,"« On dit qu’à une certaine heure de la nuit, vous pouvez entendre le son de la cloche du traîneau, mais seulement si vous croyez vraiment.&nbsp;»","Klaus,Le Pôle Express,La vie est belle,Le Drôle de Noël de Scrooge",Le Pôle Express,XEcge1O-YYw&t=8s,quiz-citation,13
+game,À quel film de Noël appartient cette réplique ?,"« On dit qu’à une certaine heure de la nuit, vous pouvez entendre le son de la cloche du traîneau, mais seulement si vous croyez vraiment.&nbsp;»","Klaus,Le Pôle Express,La vie est belle,Le Drôle de Noël de Scrooge",Le Pôle Express,XEcge1O-YYw,quiz-citation,13
 idea,Un roman pour se perdre dans le mystère,[Dans les brumes de Capelans](https://www.babelio.com/livres/Norek-Dans-les-brumes-de-Capelans/1382059),"Une île de l'Atlantique battue par les vents, le brouillard et la neige.  
 
 Un flic qui a disparu depuis six ans et dont les nouvelles missions sont classées secret défense.  
@@ -424,7 +453,8 @@ Un flic qui a disparu depuis six ans et dont les nouvelles missions sont classé
 Sa résidence surveillée, forteresse imprenable protégée par des vitres pare-balles.  
 
 Une jeune femme qu'il y garde enfermée.  
-Et le monstre qui les traque.",Olivier Norek,,livre,13
+
+Et le monstre qui les traque.",Olivier Norek,brumes-capelans_dgseae,Un livre,13
 quote,,A Noël je n'ai pas plus envie de rose que je ne voudrais de neige au printemps. J'aime chaque saison pour ce qu’elle apporte.,William Shakespeare,Peines d’amour perdues,,,13
 recipe,Moon milk,"Le moon milk est un lait végétal chaud infusé avec plein d’épices qui aide à passer ses meilleures nuits.  
 
@@ -435,21 +465,21 @@ Laissez ensuite réchauffer à feu moyen-doux pour bien infuser le lait.
 Retirer du feu, laissez un peu refroidir et ajoutez le miel ou le sirop d’érable.  
 (Si vous ajoutez du miel, veillez à ce que ce ne soit pas trop chaud pour ne pas détruire ses propriétés).  
 
-Versez dans un mug, buvez et jetez vous dans votre lit&nbsp;!","- 1 tasse de lait d’amande ou de coco
-- ½ c. à c. de cannelle en poudre (qui aide à digérer)
-- ½ c. à c. de curcuma en poudre (anti-inflammatoire et aide précieuse pour digérer les graisses)
-- ¼ c. à c. d’ashwaganha (qui permet d’éviter de se réveiller en pleine nuit)
+Versez dans un mug, buvez et jetez vous dans votre lit !","- 1 tasse de lait d’amande ou de lait de coco
+- 1/2 c. à c. de cannelle en poudre (qui aide à digérer)
+- 1/2 c. à c. de curcuma en poudre (anti-inflammatoire et aide précieuse pour digérer les graisses)
+- 1/4 c. à c. d’ashwaganha (qui permet d’éviter de se réveiller en pleine nuit)
 - une pincée de cardamome en poudre (qui régule la flore intestinale et donne bonne haleine)
 - une pincée de noix de muscade en poudre (antibactérienne et anti-douleur)
 - une pincée de poivre noir moulu (qui stimule la production d’endorphine)
 - une ou deux c. à c. de miel ou de sirop d’érable",moon_milk_qsyhwa,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-chaude,13
 anecdote,L’origine des chants de Noël,"Les chants de Noël, aussi appelés ""carols"", ont des racines dans des chants païens célébrant le solstice d'hiver.  
 
-Au Moyen  ge, ces chants ont été adoptés par les chrétiens pour célébrer la naissance du Christ. Le chant ""Adeste Fideles"" (O Come, All Ye Faithful), par exemple, est l'un des plus anciens, remontant au XVIIIe siècle.  
+Au Moyen Âge, ces chants ont été adoptés par les chrétiens pour célébrer la naissance du Christ. Le chant ""Adeste Fideles"" (O Come, All Ye Faithful), par exemple, est l'un des plus anciens, remontant au XVIIIe siècle.  
 
 Au fil du temps, les carols ont évolué, mêlant chants religieux et festifs, et sont devenus une tradition commune durant les fêtes de Noël, souvent chantés par des chorales ou lors de rassemblements familiaux.",,okyzEnO7g3c,EyrqmLfh-Qs,image,14
 game,Le pendu de Noël,"Buche,Rudolph,Hotte,Creche",,,,pendu,14
-idea,Une playlist pour se mettre dans l'ambiance,La playlist de Noël de [Caro from Woodland](https://carofromwoodland.com/blogs/univers/ma-playlist-de-noel-et-mon-top-10-de-mes-chansons-preferees),"*« On y trouve à la fois des grands classiques indémodables (Frank Sinatra, Tino Rossi,...) mais également des reprises plus modernes de ces titres (Mariah Carey, Michael Bublé,...), des musiques de films que j'associe à Noël (Maman j'ai raté l'avion, Harry Potter, la parade de Noël de Disneyland Paris,...) ou encore des morceaux chantés par des chorales et choeurs d'églises. »*",,https://sdz.sh/sAHVHz,autre,14
+idea,Une playlist pour se mettre dans l'ambiance,La playlist de Noël de [Caro from Woodland](https://carofromwoodland.com/blogs/univers/ma-playlist-de-noel-et-mon-top-10-de-mes-chansons-preferees),"« On y trouve à la fois des grands classiques indémodables (Frank Sinatra, Tino Rossi,...) mais également des reprises plus modernes de ces titres (Mariah Carey, Michael Bublé,...), des musiques de films que j'associe à Noël (Maman j'ai raté l'avion, Harry Potter, la parade de Noël de Disneyland Paris,...) ou encore des morceaux chantés par des chorales et choeurs d'églises. »",,https://sdz.sh/sAHVHz,Une playlist,14
 quote,,"Ne pourrait-on pas fixer la Saint-Sylvestre au 15 août, afin que le père Noël évolue enfin dans des cheminées éteintes ?",Philippe Bouvard,Les Pensées,,,14
 recipe,Mi-cuit au chocolat de Pierre Hermé,"Mélangez dans l’ordre et versez dans un moule à cake beurré et fariné.  
 
@@ -463,6 +493,7 @@ anecdote,"En Islande, prenez garde aux lutins","Le Noël Islandais, ""Yule"" ou 
 Chaque année entre le 12 et le 24 décembre, soit un par jour, ces plaisantins descendent des montagnes pour apporter des cadeaux mais surtout semer la pagaille. Ils sont chargés de remplir les chaussettes ou chaussures (posées sur les bords de fenêtres) de friandises aux enfants les plus sages ou d’une patate pour les enfants moins gentils.  
 
 Chacun d’eux est reconnu pour son vilain tour qu’il aime jouer : il y a le voleur de pâtisseries, le voleur de bougies, le bruyant lutin qui empêche les enfants de dormir…  
+
 Pour clôturer les fêtes, les lutins farceurs repartent l’un après l’autre jusqu’au 6 janvier.",,,,image,15
 game,Êtes-vous incollable sur Noël ?,Combien de desserts sont servis à Noël en Provence ?,"9,11,13,15",13,"La tradition des treize desserts comprend les mets suivants :  
 - fougasse à l'huile et à la fleur d'oranger
@@ -485,7 +516,7 @@ Mais rien ne se passe comme prévu quand l'ex-femme d'Ed le recontacte soudainem
 Ajoutez le stress d'un livre de recettes à terminer, des tempêtes de neige et des histoires de famille, et le Noël d'Evie s'annonce chargé !  
 
 Ses voeux de fin d'année se réaliseront-ils ?  
-Ou ce Noël rassemble-t-il tous les ingrédients pour virer au désastre ?",Lucy Diamond,,livre,15
+Ou ce Noël rassemble-t-il tous les ingrédients pour virer au désastre ?",Lucy Diamond,noel-cafe-bonheur_phsu7i,Un livre,15
 quote,,"Ce qui compte à Noël, ce n’est pas de décorer le sapin, c’est d’être tous réunis.",Kevin Bright,Friends,,,15
 recipe,Limonade à la clémentine et au romarin,"Dans un pichet, mélangez le jus de clémentine et l’eau gazeuse.  
 
@@ -496,13 +527,13 @@ Versez dans des verres avec des glaçons et décorez avec des tranches de cléme
 Servez frais.","- 100 ml de jus de clémentine frais
 - 150 ml d'eau gazeuse
 - 1 brin de romarin frais
-- glaçons
-- tranches de clémentine pour la décoration",limonade_clementine_luzwmo,Photo de [Sergey Kotenev](https://unsplash.com/fr/@sergeykotenev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,15
+- Glaçons
+- Tranches de clémentine pour la décoration",limonade_clementine_luzwmo,Photo de [Sergey Kotenev](https://unsplash.com/fr/@sergeykotenev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,15
 anecdote,L’origine des cartes de voeux,"En 1843, Henry Cole, un fonctionnaire britannique impliqué dans la création du Victoria and Albert Museum de Londres, se trouvait submergé par les lettres de voeux à envoyer pendant la période des fêtes. Cherchant un moyen plus simple d'accomplir cette tâche, il a eu l'idée de créer une carte illustrée avec un message standardisé. Il a demandé à l'artiste John Callcott Horsley de dessiner la première carte de Noël.  
 
 Cette première carte représentait une scène festive de famille, avec des gens autour d'une table en train de célébrer et le message ""A Merry Christmas and a Happy New Year to You"". La carte montrait également des actes de charité, comme l'aide aux pauvres, ce qui reflétait l'esprit de Noël à l'époque victorienne.  
 
-La carte de Noël de Henry Cole était vendue pour un shilling (une somme assez élevée pour l’époque), mais elle a rencontré un succès immédiat parmi les classes aisées. À la fin du 19ème siècle, grâce à la baisse des coûts d'impression et à la baisse des tarifs postaux avec l'instauration du Penny Post, les cartes de Noël sont devenues accessibles à un plus grand nombre de personnes, et leur popularité a explosé, notamment en Grande-Bretagne.  
+La carte de Noël de Henry Cole était vendue pour un shilling (une somme assez élevée pour l’époque), mais elle a rencontré un succès immédiat parmi les classes aisées. À la fin du 19e siècle, grâce à la baisse des coûts d'impression et à la baisse des tarifs postaux avec l'instauration du Penny Post, les cartes de Noël sont devenues accessibles à un plus grand nombre de personnes, et leur popularité a explosé, notamment en Grande-Bretagne.  
 
 L'idée de la carte de Noël s'est ensuite répandue en Europe et aux États-Unis, où elle a rapidement été adoptée comme une tradition. Aux États-Unis, c'est l'imprimeur Louis Prang, un immigrant allemand, qui a popularisé les cartes de Noël vers la fin des années 1800. Il est souvent appelé le ""père de la carte de Noël américaine"".",,,,image,16
 game,Charade,"Mon premier se jette lorsque vous jouez aux petits chevaux.  
@@ -512,7 +543,7 @@ Mon deuxième circule dans vos veines.
 Vous faites mon troisième quand il fait froid.  
 
 C’est pendant mon tout qu’à lieu Noël.",Décembre,,dé-sang-brrr,jeu,16
-idea,Un roman pour ressentir le vent froid et les vagues d'émotion,[La mer en hiver)(https://www.babelio.com/livres/Kearsley-La-mer-en-hiver/716654),"Lorsque Carrie McClelland, auteur à succès, visite les ruines du château de Slains, elle est enchantée par ce paysage écossais, à la fois désolé et magnifique.  
+idea,Un roman pour ressentir le vent froid et les vagues d'émotion,[La mer en hiver](https://www.babelio.com/livres/Kearsley-La-mer-en-hiver/716654),"Lorsque Carrie McClelland, autrice à succès, visite les ruines du château de Slains, elle est enchantée par ce paysage écossais, à la fois désolé et magnifique.  
 
 La région lui semble étrangement familière, mais elle met de côté son léger sentiment de malaise afin de commencer son nouveau roman, pour lequel elle utilise le château comme cadre et l'une de ses ancêtres, Sophia, comme héroïne.  
 
@@ -520,7 +551,7 @@ Puis Carrie se rend compte que ses mots acquièrent une vie propre et que les li
 
 Tandis que les souvenirs de Sophia attirent Carrie encore plus au coeur de l'intrigue de 1708, elle découvre une histoire d'amour fascinante, oubliée avec le temps.  
 
-Après trois cents ans, le secret de Sophia doit être révélé.",Susanna Kearsley,,livre,16
+Après trois cents ans, le secret de Sophia doit être révélé.",Susanna Kearsley,mer-hiver_vdbysi,Un livre,16
 quote,,"J'avais mis mes souliers devant la cheminée, le père Noël m'a apporté des pieds.",Philippe Geluck,Le Chat,,,16
 recipe,Sauce au vin,"Dans une casserole à fond épais, mélangez le vin avec l'eau, le sucre, le zeste et la cannelle.  
 Portez à ébullition à feu vif, puis baissez le feu et laissez frémir 5 minutes à feu moyen. Retirez du feu.  
@@ -540,17 +571,19 @@ Servez chaud.","- 300 ml de vin rouge corsé ou de porto
 - 5 jaunes d'oeufs",,,salé,16
 anecdote,Du patin à roulettes à la messe au Venezuela,"Pendant que les Australiens font du surf, les Vénézuéliens font du roller. Cette tradition de Noël, insolite, veut que toute la capitale de Caracas se rende à la messe de Noël en rollers le jour de Noël.  
 
-En fait, les véhicules sont interdits dans de nombreux quartiers de la ville avant 8 heures du matin. Comme si ce mode de transport n’était pas assez étrange, la veille, les enfants attachent une extrémité d’une ficelle à leur gros orteil et suspendent l’autre extrémité à la fenêtre de leur chambre, de sorte que les patineurs à roulettes de passage puissent tirer amicalement sur la ficelle en se rendant à la messe le lendemain matin.",,,,image,17
+En fait, les véhicules sont interdits dans de nombreux quartiers de la ville avant 8 heures du matin.  
+
+Comme si ce mode de transport n’était pas assez étrange, la veille, les enfants attachent une extrémité d’une ficelle à leur gros orteil et suspendent l’autre extrémité à la fenêtre de leur chambre, de sorte que les patineurs à roulettes de passage puissent tirer amicalement sur la ficelle en se rendant à la messe le lendemain matin.",,,,image,17
 game,À quel film de Noël appartient cette réplique ?,"« L’argent n’est pas tout, ce qui compte c’est d’être heureux.&nbsp;»","La vie est belle,Miracle sur la 34e rue,Love Actually,The Holidays",La vie est belle,cEsirWAIduQ,quiz-citation,17
 game,À quel film de Noël appartient cette réplique ?,"« Au fond, c'est ce que Noël représente&nbsp;: la paix et l'amour.&nbsp;»","La vie est belle,Love Actually,The Holidays,Klaus",Love Actually,SrkOuyNsBnc,quiz-citation,17
-game,À quel film de Noël appartient cette réplique ?,« Je suis seul&nbsp;! Je suis seul&nbsp;!&nbsp;»,"Maman j'ai raté l'avion !,Le père Noël est une ordure,Le Drôle de Noël de Scrooge,Le Grinch","Maman, j'ai raté l'avion&nbsp;!",GPtHAQARLdw,quiz-citation,17
+game,À quel film de Noël appartient cette réplique ?,« Je suis seul&nbsp;! Je suis seul&nbsp;!&nbsp;»,"Maman j'ai raté l'avion !,Le père Noël est une ordure,Le Drôle de Noël de Scrooge,Le Grinch",Maman j'ai raté l'avion !,GPtHAQARLdw,quiz-citation,17
 idea,Envie de pimenter vos Secret Santa ?,,"En Suède, il existe une tradition de Noël appelée ""klappjakt"" (""chasse au cadeau"").  
 
 Chaque cadeau offert est souvent accompagné d'un poème, d'une devinette ou d'un indice sur l'identité de la personne qui offre le cadeau pour aider le·la destinataire à deviner qui a choisi le cadeau.  
 
 Lors de la célébration, les cadeaux sont ouverts un par un. La personne qui reçoit le cadeau lit le mot laissé sur le cadeau et essaie de deviner son auteur·ice avant de l'ouvrir.  
 
-Cette tradition rend l'échange de cadeaux plus ludique tout en ajoutant une touche personnelle à chaque cadeau !",,,autre,17
+Cette tradition rend l'échange de cadeaux plus ludique tout en ajoutant une touche personnelle à chaque cadeau !",,,Une idée,17
 quote,,"Dès que l'adulte tue le mythe de l'existence du père Noël, il oublie le miracle du vrai partage qui existe dans le coeur de l'enfant.",Michel Bouthot,Chemins parsemés d'immortelles pensées,,,17
 recipe,Cidre chaud épicé,"Versez le cidre de pomme dans une grande casserole et chauffez à feu doux.  
 
@@ -579,47 +612,38 @@ Leur cordée a l’air si fragile dans ce paysage vertigineux. On dirait six fou
 
 Lou l’ignore encore, mais dès demain ils ne seront plus que cinq.  
 
-Égarés dans une effroyable tempête, terrifiés par la mort de leur compagnon, c’est pour leur propre survie qu’ils vont devoir lutter.",Sandrine Collette,six-fourmis-blanche_wscgtn,livre,18
+Égarés dans une effroyable tempête, terrifiés par la mort de leur compagnon, c’est pour leur propre survie qu’ils vont devoir lutter.",Sandrine Collette,six-fourmis-blanche_wscgtn,Un livre,18
 quote,,"Quelle est la différence entre un curé et un arbre de Noël ? Aucune : dans les deux cas, les boules, c'est pour décorer.",Les Nuls,"L'Info, c'est rigolo",,,18
-recipe,Tarte hivernale au bleu et aux épinards,"Préchauffez le four à 190°.  
+recipe,Chocolat blanc chaud à la noix de coco,"Dans une casserole, faites chauffer à feu moyen le lait de coco et le lait. Remuez régulièrement pour éviter que ça accroche.  
 
-Enlevez délicatement la nervure centrale des épinards et faites-les revenir dans une sauteuse avec une noisette de beurre en remuant constamment (comptez environ 5 minutes).  
+Lorsque le mélange commence à frémir (ne pas laisser bouillir), ajoutez le chocolat blanc cassé en morceaux. Remuez jusqu'à ce qu'il soit complètement fondu et que le mélange soit bien lisse.  
 
-Une fois les épinards cuits, mixez-les. (Pour des épinards surgelés, les faire cuire au microonde 6 minutes en remuant à mi-cuisson).  
+Ajoutez la cuillère de noix de coco râpée et le sucre de coco, puis mélangez bien. Goûtez et ajustez la quantité de sucre selon vos préférences.  
 
-Pendant ce temps, battez les oeufs et la crème. Salez, poivrez puis battez à nouveau.  
+Versez le chocolat chaud dans une tasse. Pour une touche gourmande, ajoutez de la crème chantilly sur le dessus.  
 
-Une fois les épinards cuits, mélangez-les à l’appareil oeufs/crème.  
+Saupoudrez de copeaux de chocolat blanc ou de noix de coco râpée pour la décoration.  
 
-Déroulez la pâte feuilletée dans un plat à tarte et piquez le fond de la tarte avec une fourchette.  
-
-Versez le mélange aux épinards sur la pâte feuilletée en répartissant bien.  
-
-Coupez le bleu et disposez-le joliment sur la tarte.  
-
-Émincez grossièrement les noix et éparpillez-les sur la pâte.  
-
-Saupoudrez de gruyère râpé et enfournez environ 30 minutes.  ","- 1 kg d’épinards frais (ou 700 g d’épinards surgelés)
-- 3 oeufs
-- 140 g de crème fraiche épaisse
-- 100 g de bleu
-- une poignée de noix
-- 1 pâte feuilletée
-- sel, poivre
-- 25 g de gruyère râpé",,Photo de [awv](https://unsplash.com/fr/@awv_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,18
+Astuce : vous pouvez aussi ajouter une pincée de cannelle ou un peu de vanille pour un parfum encore plus exotique !","- 200 ml de lait de coco
+- 50 ml de lait végétal
+- 50 g de chocolat blanc
+- 1 cuillère à café de sucre de coco (optionnel, selon votre goût)
+- 1 cuillère à café de noix de coco râpée (et un peu plus pour la décoration)
+- Crème chantilly (facultatif)
+- Copeaux de chocolat blanc ou éclats de noix de coco (pour la décoration)",choco-bland-chaud_hcvjep,Photo de [Sam Lion](https://www.pexels.com/fr-fr/photo/personne-tenant-une-tasse-en-ceramique-blanche-avec-creme-blanche-6001479/),boisson-chaude,18
 anecdote,Le poinsettia,"Le poinsettia, aussi appelé ""étoile de Noël"", est une plante originaire du Mexique, où elle est liée à une légende locale : une petite fille trop pauvre pour offrir un cadeau à l’enfant Jésus déposa des mauvaises herbes devant un autel, et celles-ci fleurirent en de magnifiques poinsettias.  
 
-Introduit aux États-Unis par le diplomate Joël Poinsett au XIXe siècle, le poinsettia est devenu une décoration symbolique de Noël grâce à ses feuilles rouges vives, souvent associées à l'étoile de Bethléem.",,,,image,19
+Introduit aux États-Unis par le diplomate Joël Poinsett au 19e siècle, le poinsettia est devenu une décoration symbolique de Noël grâce à ses feuilles rouges vives, souvent associées à l'étoile de Bethléem.",,,,image,19
 game,Êtes-vous incollable sur Noël ?,"Parmi ces noms, lequel n'est pas celui d'un renne du Père Noël ?","Danseuse,Cupidon,Nez Rouge,Tempête",Tempête,"Les rennes traditionnels du Père Noël sont probablement tous de sexe féminin. En effet les rennes mâles perdent leur bois durant la période hivernale.  
 
-- Tornade (Dasher) : la plus rapide
-- Danseuse (Dancer) : la plus gracieuse
-- Fringante (Vixen) : la plus belle
-- Furie (Prancer) : la plus puissante
-- Tonnerre (Donner) : la plus forte
-- Comète (Comet) : apporte le bonheur aux enfants
-- Cupidon (Cupid) : amène l'amour aux enfants
-- Éclair (Blitzen) : apporte la lumière",quiz-noel,19
+- Tornade : la plus rapide
+- Danseuse : la plus gracieuse
+- Fringante : la plus belle
+- Furie : la plus puissante
+- Tonnerre : la plus forte
+- Comète : apporte le bonheur aux enfants
+- Cupidon : amène l'amour aux enfants
+- Éclair : apporte la lumière",quiz-noel,19
 game,Êtes-vous incollable sur Noël ?,"D’où vient ""Santa Claus"", le nom anglais du père Noël aux États-Unis depuis le 19e siècle ?","Russie,Finlande,Hongrie,Hollande",Hollande,"Santa Claus provient de ""Sinter Klaas"", qui signifie Saint-Nicolas. Quand les Hollandais s’installèrent aux États-Unis, le père Noël devint Santa Claus.",quiz-noel,19
 game,Êtes-vous incollable sur Noël ?,Lequel de ces adjectifs ne pourrait pas décrire la tenue du père Noël?,"Vermeille,Parme,Incarnate,Carmin",Parme,"Les adjectifs ""vermeille"", ""incarnate"" et ""carmin"" décrivent des teintes de rouge, qui est la couleur emblématique de la tenue du père Noël.  
 
@@ -628,12 +652,12 @@ idea,Un conte russe entre magie et ténèbres,[L'Ours et le Rossignol](https://w
 
 Et plus particulièrement celui de Gel, ou Morozko, le démon aux yeux bleus, le roi de l’hiver.  
 
-Mais, pour Vassia, ces histoires sont bien plus que cela.  
-En effet, elle est la seule de la fratrie à voir les esprits protecteurs de la maison, à entendre l’appel insistant des sombres forces nichées au plus profond de la forêt.  
+Mais, pour Vassia, ces histoires sont bien plus que cela. En effet, elle est la seule de la fratrie à voir les esprits protecteurs de la maison, à entendre l’appel insistant des sombres forces nichées au plus profond de la forêt.  
 
-Ce qui n’est pas du goût de la nouvelle femme de son père, dévote acharnée, bien décidée à éradiquer de son foyer les superstitions ancestrales.",Katherine Arden,,livre,19
-quote,,"- Tu fais quoi pour Noël ?
-- Je prends deux kilos.",Anna Gavalda,"Ensemble, c’est tout",,,19
+Ce qui n’est pas du goût de la nouvelle femme de son père, dévote acharnée, bien décidée à éradiquer de son foyer les superstitions ancestrales.",Katherine Arden,ours-rossignol_jac2rg,Un livre,19
+quote,,"« Tu fais quoi pour Noël ?  
+
+Je prends deux kilos. »",Anna Gavalda,"Ensemble, c’est tout",,,19
 recipe,Mocktail aux fruits rouges et vanille,"Écrasez légèrement les fruits rouges dans un verre.  
 
 Ajoutez le sirop de vanille et mélangez bien.  
@@ -643,20 +667,20 @@ Complétez avec de l'eau gazeuse.
 Ajoutez des glaçons et servez frais.","- 150 g de fruits rouges (framboises, myrtilles, fraises)
 - 1 c. à s. de sirop de vanille
 - 200 ml d'eau gazeuse
-- glaçons",mocktail_yaslmr,Photo de Irene Fernandez sur Unsplash,boisson-froide,19
+- Glaçons",mocktail_yaslmr,Photo de Irene Fernandez sur Unsplash,boisson-froide,19
 anecdote,Les chaussettes de Noël,"La tradition des chaussettes de Noël remonte à une légende associée à Saint Nicolas, le saint patron des enfants et des pauvres. Selon cette histoire, un noble ruiné avait trois filles qu'il ne pouvait pas marier, faute de dot. Saint Nicolas, en apprenant la détresse de cette famille, décida d'intervenir en secret. Une nuit, il glissa par la cheminée et laissa des pièces d’or dans les bas des filles, suspendus près du feu pour sécher. Le matin, les jeunes filles découvrirent les pièces d'or, leur permettant de se marier.  
 
 Cette légende a évolué pour devenir la tradition moderne où les enfants suspendent des chaussettes près de la cheminée dans l’espoir que le Père Noël les remplisse de cadeaux ou de friandises durant la nuit de Noël.  
 
 Dans certaines cultures, les chaussettes peuvent contenir des oranges, symboles d'or, en souvenir de la générosité de Saint Nicolas.",,,,image,20
-game,Blague,Que dit un sapin de Noël qui arrive en retard le soir du réveillon ?,,"Zut, je vais encore me faire enguirlander&nbsp;!",,jeu,20
+game,Blague,Que dit un sapin de Noël qui arrive en retard le soir du réveillon ?,,"Zut, je vais encore me faire enguirlander !",,jeu,20
 idea,Une comédie romantique pour attendre Noël en riant et en s'émouvant,Home for Christmas,"Johanne, trentenaire célibataire, en a assez des questions de sa famille sur sa vie amoureuse.  
 
 Pour leur faire plaisir, elle ment et annonce qu'elle a un petit ami qu'elle présentera au dîner de Noël.  
 
 Elle se donne alors 24 jours pour trouver quelqu’un à ramener chez elle.  
 
-Cette comédie romantique norvégienne suit les péripéties de Johanne à la recherche de l'amour, tout en explorant l’importance des relations et la pression des attentes familiales.",,BRn8V9vnAD4,série,20
+Cette comédie romantique norvégienne suit les péripéties de Johanne à la recherche de l'amour, tout en explorant l’importance des relations et la pression des attentes familiales.",,BRn8V9vnAD4,Une série,20
 quote,,"Ce n'est pas seulement pour duper nos enfants que nous les entretenons dans la croyance au Père Noël: leur ferveur nous réchauffe, nous aide à nous tromper nous-mêmes.",Claude Lévi-Strauss,Tristes tropiques,,,20
 recipe,Camembert feuilleté,"Préchauffez le four à 190°.  
 
@@ -679,7 +703,7 @@ Enfournez environ 20/25 minutes.","- 1 camembert
 - 1 petit oignon
 - 1 pâte feuilletée
 - 1 jaune d’oeuf
-- poivre, graines de pavot",camembert_ekg4bj,Photo de [Margaret Jaszowska](https://unsplash.com/fr/@margaret_jaszowska?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,20
+- Poivre, graines de pavot",camembert_ekg4bj,Photo de [Margaret Jaszowska](https://unsplash.com/fr/@margaret_jaszowska?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),salé,20
 anecdote,Le premier jour de l’hiver,"Le premier jour de l’hiver, aussi appelé solstice d’hiver, marque le jour le plus court de l'année et le début de la saison hivernale dans l'hémisphère nord. Il tombe généralement le 21 ou 22 décembre.  
 
 À ce moment précis, l'axe de rotation de la Terre est incliné de telle sorte que l'hémisphère nord est au plus loin du Soleil, provoquant une durée minimale de lumière du jour. C’est le moment où le Soleil atteint son point le plus bas dans le ciel, par rapport à l’équateur céleste. Après ce jour, les jours commencent à rallonger jusqu'au solstice d’été.  
@@ -692,7 +716,7 @@ Des flocons blancs dans l’air ? »","L’Étrange Noël de Monsieur Jack,Klaus
 game,À quel film de Noël appartient cette réplique ?,"« Je ferai honneur à Noël dans mon coeur, et je tenterai de le célébrer toute l’année.&nbsp;»","Le Drôle de Noël de Scrooge,Klaus,Le Grinch,The Holidays",Le Drôle de Noël de Scrooge,PcNLFXSdO5A,quiz-citation,21
 game,À quel film de Noël appartient cette réplique ?,« Il y a quelque chose de magique dans l'air pendant les vacances.&nbsp;»,"Maman j'ai raté l'avion !,The Holidays,Love Actually,La vie est belle",The Holidays,wk9caHO3pW0,quiz-citation,21
 idea,Un roman pour voyager à travers l'histoire et l'amitié,[Le cercle littéraire des amateurs d'épluchures de patates](https://www.babelio.com/livres/Shaffer-Le-cercle-litteraire-des-amateurs-depluchures-de-/492788),"Janvier 1946.  
-Tandis que Londres se relève douloureusement de la guerre, Juliet, jeune écrivain, cherche un sujet pour son prochain roman.  
+Tandis que Londres se relève douloureusement de la guerre, Juliet, jeune écrivaine, cherche un sujet pour son prochain roman.  
 
 Comment pourrait-elle imaginer que la lettre d'un inconnu, natif de l'île de Guernesey, va le lui fournir ?  
 
@@ -700,19 +724,23 @@ Au fil de ses échanges avec son nouveau correspondant, Juliet pénètre un mond
 
 De lettre en lettre, Juliet découvre l'histoire d'une petite communauté débordante de charme, d'humour, d'humanité.  
 
-Et puis vient le jour où, à son tour, elle se rend à Guernesey…",Mary Ann Shaffer et Annie Barrows,,livre,21
+Et puis vient le jour où, à son tour, elle se rend à Guernesey…",Mary Ann Shaffer et Annie Barrows,cercle-litteraire_kmz7q8,Un livre,21
 quote,,"A Noël, il est tout aussi important d'ouvrir notre coeur que d'ouvrir nos cadeaux.",Janice Maeditere,,,,21
 recipe,Café latte au pain d'épices,"Versez le sirop et les shots d’expresso dans la tasse puis mélangez.  
 
 Chauffez le lait à l'aide d'un bec vapeur puis versez-le dans la tasse et remuez.  
 
-Saupoudrez de cannelle, de spéculoos, de sirop de caramel ou tout ce qui vous fait kiffer&nbsp;!","- 40 cl de lait végétal
+Saupoudrez de cannelle, de spéculoos, de sirop de caramel ou tout ce qui vous fait kiffer !","- 40 cl de lait végétal
 - 2 c. à s. de sirop au pain d’épices
 - 2 shots d’expresso
-- de la chantilly",gingebread_latte_vbsch4,Photo de Jennie Razumnaya sur Unsplash,boisson-chaude,21
-anecdote,L’origine des crackers de Noël,"Les crackers de Noël, ces tubes en papier qui font un 'pop' lorsqu'on les ouvre, sont une invention anglaise du 19ème siècle. Thomas J. Smith, un confiseur, cherchait à populariser ses bonbons en les emballant dans du papier festif. Inspiré par le bruit du bois qui craque dans la cheminée, il a eu l'idée d'ajouter un petit mécanisme explosif pour un effet surprise.",,,,image,22
+- Chantilly",gingebread_latte_vbsch4,Photo de Jennie Razumnaya sur Unsplash,boisson-chaude,21
+anecdote,L’origine des crackers de Noël,"Les crackers de Noël, ces tubes en papier qui font un 'pop' lorsqu'on les ouvre, sont une invention anglaise du 19e siècle.  
+
+Thomas J. Smith, un confiseur, cherchait à populariser ses bonbons en les emballant dans du papier festif.  
+
+Inspiré par le bruit du bois qui craque dans la cheminée, il a eu l'idée d'ajouter un petit mécanisme explosif pour un effet surprise.",,,,image,22
 game,Le pendu de Noël,"Rejouissances,Noel,Decembre,Fete",,,,pendu,22
-idea,Une saga familiale au coeur des terres gelées,[Le clan Snaeberg](https://www.babelio.com/livres/gisdottir-Le-Clan-Snaeberg/1576093),"Dans un hôtel perdu sur un champ de lave de la péninsule de Snæfellsnes, en Islande, se déroule une étrange réunion de famille : celle du clan Snæberg.    
+idea,Une saga familiale au coeur des terres gelées,[Le clan Snaeberg](https://www.babelio.com/livres/gisdottir-Le-Clan-Snaeberg/1576093),"Dans un hôtel perdu sur un champ de lave de la péninsule de Snaefellsnes, en Islande, se déroule une étrange réunion de famille : celle du clan Snaeberg.    
 
 Alors que le temps se détériore et que l’alcool coule à flots, l’un des membres de la puissante famille disparaît.  
 
@@ -720,7 +748,7 @@ La menace d’un rôdeur sème le doute parmi les convives.
 
 Mais le vrai danger ne se trouverait-il pas… à l’intérieur de l’hôtel ?  
 
-Les rancoeurs et le passé douloureux du clan Snæberg vont remonter peu à peu au jour, jusqu’à ce que la vérité, effarante, soit révélée.",Eva Björg Ægisdóttir,,livre,22
+Les rancoeurs et le passé douloureux du clan Snæberg vont remonter peu à peu au jour, jusqu’à ce que la vérité, effarante, soit révélée.",Eva Björg Ægisdóttir,clan-snaeberg_q6toxs,Un livre,22
 quote,,"Noël est là,  
 Ce joyeux Noël, des cadeaux plein les bras,  
 Qui réchauffe nos coeurs et apporte la joie,  
@@ -754,15 +782,17 @@ Mon second est un préfixe qui indique la répétition.
 Mon troisième n’est pas rapide.  
 
 Mon quatrième est le double de 1.  ",Guirlande,,gui-re-lent-deux,jeu,23
-idea,Un classique pour retrouver l'esprit de Noël,[Un chant de Noël](https://www.babelio.com/livres/Dickens-Un-chant-de-Nol--Histoire-de-fantomes-pour-Nol/151041),"La veille de Noël. tous s’affairent aux préparatifs.  
+idea,Un classique pour (re)trouver l'esprit de Noël,[Un chant de Noël](https://www.babelio.com/livres/Dickens-Un-chant-de-Nol--Histoire-de-fantomes-pour-Nol/151041),"La veille de Noël, tout le monde s’affairent aux préparatifs.  
+
 Mais, préférant la solitude à ces fêtes joyeuses, Ebenezer Scrooge refuse l’invitation de son neveu et s’enferme chez lui.  
 
-Pour ce vieil homme avare et solitaire, que tous prennent soin d’éviter, Noël se résume à un simple mot : « Sottise&nbsp;! ».  
+Pour ce vieil homme avare et solitaire, que tous prennent soin d’éviter, Noël se résume à un simple mot : ""Sottise&nbsp;!"".  
+
 Mais ce soir-là, les esprits de Noël en décident autrement.  
 
-Entraîné tour à tour dans le passé, le présent et le futur, le vieux grincheux reçoit une leçon de vie.",Charles Dickens,chant-noel_gamxa0,livre,23
+Entraîné tour à tour dans le passé, le présent et le futur, le vieux grincheux reçoit une leçon de vie.",Charles Dickens,chant-noel_gamxa0,Un livre,23
 quote,,"Noël, c’est la veille, c’est l’attente.",Georges Dor,Après l'enfance,,,23
-recipe,Tisane citron-menthe-gingembre,"Cette tisane est un classique détoxifiant, parfait pour apaiser le système digestif avant les festivités.  
+recipe,Tisane détox,"Cette tisane est un classique détoxifiant, parfait pour apaiser le système digestif avant les festivités.  
 
 Portez l'eau à ébullition, puis ajoutez le gingembre et laissez infuser pendant 10 minutes.  
 
@@ -789,22 +819,22 @@ idea,Des films d'animation pour petits et grands,Les cinq légendes,"Les Gardien
 
 Quand Pitch Black, l'incarnation des cauchemars, menace de répandre la peur, un nouveau Gardien est choisi : Jack Frost.  
 
-Au départ réticent, Jack finit par comprendre son rôle crucial dans la lutte contre Pitch, tout en découvrant sa propre identité et son importance pour les enfants.",,fVlx5D3x_5o,film,24
+Au départ réticent, Jack finit par comprendre son rôle crucial dans la lutte contre Pitch, tout en découvrant sa propre identité et son importance pour les enfants.",,fVlx5D3x_5o,Des films,24
 idea,Des films d'animation pour petits et grands,Klaus,"Dans cette réinterprétation des origines du Père Noël, Jesper, un facteur égoïste, est envoyé dans une île isolée où il découvre une ville en proie aux conflits.  
 
 Il rencontre Klaus, un menuisier solitaire qui fabrique des jouets.  
 
-Ensemble, ils décident de distribuer les jouets aux enfants de la ville, créant ainsi une légende et réconciliant peu à peu la population.",,h5gR4vUb2rA,film,24
+Ensemble, ils décident de distribuer les jouets aux enfants de la ville, créant ainsi une légende et réconciliant peu à peu la population.",,h5gR4vUb2rA,Des films,24
 idea,Des films d'animation pour petits et grands,Le Pôle Express,"Un jeune garçon, doutant de l'existence du Père Noël, embarque dans un mystérieux train, le Pôle Express, qui l’emmène au pôle Nord.  
 
 Au cours de ce voyage magique, il rencontre d'autres enfants et vit des aventures extraordinaires qui l'aident à retrouver sa foi en Noël.  
 
-À travers des paysages enchanteurs et des moments de doute, le garçon finit par comprendre que croire est parfois la plus grande des magies.",,XEcge1O-YYw,film,24
+À travers des paysages enchanteurs et des moments de doute, le garçon finit par comprendre que croire est parfois la plus grande des magies.",,XEcge1O-YYw,Des films,24
 idea,Des films d'animation pour petits et grands,Le Grinch,"Dans la ville joyeuse de Whoville, le Grinch, une créature solitaire et malveillante, déteste Noël et les festivités bruyantes qui l'accompagnent.  
 
 Décidé à ruiner les fêtes des Whos, il élabore un plan pour voler tous les cadeaux, décorations et nourriture pendant la nuit de Noël.  
 
-Mais une petite fille nommée Cindy Lou va toucher son coeur et lui faire redécouvrir l'esprit de Noël.",,uSmnMc8zawg,film,24
+Mais une petite fille nommée Cindy Lou va toucher son coeur et lui faire redécouvrir l'esprit de Noël.",,uSmnMc8zawg,Des films,24
 quote,,C'est Noël : Il est grand temps de rallumer les étoiles…,Guillaume Apollinaire,,,,24
 recipe,Sangria de Noël,"Dans un grand saladier mélangez tous les ingrédients sauf le champagne.  
   
@@ -820,4 +850,4 @@ Au moment de servir, ajoutez le champagne et les glaçons.","- 13 clémentines
 - 500 ml de jus de canneberge
 - 375 ml de vodka
 - 750 ml de champagne
-- glaçons",sangria_cdzbdy,Photo de [Frank Zhang](https://unsplash.com/fr/@terasproductions?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,24
+- Glaçons",sangria_cdzbdy,Photo de [Frank Zhang](https://unsplash.com/fr/@terasproductions?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash),boisson-froide,24

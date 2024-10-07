@@ -1,6 +1,7 @@
-import { StyleSheet, View, Pressable } from "react-native";
+import { StyleSheet, View, Pressable, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { useEffect, useState } from "react";
+import { CustomModal } from "@/components/custom-utils/Modal";
 
 interface Content {
     id: number;
@@ -23,7 +24,6 @@ export const Game: React.FC<GameProps> = ({ game }) => {
     const words = game.content1.toUpperCase().split(",");
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const currentWord = words[currentWordIndex];
-    console.log({ currentWord });
 
     const maxTries = 7;
     const [mistakes, setMistakes] = useState(0);
@@ -55,28 +55,37 @@ export const Game: React.FC<GameProps> = ({ game }) => {
         }
     };
 
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
+
+    const handleNextQuestion = () => {
+        setCurrentWordIndex(currentWordIndex + 1);
+        setModalVisible(false);
+    };
+
+    const onClose = () => {
+        if (currentWordIndex === words.length - 1) {
+            setCurrentWordIndex(0);
+            setModalVisible(false);
+        } else {
+            setCurrentWordIndex(currentWordIndex + 1);
+            setModalVisible(false);
+        }
+    };
+
     useEffect(() => {
         if (currentWord === hiddenWord.join("")) {
-            if (currentWordIndex < words.length - 1) {
-                setCurrentWordIndex(currentWordIndex + 1);
-            } else {
-                alert("Félicitations, vous avez trouvé les 4 mots !");
-            }
+            setModalMessage("Félicitations 🥳");
+            setModalVisible(true);
         }
     }, [hiddenWord]);
 
     useEffect(() => {
         if (mistakes === maxTries) {
-            if (currentWordIndex < words.length - 1) {
-                alert(
-                    `Dommage, vous avez atteint le nombre maximum d'essais :( Le mot à trouver était ${currentWord}.`
-                );
-                setCurrentWordIndex(currentWordIndex + 1);
-            } else {
-                alert(
-                    `Dommage, vous avez atteint le nombre maximum d'essais :( Le mot à trouver était ${currentWord}.`
-                );
-            }
+            setModalMessage(
+                "Dommage, vous avez atteint le nombre maximum d'essais 😟"
+            );
+            setModalVisible(true);
         }
     }, [mistakes]);
 
@@ -90,7 +99,7 @@ export const Game: React.FC<GameProps> = ({ game }) => {
         <>
             <View style={styles.infos}>
                 <ThemedText style={[styles.texts, styles.info]}>
-                    Mot n°{currentWordIndex + 1}
+                    Mot n°{currentWordIndex + 1}/{words.length}
                 </ThemedText>
 
                 <ThemedText style={[styles.texts, styles.info]}>
@@ -111,6 +120,28 @@ export const Game: React.FC<GameProps> = ({ game }) => {
                     </Pressable>
                 ))}
             </View>
+
+            <CustomModal isVisible={modalVisible} onClose={() => onClose()}>
+                <View style={styles.modal}>
+                    <ThemedText style={styles.texts}>{modalMessage}</ThemedText>
+                    <ThemedText style={styles.texts}>
+                        Le mot à trouver était {currentWord}
+                    </ThemedText>
+                    {currentWordIndex < words.length - 1 ? (
+                        <Pressable onPress={handleNextQuestion}>
+                            <ThemedText style={[styles.modalButton]}>
+                                Partie suivante
+                            </ThemedText>
+                        </Pressable>
+                    ) : (
+                        <ThemedText
+                            style={[styles.texts, styles.modalFinalText]}
+                        >
+                            Ce jeu de Noël est terminé 🎅
+                        </ThemedText>
+                    )}
+                </View>
+            </CustomModal>
         </>
     );
 };
@@ -150,4 +181,20 @@ const styles = StyleSheet.create({
         opacity: 0.4,
     },
     hiddenWord: { fontSize: 30, marginVertical: 20 },
+    modal: { justifyContent: "center", flex: 1, gap: 20 },
+    modalButton: {
+        color: "#136F63",
+        borderColor: "#136F63",
+        borderWidth: 2,
+        margin: 5,
+        borderRadius: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 14,
+        fontFamily: "AnonymousProBold",
+    },
+    modalFinalText: {
+        fontFamily: "AnonymousProBold",
+        fontSize: 14,
+        marginTop: 10,
+    },
 });

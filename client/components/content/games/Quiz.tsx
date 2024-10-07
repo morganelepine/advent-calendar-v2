@@ -2,15 +2,17 @@ import { Pressable, StyleSheet, View, TextStyle } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { useState } from "react";
 import Markdown from "react-native-markdown-display";
+import { Video } from "@/components/custom-utils/Video";
 
 interface Content {
     id: number;
     type: "quote" | "recipe" | "anecdote" | "idea" | "game";
     title: string;
-    content1: string; // Question
-    content2: string; // Réponses séparées par des virgules
-    content3: string; // Bonne réponse
-    content4: string; // Explication
+    content1: string;
+    content2: string;
+    content3: string;
+    content4: string;
+    content5: string;
 }
 
 interface QuizProps {
@@ -90,13 +92,12 @@ export const Quiz: React.FC<QuizProps> = ({ games }) => {
                             </ThemedText>
                         )}
 
-                        {currentGame.content4 ? (
-                            <ThemedText
-                                style={[styles.texts, styles.explanations]}
-                            >
-                                {currentGame.content4}
-                            </ThemedText>
-                        ) : null}
+                        {currentGame.content5 === "quiz-citation" &&
+                            currentGame.content4 && (
+                                <View style={[styles.videoContainer]}>
+                                    <Video videoId={currentGame.content4} />
+                                </View>
+                            )}
                     </View>
 
                     {currentQuestionIndex === games.length - 1 ? (
@@ -144,7 +145,9 @@ const styles = StyleSheet.create({
     },
     explanations: {
         marginTop: 10,
+        fontSize: 18,
     },
+    videoContainer: { marginTop: 20 },
     button: {
         color: "#136F63",
         borderColor: "#136F63",

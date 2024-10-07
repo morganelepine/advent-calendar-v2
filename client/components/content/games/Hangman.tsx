@@ -21,7 +21,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game }) => {
     return (
         <View key={game.id}>
             <ThemedText style={[styles.texts, styles.quizTitle]}>
-                Trouve 4 mots autour de l'hiver et de Noël
+                Trouvez 4 mots autour de l'hiver et de Noël
             </ThemedText>
 
             <Game game={game} />
