@@ -35,11 +35,11 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
                     <ThemedText type="modalTitle">Anecdote du jour</ThemedText>
 
                     <View>
-                        <ThemedText style={[styles.texts, styles.title]}>
+                        <ThemedText style={styles.title}>
                             {content.title}
                         </ThemedText>
 
-                        <ThemedText style={[styles.texts, styles.anecdote]}>
+                        <ThemedText style={styles.anecdote}>
                             {content.content1}
                         </ThemedText>
 
@@ -49,9 +49,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
 
                         {content.content4 ? (
                             <>
-                                <ThemedText
-                                    style={[styles.texts, styles.video2]}
-                                >
+                                <ThemedText style={styles.video2}>
                                     Et en version moins classique...
                                 </ThemedText>
                                 <Video videoId={content.content4} />
@@ -65,9 +63,6 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-    },
     title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     anecdote: {
         marginVertical: 20,

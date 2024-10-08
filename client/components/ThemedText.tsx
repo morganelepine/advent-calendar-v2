@@ -8,7 +8,7 @@ export type ThemedTextProps = TextProps & {
     type?:
         | "default"
         | "calendarDay"
-        | "title"
+        | "homeTitle"
         | "subtitle"
         | "link"
         | "modalTitle";
@@ -29,7 +29,7 @@ export function ThemedText({
                 { color },
                 type === "default" ? styles.default : undefined,
                 type === "calendarDay" ? styles.calendarDay : undefined,
-                type === "title" ? styles.title : undefined,
+                type === "homeTitle" ? styles.homeTitle : undefined,
                 type === "subtitle" ? styles.subtitle : undefined,
                 type === "link" ? styles.link : undefined,
                 type === "modalTitle" ? styles.modalTitle : undefined,
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: "AnonymousPro",
         textAlign: "center",
+        color: "#22311d",
     },
     calendarDay: {
         fontSize: 40,
@@ -53,10 +54,11 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "white",
     },
-    title: {
-        fontSize: 32,
-        fontFamily: "AnonymousProBold",
+    homeTitle: {
+        fontSize: 50,
+        fontFamily: "SpecialElite",
         textAlign: "center",
+        color: "white",
     },
     subtitle: {
         fontSize: 22,
@@ -64,9 +66,9 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     link: {
-        fontSize: 16,
-        color: "#0a7ea4",
+        fontSize: 20,
         fontFamily: "AnonymousPro",
+        color: "white",
     },
     modalTitle: {
         color: "#22311d",

@@ -1,6 +1,7 @@
-import { StyleSheet, View, Pressable, TextStyle } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import Markdown from "react-native-markdown-display";
+import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomButton } from "@/components/custom-utils/Button";
 import { useState } from "react";
 
 interface Content {
@@ -23,47 +24,36 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
 
     return (
         <View key={game.id}>
-            <ThemedText style={[styles.texts, styles.title]}>
-                Charade de Noël
-            </ThemedText>
+            <ThemedText style={styles.title}>Charade de Noël</ThemedText>
 
             {game.content1 ? (
-                <Markdown
-                    style={{
-                        body: [styles.texts] as TextStyle,
-                    }}
-                >
-                    {game.content1}
-                </Markdown>
+                <CustomMarkdown>{game.content1}</CustomMarkdown>
             ) : null}
 
-            <Pressable
+            <CustomButton
                 onPress={() => {
                     setShowAnswer(!showAnswer);
                 }}
-                style={styles.button}
             >
-                <ThemedText>
-                    {showAnswer ? "Cacher la réponse" : "Voir la réponse"}
-                </ThemedText>
-            </Pressable>
+                {showAnswer ? "Cacher la réponse" : "Voir la réponse"}
+            </CustomButton>
 
             {showAnswer && (
                 <View>
                     {game.content2 ? (
-                        <ThemedText style={[styles.texts, styles.shortAnswer]}>
+                        <ThemedText style={styles.shortAnswer}>
                             {game.content2}
                         </ThemedText>
                     ) : null}
 
                     {game.content3 ? (
-                        <ThemedText style={[styles.texts, styles.longAnswer]}>
+                        <ThemedText style={styles.longAnswer}>
                             {game.content3}
                         </ThemedText>
                     ) : null}
 
                     {game.content4 ? (
-                        <ThemedText style={[styles.texts, styles.explanation]}>
+                        <ThemedText style={styles.explanation}>
                             {game.content4}
                         </ThemedText>
                     ) : null}
@@ -74,23 +64,11 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-        textAlign: "center",
-        fontFamily: "AnonymousPro",
-        fontSize: 20,
-    },
     title: {
         color: "#22311d",
         marginTop: 10,
         fontFamily: "AnonymousProBold",
         marginBottom: 20,
-    },
-    button: {
-        backgroundColor: "#22311d",
-        paddingVertical: 10,
-        borderRadius: 20,
-        marginVertical: 20,
     },
     shortAnswer: {
         fontFamily: "AnonymousProBold",

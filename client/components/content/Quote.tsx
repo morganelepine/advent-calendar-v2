@@ -33,16 +33,16 @@ export const Quote: React.FC<QuoteProps> = ({ content }) => {
             >
                 <ThemedText type="modalTitle">Citation du jour</ThemedText>
                 <View>
-                    <ThemedText style={[styles.texts, styles.quote]}>
+                    <ThemedText style={styles.quote}>
                         {content.content1}
                     </ThemedText>
 
-                    <ThemedText style={[styles.texts, styles.author]}>
+                    <ThemedText style={styles.author}>
                         {content.content2}
                     </ThemedText>
 
                     {content.content3 ? (
-                        <ThemedText style={[styles.texts, styles.source]}>
+                        <ThemedText style={styles.source}>
                             ({content.content3})
                         </ThemedText>
                     ) : null}
@@ -53,9 +53,6 @@ export const Quote: React.FC<QuoteProps> = ({ content }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-    },
     quote: {
         marginBottom: 30,
         fontSize: 28,

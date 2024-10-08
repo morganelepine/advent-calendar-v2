@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView, TextStyle } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/custom-utils/Video";
-import Markdown from "react-native-markdown-display";
+import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
@@ -47,40 +47,25 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 
                     {ideas.map((idea) => (
                         <View key={idea.id}>
-                            <ThemedText style={[styles.texts, styles.title]}>
+                            <ThemedText style={styles.title}>
                                 {idea.title}
                             </ThemedText>
 
-                            <ThemedText style={[styles.texts, styles.type]}>
+                            <ThemedText style={styles.type}>
                                 {idea.content5}
                             </ThemedText>
 
-                            <Markdown
-                                style={{
-                                    body: [
-                                        styles.texts,
-                                        styles.contentTitle,
-                                    ] as TextStyle,
-                                }}
-                            >
-                                {idea.content1}
-                            </Markdown>
+                            <CustomMarkdown>{idea.content1}</CustomMarkdown>
 
                             {idea.content3 ? (
-                                <ThemedText
-                                    style={[styles.texts, styles.author]}
-                                >
+                                <ThemedText style={styles.author}>
                                     de {idea.content3}
                                 </ThemedText>
                             ) : null}
 
-                            <Markdown
-                                style={{
-                                    body: styles.description as TextStyle,
-                                }}
-                            >
+                            <CustomMarkdown style={styles.description}>
                                 {idea.content2}
-                            </Markdown>
+                            </CustomMarkdown>
 
                             {(idea.content5 === "Une série" ||
                                 idea.content5 === "Des films") &&
@@ -107,7 +92,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                     href={idea.content4}
                                     style={styles.button}
                                 >
-                                    <ThemedText>
+                                    <ThemedText style={styles.buttonText}>
                                         {idea.title.includes("Bingo")
                                             ? "Télécharger le bingo"
                                             : "Voir la playlist"}
@@ -123,11 +108,6 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-        textAlign: "left",
-        fontFamily: "AnonymousPro",
-    },
     title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     type: {
         backgroundColor: "#22311d",
@@ -141,19 +121,16 @@ const styles = StyleSheet.create({
         marginTop: 20,
         alignSelf: "flex-start",
     },
-    contentTitle: {
-        fontSize: 20,
-    },
     author: {
         marginTop: 5,
         marginBottom: 20,
         fontSize: 14,
         fontFamily: "AnonymousProItalic",
+        textAlign: "left",
     },
     description: {
         marginBottom: 5,
         fontSize: 18,
-        fontFamily: "AnonymousPro",
     },
     video: {
         marginTop: 20,
@@ -170,9 +147,10 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: "#22311d",
-        paddingVertical: 10,
+        padding: 10,
         borderRadius: 20,
         marginVertical: 20,
         textAlign: "center",
     },
+    buttonText: { color: "white" },
 });

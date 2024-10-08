@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
@@ -79,9 +79,7 @@ export const Game: React.FC<GameProps> = ({ games }) => {
                             <ThemedText type="modalTitle">
                                 Quiz du jour
                             </ThemedText>
-                            <ThemedText
-                                style={[styles.texts, styles.quizTitle]}
-                            >
+                            <ThemedText style={styles.quizTitle}>
                                 À quel film de Noël appartient cette réplique ?
                             </ThemedText>
                             <Quiz games={gamesByType.quizCitation} />
@@ -93,9 +91,7 @@ export const Game: React.FC<GameProps> = ({ games }) => {
                             <ThemedText type="modalTitle">
                                 Quiz du jour
                             </ThemedText>
-                            <ThemedText
-                                style={[styles.texts, styles.quizTitle]}
-                            >
+                            <ThemedText style={styles.quizTitle}>
                                 Êtes-vous incollable sur Noël ?
                             </ThemedText>
                             <Quiz games={gamesByType.quizNoel} />
@@ -108,13 +104,7 @@ export const Game: React.FC<GameProps> = ({ games }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-        textAlign: "center",
-        fontFamily: "AnonymousPro",
-    },
     title: {
-        color: "#22311d",
         marginTop: 10,
     },
     quizTitle: {

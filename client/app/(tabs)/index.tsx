@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, ImageBackground, View, Text } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemedText } from "@/components/ThemedText";
 
 export default function HomeScreen() {
     const MILLISECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
@@ -26,11 +27,13 @@ export default function HomeScreen() {
             style={styles.background}
         >
             <SafeAreaView style={styles.safeArea}>
-                <Text style={[styles.text, styles.text1]}>Plus que</Text>
-                <Text style={[styles.text, styles.text2]}>
+                <ThemedText type="homeTitle" style={styles.text1}>
+                    Plus que
+                </ThemedText>
+                <ThemedText type="homeTitle" style={styles.text2}>
                     {daysToChristmas} nuits
-                </Text>
-                <Text style={styles.text}>avant Noël</Text>
+                </ThemedText>
+                <ThemedText type="homeTitle">avant Noël</ThemedText>
             </SafeAreaView>
         </ImageBackground>
     );
@@ -48,11 +51,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-    },
-    text: {
-        color: "white",
-        fontSize: 50,
-        fontFamily: "SpecialElite",
     },
     text1: {
         letterSpacing: 8,

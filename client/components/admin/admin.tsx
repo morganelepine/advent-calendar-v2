@@ -71,7 +71,7 @@ export default function AdminScreen() {
             }
         >
             <ThemedView style={styles.titleContainer}>
-                <ThemedText type="title">Ajouter du contenu</ThemedText>
+                <ThemedText>Ajouter du contenu</ThemedText>
                 <SparkleWave />
             </ThemedView>
 

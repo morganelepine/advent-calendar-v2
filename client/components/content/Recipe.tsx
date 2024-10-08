@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView, TextStyle } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
-import Markdown from "react-native-markdown-display";
+import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 
@@ -45,7 +45,7 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
                     <ThemedText type="modalTitle">Recette du jour</ThemedText>
 
                     <View>
-                        <ThemedText style={[styles.texts, styles.title]}>
+                        <ThemedText style={styles.title}>
                             {content.title}
                         </ThemedText>
 
@@ -58,44 +58,26 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
                             ) : null}
 
                             {content.content4 ? (
-                                <Markdown
-                                    style={{
-                                        body: [
-                                            styles.texts,
-                                            styles.sourcePhoto,
-                                        ] as TextStyle,
-                                    }}
-                                >
+                                <CustomMarkdown style={styles.sourcePhoto}>
                                     {content.content4}
-                                </Markdown>
+                                </CustomMarkdown>
                             ) : null}
                         </View>
 
                         <View style={styles.contentContainer}>
-                            <ThemedText
-                                style={[styles.texts, styles.contentTitle]}
-                            >
+                            <ThemedText style={styles.contentTitle}>
                                 Ingrédients
                             </ThemedText>
-                            <Markdown
-                                style={{
-                                    body: [
-                                        styles.texts,
-                                        styles.ingredients,
-                                    ] as TextStyle,
-                                }}
-                            >
+                            <CustomMarkdown style={styles.ingredients}>
                                 {content.content2}
-                            </Markdown>
+                            </CustomMarkdown>
                         </View>
 
                         <View style={styles.contentContainer}>
-                            <ThemedText
-                                style={[styles.texts, styles.contentTitle]}
-                            >
+                            <ThemedText style={styles.contentTitle}>
                                 Recette
                             </ThemedText>
-                            <ThemedText style={[styles.texts, styles.recipe]}>
+                            <ThemedText style={styles.recipe}>
                                 {content.content1}
                             </ThemedText>
                         </View>
@@ -107,10 +89,6 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
 };
 
 const styles = StyleSheet.create({
-    texts: {
-        color: "#22311d",
-        fontFamily: "AnonymousPro",
-    },
     title: {
         textAlign: "center",
         fontFamily: "AnonymousProBold",
