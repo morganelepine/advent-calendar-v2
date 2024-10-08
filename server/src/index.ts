@@ -9,9 +9,9 @@ import { ContentRoutes } from "./routes/content.routes";
 
 function registerRoutes(app: Application, routes: any[]) {
     routes.forEach((route) => {
-        console.log(
-            `Registering route: ${route.method.toUpperCase()} ${route.route}`
-        );
+        // console.log(
+        //     `Registering route: ${route.method.toUpperCase()} ${route.route}`
+        // );
         (app as any)[route.method](
             route.route,
             (req: Request, res: Response, next: Function) => {

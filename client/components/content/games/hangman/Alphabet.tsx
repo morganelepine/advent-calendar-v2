@@ -12,21 +12,36 @@ export const Alphabet: React.FC<AlphabetProps> = ({
 }) => {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-    const getLetterStyle = (letter: string) => {
-        return clickedLetters.includes(letter)
-            ? [styles.letter, styles.clickedLetter]
-            : styles.letter;
+    const getStyles = (letter: string) => {
+        const isClicked = clickedLetters.includes(letter);
+
+        return {
+            buttonStyle: [
+                styles.letter,
+                isClicked ? styles.clickedLetter : null,
+            ],
+            textStyle: {
+                color: !isClicked ? "white" : "#136F63",
+                fontSize: 28,
+                fontFamily: "AnonymousProBold",
+            },
+        };
     };
 
     return (
         <View style={styles.alphabet}>
-            {alphabet.map((letter) => (
-                <Pressable key={letter} onPress={() => checkLetter(letter)}>
-                    <ThemedText style={getLetterStyle(letter)}>
-                        {letter}
-                    </ThemedText>
-                </Pressable>
-            ))}
+            {alphabet.map((letter) => {
+                const { buttonStyle, textStyle } = getStyles(letter);
+                return (
+                    <Pressable
+                        key={letter}
+                        onPress={() => checkLetter(letter)}
+                        style={buttonStyle}
+                    >
+                        <ThemedText style={textStyle}>{letter}</ThemedText>
+                    </Pressable>
+                );
+            })}
         </View>
     );
 };
@@ -37,17 +52,13 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: "center",
         marginTop: 20,
+        gap: 10,
     },
     letter: {
-        fontFamily: "AnonymousProBold",
-        fontSize: 28,
         paddingHorizontal: 16,
         paddingVertical: 8,
-        margin: 5,
         backgroundColor: "#22311d",
         borderRadius: 50,
-        alignItems: "center",
-        color: "white",
     },
     clickedLetter: {
         color: "#22311d",

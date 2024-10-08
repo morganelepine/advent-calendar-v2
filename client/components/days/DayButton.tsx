@@ -1,6 +1,6 @@
-import { StyleSheet, Pressable, ToastAndroid } from "react-native";
+import { StyleSheet, Pressable, ToastAndroid, View } from "react-native";
 import { router } from "expo-router";
-import { DayNumber } from "./DayNumber";
+import { ThemedText } from "@/components/ThemedText";
 
 interface DayButtonProps {
     day: { id: number; dayNumber: number; isOpen: boolean };
@@ -11,7 +11,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
         const today = new Date();
         if (day.isOpen) {
             router.push({
-                pathname: "/day",
+                pathname: "/Days",
                 params: { dayId: day.id },
             });
         } else if (day.dayNumber > today.getDate()) {
@@ -28,7 +28,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
             }
 
             router.push({
-                pathname: "/day",
+                pathname: "/Days",
                 params: { dayId: day.id },
             });
         } else {
@@ -38,7 +38,13 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
 
     return (
         <Pressable onPress={handleDayPress} style={styles.container}>
-            <DayNumber day={day} />
+            <View
+                style={[
+                    styles.background,
+                    { backgroundColor: day.isOpen ? "black" : "white" },
+                ]}
+            />
+            <ThemedText type="calendarDay">{day.dayNumber}</ThemedText>
         </Pressable>
     );
 };
@@ -46,10 +52,15 @@ export const DayButton: React.FC<DayButtonProps> = ({ day }) => {
 const styles = StyleSheet.create({
     container: {
         width: "30%",
-        height: 68,
-        marginBottom: 10,
+        // height: 68,
         borderRadius: 5,
         justifyContent: "center",
         alignItems: "center",
+    },
+    background: {
+        ...StyleSheet.absoluteFillObject, // Remplit tout l'espace du parent
+        backgroundColor: "white",
+        opacity: 0.15,
+        borderRadius: 5,
     },
 });

@@ -47,12 +47,14 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 
                     {ideas.map((idea) => (
                         <View key={idea.id}>
+                            <View style={styles.type}>
+                                <ThemedText style={styles.typeText}>
+                                    {idea.content5}
+                                </ThemedText>
+                            </View>
+
                             <ThemedText style={styles.title}>
                                 {idea.title}
-                            </ThemedText>
-
-                            <ThemedText style={styles.type}>
-                                {idea.content5}
                             </ThemedText>
 
                             <CustomMarkdown>{idea.content1}</CustomMarkdown>
@@ -108,19 +110,17 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 };
 
 const styles = StyleSheet.create({
-    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     type: {
         backgroundColor: "#22311d",
-        fontSize: 14,
-        color: "white",
         paddingVertical: 5,
-        paddingHorizontal: 10,
+        paddingHorizontal: 12,
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
-        textAlign: "center",
-        marginTop: 20,
+        marginBottom: 20,
         alignSelf: "flex-start",
     },
+    typeText: { color: "white", fontSize: 14 },
+    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     author: {
         marginTop: 5,
         marginBottom: 20,
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
     description: {
         marginBottom: 5,
         fontSize: 18,
+        textAlign: "left",
     },
     video: {
         marginTop: 20,

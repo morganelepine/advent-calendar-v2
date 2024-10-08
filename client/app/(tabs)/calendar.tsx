@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, ImageBackground, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { DayButton } from "@/components/days/DayButton";
@@ -23,29 +23,27 @@ export default function CalendarScreen() {
         return arr;
     };
 
-    useFocusEffect(
-        useCallback(() => {
-            const fetchDays = async () => {
-                try {
-                    const response = await fetch(
-                        "http://192.168.1.16:3000/days"
-                    );
-                    const data = await response.json();
-                    if (!hasShuffled) {
-                        const shuffledData = shuffleDays([...data]);
-                        setDays(shuffledData);
-                        setHasShuffled(true);
-                    } else {
-                        setDays(data);
-                    }
-                } catch (error) {
-                    console.error("Error fetching days:", error);
+    // useFocusEffect(
+    useEffect(() => {
+        const fetchDays = async () => {
+            try {
+                const response = await fetch("http://192.168.1.16:3000/days");
+                const data = await response.json();
+                if (!hasShuffled) {
+                    const shuffledData = shuffleDays([...data]);
+                    setDays(shuffledData);
+                    setHasShuffled(true);
+                } else {
+                    setDays(data);
                 }
-            };
+            } catch (error) {
+                console.error("Error fetching days:", error);
+            }
+        };
 
-            fetchDays();
-        }, [])
-    );
+        fetchDays();
+    }, []);
+    // );
 
     return (
         <ImageBackground
@@ -76,12 +74,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        paddingBottom: 20,
+        // borderColor: "red",
+        // borderWidth: 2,
     },
     daysContainer: {
+        flex: 1,
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        margin: 20,
-        flex: 1,
+        alignContent: "space-between",
+        margin: 10,
+        gap: 10,
     },
 });

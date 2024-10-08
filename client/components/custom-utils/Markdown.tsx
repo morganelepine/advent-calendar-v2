@@ -3,7 +3,7 @@ import Markdown from "react-native-markdown-display";
 
 interface CustomMarkdownProps {
     children?: React.ReactNode;
-    style?: TextStyle;
+    style?: TextStyle; //React.CSSProperties
 }
 
 export const CustomMarkdown: React.FC<CustomMarkdownProps> = ({

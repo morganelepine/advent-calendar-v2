@@ -7,6 +7,7 @@ import {
     ImageBackground,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface CustomModalProps {
     isVisible: boolean;
@@ -21,6 +22,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({
     backgroundImage = require("@/assets/images/sapin-lumineux.jpg"),
     children,
 }) => {
+    const insets = useSafeAreaInsets();
+
     return (
         <Modal
             animationType="fade"
@@ -34,7 +37,12 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                 style={styles.imageBackground}
             >
                 <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
+                    <View
+                        style={[
+                            styles.modalView,
+                            { paddingTop: insets.bottom },
+                        ]}
+                    >
                         <View style={styles.background} />
 
                         {children}

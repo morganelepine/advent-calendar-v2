@@ -6,6 +6,12 @@ import { ContentButton } from "@/components/content/ContentButton";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { CloudinaryImage } from "@cloudinary/url-gen";
+import { URLConfig } from "@cloudinary/url-gen";
+import { CloudConfig } from "@cloudinary/url-gen";
+
+let cloudConfig = new CloudConfig({ cloudName: "deauthz29" });
+let urlConfig = new URLConfig({ secure: true });
 
 const cld = new Cloudinary({
     cloud: {
@@ -29,7 +35,7 @@ interface RecipeProps {
 export const Recipe: React.FC<RecipeProps> = ({ content }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
-    const image = cld.image(content.content3);
+    let image = new CloudinaryImage(content.content3, cloudConfig, urlConfig);
 
     return (
         <>

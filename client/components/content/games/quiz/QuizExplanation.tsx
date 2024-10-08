@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     explanations: {
         marginTop: 10,
         fontSize: 18,
+        textAlign: "left",
     },
     videoContainer: { marginTop: 20 },
     nextQuestionButton: {

@@ -3,6 +3,8 @@ import {
     DefaultTheme,
     ThemeProvider,
 } from "@react-navigation/native";
+import { Text, View } from "react-native";
+
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -38,16 +40,41 @@ export default function RootLayout() {
         <ThemeProvider
             value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
         >
-            <Stack>
+            <Stack
+                screenOptions={{
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontFamily: "AnonymousPro",
+                    },
+                    headerBackTitleVisible: false,
+                }}
+            >
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
-                {/* <Stack.Screen
+                <Stack.Screen
                     name="Days"
                     options={{
                         title: "Retour au calendrier",
-                        headerShown: false,
+                        // headerShown: false,
+                        headerTitle: (props) => (
+                            <View
+                                style={{
+                                    flex: 1,
+                                    flexDirection: "row",
+                                }}
+                            >
+                                <Text
+                                    style={{
+                                        color: "white",
+                                        fontFamily: "AnonymousPro",
+                                    }}
+                                >
+                                    {props.children}
+                                </Text>
+                            </View>
+                        ),
                     }}
-                /> */}
+                />
             </Stack>
         </ThemeProvider>
     );
