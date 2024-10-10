@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomScrollView } from "@/components/custom-utils/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/custom-utils/Video";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
@@ -39,12 +40,9 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
+                contentType={"ideas"}
             >
-                <ScrollView>
-                    <ThemedText type="modalTitle">
-                        Recommandation du jour
-                    </ThemedText>
-
+                <CustomScrollView>
                     {ideas.map((idea) => (
                         <View key={idea.id}>
                             <View style={styles.type}>
@@ -103,7 +101,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                             ) : null}
                         </View>
                     ))}
-                </ScrollView>
+                </CustomScrollView>
             </CustomModal>
         </>
     );

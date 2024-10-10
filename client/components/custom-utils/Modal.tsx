@@ -8,11 +8,13 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ThemedText } from "@/components/ThemedText";
 
 interface CustomModalProps {
     isVisible: boolean;
     onClose: () => void;
     backgroundImage?: any;
+    contentType: string;
     children?: React.ReactNode;
 }
 
@@ -20,9 +22,27 @@ export const CustomModal: React.FC<CustomModalProps> = ({
     isVisible,
     onClose,
     backgroundImage = require("@/assets/images/sapin-lumineux.jpg"),
+    contentType,
     children,
 }) => {
     const insets = useSafeAreaInsets();
+
+    const getTitle = () => {
+        switch (contentType) {
+            case "quote":
+                return "Citation";
+            case "recipe":
+                return "Recette";
+            case "ideas":
+                return "Recommandation";
+            case "anecdote":
+                return "Anecdote";
+            case "game":
+                return "Jeu";
+            case "quiz":
+                return "Quiz";
+        }
+    };
 
     return (
         <Modal
@@ -44,6 +64,10 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                         ]}
                     >
                         <View style={styles.background} />
+
+                        <ThemedText type="modalTitle">
+                            {getTitle()} du&nbsp;jour
+                        </ThemedText>
 
                         {children}
 
@@ -82,7 +106,7 @@ const styles = StyleSheet.create({
     modalView: {
         margin: 15,
         width: "93%",
-        paddingHorizontal: 20,
+        paddingHorizontal: 5,
         paddingBottom: 10,
         alignItems: "center",
         justifyContent: "space-between",

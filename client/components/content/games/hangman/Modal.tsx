@@ -22,7 +22,11 @@ export const Modal: React.FC<ModalProps> = ({
     handleNextQuestion,
 }) => {
     return (
-        <CustomModal isVisible={modalVisible} onClose={() => onClose()}>
+        <CustomModal
+            isVisible={modalVisible}
+            onClose={() => onClose()}
+            contentType={"game"}
+        >
             <View style={styles.modal}>
                 <ThemedText>{modalMessage}</ThemedText>
                 <ThemedText>Le mot à trouver était {currentWord}</ThemedText>
@@ -43,7 +47,12 @@ export const Modal: React.FC<ModalProps> = ({
 };
 
 const styles = StyleSheet.create({
-    modal: { justifyContent: "center", flex: 1, gap: 20 },
+    modal: {
+        justifyContent: "center",
+        flex: 1,
+        gap: 20,
+        paddingHorizontal: 10,
+    },
     modalButton: {
         color: "#136F63",
         borderColor: "#136F63",

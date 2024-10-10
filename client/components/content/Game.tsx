@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
@@ -31,19 +31,24 @@ export const Game: React.FC<GameProps> = ({ games }) => {
         quizNoel: Content[];
     } = { quizCitation: [], quizNoel: [] };
 
+    let title = "";
     games.forEach((game) => {
         switch (game.content5) {
             case "pendu":
                 gamesByType.pendu = game;
+                title = "game";
                 break;
             case "jeu":
                 gamesByType.jeu = game;
+                title = "game";
                 break;
             case "quiz-citation":
                 gamesByType.quizCitation.push(game);
+                title = "quiz";
                 break;
             case "quiz-noel":
                 gamesByType.quizNoel.push(game);
+                title = "quiz";
                 break;
         }
     });
@@ -54,49 +59,34 @@ export const Game: React.FC<GameProps> = ({ games }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
+                contentType={title}
             >
-                <ScrollView>
-                    {gamesByType.pendu && (
-                        <>
-                            <ThemedText type="modalTitle">
-                                Jeu du jour
-                            </ThemedText>
+                <ScrollView
+                    persistentScrollbar={true} // Android only
+                >
+                    <View style={styles.container}>
+                        {gamesByType.pendu && (
                             <Hangman game={gamesByType.pendu} />
-                        </>
-                    )}
-
-                    {gamesByType.jeu && (
-                        <>
-                            <ThemedText type="modalTitle">
-                                Jeu du jour
-                            </ThemedText>
-                            <Games game={gamesByType.jeu} />
-                        </>
-                    )}
-
-                    {gamesByType.quizCitation.length > 0 && (
-                        <>
-                            <ThemedText type="modalTitle">
-                                Quiz du jour
-                            </ThemedText>
-                            <ThemedText style={styles.quizTitle}>
-                                À quel film de Noël appartient cette réplique ?
-                            </ThemedText>
-                            <Quiz games={gamesByType.quizCitation} />
-                        </>
-                    )}
-
-                    {gamesByType.quizNoel.length > 0 && (
-                        <>
-                            <ThemedText type="modalTitle">
-                                Quiz du jour
-                            </ThemedText>
-                            <ThemedText style={styles.quizTitle}>
-                                Êtes-vous incollable sur Noël ?
-                            </ThemedText>
-                            <Quiz games={gamesByType.quizNoel} />
-                        </>
-                    )}
+                        )}
+                        {gamesByType.jeu && <Games game={gamesByType.jeu} />}
+                        {gamesByType.quizCitation.length > 0 && (
+                            <>
+                                <ThemedText style={styles.quizTitle}>
+                                    À quel film de Noël appartient cette
+                                    réplique ?
+                                </ThemedText>
+                                <Quiz games={gamesByType.quizCitation} />
+                            </>
+                        )}
+                        {gamesByType.quizNoel.length > 0 && (
+                            <>
+                                <ThemedText style={styles.quizTitle}>
+                                    Êtes-vous incollable sur Noël ?
+                                </ThemedText>
+                                <Quiz games={gamesByType.quizNoel} />
+                            </>
+                        )}
+                    </View>
                 </ScrollView>
             </CustomModal>
         </>
@@ -104,6 +94,9 @@ export const Game: React.FC<GameProps> = ({ games }) => {
 };
 
 const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 20,
+    },
     title: {
         marginTop: 10,
     },

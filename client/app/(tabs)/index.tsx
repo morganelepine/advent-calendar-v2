@@ -15,9 +15,12 @@ export default function HomeScreen() {
     const checkFirstLaunch = async () => {
         try {
             const userUuid = await AsyncStorage.getItem("userUuid");
+            console.log({ userUuid });
 
             if (!userUuid) {
                 const newUserUuid: string = uuid.v4() as string;
+                console.log({ newUserUuid });
+
                 try {
                     await AsyncStorage.setItem("userUuid", newUserUuid);
                     const response = await fetch(
@@ -41,7 +44,7 @@ export default function HomeScreen() {
                     console.error("Error saving uuid: ", error);
                 }
             } else {
-                // await AsyncStorage.removeItem("userUuid");
+                await AsyncStorage.removeItem("userUuid");
                 setFirstLaunch(false);
             }
         } catch (error) {

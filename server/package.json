@@ -26,6 +26,7 @@
     "scripts": {
         "start": "nodemon src/index.ts",
         "typeorm": "typeorm-ts-node-commonjs",
-        "seed": "ts-node ./src/seed/calendar.seed.ts"
+        "seed": "ts-node ./src/seed/calendar.seed.ts",
+        "content": "ts-node ./src/scripts/send-csv-data-to-db.ts"
     }
 }

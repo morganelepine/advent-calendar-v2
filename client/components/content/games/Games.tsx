@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
-import { CustomButton } from "@/components/custom-utils/Button";
+import { CustomButton } from "@/components/custom-utils/Buttons/Button";
 import { useState } from "react";
 
 interface Content {

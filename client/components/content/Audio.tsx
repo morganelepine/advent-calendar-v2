@@ -37,7 +37,7 @@ export const AudioPlayer = ({}) => {
     };
 
     useEffect(() => {
-        // playSound();
+        playSound();
 
         return () => {
             if (sound) {

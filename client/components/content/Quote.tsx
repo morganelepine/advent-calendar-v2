@@ -30,9 +30,9 @@ export const Quote: React.FC<QuoteProps> = ({ content }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
+                contentType={content.type}
             >
-                <ThemedText type="modalTitle">Citation du jour</ThemedText>
-                <View>
+                <View style={{ paddingHorizontal: 20 }}>
                     <ThemedText style={styles.quote}>
                         {content.content1}
                     </ThemedText>

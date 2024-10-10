@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomScrollView } from "@/components/custom-utils/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
@@ -46,10 +47,9 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
+                contentType={content.type}
             >
-                <ScrollView>
-                    <ThemedText type="modalTitle">Recette du jour</ThemedText>
-
+                <CustomScrollView>
                     <View>
                         <ThemedText style={styles.title}>
                             {content.title}
@@ -88,7 +88,7 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
                             </ThemedText>
                         </View>
                     </View>
-                </ScrollView>
+                </CustomScrollView>
             </CustomModal>
         </>
     );

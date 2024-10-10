@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomScrollView } from "@/components/custom-utils/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/custom-utils/Video";
 
@@ -30,10 +31,9 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
+                contentType={content.type}
             >
-                <ScrollView>
-                    <ThemedText type="modalTitle">Anecdote du jour</ThemedText>
-
+                <CustomScrollView>
                     <View>
                         <ThemedText style={styles.title}>
                             {content.title}
@@ -56,13 +56,16 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
                             </>
                         ) : null}
                     </View>
-                </ScrollView>
+                </CustomScrollView>
             </CustomModal>
         </>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 20,
+    },
     title: { textAlign: "left", fontFamily: "AnonymousProBold" },
     anecdote: {
         marginVertical: 20,
