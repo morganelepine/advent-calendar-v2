@@ -3,49 +3,63 @@ import { NextFunction, Request, Response } from "express";
 import { User } from "../entity/user.entity";
 
 export class UserController {
-    private userRepository = AppDataSource.getRepository(User);
+    private readonly userRepository = AppDataSource.getRepository(User);
 
     async getAll(request: Request, response: Response, next: NextFunction) {
         return this.userRepository.find();
     }
 
     async getOne(request: Request, response: Response, next: NextFunction) {
-        const id = parseInt(request.params.id);
+        const uuid = request.params.uuid;
 
         const user = await this.userRepository.findOne({
-            where: { id },
+            where: { uuid },
         });
 
         if (!user) {
-            return "unregistered user";
+            return "Unregistered user";
         }
         return user;
     }
 
     async save(request: Request, response: Response, next: NextFunction) {
-        const { username, email, password, role } = request.body;
-
+        const { uuid, score } = request.body;
         const user = Object.assign(new User(), {
-            username,
-            email,
-            password,
-            role,
+            uuid,
+            score,
         });
+        await this.userRepository.save(user);
+        return "User has been created";
+    }
 
-        return this.userRepository.save(user);
+    async update(request: Request, response: Response, next: NextFunction) {
+        const uuid = request.params.uuid;
+        const { score } = request.body;
+
+        const userToUpdate = await this.userRepository.findOne({
+            where: { uuid },
+        });
+        if (!userToUpdate) {
+            return "This user not exist";
+        }
+
+        if (score !== undefined) {
+            userToUpdate.score = score;
+        }
+
+        await this.userRepository.save(userToUpdate);
+        return "User has been updated";
     }
 
     async remove(request: Request, response: Response, next: NextFunction) {
-        const id = parseInt(request.params.id);
+        const uuid = request.params.uuid;
 
-        let userToRemove = await this.userRepository.findOneBy({ id });
-
+        const userToRemove = await this.userRepository.findOneBy({ uuid });
         if (!userToRemove) {
-            return "this user not exist";
+            return "This user not exist";
         }
 
         await this.userRepository.remove(userToRemove);
-
-        return "user has been removed";
+        return "User has been removed";
     }
 }

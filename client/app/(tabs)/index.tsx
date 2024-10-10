@@ -1,61 +1,59 @@
-import React from "react";
-import { StyleSheet, ImageBackground } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { ThemedText } from "@/components/ThemedText";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, ActivityIndicator } from "react-native";
+import { Home } from "@/components/calendar/Home";
+import { FirstLaunch } from "@/components/calendar/FirstLaunch";
+import uuid from "react-native-uuid";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function HomeScreen() {
-    const MILLISECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
-    const today = new Date();
+    const [firstLaunch, setFirstLaunch] = useState<boolean | null>(null);
 
-    let christmasDay = new Date(today.getFullYear(), 11, 25);
-    // Check if Christmas has already passed
-    if (today > christmasDay) {
-        christmasDay.setFullYear(christmasDay.getFullYear() + 1);
+    useEffect(() => {
+        checkFirstLaunch();
+    }, []);
+
+    const checkFirstLaunch = async () => {
+        try {
+            const userUuid = await AsyncStorage.getItem("userUuid");
+
+            if (!userUuid) {
+                const newUserUuid: string = uuid.v4() as string;
+                try {
+                    await AsyncStorage.setItem("userUuid", newUserUuid);
+                    const response = await fetch(
+                        "http://192.168.1.16:3000/users",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                uuid: newUserUuid,
+                                score: 0,
+                            }),
+                        }
+                    );
+                    if (!response.ok) {
+                        throw new Error("Failed to create user");
+                    }
+                    setFirstLaunch(true);
+                } catch (error) {
+                    console.error("Error saving uuid: ", error);
+                }
+            } else {
+                // await AsyncStorage.removeItem("userUuid");
+                setFirstLaunch(false);
+            }
+        } catch (error) {
+            console.error("Error checking first launch: ", error);
+        }
+    };
+
+    if (firstLaunch === null) {
+        return <ActivityIndicator size="large" color="white" />;
     }
 
-    const daysToChristmas = Math.ceil(
-        (christmasDay.getTime() - today.getTime()) / MILLISECONDS_IN_A_DAY
-    );
-
-    // console.log({ today });
-    // console.log({ christmasDay });
-
-    return (
-        <ImageBackground
-            source={require("@/assets/images/sapin.jpg")}
-            resizeMode="cover"
-            style={styles.background}
-        >
-            <SafeAreaView style={styles.safeArea}>
-                <ThemedText type="homeTitle" style={styles.text1}>
-                    Plus que
-                </ThemedText>
-                <ThemedText type="homeTitle" style={styles.text2}>
-                    {daysToChristmas} nuits
-                </ThemedText>
-                <ThemedText type="homeTitle">avant Noël</ThemedText>
-            </SafeAreaView>
-        </ImageBackground>
-    );
+    return <>{firstLaunch ? <FirstLaunch /> : <Home />}</>;
 }
 
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        width: "100%",
-        height: "100%",
-    },
-    safeArea: {
-        flex: 1,
-        backgroundColor: "transparent",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-    },
-    text1: {
-        letterSpacing: 8,
-    },
-    text2: {
-        letterSpacing: 9,
-    },
-});
+const styles = StyleSheet.create({});

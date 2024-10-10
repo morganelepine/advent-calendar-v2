@@ -1,14 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { StyleSheet, ImageBackground, View } from "react-native";
+import React, { useCallback, useState } from "react";
+import { StyleSheet, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { DayButton } from "@/components/days/DayButton";
 import { useFocusEffect } from "@react-navigation/native";
+import { Days } from "@/components/days/Days";
 
 interface Day {
     id: number;
     dayNumber: number;
-    isOpen: boolean;
-    openAt: Date;
 }
 
 export default function CalendarScreen() {
@@ -23,27 +21,30 @@ export default function CalendarScreen() {
         return arr;
     };
 
-    // useFocusEffect(
-    useEffect(() => {
-        const fetchDays = async () => {
-            try {
-                const response = await fetch("http://192.168.1.16:3000/days");
-                const data = await response.json();
-                if (!hasShuffled) {
-                    const shuffledData = shuffleDays([...data]);
-                    setDays(shuffledData);
-                    setHasShuffled(true);
-                } else {
-                    setDays(data);
+    useFocusEffect(
+        useCallback(() => {
+            const fetchDays = async () => {
+                try {
+                    const response = await fetch(
+                        "http://192.168.1.16:3000/days"
+                    );
+                    const data = await response.json();
+                    if (!hasShuffled) {
+                        const shuffledData = shuffleDays([...data]);
+                        setDays(shuffledData);
+                        setHasShuffled(true);
+                    } else {
+                        setDays(data);
+                    }
+                    // setDays(data);
+                } catch (error) {
+                    console.error("Error fetching days:", error);
                 }
-            } catch (error) {
-                console.error("Error fetching days:", error);
-            }
-        };
+            };
 
-        fetchDays();
-    }, []);
-    // );
+            fetchDays();
+        }, [])
+    );
 
     return (
         <ImageBackground
@@ -52,11 +53,7 @@ export default function CalendarScreen() {
             style={styles.background}
         >
             <SafeAreaView style={styles.safeArea}>
-                <View style={styles.daysContainer}>
-                    {days.map((day) => (
-                        <DayButton key={day.id} day={day} />
-                    ))}
-                </View>
+                <Days days={days} />
             </SafeAreaView>
         </ImageBackground>
     );
@@ -77,14 +74,5 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         // borderColor: "red",
         // borderWidth: 2,
-    },
-    daysContainer: {
-        flex: 1,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        alignContent: "space-between",
-        margin: 10,
-        gap: 10,
     },
 });

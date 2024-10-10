@@ -6,6 +6,7 @@ import { UserRoutes } from "./routes/user.routes";
 import { CalendarRoutes } from "./routes/calendar.routes";
 import { DayRoutes } from "./routes/day.routes";
 import { ContentRoutes } from "./routes/content.routes";
+import { DaysOpeningRoutes } from "./routes/days-opening.routes";
 
 function registerRoutes(app: Application, routes: any[]) {
     routes.forEach((route) => {
@@ -54,6 +55,7 @@ AppDataSource.initialize()
         registerRoutes(app, CalendarRoutes);
         registerRoutes(app, DayRoutes);
         registerRoutes(app, ContentRoutes);
+        registerRoutes(app, DaysOpeningRoutes);
 
         // setup express app here
         // ...

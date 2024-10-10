@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
-import { DayHeader } from "@/components/days/DayHeader";
-import { DayContent } from "@/components/days/DayContent";
+import { DayHeader } from "@/components/days/Content/DayHeader";
+import { DayContent } from "@/components/days/Content/DayContent";
+
 interface Content {
     id: number;
     type: "quote" | "anecdote" | "recipe" | "idea" | "game";

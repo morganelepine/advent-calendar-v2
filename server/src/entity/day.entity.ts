@@ -7,6 +7,7 @@ import {
 } from "typeorm";
 import { Calendar } from "./calendar.entity";
 import { Content } from "./content.entity";
+import { DaysOpening } from "./days-opening.entity";
 
 @Entity()
 export class Day {
@@ -22,9 +23,6 @@ export class Day {
     @OneToMany(() => Content, (content) => content.day)
     contents: Content[];
 
-    @Column({ default: false })
-    isOpen: boolean;
-
-    @Column({ nullable: true })
-    openAt: Date;
+    @OneToMany(() => DaysOpening, (days) => days.day)
+    daysOpening: DaysOpening[];
 }

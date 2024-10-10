@@ -9,7 +9,7 @@ export const UserRoutes = [
     },
     {
         method: "get",
-        route: "/users/:id",
+        route: "/users/:uuid",
         controller: UserController,
         action: "getOne",
     },
@@ -20,8 +20,14 @@ export const UserRoutes = [
         action: "save",
     },
     {
+        method: "patch",
+        route: "/users/:uuid",
+        controller: UserController,
+        action: "update",
+    },
+    {
         method: "delete",
-        route: "/users/:id",
+        route: "/users/:uuid",
         controller: UserController,
         action: "remove",
     },

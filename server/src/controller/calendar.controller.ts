@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { Calendar } from "../entity/calendar.entity";
 
 export class CalendarController {
-    private calendarRepository = AppDataSource.getRepository(Calendar);
+    private readonly calendarRepository = AppDataSource.getRepository(Calendar);
 
     async getAll(request: Request, response: Response, next: NextFunction) {
         return this.calendarRepository.find();
@@ -19,6 +19,7 @@ export class CalendarController {
         if (!calendar) {
             return "unknown calendar";
         }
+
         return calendar;
     }
 }
