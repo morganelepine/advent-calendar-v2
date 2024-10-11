@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { StyleSheet, Pressable, ToastAndroid } from "react-native";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { DayNumber } from "@/components/days/Button/DayNumber";
 
 interface DayButtonProps {
@@ -24,7 +24,6 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
                 throw new Error("Failed to check if the day is open");
             }
             const data = await response.json();
-            // setDayIsOpen(data.isOpen);
             return data;
         } catch (error) {
             console.log("Error checking if day is open: ", error);
@@ -32,14 +31,16 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
         }
     };
 
-    useEffect(() => {
-        const checkIfDayIsOpen = async () => {
-            const openState = await isDayOpen(userUuid, day.id);
-            setDayIsOpen(openState);
-        };
+    useFocusEffect(
+        useCallback(() => {
+            const checkIfDayIsOpen = async () => {
+                const openState = await isDayOpen(userUuid, day.id);
+                setDayIsOpen(openState);
+            };
 
-        checkIfDayIsOpen();
-    }, [userUuid, day.id]);
+            checkIfDayIsOpen();
+        }, [userUuid, day.id])
+    );
 
     /*****************************************/
     /********** HANDLE DAY CLICK **********/
@@ -115,6 +116,5 @@ const styles = StyleSheet.create({
     container: {
         width: "30%",
         justifyContent: "center",
-        // paddingVertical: 25,
     },
 });
