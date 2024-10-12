@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
     title: {
         textAlign: "center",
         fontFamily: "AnonymousProBold",
+        fontSize: 20,
         marginBottom: 20,
     },
     recipe: {
-        fontSize: 18,
         textAlign: "left",
     },
     contentContainer: { textAlign: "left", marginTop: 20 },
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
         fontFamily: "AnonymousProBold",
         textAlign: "left",
         marginBottom: 10,
+        fontSize: 22,
     },
     ingredients: {
         marginBottom: 5,

@@ -11,7 +11,8 @@ export type ThemedTextProps = TextProps & {
         | "homeTitle"
         | "subtitle"
         | "link"
-        | "modalTitle";
+        | "modalTitle"
+        | "headerTab";
 };
 
 export function ThemedText({
@@ -33,6 +34,7 @@ export function ThemedText({
                 type === "subtitle" ? styles.subtitle : undefined,
                 type === "link" ? styles.link : undefined,
                 type === "modalTitle" ? styles.modalTitle : undefined,
+                type === "headerTab" ? styles.headerTab : undefined,
 
                 style,
             ]}
@@ -43,8 +45,8 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
     default: {
-        fontSize: 20,
-        fontFamily: "AnonymousPro",
+        fontSize: 16,
+        fontFamily: "Poppins",
         textAlign: "center",
         color: "#22311d",
     },
@@ -76,5 +78,9 @@ const styles = StyleSheet.create({
         fontFamily: "AnonymousProBold",
         textAlign: "center",
         marginVertical: 20,
+    },
+    headerTab: {
+        fontSize: 15,
+        fontFamily: "AnonymousPro",
     },
 });

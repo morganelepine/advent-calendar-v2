@@ -35,7 +35,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
             >
                 <CustomScrollView>
                     <View>
-                        <ThemedText style={styles.title}>
+                        <ThemedText type="subtitle" style={styles.title}>
                             {content.title}
                         </ThemedText>
 
@@ -66,16 +66,14 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
     },
-    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
+    title: {
+        textAlign: "left",
+        fontFamily: "AnonymousProBold",
+        color: "#22311d",
+    },
     anecdote: {
         marginVertical: 20,
-        fontSize: 18,
         textAlign: "left",
-    },
-    author: {
-        marginBottom: 5,
-        fontSize: 20,
-        fontFamily: "AnonymousProItalic",
     },
     video2: {
         fontSize: 15,

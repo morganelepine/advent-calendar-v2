@@ -36,7 +36,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
             ],
             textStyle: {
                 color: isCorrect ? "white" : isSelected ? "#136F63" : "white",
-                fontSize: 18,
+                fontSize: 16,
             },
         };
     };

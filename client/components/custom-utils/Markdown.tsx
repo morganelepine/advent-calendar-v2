@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     body: {
         color: "#22311d",
         textAlign: "center",
-        fontFamily: "AnonymousPro",
-        fontSize: 20,
+        fontFamily: "Poppins",
+        fontSize: 16,
     },
 });

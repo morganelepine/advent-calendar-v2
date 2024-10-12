@@ -40,7 +40,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Un compte à rebours pour vous faire patienter
-                            jusqu'au 25 décembre
+                            jusqu'au 25 décembre.
                         </ThemedText>
                     </View>
 
@@ -50,7 +50,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Une citation inspirante vous plonger dans l'esprit
-                            de Noël
+                            de Noël.
                         </ThemedText>
                     </View>
 
@@ -60,7 +60,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Une recette gourmande pour vous régaler et partager
-                            de délicieux moments avec vos proches
+                            de délicieux moments avec vos proches.
                         </ThemedText>
                     </View>
 
@@ -70,7 +70,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Une anecdote sur les traditions et l’histoire de
-                            Noël
+                            Noël.
                         </ThemedText>
                     </View>
 
@@ -80,7 +80,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Livre, série, activité... : une idée pour
-                            accompagner vos journées et soirées d'hiver
+                            accompagner vos journées et soirées d'hiver.
                         </ThemedText>
                     </View>
 
@@ -90,7 +90,7 @@ export const FirstLaunch = () => {
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Un mini-jeu pour mettre vos connaissances de Noël à
-                            l’épreuve
+                            l’épreuve.
                         </ThemedText>
                     </View>
 
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     background: {
         ...StyleSheet.absoluteFillObject, // Remplit tout l'espace du parent
         backgroundColor: "white",
-        opacity: 0.8,
+        opacity: 0.9,
     },
     safeArea: {
         flex: 1,
@@ -152,12 +152,10 @@ const styles = StyleSheet.create({
         color: "#22311d",
     },
     paragraph: {
-        marginBottom: 15,
         textAlign: "left",
-        fontSize: 18,
     },
     section: {
-        marginVertical: 6,
+        marginVertical: 10,
     },
     sectionTitle: {
         marginBottom: 5,
@@ -166,7 +164,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     ital: {
-        fontFamily: "AnonymousProItalic",
+        fontFamily: "PoppinsItalic",
         textAlign: "center",
     },
 });

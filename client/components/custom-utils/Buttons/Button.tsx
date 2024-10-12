@@ -1,4 +1,5 @@
-import { StyleSheet, TextStyle, Pressable, Text } from "react-native";
+import { StyleSheet, TextStyle, Pressable } from "react-native";
+import { ThemedText } from "@/components/ThemedText";
 
 interface CustomButtonProps {
     children?: React.ReactNode;
@@ -13,14 +14,14 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
 }) => {
     return (
         <Pressable onPress={onPress} style={{ ...styles.button, ...style }}>
-            <Text style={styles.buttonText}>{children}</Text>
+            <ThemedText style={styles.buttonText}>{children}</ThemedText>
         </Pressable>
     );
 };
 
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 20,
+        borderRadius: 50,
         backgroundColor: "#22311d",
         paddingHorizontal: 20,
         paddingVertical: 10,
@@ -28,8 +29,5 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
-        textAlign: "center",
-        fontSize: 20,
-        fontFamily: "AnonymousPro",
     },
 });

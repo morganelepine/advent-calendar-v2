@@ -36,9 +36,14 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
                         Bonne réponse !
                     </ThemedText>
                 ) : (
-                    <ThemedText style={styles.response}>
-                        Oops... La bonne réponse était "{currentGame.content3}"
-                    </ThemedText>
+                    <>
+                        <ThemedText style={styles.response}>
+                            Oops... la bonne réponse était :
+                        </ThemedText>
+                        <ThemedText style={styles.response}>
+                            {currentGame.content3}
+                        </ThemedText>
+                    </>
                 )}
 
                 {currentGame.content5 === "quiz-noel" &&
@@ -72,13 +77,14 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
 };
 
 const styles = StyleSheet.create({
-    response: { fontFamily: "AnonymousProBold" },
+    response: { fontFamily: "PoppinsBold" },
     explanationsContainer: {
-        marginVertical: 20,
+        marginTop: 20,
+        marginBottom: 10,
     },
     explanations: {
         marginTop: 10,
-        fontSize: 18,
+        fontSize: 16,
         textAlign: "left",
     },
     videoContainer: { marginTop: 20 },
@@ -88,8 +94,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 20,
         paddingHorizontal: 20,
-        paddingVertical: 10,
-        fontFamily: "AnonymousProBold",
+        paddingTop: 10,
+        paddingBottom: 6,
+        fontFamily: "PoppinsBold",
+        marginBottom: 10,
     },
     finalText: { fontFamily: "AnonymousProBold", fontSize: 14, marginTop: 10 },
 });

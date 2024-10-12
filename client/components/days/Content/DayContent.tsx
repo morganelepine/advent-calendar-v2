@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         flexGrow: 1,
         alignContent: "center",
+        paddingHorizontal: 5,
     },
     contentContainer: {
         height: "33%",

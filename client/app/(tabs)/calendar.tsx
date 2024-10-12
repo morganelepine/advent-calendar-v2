@@ -3,6 +3,7 @@ import { StyleSheet, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
 import { Days } from "@/components/days/Days";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 interface Day {
     id: number;
@@ -46,33 +47,27 @@ export default function CalendarScreen() {
         }, [])
     );
 
+    const tabBarHeight = useBottomTabBarHeight(); // 49
+    // console.log({ tabBarHeight });
+
     return (
         <ImageBackground
             source={require("@/assets/images/annie.jpg")}
             resizeMode="cover"
-            style={styles.background}
+            style={{
+                flex: 1,
+            }}
         >
-            <SafeAreaView style={styles.safeArea}>
+            <SafeAreaView
+                style={{
+                    flex: 1,
+                    paddingBottom: tabBarHeight / 2,
+                }}
+            >
                 <Days days={days} />
             </SafeAreaView>
         </ImageBackground>
     );
 }
 
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        width: "100%",
-        height: "100%",
-    },
-    safeArea: {
-        flex: 1,
-        backgroundColor: "transparent",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        paddingBottom: 20,
-        // borderColor: "red",
-        // borderWidth: 2,
-    },
-});
+const styles = StyleSheet.create({});

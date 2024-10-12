@@ -44,7 +44,7 @@ export default function HomeScreen() {
                     console.error("Error saving uuid: ", error);
                 }
             } else {
-                // await AsyncStorage.removeItem("userUuid");
+                await AsyncStorage.removeItem("userUuid");
                 setFirstLaunch(false);
             }
         } catch (error) {

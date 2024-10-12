@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Dimensions, Image } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { CustomScrollView } from "@/components/custom-utils/ScrollView";
@@ -32,7 +32,27 @@ interface IdeaProps {
 }
 
 export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = useState<boolean>(false);
+
+    const [imageWidth, setImageWidth] = useState<number>(0);
+    const [imageHeight, setImageHeight] = useState<number>(0);
+
+    const screenWidth = Dimensions.get("window").width;
+    const maxHeight = 200;
+
+    ideas.forEach((idea) => {
+        const image = cld.image(idea.content4);
+        const imageUrl = image.toURL();
+
+        Image.getSize(imageUrl, (width, height) => {
+            const ratio = Math.min(screenWidth / width, maxHeight / height);
+            const adjustedWidth = width * ratio;
+            const adjustedHeight = height * ratio;
+
+            setImageWidth(adjustedWidth);
+            setImageHeight(adjustedHeight);
+        });
+    });
 
     return (
         <>
@@ -63,6 +83,20 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 </ThemedText>
                             ) : null}
 
+                            {idea.content5 === "Un livre" && idea.content4 ? (
+                                <View>
+                                    <AdvancedImage
+                                        cldImg={cld.image(idea.content4)}
+                                        style={[
+                                            styles.image,
+                                            { width: imageWidth },
+                                            { height: imageHeight },
+                                        ]}
+                                        resizeMode="contain"
+                                    />
+                                </View>
+                            ) : null}
+
                             <CustomMarkdown style={styles.description}>
                                 {idea.content2}
                             </CustomMarkdown>
@@ -72,16 +106,6 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                             idea.content4 ? (
                                 <View style={styles.video}>
                                     <Video videoId={idea.content4} />
-                                </View>
-                            ) : null}
-
-                            {idea.content5 === "Un livre" && idea.content4 ? (
-                                <View style={styles.imageContainer}>
-                                    <AdvancedImage
-                                        cldImg={cld.image(idea.content4)}
-                                        style={styles.image}
-                                        resizeMode="contain"
-                                    />
                                 </View>
                             ) : null}
 
@@ -110,39 +134,40 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
 const styles = StyleSheet.create({
     type: {
         backgroundColor: "#22311d",
-        paddingVertical: 5,
-        paddingHorizontal: 12,
+        paddingLeft: 10,
+        paddingRight: 14,
+        paddingTop: 6,
+        paddingBottom: 4,
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
         marginBottom: 20,
         alignSelf: "flex-start",
     },
-    typeText: { color: "white", fontSize: 14 },
-    title: { textAlign: "left", fontFamily: "AnonymousProBold" },
+    typeText: { color: "white", fontSize: 12 },
+    title: {
+        textAlign: "left",
+        fontFamily: "AnonymousProBold",
+        fontSize: 20,
+        marginBottom: 15,
+    },
     author: {
-        marginTop: 5,
-        marginBottom: 20,
-        fontSize: 14,
-        fontFamily: "AnonymousProItalic",
+        marginTop: -10,
+        marginBottom: 15,
+        fontSize: 12,
+        fontFamily: "PoppinsItalic",
         textAlign: "left",
     },
     description: {
         marginBottom: 5,
-        fontSize: 18,
         textAlign: "left",
     },
     video: {
         marginTop: 20,
     },
-    imageContainer: {
-        marginTop: 20,
-        width: "100%",
-        overflow: "hidden",
-    },
     image: {
-        width: "100%",
-        height: undefined,
-        aspectRatio: 1,
+        borderColor: "#22311d",
+        borderWidth: 0.2,
+        marginBottom: 5,
     },
     button: {
         backgroundColor: "#22311d",

@@ -1,4 +1,5 @@
 import { StyleSheet, View } from "react-native";
+import { GoBackButton } from "@/components/custom-utils/Buttons/GoBackButton";
 import { AudioPlayer } from "@/components/content/Audio";
 import { ThemedText } from "@/components/ThemedText";
 
@@ -13,6 +14,8 @@ export const DayHeader = () => {
 
     return (
         <View style={[styles.container]}>
+            <GoBackButton route={"/calendar"} />
+
             <ThemedText type="subtitle">{capitalizedToday}</ThemedText>
 
             <AudioPlayer />
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginHorizontal: 5,
-        marginTop: 5,
+        marginTop: 15,
         alignItems: "center",
     },
 });

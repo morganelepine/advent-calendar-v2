@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
 import { DayHeader } from "@/components/days/Content/DayHeader";
@@ -57,7 +58,7 @@ export const Day = () => {
     const insets = useSafeAreaInsets();
 
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
                 paddingBottom: insets.bottom,
@@ -65,7 +66,7 @@ export const Day = () => {
         >
             <DayHeader />
             <DayContent contents={contents} />
-        </View>
+        </SafeAreaView>
     );
 };
 
