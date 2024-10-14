@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { QuizAnswers } from "@/components/content/games/quiz/QuizAnswers";
 import { QuizExplanation } from "@/components/content/games/quiz/QuizExplanation";
@@ -17,9 +17,10 @@ interface Content {
 
 interface QuizProps {
     games: Content[];
+    setScore: () => Promise<void>;
 }
 
-export const Quiz: React.FC<QuizProps> = ({ games }) => {
+export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const currentGame = games[currentQuestionIndex];
@@ -28,6 +29,12 @@ export const Quiz: React.FC<QuizProps> = ({ games }) => {
     const handleAnswer = (answer: string) => {
         setSelectedAnswer(answer);
     };
+
+    useEffect(() => {
+        if (selectedAnswer === currentGame.content3) {
+            setScore();
+        }
+    }, [selectedAnswer]);
 
     const handleNextQuestion = () => {
         setSelectedAnswer(null);

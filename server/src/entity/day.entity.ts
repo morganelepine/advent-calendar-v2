@@ -8,6 +8,7 @@ import {
 import { Calendar } from "./calendar.entity";
 import { Content } from "./content.entity";
 import { DaysOpening } from "./days-opening.entity";
+import { Score } from "./score.entity";
 
 @Entity()
 export class Day {
@@ -25,4 +26,7 @@ export class Day {
 
     @OneToMany(() => DaysOpening, (days) => days.day)
     daysOpening: DaysOpening[];
+
+    @OneToMany(() => Score, (score) => score.day)
+    scoreHistory: Score[];
 }

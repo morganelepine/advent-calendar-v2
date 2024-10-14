@@ -2,6 +2,8 @@ import { useCallback, useState } from "react";
 import { StyleSheet, Pressable, ToastAndroid } from "react-native";
 import { router, useFocusEffect } from "expo-router";
 import { DayNumber } from "@/components/days/Button/DayNumber";
+import { saveScore } from "@/services/score.service";
+import { isDayOpen, addDayOpening } from "@/services/day.service";
 
 interface DayButtonProps {
     day: { id: number; dayNumber: number };
@@ -14,22 +16,6 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
     /*****************************************/
 
     const [dayIsOpen, setDayIsOpen] = useState<boolean | null>(null);
-
-    const isDayOpen = async (userUuid: string, day: number) => {
-        try {
-            const response = await fetch(
-                `http://192.168.1.16:3000/days-opened/${userUuid}/${day}`
-            );
-            if (!response.ok) {
-                throw new Error("Failed to check if the day is open");
-            }
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.log("Error checking if day is open: ", error);
-            return false;
-        }
-    };
 
     useFocusEffect(
         useCallback(() => {
@@ -46,22 +32,6 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
     /********** HANDLE DAY CLICK **********/
     /*****************************************/
 
-    const handleDayPress = async () => {
-        const today = new Date();
-
-        if (dayIsOpen) {
-            openDay();
-        }
-
-        if (day.dayNumber <= today.getDate()) {
-            await addDayOpening();
-            // await updateScore();
-            openDay();
-        } else {
-            ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);
-        }
-    };
-
     const openDay = () => {
         router.push({
             pathname: "/Days",
@@ -69,39 +39,19 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
         });
     };
 
-    const addDayOpening = async () => {
-        try {
-            const response = await fetch(
-                "http://192.168.1.16:3000/days-opened",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ userUuid: userUuid, dayId: day.id }),
-                }
-            );
-            if (!response.ok) {
-                throw new Error("Failed to add day's opening");
-            }
-        } catch (error) {
-            console.log("Error adding day opening: ", error);
-        }
-    };
+    const handleDayPress = async () => {
+        const today = new Date();
 
-    const updateScore = async () => {
-        try {
-            const response = await fetch(
-                `http://192.168.1.16:3000/users/${userUuid}`,
-                {
-                    method: "PATCH",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ score: 20 }),
-                }
-            );
-            if (!response.ok) {
-                throw new Error("Failed to update user's score");
+        if (dayIsOpen) {
+            openDay();
+        } else if (day.dayNumber <= today.getDate()) {
+            await addDayOpening(userUuid, day.id);
+            if (day.dayNumber === today.getDate()) {
+                await saveScore(userUuid, day.id, 25, "Ouverture du jour");
             }
-        } catch (error) {
-            console.log("Error updating user's score: ", error);
+            openDay();
+        } else {
+            ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);
         }
     };
 

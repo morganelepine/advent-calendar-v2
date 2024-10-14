@@ -1,10 +1,12 @@
 import {
     Entity,
+    OneToMany,
     PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
     UpdateDateColumn,
 } from "typeorm";
+import { Score } from "./score.entity";
 
 @Entity()
 export class User {
@@ -16,6 +18,9 @@ export class User {
 
     @Column({ default: 0 })
     score: number;
+
+    @OneToMany(() => Score, (score) => score.user)
+    scoreHistory: Score[];
 
     @CreateDateColumn()
     createdAt: Date;

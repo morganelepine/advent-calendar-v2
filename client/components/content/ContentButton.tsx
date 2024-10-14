@@ -1,5 +1,12 @@
+import { useEffect, useState } from "react";
 import { StyleSheet, Pressable, ImageBackground } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemedText } from "@/components/ThemedText";
+import { saveScore } from "../../services/score.service";
+import {
+    getContentTitle,
+    getContentBackgroundImage,
+} from "../../services/content.service";
 
 interface Content {
     id: number;
@@ -17,6 +24,7 @@ interface ContentButtonProps {
     ideas?: Content[];
     games?: Content[];
     setModalVisible: (visible: boolean) => void;
+    dayId: number | null;
 }
 
 export const ContentButton: React.FC<ContentButtonProps> = ({
@@ -33,56 +41,38 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     ideas = [],
     games = [],
     setModalVisible,
+    dayId,
 }) => {
-    const getImage = (content: Content, ideas: Content[], games: Content[]) => {
-        if (ideas.length > 0) {
-            return require("@/assets/images/content_background/se-divertir.jpg");
-        }
-        if (games.length > 0) {
-            return require("@/assets/images/content_background/s-amuser.jpg");
-        }
-        switch (content.type) {
-            case "quote":
-                return require("@/assets/images/content_background/s-inspirer.jpg");
-            case "recipe":
-                return require("@/assets/images/content_background/se-regaler.jpg");
-            case "anecdote":
-                return require("@/assets/images/content_background/s-instruire.jpg");
-        }
-    };
-    const image = getImage(content, ideas, games);
+    const backgroundImage = getContentBackgroundImage(content, ideas, games);
 
-    const getTitle = (content: Content, ideas: Content[], games: Content[]) => {
-        if (ideas.length > 0) {
-            return "Se divertir";
-        }
-        if (games.length > 0) {
-            return "S'amuser";
-        }
-        switch (content.type) {
-            case "quote":
-                return "S'inspirer";
-            case "recipe":
-                return "Se régaler";
-            case "anecdote":
-                return "S'instuire";
-            default:
-                return "Contenu du jour";
-        }
+    const [userUuid, setUserUuid] = useState<string>("");
+    useEffect(() => {
+        const getUserUuid = async () => {
+            const uuid = await AsyncStorage.getItem("userUuid");
+            if (uuid) {
+                setUserUuid(uuid);
+            }
+        };
+        getUserUuid();
+    }, []);
+
+    const handleContentOpening = async () => {
+        const today = new Date();
+        let score = dayId === today.getDate() ? 12 : 6;
+
+        await saveScore(userUuid, dayId, score, "Ouverture d'un contenu");
+        setModalVisible(true);
     };
 
     return (
         <ImageBackground
-            source={image}
+            source={backgroundImage}
             resizeMode="cover"
-            style={styles.background}
+            style={styles.backgroundImage}
         >
-            <Pressable
-                style={[styles.button]}
-                onPress={() => setModalVisible(true)}
-            >
-                <ThemedText style={[styles.title]} type="subtitle">
-                    {getTitle(content, ideas, games)}
+            <Pressable style={styles.button} onPress={handleContentOpening}>
+                <ThemedText style={styles.title} type="subtitle">
+                    {getContentTitle(content, ideas, games)}
                 </ThemedText>
             </Pressable>
         </ImageBackground>
@@ -90,7 +80,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
 };
 
 const styles = StyleSheet.create({
-    background: {
+    backgroundImage: {
         flex: 1,
     },
     button: {

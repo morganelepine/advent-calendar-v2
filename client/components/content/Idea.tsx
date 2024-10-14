@@ -29,9 +29,10 @@ interface Content {
 
 interface IdeaProps {
     ideas: Content[];
+    dayId: number | null;
 }
 
-export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
+export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
 
     const [imageWidth, setImageWidth] = useState<number>(0);
@@ -41,22 +42,28 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
     const maxHeight = 200;
 
     ideas.forEach((idea) => {
-        const image = cld.image(idea.content4);
-        const imageUrl = image.toURL();
+        if (idea.content5 === "Un livre") {
+            const image = cld.image(idea.content4);
+            const imageUrl = image.toURL();
 
-        Image.getSize(imageUrl, (width, height) => {
-            const ratio = Math.min(screenWidth / width, maxHeight / height);
-            const adjustedWidth = width * ratio;
-            const adjustedHeight = height * ratio;
+            Image.getSize(imageUrl, (width, height) => {
+                const ratio = Math.min(screenWidth / width, maxHeight / height);
+                const adjustedWidth = width * ratio;
+                const adjustedHeight = height * ratio;
 
-            setImageWidth(adjustedWidth);
-            setImageHeight(adjustedHeight);
-        });
+                setImageWidth(adjustedWidth);
+                setImageHeight(adjustedHeight);
+            });
+        }
     });
 
     return (
         <>
-            <ContentButton ideas={ideas} setModalVisible={setModalVisible} />
+            <ContentButton
+                ideas={ideas}
+                setModalVisible={setModalVisible}
+                dayId={dayId}
+            />
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
@@ -97,17 +104,15 @@ export const Idea: React.FC<IdeaProps> = ({ ideas }) => {
                                 </View>
                             ) : null}
 
-                            <CustomMarkdown style={styles.description}>
-                                {idea.content2}
-                            </CustomMarkdown>
-
                             {(idea.content5 === "Une série" ||
                                 idea.content5 === "Des films") &&
                             idea.content4 ? (
-                                <View style={styles.video}>
-                                    <Video videoId={idea.content4} />
-                                </View>
+                                <Video videoId={idea.content4} />
                             ) : null}
+
+                            <CustomMarkdown style={styles.description}>
+                                {idea.content2}
+                            </CustomMarkdown>
 
                             {(idea.content5 === "Une playlist" ||
                                 idea.content5 === "Un jeu") &&
@@ -160,9 +165,6 @@ const styles = StyleSheet.create({
     description: {
         marginBottom: 5,
         textAlign: "left",
-    },
-    video: {
-        marginTop: 20,
     },
     image: {
         borderColor: "#22311d",

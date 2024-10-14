@@ -19,7 +19,9 @@ interface Content {
 
 export const Day = () => {
     const params = useLocalSearchParams();
-    const dayId = params.dayId;
+    const day: string | string[] = params.dayId;
+    const dayId = Array.isArray(params.dayId) ? params.dayId[0] : params.dayId;
+    const parsedDayId = dayId ? parseInt(dayId, 10) : null;
 
     const [contents, setContents] = useState<Content[]>([]);
 
@@ -43,7 +45,7 @@ export const Day = () => {
         const fetchContent = async () => {
             try {
                 const response = await fetch(
-                    `http://192.168.1.16:3000/days/${dayId}/contents`
+                    `http://192.168.1.16:3000/days/${day}/contents`
                 );
                 const data = await response.json();
                 sortContents(data);
@@ -53,7 +55,7 @@ export const Day = () => {
             }
         };
         fetchContent();
-    }, [dayId]);
+    }, [day]);
 
     const insets = useSafeAreaInsets();
 
@@ -65,7 +67,7 @@ export const Day = () => {
             }}
         >
             <DayHeader />
-            <DayContent contents={contents} />
+            <DayContent contents={contents} dayId={parsedDayId} />
         </SafeAreaView>
     );
 };

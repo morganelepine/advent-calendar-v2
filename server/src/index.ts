@@ -7,6 +7,7 @@ import { CalendarRoutes } from "./routes/calendar.routes";
 import { DayRoutes } from "./routes/day.routes";
 import { ContentRoutes } from "./routes/content.routes";
 import { DaysOpeningRoutes } from "./routes/days-opening.routes";
+import { ScoreRoutes } from "./routes/score.routes";
 
 function registerRoutes(app: Application, routes: any[]) {
     routes.forEach((route) => {
@@ -56,6 +57,7 @@ AppDataSource.initialize()
         registerRoutes(app, DayRoutes);
         registerRoutes(app, ContentRoutes);
         registerRoutes(app, DaysOpeningRoutes);
+        registerRoutes(app, ScoreRoutes);
 
         // setup express app here
         // ...
@@ -64,7 +66,7 @@ AppDataSource.initialize()
         app.listen(PORT);
 
         console.log(
-            "Express server has started on port 3000. Open http://localhost:3000/users to see results"
+            `Express server has started on port ${PORT}. Open http://localhost:${PORT}/users to see results`
         );
     })
     .catch((error) => console.log(error));

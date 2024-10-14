@@ -18,9 +18,10 @@ interface Content {
 
 interface DayContentProps {
     contents: Content[];
+    dayId: number | null;
 }
 
-export const DayContent: React.FC<DayContentProps> = ({ contents }) => {
+export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
     const contentsByType: {
         quote?: Content;
         recipe?: Content;
@@ -53,31 +54,31 @@ export const DayContent: React.FC<DayContentProps> = ({ contents }) => {
         <View style={[styles.contentsContainer]}>
             {contentsByType.quote && (
                 <View style={[styles.contentContainer, { width: "100%" }]}>
-                    <Quote content={contentsByType.quote} />
+                    <Quote content={contentsByType.quote} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.anecdote && (
                 <View style={[styles.contentContainer, { width: "45%" }]}>
-                    <Anecdote content={contentsByType.anecdote} />
+                    <Anecdote content={contentsByType.anecdote} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.recipe && (
                 <View style={[styles.contentContainer, { width: "55%" }]}>
-                    <Recipe content={contentsByType.recipe} />
+                    <Recipe content={contentsByType.recipe} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.ideas.length > 0 && (
                 <View style={[styles.contentContainer, { width: "60%" }]}>
-                    <Idea ideas={contentsByType.ideas} />
+                    <Idea ideas={contentsByType.ideas} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.games.length > 0 && (
                 <View style={[styles.contentContainer, { width: "40%" }]}>
-                    <Game games={contentsByType.games} />
+                    <Game games={contentsByType.games} dayId={dayId} />
                 </View>
             )}
         </View>

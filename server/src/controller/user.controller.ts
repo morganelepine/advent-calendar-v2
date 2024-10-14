@@ -32,25 +32,6 @@ export class UserController {
         return "User has been created";
     }
 
-    async update(request: Request, response: Response, next: NextFunction) {
-        const uuid = request.params.uuid;
-        const { score } = request.body;
-
-        const userToUpdate = await this.userRepository.findOne({
-            where: { uuid },
-        });
-        if (!userToUpdate) {
-            return "This user not exist";
-        }
-
-        if (score !== undefined) {
-            userToUpdate.score = score;
-        }
-
-        await this.userRepository.save(userToUpdate);
-        return "User has been updated";
-    }
-
     async remove(request: Request, response: Response, next: NextFunction) {
         const uuid = request.params.uuid;
 

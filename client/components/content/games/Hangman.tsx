@@ -18,9 +18,10 @@ interface Content {
 
 interface HangmanProps {
     game: Content;
+    setScore: () => Promise<void>;
 }
 
-export const Hangman: React.FC<HangmanProps> = ({ game }) => {
+export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
     const words = game.content1.toUpperCase().split(",");
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const currentWord = words[currentWordIndex];
@@ -75,6 +76,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game }) => {
 
     useEffect(() => {
         if (currentWord === hiddenWord.join("")) {
+            setScore();
             setModalMessage("Félicitations 🥳");
             setModalVisible(true);
         }

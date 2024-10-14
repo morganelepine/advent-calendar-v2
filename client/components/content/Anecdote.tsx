@@ -17,9 +17,10 @@ interface AnecdoteProps {
         content4: string;
         content5: string;
     };
+    dayId: number | null;
 }
 
-export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
+export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -27,6 +28,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content }) => {
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
+                dayId={dayId}
             />
             <CustomModal
                 isVisible={modalVisible}

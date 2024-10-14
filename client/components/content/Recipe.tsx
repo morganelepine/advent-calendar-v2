@@ -31,9 +31,10 @@ interface RecipeProps {
         content4: string;
         content5: string;
     };
+    dayId: number | null;
 }
 
-export const Recipe: React.FC<RecipeProps> = ({ content }) => {
+export const Recipe: React.FC<RecipeProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     let image = new CloudinaryImage(content.content3, cloudConfig, urlConfig);
@@ -43,6 +44,7 @@ export const Recipe: React.FC<RecipeProps> = ({ content }) => {
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
+                dayId={dayId}
             />
             <CustomModal
                 isVisible={modalVisible}

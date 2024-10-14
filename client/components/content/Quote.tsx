@@ -15,9 +15,10 @@ interface QuoteProps {
         content4: string;
         content5: string;
     };
+    dayId: number | null;
 }
 
-export const Quote: React.FC<QuoteProps> = ({ content }) => {
+export const Quote: React.FC<QuoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -25,6 +26,7 @@ export const Quote: React.FC<QuoteProps> = ({ content }) => {
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
+                dayId={dayId}
             />
 
             <CustomModal

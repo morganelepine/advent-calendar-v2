@@ -7,7 +7,6 @@ import {
     Index,
 } from "typeorm";
 import { Day } from "./day.entity";
-import { User } from "./user.entity";
 
 @Entity()
 @Index(["userUuid", "day"], { unique: true })
@@ -18,12 +17,9 @@ export class DaysOpening {
     @ManyToOne(() => Day, (day) => day.daysOpening)
     day: Day;
 
-    // @ManyToOne(() => User, (user) => user.daysOpening)
-    // user: User;
-
     @Column()
     userUuid: string;
 
     @CreateDateColumn()
-    createdAt: Date;
+    openAt: Date;
 }

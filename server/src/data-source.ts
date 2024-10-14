@@ -5,6 +5,7 @@ import { Calendar } from "./entity/calendar.entity";
 import { Day } from "./entity/day.entity";
 import { DaysOpening } from "./entity/days-opening.entity";
 import { Content } from "./entity/content.entity";
+import { Score } from "./entity/score.entity";
 import { config } from "dotenv";
 config();
 
@@ -20,7 +21,7 @@ export const AppDataSource = new DataSource({
     database: DB_DATABASE,
     synchronize: NODE_ENV === "dev",
     logging: false,
-    entities: [User, Calendar, Day, DaysOpening, Content], // "entity/*.js"
+    entities: [User, Calendar, Day, DaysOpening, Content, Score], // "entity/*.js"
     migrations: [],
     subscribers: [],
 });

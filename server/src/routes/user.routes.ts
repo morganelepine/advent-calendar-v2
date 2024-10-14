@@ -20,12 +20,6 @@ export const UserRoutes = [
         action: "save",
     },
     {
-        method: "patch",
-        route: "/users/:uuid",
-        controller: UserController,
-        action: "update",
-    },
-    {
         method: "delete",
         route: "/users/:uuid",
         controller: UserController,

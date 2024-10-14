@@ -18,7 +18,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: "Days to Christmas",
+                    title: "Compte à rebours",
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "gift" : "gift-outline"}
@@ -30,10 +30,26 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="calendar"
                 options={{
-                    title: "Advent calendar",
+                    title: "Calendrier de l'avent",
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "calendar" : "calendar-outline"}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="rules"
+                options={{
+                    title: "Règles du jeu",
+                    tabBarIcon: ({ color, focused }) => (
+                        <TabBarIcon
+                            name={
+                                focused
+                                    ? "game-controller"
+                                    : "game-controller-outline"
+                            }
                             color={color}
                         />
                     ),
@@ -43,22 +59,6 @@ export default function TabLayout() {
                 name="day"
                 options={{
                     href: null,
-                }}
-            /> */}
-            {/* <Tabs.Screen
-                name="admin"
-                options={{
-                    title: "Admin",
-                    tabBarIcon: ({ color, focused }) => (
-                        <TabBarIcon
-                            name={
-                                focused
-                                    ? "extension-puzzle"
-                                    : "extension-puzzle-outline"
-                            }
-                            color={color}
-                        />
-                    ),
                 }}
             /> */}
         </Tabs>
