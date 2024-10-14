@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     modalTitle: {
-        color: "#22311d",
+        color: "#165d4b",
         fontSize: 32,
         fontFamily: "AnonymousProBold",
         textAlign: "center",

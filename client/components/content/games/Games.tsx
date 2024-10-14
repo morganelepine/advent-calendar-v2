@@ -65,7 +65,7 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
 
 const styles = StyleSheet.create({
     title: {
-        color: "#22311d",
+        color: "#165d4b",
         marginTop: 10,
         fontFamily: "AnonymousProBold",
         marginBottom: 20,

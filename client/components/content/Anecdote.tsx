@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     title: {
         textAlign: "left",
         fontFamily: "AnonymousProBold",
-        color: "#22311d",
+        color: "#165d4b",
     },
     anecdote: {
         marginVertical: 20,

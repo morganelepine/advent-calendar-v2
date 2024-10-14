@@ -11,6 +11,6 @@ export const ScoreRoutes = [
         method: "get",
         route: "/scores/user/:uuid",
         controller: ScoreController,
-        action: "getUserSCore",
+        action: "getUserScore",
     },
 ];

@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
     letter: {
         paddingHorizontal: 16,
         paddingVertical: 8,
-        backgroundColor: "#22311d",
+        backgroundColor: "#165d4b",
         borderRadius: 50,
     },
     clickedLetter: {
-        color: "#22311d",
+        color: "#165d4b",
         backgroundColor: "white",
         opacity: 0.4,
     },

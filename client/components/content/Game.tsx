@@ -45,7 +45,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
         const today = new Date();
         let score = dayId === today.getDate() ? 12 : 6;
 
-        await saveScore(userUuid, dayId, score, "Bonne réponse à un jeu");
+        await saveScore(userUuid, dayId, score, "une bonne réponse à un jeu");
     };
 
     return (

@@ -27,11 +27,11 @@ export default function HomeScreen() {
             console.log({ newUserUuid });
 
             await saveUser(newUserUuid, 0);
-            await saveScore(newUserUuid, day, 40, "Première connexion");
+            await saveScore(newUserUuid, day, 40, "la première connexion");
 
             setFirstLaunch(true);
         } else {
-            await AsyncStorage.removeItem("userUuid");
+            // await AsyncStorage.removeItem("userUuid");
             setFirstLaunch(false);
         }
     };

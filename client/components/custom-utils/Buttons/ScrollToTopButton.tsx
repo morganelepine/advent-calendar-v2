@@ -33,7 +33,7 @@ export const ScrollToTopButton = forwardRef<ScrollView, ScrollToTopButtonProps>(
                     <Ionicons
                         name={"chevron-up-outline"}
                         size={25}
-                        color={"#22311d"}
+                        color={"#165d4b"}
                     />
                 </Text>
             </Pressable>

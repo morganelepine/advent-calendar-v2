@@ -13,6 +13,9 @@ export default function TabLayout() {
             screenOptions={{
                 tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
                 headerShown: false,
+                tabBarStyle: {
+                    // position: "absolute",
+                },
             }}
         >
             <Tabs.Screen
@@ -40,9 +43,9 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="rules"
+                name="score"
                 options={{
-                    title: "Règles du jeu",
+                    title: "Score",
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={

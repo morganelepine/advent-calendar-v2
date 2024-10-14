@@ -30,17 +30,19 @@ export const CustomModal: React.FC<CustomModalProps> = ({
     const getTitle = () => {
         switch (contentType) {
             case "quote":
-                return "Citation";
+                return "Citation du jour";
             case "recipe":
-                return "Recette";
+                return "Recette du jour";
             case "ideas":
-                return "Recommandation";
+                return "Recommandation du jour";
             case "anecdote":
-                return "Anecdote";
+                return "Anecdote du jour";
             case "game":
-                return "Jeu";
+                return "Jeu du jour";
             case "quiz":
-                return "Quiz";
+                return "Quiz du jour";
+            case "rules":
+                return "Règles pour gagner des points";
         }
     };
 
@@ -65,8 +67,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                     >
                         <View style={styles.background} />
 
-                        <ThemedText type="modalTitle">
-                            {getTitle()} du&nbsp;jour
+                        <ThemedText type="modalTitle" style={styles.modalTitle}>
+                            {getTitle()}
                         </ThemedText>
 
                         {children}
@@ -78,7 +80,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                             <Ionicons
                                 name={"close-outline"}
                                 size={35}
-                                color="#22311d"
+                                color="#165d4b"
                             />
                         </TouchableOpacity>
                     </View>
@@ -112,5 +114,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         flex: 1,
     },
+    modalTitle: { paddingHorizontal: 15 },
     closeButton: { marginTop: 10 },
 });

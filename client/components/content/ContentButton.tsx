@@ -60,7 +60,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
         const today = new Date();
         let score = dayId === today.getDate() ? 12 : 6;
 
-        await saveScore(userUuid, dayId, score, "Ouverture d'un contenu");
+        await saveScore(userUuid, dayId, score, "l'ouverture d'un contenu");
         setModalVisible(true);
     };
 

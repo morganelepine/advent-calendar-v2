@@ -47,7 +47,12 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
         } else if (day.dayNumber <= today.getDate()) {
             await addDayOpening(userUuid, day.id);
             if (day.dayNumber === today.getDate()) {
-                await saveScore(userUuid, day.id, 25, "Ouverture du jour");
+                await saveScore(
+                    userUuid,
+                    day.id,
+                    25,
+                    "l'ouverture de la case du jour"
+                );
             }
             openDay();
         } else {

@@ -41,10 +41,16 @@ export class ScoreController {
             },
         });
 
-        if (reason === "Ouverture d'un contenu" && scoreOfTheDay.length >= 5) {
+        if (
+            reason === "l'ouverture d'un contenu" &&
+            scoreOfTheDay.length >= 5
+        ) {
             return "All points for content openings have been awarded";
         }
-        if (reason === "Bonne réponse à un jeu" && scoreOfTheDay.length >= 4) {
+        if (
+            reason === "une bonne réponse à un jeu" &&
+            scoreOfTheDay.length >= 4
+        ) {
             return "All points for the game have been awarded";
         }
 
@@ -61,7 +67,7 @@ export class ScoreController {
         return "Score is saved";
     }
 
-    async getUserSCore(
+    async getUserScore(
         request: Request,
         response: Response,
         next: NextFunction
@@ -70,17 +76,34 @@ export class ScoreController {
 
         const user = await this.userRepository.findOne({
             where: { uuid },
-            relations: ["pointsHistory"],
+            relations: ["scoreHistory", "scoreHistory.day"],
         });
 
         if (!user) {
             return "Unregistered user";
         }
 
-        return user;
-        // {
-        //     score: user.score,
-        //     pointsHistory: user.scoreHistory,
-        // }
+        const scoresByDate = user.scoreHistory.reduce(
+            (groupedScores, score) => {
+                const earnedAtDate = score.earnedAt.toLocaleDateString("fr-FR");
+
+                if (!groupedScores[earnedAtDate]) {
+                    groupedScores[earnedAtDate] = [];
+                }
+
+                groupedScores[earnedAtDate].push({
+                    id: score.id,
+                    points: score.points,
+                    reason: score.reason,
+                    day: score.day,
+                    earnedAt: score.earnedAt,
+                });
+
+                return groupedScores;
+            },
+            {} as Record<string, any[]>
+        );
+
+        return { score: user.score, scoresByDate: scoresByDate };
     }
 }

@@ -138,7 +138,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
 
 const styles = StyleSheet.create({
     type: {
-        backgroundColor: "#22311d",
+        backgroundColor: "#165d4b",
         paddingLeft: 10,
         paddingRight: 14,
         paddingTop: 6,
@@ -167,12 +167,12 @@ const styles = StyleSheet.create({
         textAlign: "left",
     },
     image: {
-        borderColor: "#22311d",
+        borderColor: "#165d4b",
         borderWidth: 0.2,
         marginBottom: 5,
     },
     button: {
-        backgroundColor: "#22311d",
+        backgroundColor: "#165d4b",
         padding: 10,
         borderRadius: 20,
         marginVertical: 20,

@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginVertical: 20,
-        color: "#22311d",
+        color: "#165d4b",
     },
     paragraph: {
         textAlign: "left",
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         marginBottom: 5,
-        color: "#22311d",
+        color: "#165d4b",
         textAlign: "left",
         fontSize: 18,
     },
