@@ -10,6 +10,7 @@ import { Rules } from "@/components/score/Rules";
 import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
 import { Score } from "@/components/score/Score";
+import { MenuButton } from "@/components/navigation/MenuButton";
 
 interface Day {
     id: number;
@@ -27,7 +28,7 @@ interface ScoreHistoryType {
     [date: string]: Score[];
 }
 
-export default function RulesScreen() {
+export default function ScoreScreen() {
     const scrollViewRef = useRef<ScrollView>(null);
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -79,7 +80,7 @@ export default function RulesScreen() {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/fond-blanc-pommedepin.jpg")}
+            source={require("@/assets/images/canva-bottom.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >
@@ -88,7 +89,11 @@ export default function RulesScreen() {
 
                 <TotalScore score={score} />
 
-                <ScrollView ref={scrollViewRef} style={styles.container}>
+                <ScrollView
+                    ref={scrollViewRef}
+                    style={styles.container}
+                    persistentScrollbar={true} // Android only
+                >
                     {groupedScores.map(([date, { openOnTime, openLate }]) => (
                         <ScoreHistory
                             key={date}
@@ -104,7 +109,7 @@ export default function RulesScreen() {
                     />
                 </ScrollView>
 
-                <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton>
+                {/* <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton> */}
             </SafeAreaView>
         </ImageBackground>
     );
@@ -122,10 +127,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        paddingBottom: 80,
     },
     container: {
         flex: 1,
-        paddingHorizontal: 25,
+        paddingHorizontal: 20,
         width: "100%",
     },
 });

@@ -1,6 +1,5 @@
 import { StyleSheet, View } from "react-native";
 import { Quote } from "@/components/content/Quote";
-import { Recipe } from "@/components/content/Recipe";
 import { Anecdote } from "@/components/content/Anecdote";
 import { Idea } from "@/components/content/Idea";
 import { Game } from "@/components/content/Game";
@@ -24,7 +23,6 @@ interface DayContentProps {
 export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
     const contentsByType: {
         quote?: Content;
-        recipe?: Content;
         anecdote?: Content;
         ideas: Content[];
         games: Content[];
@@ -34,9 +32,6 @@ export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
         switch (content.type) {
             case "quote":
                 contentsByType.quote = content;
-                break;
-            case "recipe":
-                contentsByType.recipe = content;
                 break;
             case "anecdote":
                 contentsByType.anecdote = content;
@@ -53,31 +48,25 @@ export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
     return (
         <View style={[styles.contentsContainer]}>
             {contentsByType.quote && (
-                <View style={[styles.contentContainer, { width: "100%" }]}>
+                <View style={styles.contentContainer}>
                     <Quote content={contentsByType.quote} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.anecdote && (
-                <View style={[styles.contentContainer, { width: "45%" }]}>
+                <View style={styles.contentContainer}>
                     <Anecdote content={contentsByType.anecdote} dayId={dayId} />
                 </View>
             )}
 
-            {contentsByType.recipe && (
-                <View style={[styles.contentContainer, { width: "55%" }]}>
-                    <Recipe content={contentsByType.recipe} dayId={dayId} />
-                </View>
-            )}
-
             {contentsByType.ideas.length > 0 && (
-                <View style={[styles.contentContainer, { width: "60%" }]}>
+                <View style={styles.contentContainer}>
                     <Idea ideas={contentsByType.ideas} dayId={dayId} />
                 </View>
             )}
 
             {contentsByType.games.length > 0 && (
-                <View style={[styles.contentContainer, { width: "40%" }]}>
+                <View style={styles.contentContainer}>
                     <Game games={contentsByType.games} dayId={dayId} />
                 </View>
             )}
@@ -92,9 +81,12 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         alignContent: "center",
         paddingHorizontal: 5,
+        // borderWidth: 2,
+        // borderColor: "red",
     },
     contentContainer: {
-        height: "33%",
+        width: "100%",
+        height: "25%",
         padding: 5,
     },
 });

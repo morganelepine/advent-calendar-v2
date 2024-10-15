@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: 25,
+        paddingHorizontal: 20,
         width: "100%",
     },
     button: {
         borderRadius: 50,
-        backgroundColor: "#b52936",
+        backgroundColor: "#d6ae72",
         paddingHorizontal: 10,
         paddingTop: 5,
         paddingBottom: 3,
@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: "white",
         fontSize: 12,
+        fontFamily: "PoppinsBold",
     },
 });

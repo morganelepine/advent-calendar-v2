@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, Pressable } from "react-native";
 import { Audio, AVPlaybackStatus } from "expo-av";
 import { useCallback, useEffect, useState } from "react";
 import { useFocusEffect } from "expo-router";
@@ -59,13 +59,13 @@ export const AudioPlayer = ({}) => {
     );
 
     return (
-        <TouchableOpacity onPress={togglePlayPause} style={styles.iconButton}>
+        <Pressable onPress={togglePlayPause} style={styles.iconButton}>
             <Ionicons
                 name={isPlaying ? "pause-circle" : "play-circle-outline"}
                 size={40}
                 color={Colors[colorScheme ?? "light"].tint}
             />
-        </TouchableOpacity>
+        </Pressable>
     );
 };
 

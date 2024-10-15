@@ -23,7 +23,7 @@ export const CustomMarkdown: React.FC<CustomMarkdownProps> = ({
 
 const styles = StyleSheet.create({
     body: {
-        color: "#165d4b",
+        color: "#22311d",
         textAlign: "center",
         fontFamily: "Poppins",
         fontSize: 16,

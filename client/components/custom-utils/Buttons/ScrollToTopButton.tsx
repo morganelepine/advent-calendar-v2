@@ -33,7 +33,7 @@ export const ScrollToTopButton = forwardRef<ScrollView, ScrollToTopButtonProps>(
                     <Ionicons
                         name={"chevron-up-outline"}
                         size={25}
-                        color={"#165d4b"}
+                        color={"white"}
                     />
                 </Text>
             </Pressable>
@@ -43,16 +43,16 @@ export const ScrollToTopButton = forwardRef<ScrollView, ScrollToTopButtonProps>(
 
 const styles = StyleSheet.create({
     button: {
-        padding: 8,
+        padding: 6,
         alignSelf: "center",
         position: "absolute",
-        bottom: 10,
+        bottom: 50,
         right: 10,
     },
     buttonBackground: {
         ...StyleSheet.absoluteFillObject, // Remplit tout l'espace du parent
-        backgroundColor: "white",
-        opacity: 0.5,
+        backgroundColor: "#d6ae72",
+        // opacity: 0.5,
         borderRadius: 50,
     },
     buttonText: {

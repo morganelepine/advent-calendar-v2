@@ -2,11 +2,8 @@ import { StyleSheet, View, Text } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import Animated, {
     useAnimatedStyle,
-    useSharedValue,
-    withSpring,
     withTiming,
 } from "react-native-reanimated";
-import { useEffect } from "react";
 
 interface TotalScoreProps {
     score: number;
@@ -41,7 +38,7 @@ export const TotalScore: React.FC<TotalScoreProps> = ({ score }) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 25,
+        paddingHorizontal: 20,
         width: "100%",
     },
 

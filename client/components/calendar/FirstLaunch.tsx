@@ -15,18 +15,20 @@ export const FirstLaunch = () => {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/sapin.jpg")}
+            source={require("@/assets/images/canva-bottom.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >
-            <View style={[styles.background]} />
-
             <SafeAreaView style={styles.safeArea}>
-                <ScrollView ref={scrollViewRef} style={styles.container}>
-                    <ThemedText type="modalTitle" style={styles.title}>
-                        Bienvenue dans votre Calendrier de l'avent
-                    </ThemedText>
+                <ThemedText type="modalTitle" style={styles.title}>
+                    Bienvenue dans votre calendrier de l'avent
+                </ThemedText>
 
+                <ScrollView
+                    ref={scrollViewRef}
+                    style={styles.container}
+                    persistentScrollbar={true} // Android only
+                >
                     <View style={styles.section}>
                         <ThemedText style={[styles.paragraph, styles.ital]}>
                             Chaque jour, plongez dans la magie de Noël et
@@ -46,7 +48,7 @@ export const FirstLaunch = () => {
 
                     <View style={styles.section}>
                         <ThemedText type="subtitle" style={styles.sectionTitle}>
-                            🎄 Citation festive
+                            🎄 Une citation festive
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Une citation inspirante vous plonger dans l'esprit
@@ -56,17 +58,7 @@ export const FirstLaunch = () => {
 
                     <View style={styles.section}>
                         <ThemedText type="subtitle" style={styles.sectionTitle}>
-                            🍪 Recette gourmande
-                        </ThemedText>
-                        <ThemedText style={styles.paragraph}>
-                            Une recette gourmande pour vous régaler et partager
-                            de délicieux moments avec vos proches.
-                        </ThemedText>
-                    </View>
-
-                    <View style={styles.section}>
-                        <ThemedText type="subtitle" style={styles.sectionTitle}>
-                            🎅 Anecdote de Noël
+                            🎅 Une anecdote de Noël
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
                             Une anecdote sur les traditions et l’histoire de
@@ -76,20 +68,20 @@ export const FirstLaunch = () => {
 
                     <View style={styles.section}>
                         <ThemedText type="subtitle" style={styles.sectionTitle}>
-                            📖 Recommandation
+                            🍪 Une recommandation
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
-                            Livre, série, activité... : une idée pour
+                            Livre, série, activité, recette... : une idée pour
                             accompagner vos journées et soirées d'hiver.
                         </ThemedText>
                     </View>
 
                     <View style={styles.section}>
                         <ThemedText type="subtitle" style={styles.sectionTitle}>
-                            🎮 Jeu du jour
+                            🎮 Un mini-jeu
                         </ThemedText>
                         <ThemedText style={styles.paragraph}>
-                            Un mini-jeu pour mettre vos connaissances de Noël à
+                            Un jeu pour mettre vos connaissances de Noël à
                             l’épreuve.
                         </ThemedText>
                     </View>
@@ -119,7 +111,7 @@ export const FirstLaunch = () => {
                         Commencer l'aventure 🚀
                     </CustomButton>
                 </ScrollView>
-                <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton>
+                {/* <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton> */}
             </SafeAreaView>
         </ImageBackground>
     );
@@ -142,13 +134,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        paddingBottom: 80,
     },
     container: {
         flex: 1,
         paddingHorizontal: 20,
     },
     title: {
+        paddingHorizontal: 20,
+        width: "100%",
         marginVertical: 20,
+        textAlign: "left",
         color: "#165d4b",
     },
     paragraph: {
@@ -165,6 +161,5 @@ const styles = StyleSheet.create({
     },
     ital: {
         fontFamily: "PoppinsItalic",
-        textAlign: "center",
     },
 });

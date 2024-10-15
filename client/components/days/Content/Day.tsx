@@ -66,7 +66,7 @@ export const Day = () => {
                 paddingBottom: insets.bottom,
             }}
         >
-            <DayHeader />
+            <DayHeader dayId={parsedDayId} />
             <DayContent contents={contents} dayId={parsedDayId} />
         </SafeAreaView>
     );

@@ -34,7 +34,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
 
     const openDay = () => {
         router.push({
-            pathname: "/Days",
+            pathname: "/day",
             params: { dayId: day.id },
         });
     };

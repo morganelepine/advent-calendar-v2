@@ -54,8 +54,8 @@ export default function RootLayout() {
             >
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
-                <Stack.Screen
-                    name="Days"
+                {/* <Stack.Screen
+                    name="day"
                     options={{
                         title: "Retour au calendrier",
                         headerShown: false,
@@ -72,7 +72,7 @@ export default function RootLayout() {
                             </View>
                         ),
                     }}
-                />
+                /> */}
             </Stack>
         </ThemeProvider>
     );

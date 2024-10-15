@@ -74,6 +74,6 @@ const styles = StyleSheet.create({
         color: "#136F63",
         opacity: 0.4,
         borderColor: "#136F63",
-        borderWidth: 0.3,
+        borderWidth: 0.6,
     },
 });

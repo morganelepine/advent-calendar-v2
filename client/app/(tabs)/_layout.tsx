@@ -15,6 +15,7 @@ export default function TabLayout() {
                 headerShown: false,
                 tabBarStyle: {
                     // position: "absolute",
+                    // display: "none",
                 },
             }}
         >
@@ -22,6 +23,7 @@ export default function TabLayout() {
                 name="index"
                 options={{
                     title: "Compte à rebours",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "gift" : "gift-outline"}
@@ -33,7 +35,8 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="calendar"
                 options={{
-                    title: "Calendrier de l'avent",
+                    title: "Calendrier",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "calendar" : "calendar-outline"}
@@ -46,6 +49,7 @@ export default function TabLayout() {
                 name="score"
                 options={{
                     title: "Score",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={
@@ -58,12 +62,25 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            {/* <Tabs.Screen
+            <Tabs.Screen
+                name="informations"
+                options={{
+                    title: "Informations",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
+                    tabBarIcon: ({ color, focused }) => (
+                        <TabBarIcon
+                            name={focused ? "snow" : "snow-outline"}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
                 name="day"
                 options={{
                     href: null,
                 }}
-            /> */}
+            />
         </Tabs>
     );
 }

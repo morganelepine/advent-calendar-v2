@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
 import { Days } from "@/components/days/Days";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface Day {
     id: number;
@@ -49,6 +50,8 @@ export default function CalendarScreen() {
 
     const tabBarHeight = useBottomTabBarHeight(); // 49
     // console.log({ tabBarHeight });
+    const insets = useSafeAreaInsets();
+    // console.log({ insets });
 
     return (
         <ImageBackground
@@ -61,7 +64,7 @@ export default function CalendarScreen() {
             <SafeAreaView
                 style={{
                     flex: 1,
-                    paddingBottom: tabBarHeight / 2,
+                    paddingBottom: insets.top,
                 }}
             >
                 <Days days={days} />

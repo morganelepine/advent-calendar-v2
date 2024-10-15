@@ -3,7 +3,7 @@ import {
     StyleSheet,
     View,
     Modal,
-    TouchableOpacity,
+    Pressable,
     ImageBackground,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -73,16 +73,13 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 
                         {children}
 
-                        <TouchableOpacity
-                            onPress={onClose}
-                            style={styles.closeButton}
-                        >
+                        <Pressable onPress={onClose} style={styles.closeButton}>
                             <Ionicons
                                 name={"close-outline"}
                                 size={35}
                                 color="#165d4b"
                             />
-                        </TouchableOpacity>
+                        </Pressable>
                     </View>
                 </View>
             </ImageBackground>

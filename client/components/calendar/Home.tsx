@@ -1,6 +1,7 @@
 import { StyleSheet, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
+import { MenuButton } from "@/components/navigation/MenuButton";
 
 export const Home = () => {
     const MILLISECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
@@ -26,6 +27,8 @@ export const Home = () => {
             style={styles.background}
         >
             <SafeAreaView style={styles.safeArea}>
+                <MenuButton />
+
                 <ThemedText type="homeTitle" style={styles.text1}>
                     Plus que
                 </ThemedText>

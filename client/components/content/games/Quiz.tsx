@@ -69,7 +69,6 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
 
 const styles = StyleSheet.create({
     question: {
-        fontFamily: "AnonymousProItalic",
         marginVertical: 20,
     },
 });
