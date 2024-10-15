@@ -1,4 +1,4 @@
-import { ContentController } from "../controller/content.controller";
+import { ContentController } from "../controllers/content.controller";
 
 export const ContentRoutes = [
     {

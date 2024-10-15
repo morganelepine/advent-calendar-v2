@@ -1,4 +1,4 @@
-import { DaysOpeningController } from "../controller/days-opening.controller";
+import { DaysOpeningController } from "../controllers/days-opening.controller";
 
 export const DaysOpeningRoutes = [
     {

@@ -1,4 +1,4 @@
-import { CalendarController } from "../controller/calendar.controller";
+import { CalendarController } from "../controllers/calendar.controller";
 
 export const CalendarRoutes = [
     {

@@ -21,7 +21,7 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({
     openLate,
 }) => {
     return (
-        <View key={date} style={styles.section}>
+        <View style={styles.section}>
             <ThemedText type="subtitle" style={styles.scoresDate}>
                 {date}
             </ThemedText>

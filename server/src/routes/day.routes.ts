@@ -1,4 +1,4 @@
-import { DayController } from "../controller/day.controller";
+import { DayController } from "../controllers/day.controller";
 
 export const DayRoutes = [
     {

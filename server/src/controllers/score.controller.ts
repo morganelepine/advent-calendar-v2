@@ -77,6 +77,11 @@ export class ScoreController {
         const user = await this.userRepository.findOne({
             where: { uuid },
             relations: ["scoreHistory", "scoreHistory.day"],
+            order: {
+                scoreHistory: {
+                    day: { id: "DESC" },
+                },
+            },
         });
 
         if (!user) {

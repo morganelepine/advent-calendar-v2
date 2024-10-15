@@ -91,6 +91,7 @@ export default function RulesScreen() {
                 <ScrollView ref={scrollViewRef} style={styles.container}>
                     {groupedScores.map(([date, { openOnTime, openLate }]) => (
                         <ScoreHistory
+                            key={date}
                             date={date}
                             openOnTime={openOnTime}
                             openLate={openLate}

@@ -1,4 +1,4 @@
-import { ScoreController } from "../controller/score.controller";
+import { ScoreController } from "../controllers/score.controller";
 
 export const ScoreRoutes = [
     {
