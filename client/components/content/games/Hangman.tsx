@@ -129,51 +129,8 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
 const styles = StyleSheet.create({
     quizTitle: {
         marginVertical: 10,
-    },
-    infos: {
-        marginTop: 5,
-        marginBottom: 20,
-    },
-    info: {
-        fontSize: 16,
-    },
-    alphabet: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        marginTop: 20,
-    },
-    letter: {
-        fontFamily: "AnonymousProBold",
-        fontSize: 28,
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        margin: 5,
-        backgroundColor: "#165d4b",
-        borderRadius: 50,
-        alignItems: "center",
-        color: "white",
-    },
-    clickedLetter: {
-        color: "#165d4b",
-        backgroundColor: "white",
-        opacity: 0.4,
+        fontFamily: "PallyBold",
+        fontSize: 22,
     },
     hiddenWord: { fontSize: 30, marginVertical: 20 },
-    modal: { justifyContent: "center", flex: 1, gap: 20 },
-    modalButton: {
-        color: "#136F63",
-        borderColor: "#136F63",
-        borderWidth: 2,
-        margin: 5,
-        borderRadius: 20,
-        paddingHorizontal: 20,
-        paddingVertical: 14,
-        fontFamily: "AnonymousProBold",
-    },
-    modalFinalText: {
-        fontFamily: "AnonymousProBold",
-        fontSize: 14,
-        marginTop: 10,
-    },
 });

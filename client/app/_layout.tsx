@@ -23,10 +23,11 @@ export default function RootLayout() {
         AnonymousPro: require("../assets/fonts/Anonymous/AnonymousPro-Regular.ttf"),
         AnonymousProBold: require("../assets/fonts/Anonymous/AnonymousPro-Bold.ttf"),
         AnonymousProItalic: require("../assets/fonts/Anonymous/AnonymousPro-Italic.ttf"),
-        AnonymousProBoldItalic: require("../assets/fonts/Anonymous/AnonymousPro-BoldItalic.ttf"),
         Poppins: require("../assets/fonts/Poppins/Poppins-Regular.ttf"),
         PoppinsBold: require("../assets/fonts/Poppins/Poppins-SemiBold.ttf"),
         PoppinsItalic: require("../assets/fonts/Poppins/Poppins-Italic.ttf"),
+        Pally: require("../assets/fonts/Pally_Complete/Fonts/OTF/Pally-Regular.otf"),
+        PallyBold: require("../assets/fonts/Pally_Complete/Fonts/OTF/Pally-Bold.otf"),
     });
 
     useEffect(() => {
@@ -47,32 +48,13 @@ export default function RootLayout() {
                 screenOptions={{
                     headerTintColor: "#fff",
                     headerTitleStyle: {
-                        fontFamily: "AnonymousPro",
+                        fontFamily: "Pally",
                     },
                     headerBackTitleVisible: false,
                 }}
             >
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
-                {/* <Stack.Screen
-                    name="day"
-                    options={{
-                        title: "Retour au calendrier",
-                        headerShown: false,
-                        headerTitle: (props) => (
-                            <View
-                                style={{
-                                    flex: 1,
-                                    flexDirection: "row",
-                                }}
-                            >
-                                <ThemedText type="headerTab">
-                                    {props.children}
-                                </ThemedText>
-                            </View>
-                        ),
-                    }}
-                /> */}
             </Stack>
         </ThemeProvider>
     );

@@ -75,9 +75,12 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
 
                         {gamesByType.quizCitation.length > 0 && (
                             <>
-                                <ThemedText style={styles.quizTitle}>
+                                <ThemedText
+                                    type="modalSubtitle"
+                                    style={{ textAlign: "center" }}
+                                >
                                     À quel film de Noël appartient cette
-                                    réplique ?
+                                    réplique&nbsp;?
                                 </ThemedText>
                                 <Quiz
                                     games={gamesByType.quizCitation}
@@ -88,8 +91,8 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
 
                         {gamesByType.quizNoel.length > 0 && (
                             <>
-                                <ThemedText style={styles.quizTitle}>
-                                    Êtes-vous incollable sur Noël ?
+                                <ThemedText type="modalSubtitle">
+                                    Êtes-vous incollable sur&nbsp;Noël&nbsp;?
                                 </ThemedText>
                                 <Quiz
                                     games={gamesByType.quizNoel}
@@ -110,10 +113,5 @@ const styles = StyleSheet.create({
     },
     title: {
         marginTop: 10,
-    },
-    quizTitle: {
-        fontFamily: "AnonymousProBold",
-        fontSize: 24,
-        marginBottom: 15,
     },
 });

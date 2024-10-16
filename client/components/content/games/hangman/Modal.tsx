@@ -60,8 +60,9 @@ const styles = StyleSheet.create({
         margin: 5,
         borderRadius: 20,
         paddingHorizontal: 20,
-        paddingVertical: 14,
-        fontFamily: "AnonymousProBold",
+        paddingTop: 14,
+        paddingBottom: 8,
+        fontFamily: "PoppinsBold",
     },
     modalFinalText: {
         fontFamily: "AnonymousProBold",

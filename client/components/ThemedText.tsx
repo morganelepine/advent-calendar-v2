@@ -10,9 +10,11 @@ export type ThemedTextProps = TextProps & {
         | "calendarDay"
         | "homeTitle"
         | "subtitle"
+        | "sectionSubtitle"
+        | "sectionText"
         | "link"
         | "modalTitle"
-        | "headerTab";
+        | "modalSubtitle";
 };
 
 export function ThemedText({
@@ -32,9 +34,11 @@ export function ThemedText({
                 type === "calendarDay" ? styles.calendarDay : undefined,
                 type === "homeTitle" ? styles.homeTitle : undefined,
                 type === "subtitle" ? styles.subtitle : undefined,
+                type === "sectionSubtitle" ? styles.sectionSubtitle : undefined,
+                type === "sectionText" ? styles.sectionText : undefined,
                 type === "link" ? styles.link : undefined,
                 type === "modalTitle" ? styles.modalTitle : undefined,
-                type === "headerTab" ? styles.headerTab : undefined,
+                type === "modalSubtitle" ? styles.modalSubtitle : undefined,
 
                 style,
             ]}
@@ -57,30 +61,48 @@ const styles = StyleSheet.create({
         color: "white",
     },
     homeTitle: {
-        fontSize: 50,
-        fontFamily: "SpecialElite",
+        fontSize: 55,
+        fontFamily: "PallyBold",
         textAlign: "center",
         color: "white",
     },
     subtitle: {
-        fontSize: 22,
-        fontFamily: "AnonymousProBold",
+        fontSize: 16,
+        fontFamily: "Poppins",
         textAlign: "center",
+        letterSpacing: 1,
+    },
+    sectionSubtitle: {
+        fontFamily: "PallyBold",
+        letterSpacing: 1,
+        color: "#165d4b",
+        textAlign: "left",
+        fontSize: 18,
+    },
+    sectionText: {
+        fontSize: 16,
+        fontFamily: "Poppins",
+        textAlign: "left",
+        color: "#22311d",
     },
     link: {
         fontSize: 20,
-        fontFamily: "AnonymousPro",
+        fontFamily: "Pally",
         color: "white",
     },
     modalTitle: {
         color: "#165d4b",
         fontSize: 32,
-        fontFamily: "AnonymousProBold",
+        fontFamily: "PallyBold",
         textAlign: "center",
+        letterSpacing: 3,
         marginVertical: 20,
     },
-    headerTab: {
-        fontSize: 15,
-        fontFamily: "AnonymousPro",
+    modalSubtitle: {
+        color: "#22311d",
+        fontSize: 22,
+        fontFamily: "PallyBold",
+        textAlign: "left",
+        letterSpacing: 1,
     },
 });

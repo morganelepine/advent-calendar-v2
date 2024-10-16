@@ -72,13 +72,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 <CustomScrollView>
                     {ideas.map((idea) => (
                         <View key={idea.id}>
-                            <View style={styles.type}>
-                                <ThemedText style={styles.typeText}>
-                                    {idea.content5}
-                                </ThemedText>
-                            </View>
-
-                            <ThemedText style={styles.title}>
+                            <ThemedText type="modalSubtitle">
                                 {idea.title}
                             </ThemedText>
 
@@ -124,7 +118,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                                     <ThemedText style={styles.buttonText}>
                                         {idea.title.includes("Bingo")
                                             ? "Télécharger le bingo"
-                                            : "Voir la playlist"}
+                                            : "Écouter la playlist"}
                                     </ThemedText>
                                 </ExternalLink>
                             ) : null}
@@ -137,24 +131,6 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
 };
 
 const styles = StyleSheet.create({
-    type: {
-        backgroundColor: "#165d4b",
-        paddingLeft: 10,
-        paddingRight: 14,
-        paddingTop: 6,
-        paddingBottom: 4,
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 20,
-        marginBottom: 20,
-        alignSelf: "flex-start",
-    },
-    typeText: { color: "white", fontSize: 12 },
-    title: {
-        textAlign: "left",
-        fontFamily: "AnonymousProBold",
-        fontSize: 20,
-        marginBottom: 15,
-    },
     author: {
         marginTop: -10,
         marginBottom: 15,
@@ -175,7 +151,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#165d4b",
         padding: 10,
         borderRadius: 20,
-        marginVertical: 20,
+        marginBottom: 20,
         textAlign: "center",
     },
     buttonText: { color: "white" },

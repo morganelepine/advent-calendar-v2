@@ -17,7 +17,7 @@ const tintColorDark = paleGold;
 export const Colors = {
     light: {
         text: "#11181C",
-        background: "#f7f5f6",
+        background: snow,
         tint: tintColorLight,
         icon: "#687076",
         tabIconDefault: "#687076",
@@ -27,8 +27,8 @@ export const Colors = {
         text: "#ECEDEE",
         background: "#151718",
         tint: tintColorDark,
-        icon: "#eee6d9",
-        tabIconDefault: "#eee6d9",
+        icon: paleGold,
+        tabIconDefault: paleGold,
         tabIconSelected: tintColorDark,
     },
 };

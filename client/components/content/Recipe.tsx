@@ -99,8 +99,8 @@ export const Recipe: React.FC<RecipeProps> = ({ content, dayId }) => {
 const styles = StyleSheet.create({
     title: {
         textAlign: "center",
-        fontFamily: "AnonymousProBold",
-        fontSize: 20,
+        fontFamily: "Pally",
+        fontSize: 24,
         marginBottom: 20,
     },
     recipe: {
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     },
     contentContainer: { textAlign: "left", marginTop: 20 },
     contentTitle: {
-        fontFamily: "AnonymousProBold",
+        fontFamily: "PallyBold",
         textAlign: "left",
         marginBottom: 10,
         fontSize: 22,

@@ -37,7 +37,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
             >
                 <CustomScrollView>
                     <View>
-                        <ThemedText type="subtitle" style={styles.title}>
+                        <ThemedText type="modalSubtitle">
                             {content.title}
                         </ThemedText>
 
@@ -51,7 +51,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
 
                         {content.content4 ? (
                             <>
-                                <ThemedText style={styles.video2}>
+                                <ThemedText style={styles.video}>
                                     Et en version moins classique...
                                 </ThemedText>
                                 <Video videoId={content.content4} />
@@ -68,18 +68,13 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
     },
-    title: {
-        textAlign: "left",
-        fontFamily: "AnonymousProBold",
-        color: "#165d4b",
-    },
     anecdote: {
         marginVertical: 20,
         textAlign: "left",
     },
-    video2: {
-        fontSize: 15,
-        fontFamily: "AnonymousProItalic",
+    video: {
+        fontSize: 14,
+        fontFamily: "PoppinsItalic",
         marginVertical: 10,
     },
 });

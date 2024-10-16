@@ -44,7 +44,11 @@ export default function HomeScreen() {
         );
     }
 
-    return <>{firstLaunch ? <FirstLaunch /> : <Home />}</>;
+    return (
+        <>
+            {firstLaunch ? <FirstLaunch firstLaunch={firstLaunch} /> : <Home />}
+        </>
+    );
 }
 
 const styles = StyleSheet.create({

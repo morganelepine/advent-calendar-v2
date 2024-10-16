@@ -22,9 +22,7 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({
 }) => {
     return (
         <View style={styles.section}>
-            <ThemedText type="subtitle" style={styles.scoresDate}>
-                {date}
-            </ThemedText>
+            <ThemedText style={styles.scoresDate}>{date}</ThemedText>
 
             {openOnTime.map((score) => (
                 <Score key={score.id} score={score} />
@@ -55,14 +53,15 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
     },
     scoresDate: {
-        fontSize: 18,
-        borderRadius: 50,
-        backgroundColor: "#165d4b",
+        fontFamily: "Pally",
+        fontSize: 16,
         color: "white",
+        backgroundColor: "#165d4b",
+        borderRadius: 50,
+        alignSelf: "flex-start",
         paddingHorizontal: 14,
         paddingTop: 6,
         paddingBottom: 8,
         marginBottom: 10,
-        alignSelf: "flex-start",
     },
 });

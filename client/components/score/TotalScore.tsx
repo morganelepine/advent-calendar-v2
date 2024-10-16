@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     },
 
     bold: {
-        fontFamily: "PoppinsBold",
+        fontFamily: "PallyBold",
     },
     score: {
-        fontSize: 40,
+        fontSize: 50,
         marginVertical: 10,
     },
 

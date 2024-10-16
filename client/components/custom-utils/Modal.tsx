@@ -34,9 +34,9 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             case "recipe":
                 return "Recette du jour";
             case "ideas":
-                return "Recommandation du jour";
+                return "Recommandation du\u00A0jour";
             case "anecdote":
-                return "Anecdote du jour";
+                return "Anecdote du\u00A0jour";
             case "game":
                 return "Jeu du jour";
             case "quiz":

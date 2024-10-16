@@ -80,7 +80,7 @@ export default function ScoreScreen() {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/canva-bottom.png")}
+            source={require("@/assets/images/4.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >
@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        paddingBottom: 80,
     },
     container: {
         flex: 1,

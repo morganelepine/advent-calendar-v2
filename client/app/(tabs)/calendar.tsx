@@ -31,14 +31,14 @@ export default function CalendarScreen() {
                         "http://192.168.1.16:3000/days"
                     );
                     const data = await response.json();
-                    if (!hasShuffled) {
-                        const shuffledData = shuffleDays([...data]);
-                        setDays(shuffledData);
-                        setHasShuffled(true);
-                    } else {
-                        setDays(data);
-                    }
-                    // setDays(data);
+                    // if (!hasShuffled) {
+                    //     const shuffledData = shuffleDays([...data]);
+                    //     setDays(shuffledData);
+                    //     setHasShuffled(true);
+                    // } else {
+                    //     setDays(data);
+                    // }
+                    setDays(data);
                 } catch (error) {
                     console.error("Error fetching days:", error);
                 }

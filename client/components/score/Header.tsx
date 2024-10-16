@@ -8,7 +8,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ setModalVisible }) => {
     return (
         <View style={styles.header}>
-            <ThemedText type="modalTitle">Scores</ThemedText>
             <Pressable
                 onPress={() => setModalVisible(true)}
                 style={styles.button}
@@ -24,7 +23,9 @@ export const Header: React.FC<HeaderProps> = ({ setModalVisible }) => {
 const styles = StyleSheet.create({
     header: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
+        paddingTop: 40,
+        paddingBottom: 15,
         paddingHorizontal: 20,
         width: "100%",
     },

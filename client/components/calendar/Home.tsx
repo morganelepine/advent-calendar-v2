@@ -1,4 +1,4 @@
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
 import { MenuButton } from "@/components/navigation/MenuButton";
@@ -22,20 +22,19 @@ export const Home = () => {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/sapin.jpg")}
+            source={require("@/assets/images/home/1.png")}
             resizeMode="cover"
             style={styles.background}
         >
             <SafeAreaView style={styles.safeArea}>
                 <MenuButton />
 
-                <ThemedText type="homeTitle" style={styles.text1}>
-                    Plus que
-                </ThemedText>
-                <ThemedText type="homeTitle" style={styles.text2}>
-                    {daysToChristmas} nuits
-                </ThemedText>
-                <ThemedText type="homeTitle">avant Noël</ThemedText>
+                <View style={styles.textContainer}>
+                    <ThemedText type="homeTitle" style={styles.text1}>
+                        {daysToChristmas} nuits
+                    </ThemedText>
+                    <ThemedText type="homeTitle">avant Noël</ThemedText>
+                </View>
             </SafeAreaView>
         </ImageBackground>
     );
@@ -54,10 +53,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "column",
     },
+    textContainer: {
+        marginBottom: 150,
+    },
     text1: {
         letterSpacing: 8,
-    },
-    text2: {
-        letterSpacing: 9,
     },
 });

@@ -24,11 +24,11 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
 
     return (
         <View key={game.id}>
-            <ThemedText style={styles.title}>Charade de Noël</ThemedText>
+            <ThemedText type="modalSubtitle" style={styles.title}>
+                Charade de Noël
+            </ThemedText>
 
-            {game.content1 ? (
-                <CustomMarkdown>{game.content1}</CustomMarkdown>
-            ) : null}
+            <CustomMarkdown>{game.content1}</CustomMarkdown>
 
             <CustomButton
                 onPress={() => {
@@ -53,9 +53,7 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
                     ) : null}
 
                     {game.content4 ? (
-                        <ThemedText style={styles.explanation}>
-                            {game.content4}
-                        </ThemedText>
+                        <ThemedText>{game.content4}</ThemedText>
                     ) : null}
                 </View>
             )}
@@ -65,22 +63,16 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
 
 const styles = StyleSheet.create({
     title: {
-        color: "#165d4b",
-        marginTop: 10,
-        fontFamily: "AnonymousProBold",
         marginBottom: 20,
+        textAlign: "center",
     },
     shortAnswer: {
-        fontFamily: "AnonymousProBold",
-        fontSize: 24,
-        marginBottom: 10,
-    },
-    longAnswer: {
-        fontFamily: "AnonymousProBold",
+        fontFamily: "PallyBold",
         fontSize: 20,
         marginBottom: 10,
     },
-    explanation: {
-        fontFamily: "AnonymousProItalic",
+    longAnswer: {
+        color: "#165d4b",
+        marginBottom: 10,
     },
 });
