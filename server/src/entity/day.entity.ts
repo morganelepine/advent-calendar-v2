@@ -1,11 +1,4 @@
-import {
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    Column,
-} from "typeorm";
-import { Calendar } from "./calendar.entity";
+import { Entity, OneToMany, PrimaryGeneratedColumn, Column } from "typeorm";
 import { Content } from "./content.entity";
 import { DaysOpening } from "./days-opening.entity";
 import { Score } from "./score.entity";
@@ -15,11 +8,11 @@ export class Day {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => Calendar)
-    calendar: Calendar;
-
     @Column()
     dayNumber: number;
+
+    @Column()
+    image: string;
 
     @OneToMany(() => Content, (content) => content.day)
     contents: Content[];

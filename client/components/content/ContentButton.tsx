@@ -7,6 +7,13 @@ import {
     getContentTitle,
     getContentBackgroundImage,
 } from "../../services/content.service";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: "deauthz29",
+    },
+});
 
 interface Content {
     id: number;
@@ -43,7 +50,20 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     setModalVisible,
     dayId,
 }) => {
-    const backgroundImage = getContentBackgroundImage(content, ideas, games);
+    const [image, setImage] = useState<string>();
+    const [isImageReady, setIsImageReady] = useState<boolean>(false);
+    useEffect(() => {
+        const backgroundImage = getContentBackgroundImage(
+            content,
+            ideas,
+            games
+        );
+        if (backgroundImage) {
+            setImage(backgroundImage);
+            setIsImageReady(true);
+        }
+    }, []);
+    let backgroundImage = cld.image(image);
 
     const [userUuid, setUserUuid] = useState<string>("");
     useEffect(() => {
@@ -65,17 +85,24 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     };
 
     return (
-        <ImageBackground
-            source={backgroundImage}
-            resizeMode="cover"
-            style={styles.backgroundImage}
-        >
-            <Pressable style={styles.button} onPress={handleContentOpening}>
-                <ThemedText style={styles.title}>
-                    {getContentTitle(content, ideas, games)}
-                </ThemedText>
-            </Pressable>
-        </ImageBackground>
+        <>
+            {isImageReady && (
+                <ImageBackground
+                    source={{ uri: backgroundImage.toURL() }}
+                    resizeMode="cover"
+                    style={styles.backgroundImage}
+                >
+                    <Pressable
+                        style={styles.button}
+                        onPress={handleContentOpening}
+                    >
+                        <ThemedText style={styles.title}>
+                            {getContentTitle(content, ideas, games)}
+                        </ThemedText>
+                    </Pressable>
+                </ImageBackground>
+            )}
+        </>
     );
 };
 
@@ -93,5 +120,6 @@ const styles = StyleSheet.create({
         fontSize: 24,
         letterSpacing: 3,
         fontFamily: "PallyBold",
+        textAlign: "center",
     },
 });

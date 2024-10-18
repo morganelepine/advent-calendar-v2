@@ -14,7 +14,7 @@ export const AudioPlayer = ({}) => {
 
     const playSound = async () => {
         const { sound } = await Audio.Sound.createAsync(
-            require("../../assets/musics/jingle-bells-rock.mp3")
+            require("../../assets/musics/we-wish-you-a-merry-christmas.mp3")
         );
         setSound(sound);
         await sound.playAsync();

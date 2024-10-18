@@ -1,11 +1,9 @@
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/user.entity";
-import { Calendar } from "../entity/calendar.entity";
 import { Day } from "../entity/day.entity";
 
 async function seedDB() {
     const userRepository = AppDataSource.getRepository(User);
-    const calendarRepository = AppDataSource.getRepository(Calendar);
     const dayRepository = AppDataSource.getRepository(Day);
 
     // Insert users
@@ -21,17 +19,9 @@ async function seedDB() {
 
     console.log("Two users have been added to the database.");
 
-    // Create calendar
-    const calendar = new Calendar();
-    calendar.title = "Noël";
-
-    await calendarRepository.save(calendar);
-    console.log("A calendar has been added to the database.");
-
     // Add days to the calendar
     for (let i = 1; i <= 24; i++) {
         const day = new Day();
-        day.calendar = calendar;
         day.dayNumber = i;
 
         await dayRepository.save(day);

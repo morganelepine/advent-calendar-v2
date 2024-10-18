@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { StyleSheet, View, Dimensions, Image } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
+import { StyleSheet, Dimensions, Image, View } from "react-native";
 import { CustomModal } from "@/components/custom-utils/Modal";
 import { CustomScrollView } from "@/components/custom-utils/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
-import { Video } from "@/components/custom-utils/Video";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
-import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { ExternalLink } from "@/components/utils/ExternalLink";
+import { Reco } from "@/components/content/ideas/Reco";
+import { Recipe } from "@/components/content/ideas/Recipe";
 
 const cld = new Cloudinary({
     cloud: {
@@ -72,56 +69,15 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 <CustomScrollView>
                     {ideas.map((idea) => (
                         <View key={idea.id}>
-                            <ThemedText type="modalSubtitle">
-                                {idea.title}
-                            </ThemedText>
-
-                            <CustomMarkdown>{idea.content1}</CustomMarkdown>
-
-                            {idea.content3 ? (
-                                <ThemedText style={styles.author}>
-                                    de {idea.content3}
-                                </ThemedText>
-                            ) : null}
-
-                            {idea.content5 === "Un livre" && idea.content4 ? (
-                                <View>
-                                    <AdvancedImage
-                                        cldImg={cld.image(idea.content4)}
-                                        style={[
-                                            styles.image,
-                                            { width: imageWidth },
-                                            { height: imageHeight },
-                                        ]}
-                                        resizeMode="contain"
-                                    />
-                                </View>
-                            ) : null}
-
-                            {(idea.content5 === "Une série" ||
-                                idea.content5 === "Des films") &&
-                            idea.content4 ? (
-                                <Video videoId={idea.content4} />
-                            ) : null}
-
-                            <CustomMarkdown style={styles.description}>
-                                {idea.content2}
-                            </CustomMarkdown>
-
-                            {(idea.content5 === "Une playlist" ||
-                                idea.content5 === "Un jeu") &&
-                            idea.content4 ? (
-                                <ExternalLink
-                                    href={idea.content4}
-                                    style={styles.button}
-                                >
-                                    <ThemedText style={styles.buttonText}>
-                                        {idea.title.includes("Bingo")
-                                            ? "Télécharger le bingo"
-                                            : "Écouter la playlist"}
-                                    </ThemedText>
-                                </ExternalLink>
-                            ) : null}
+                            {idea.content5 === "Une recette" ? (
+                                <Recipe content={idea} />
+                            ) : (
+                                <Reco
+                                    idea={idea}
+                                    imageWidth={imageWidth}
+                                    imageHeight={imageHeight}
+                                />
+                            )}
                         </View>
                     ))}
                 </CustomScrollView>
@@ -130,29 +86,4 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    author: {
-        marginTop: -10,
-        marginBottom: 15,
-        fontSize: 12,
-        fontFamily: "PoppinsItalic",
-        textAlign: "left",
-    },
-    description: {
-        marginBottom: 5,
-        textAlign: "left",
-    },
-    image: {
-        borderColor: "#165d4b",
-        borderWidth: 0.2,
-        marginBottom: 5,
-    },
-    button: {
-        backgroundColor: "#165d4b",
-        padding: 10,
-        borderRadius: 20,
-        marginBottom: 20,
-        textAlign: "center",
-    },
-    buttonText: { color: "white" },
-});
+const styles = StyleSheet.create({});

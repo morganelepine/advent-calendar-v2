@@ -1,7 +1,6 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { User } from "./entity/user.entity";
-import { Calendar } from "./entity/calendar.entity";
 import { Day } from "./entity/day.entity";
 import { DaysOpening } from "./entity/days-opening.entity";
 import { Content } from "./entity/content.entity";
@@ -21,7 +20,7 @@ export const AppDataSource = new DataSource({
     database: DB_DATABASE,
     synchronize: NODE_ENV === "dev",
     logging: false,
-    entities: [User, Calendar, Day, DaysOpening, Content, Score], // "entity/*.js"
+    entities: [User, Day, DaysOpening, Content, Score], // "entity/*.js"
     migrations: [],
     subscribers: [],
 });

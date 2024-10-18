@@ -60,4 +60,27 @@ export class DayController {
                 .json({ message: "Server error", error });
         }
     }
+
+    async getDayImage(
+        request: Request,
+        response: Response,
+        next: NextFunction
+    ) {
+        try {
+            const id = this.validateDayId(request, response);
+            const day = await this.dayRepository.findOne({
+                where: { id },
+            });
+
+            if (!day) {
+                return response.status(404).json({ message: "Day not found" });
+            }
+
+            return day.image;
+        } catch (error) {
+            return response
+                .status(500)
+                .json({ message: "Server error", error });
+        }
+    }
 }

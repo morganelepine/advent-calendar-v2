@@ -3,7 +3,6 @@ import * as bodyParser from "body-parser";
 import { Application, Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import { UserRoutes } from "./routes/user.routes";
-import { CalendarRoutes } from "./routes/calendar.routes";
 import { DayRoutes } from "./routes/day.routes";
 import { ContentRoutes } from "./routes/content.routes";
 import { DaysOpeningRoutes } from "./routes/days-opening.routes";
@@ -53,7 +52,6 @@ AppDataSource.initialize()
 
         // register express routes from defined application routes
         registerRoutes(app, UserRoutes);
-        registerRoutes(app, CalendarRoutes);
         registerRoutes(app, DayRoutes);
         registerRoutes(app, ContentRoutes);
         registerRoutes(app, DaysOpeningRoutes);

@@ -31,18 +31,14 @@ export const CustomModal: React.FC<CustomModalProps> = ({
         switch (contentType) {
             case "quote":
                 return "Citation du jour";
-            case "recipe":
-                return "Recette du jour";
             case "ideas":
-                return "Recommandation du\u00A0jour";
+                return "Idée du jour";
             case "anecdote":
                 return "Anecdote du\u00A0jour";
             case "game":
                 return "Jeu du jour";
             case "quiz":
                 return "Quiz du jour";
-            case "rules":
-                return "Règles pour gagner des points";
         }
     };
 
@@ -88,13 +84,13 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 };
 
 const styles = StyleSheet.create({
+    imageBackground: {
+        flex: 1,
+    },
     centeredView: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-    },
-    imageBackground: {
-        flex: 1,
     },
     background: {
         ...StyleSheet.absoluteFillObject,

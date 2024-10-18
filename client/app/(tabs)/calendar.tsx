@@ -1,11 +1,18 @@
 import React, { useCallback, useState } from "react";
 import { StyleSheet, ImageBackground } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+    SafeAreaView,
+    useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
 import { Days } from "@/components/days/Days";
-import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Cloudinary } from "@cloudinary/url-gen";
 
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: "deauthz29",
+    },
+});
 interface Day {
     id: number;
     dayNumber: number;
@@ -31,14 +38,14 @@ export default function CalendarScreen() {
                         "http://192.168.1.16:3000/days"
                     );
                     const data = await response.json();
-                    // if (!hasShuffled) {
-                    //     const shuffledData = shuffleDays([...data]);
-                    //     setDays(shuffledData);
-                    //     setHasShuffled(true);
-                    // } else {
-                    //     setDays(data);
-                    // }
-                    setDays(data);
+                    if (!hasShuffled) {
+                        const shuffledData = shuffleDays([...data]);
+                        setDays(shuffledData);
+                        setHasShuffled(true);
+                    } else {
+                        setDays(data);
+                    }
+                    // setDays(data);
                 } catch (error) {
                     console.error("Error fetching days:", error);
                 }
@@ -48,14 +55,13 @@ export default function CalendarScreen() {
         }, [])
     );
 
-    const tabBarHeight = useBottomTabBarHeight(); // 49
-    // console.log({ tabBarHeight });
     const insets = useSafeAreaInsets();
-    // console.log({ insets });
+    const backgroundImage = cld.image("sapin_sao6oe");
 
     return (
         <ImageBackground
-            source={require("@/assets/images/annie.jpg")}
+            source={{ uri: backgroundImage.toURL() }}
+            defaultSource={require("@/assets/images/sapin-rouge.jpg")}
             resizeMode="cover"
             style={{
                 flex: 1,

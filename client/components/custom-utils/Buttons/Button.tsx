@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
+        textAlign: "center",
     },
 });

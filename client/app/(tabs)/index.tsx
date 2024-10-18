@@ -46,7 +46,14 @@ export default function HomeScreen() {
 
     return (
         <>
-            {firstLaunch ? <FirstLaunch firstLaunch={firstLaunch} /> : <Home />}
+            {firstLaunch ? (
+                <FirstLaunch
+                    firstLaunch={firstLaunch}
+                    setFirstLaunch={setFirstLaunch}
+                />
+            ) : (
+                <Home />
+            )}
         </>
     );
 }

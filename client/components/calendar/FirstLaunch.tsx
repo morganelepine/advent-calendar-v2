@@ -1,20 +1,34 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { StyleSheet, View, ScrollView, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { CustomButton } from "@/components/custom-utils/Buttons/Button";
-import { ScrollToTopButton } from "@/components/custom-utils/Buttons/ScrollToTopButton";
 import { ThemedText } from "@/components/ThemedText";
 
 interface FirstLaunchProps {
     firstLaunch: boolean;
+    setFirstLaunch: (firstLaunch: boolean) => void;
 }
-export const FirstLaunch: React.FC<FirstLaunchProps> = ({ firstLaunch }) => {
+
+export const FirstLaunch: React.FC<FirstLaunchProps> = ({
+    firstLaunch,
+    setFirstLaunch,
+}) => {
     const handleStart = () => {
         router.push("/calendar");
     };
 
     const scrollViewRef = useRef<ScrollView>(null);
+
+    useFocusEffect(
+        useCallback(() => {
+            return () => {
+                if (firstLaunch) {
+                    setFirstLaunch(false);
+                }
+            };
+        }, [])
+    );
 
     return (
         <ImageBackground
@@ -25,7 +39,7 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({ firstLaunch }) => {
             <SafeAreaView style={styles.safeArea}>
                 <ThemedText type="modalTitle" style={styles.title}>
                     {firstLaunch
-                        ? "Bienvenue dans votre calendrier de l'avent"
+                        ? "Bienvenue dans votre calendrier de\u00A0l'avent"
                         : "Présentation du\u00A0calendrier"}
                 </ThemedText>
 
@@ -118,7 +132,6 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({ firstLaunch }) => {
                         </CustomButton>
                     )}
                 </ScrollView>
-                {/* <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton> */}
             </SafeAreaView>
         </ImageBackground>
     );

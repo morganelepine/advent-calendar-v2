@@ -30,3 +30,16 @@ export const addDayOpening = async (userUuid: string, dayId: number) => {
         console.log("Error adding day opening: ", error);
     }
 };
+
+export const getDayImage = async (dayId: number) => {
+    try {
+        const response = await fetch(`${BASE_URL}/days/${dayId}/image`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch day's image");
+        }
+        const data = await response.text();
+        return data;
+    } catch (error) {
+        console.error("Error fetching image:", error);
+    }
+};

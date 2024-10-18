@@ -19,4 +19,10 @@ export const DayRoutes = [
         controller: DayController,
         action: "getDayContents",
     },
+    {
+        method: "get",
+        route: "/days/:id/image",
+        controller: DayController,
+        action: "getDayImage",
+    },
 ];

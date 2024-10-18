@@ -38,18 +38,16 @@ export const getContentBackgroundImage = (
     games: Content[]
 ) => {
     if (ideas.length > 0) {
-        return require("@/assets/images/content_background/se-divertir.jpg");
+        return "se-divertir_oyxijv";
     }
     if (games.length > 0) {
-        return require("@/assets/images/content_background/s-amuser.jpg");
+        return "s-amuser_y6vgfx";
     }
     switch (content.type) {
         case "quote":
-            return require("@/assets/images/content_background/s-inspirer.jpg");
-        case "recipe":
-            return require("@/assets/images/content_background/se-regaler.jpg");
+            return "s-inspirer_pwl3gx";
         case "anecdote":
-            return require("@/assets/images/content_background/s-instruire.jpg");
+            return "s-instruire_xnjxha";
     }
 };
 

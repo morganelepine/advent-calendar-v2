@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         color: "#22311d",
         fontSize: 22,
         fontFamily: "PallyBold",
-        textAlign: "left",
+        textAlign: "center",
         letterSpacing: 1,
     },
 });
