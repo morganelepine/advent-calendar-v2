@@ -1,5 +1,6 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { Colors } from "@/constants/Colors";
 
 interface HeaderProps {
     setModalVisible: (modalVisible: boolean) => void;
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     },
     button: {
         borderRadius: 50,
-        backgroundColor: "#d6ae72",
+        backgroundColor: Colors.red,
         paddingHorizontal: 10,
         paddingTop: 5,
         paddingBottom: 3,

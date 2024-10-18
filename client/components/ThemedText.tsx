@@ -1,5 +1,5 @@
 import { Text, type TextProps, StyleSheet } from "react-native";
-
+import { Colors } from "@/constants/Colors";
 import { useThemeColor } from "@/hooks/useThemeColor";
 
 export type ThemedTextProps = TextProps & {
@@ -7,9 +7,7 @@ export type ThemedTextProps = TextProps & {
     darkColor?: string;
     type?:
         | "default"
-        | "calendarDay"
         | "homeTitle"
-        | "subtitle"
         | "sectionSubtitle"
         | "sectionText"
         | "link"
@@ -31,9 +29,7 @@ export function ThemedText({
             style={[
                 { color },
                 type === "default" ? styles.default : undefined,
-                type === "calendarDay" ? styles.calendarDay : undefined,
                 type === "homeTitle" ? styles.homeTitle : undefined,
-                type === "subtitle" ? styles.subtitle : undefined,
                 type === "sectionSubtitle" ? styles.sectionSubtitle : undefined,
                 type === "sectionText" ? styles.sectionText : undefined,
                 type === "link" ? styles.link : undefined,
@@ -52,13 +48,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: "Poppins",
         textAlign: "center",
-        color: "#22311d",
-    },
-    calendarDay: {
-        fontSize: 40,
-        fontFamily: "SpecialElite",
-        textAlign: "center",
-        color: "white",
+        color: Colors.darkGreen,
     },
     homeTitle: {
         fontSize: 55,
@@ -66,16 +56,10 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "white",
     },
-    subtitle: {
-        fontSize: 16,
-        fontFamily: "Poppins",
-        textAlign: "center",
-        letterSpacing: 1,
-    },
     sectionSubtitle: {
         fontFamily: "PallyBold",
         letterSpacing: 1,
-        color: "#165d4b",
+        color: Colors.green,
         textAlign: "left",
         fontSize: 18,
     },
@@ -83,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: "Poppins",
         textAlign: "left",
-        color: "#22311d",
+        color: Colors.darkGreen,
     },
     link: {
         fontSize: 20,
@@ -91,7 +75,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     modalTitle: {
-        color: "#165d4b",
+        color: Colors.green,
         fontSize: 32,
         fontFamily: "PallyBold",
         textAlign: "center",
@@ -99,7 +83,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     modalSubtitle: {
-        color: "#22311d",
+        color: Colors.darkGreen,
         fontSize: 22,
         fontFamily: "PallyBold",
         textAlign: "center",

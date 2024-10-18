@@ -2,6 +2,7 @@ import { StyleSheet, View, Text, Modal, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomScrollView } from "@/components/custom-utils/ScrollView";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "@/constants/Colors";
 
 interface RulesProps {
     modalVisible: boolean;
@@ -143,7 +144,7 @@ export const Rules: React.FC<RulesProps> = ({
                     <Ionicons
                         name={"close-outline"}
                         size={35}
-                        color="#165d4b"
+                        color={Colors.green}
                     />
                 </Pressable>
             </View>
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
         margin: 20,
         paddingBottom: 10,
         alignItems: "center",
-        backgroundColor: "#f7f5f6",
+        backgroundColor: Colors.snow,
         borderRadius: 30,
         shadowColor: "#000",
         shadowOffset: {

@@ -109,6 +109,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
 const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
+        width: "100%",
     },
     button: {
         padding: 5,

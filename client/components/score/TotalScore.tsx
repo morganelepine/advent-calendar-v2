@@ -4,6 +4,7 @@ import Animated, {
     useAnimatedStyle,
     withTiming,
 } from "react-native-reanimated";
+import { Colors } from "@/constants/Colors";
 
 interface TotalScoreProps {
     score: number;
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         alignSelf: "stretch",
         height: "100%",
-        backgroundColor: "#b52936",
+        backgroundColor: Colors.red,
         borderRadius: 50,
     },
 

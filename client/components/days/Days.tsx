@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { DayButton } from "@/components/days/Button/DayButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface Day {
     id: number;
@@ -24,8 +25,10 @@ export const Days: React.FC<DaysProps> = ({ days }) => {
         getUserUuid();
     }, []);
 
+    const insets = useSafeAreaInsets();
+
     return (
-        <View style={styles.daysContainer}>
+        <View style={[styles.daysContainer, { paddingTop: insets.top }]}>
             {days.map((day) => (
                 <DayButton key={day.id} day={day} userUuid={userUuid} />
             ))}

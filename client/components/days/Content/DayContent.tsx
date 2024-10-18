@@ -3,6 +3,10 @@ import { Quote } from "@/components/content/Quote";
 import { Anecdote } from "@/components/content/Anecdote";
 import { Idea } from "@/components/content/Idea";
 import { Game } from "@/components/content/Game";
+import {
+    SafeAreaView,
+    useSafeAreaInsets,
+} from "react-native-safe-area-context";
 
 interface Content {
     id: number;
@@ -45,48 +49,56 @@ export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
         }
     });
 
+    const insets = useSafeAreaInsets();
+
     return (
-        <View style={[styles.contentsContainer]}>
-            {contentsByType.quote && (
+        <SafeAreaView
+            style={{
+                flexGrow: 1,
+                paddingTop: -insets.top,
+            }}
+        >
+            <View style={styles.contentsContainer}>
                 <View style={styles.contentContainer}>
-                    <Quote content={contentsByType.quote} dayId={dayId} />
+                    {contentsByType.quote && (
+                        <Quote content={contentsByType.quote} dayId={dayId} />
+                    )}
                 </View>
-            )}
 
-            {contentsByType.anecdote && (
                 <View style={styles.contentContainer}>
-                    <Anecdote content={contentsByType.anecdote} dayId={dayId} />
+                    {contentsByType.anecdote && (
+                        <Anecdote
+                            content={contentsByType.anecdote}
+                            dayId={dayId}
+                        />
+                    )}
                 </View>
-            )}
 
-            {contentsByType.ideas.length > 0 && (
                 <View style={styles.contentContainer}>
-                    <Idea ideas={contentsByType.ideas} dayId={dayId} />
+                    {contentsByType.ideas.length > 0 && (
+                        <Idea ideas={contentsByType.ideas} dayId={dayId} />
+                    )}
                 </View>
-            )}
 
-            {contentsByType.games.length > 0 && (
                 <View style={styles.contentContainer}>
-                    <Game games={contentsByType.games} dayId={dayId} />
+                    {contentsByType.games.length > 0 && (
+                        <Game games={contentsByType.games} dayId={dayId} />
+                    )}
                 </View>
-            )}
-        </View>
+            </View>
+        </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     contentsContainer: {
-        flexDirection: "row",
-        flexWrap: "wrap",
         flexGrow: 1,
-        alignContent: "center",
-        paddingHorizontal: 5,
+        gap: 8,
+        padding: 8,
         // borderWidth: 2,
         // borderColor: "red",
     },
     contentContainer: {
-        width: "100%",
-        height: "25%",
-        padding: 5,
+        flexGrow: 1,
     },
 });

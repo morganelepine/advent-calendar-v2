@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable, Animated } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { ThemedText } from "@/components/ThemedText";
 import { Href, router, useFocusEffect } from "expo-router";
+import { Colors } from "@/constants/Colors";
 
 type IconName =
     | "alarm-outline"
@@ -76,7 +77,7 @@ export const MenuButton = () => {
         <Animated.View style={[styles.secondary, getAnimatedStyle(translateY)]}>
             <Pressable onPress={() => onPress(route)} style={styles.secondary}>
                 <View style={styles.buttonBackground} />
-                <Ionicons name={iconName} size={24} color="#165d4b" />
+                <Ionicons name={iconName} size={24} color={Colors.green} />
                 <ThemedText style={styles.text}>{label}</ThemedText>
             </Pressable>
         </Animated.View>
@@ -113,7 +114,7 @@ export const MenuButton = () => {
                         <Ionicons
                             name="sparkles-sharp"
                             size={36}
-                            color="#165d4b"
+                            color={Colors.green}
                         ></Ionicons>
                     </Animated.View>
                 </Pressable>
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 12,
-        color: "#165d4b",
+        color: Colors.green,
         fontFamily: "PoppinsBold",
         paddingTop: 1,
     },

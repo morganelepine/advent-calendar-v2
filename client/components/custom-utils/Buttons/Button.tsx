@@ -1,5 +1,6 @@
 import { StyleSheet, TextStyle, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { Colors } from "@/constants/Colors";
 
 interface CustomButtonProps {
     children?: React.ReactNode;
@@ -22,7 +23,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
 const styles = StyleSheet.create({
     button: {
         borderRadius: 50,
-        backgroundColor: "#165d4b",
+        backgroundColor: Colors.green,
         paddingHorizontal: 20,
         paddingVertical: 10,
         marginVertical: 20,

@@ -9,6 +9,7 @@ import {
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
+import { Colors } from "@/constants/Colors";
 
 interface CustomModalProps {
     isVisible: boolean;
@@ -73,7 +74,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                             <Ionicons
                                 name={"close-outline"}
                                 size={35}
-                                color="#165d4b"
+                                color={Colors.green}
                             />
                         </Pressable>
                     </View>

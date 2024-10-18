@@ -3,6 +3,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { CustomButton } from "@/components/custom-utils/Buttons/Button";
 import { useState } from "react";
+import { Colors } from "@/constants/Colors";
 
 interface Content {
     id: number;
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     longAnswer: {
-        color: "#165d4b",
+        color: Colors.green,
         marginBottom: 10,
     },
 });

@@ -63,7 +63,8 @@ export const AudioPlayer = ({}) => {
             <Ionicons
                 name={isPlaying ? "pause-circle" : "play-circle-outline"}
                 size={40}
-                color={Colors[colorScheme ?? "light"].tint}
+                // color={Colors[colorScheme ?? "light"].tint}
+                color={Colors.green}
             />
         </Pressable>
     );

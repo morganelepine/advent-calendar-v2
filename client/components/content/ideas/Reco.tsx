@@ -5,6 +5,7 @@ import { CustomMarkdown } from "@/components/custom-utils/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
+import { Colors } from "@/constants/Colors";
 
 const cld = new Cloudinary({
     cloud: {
@@ -104,12 +105,12 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     image: {
-        borderColor: "#165d4b",
+        borderColor: Colors.green,
         borderWidth: 0.2,
         marginBottom: 5,
     },
     button: {
-        backgroundColor: "#165d4b",
+        backgroundColor: Colors.green,
         padding: 10,
         borderRadius: 20,
         marginBottom: 20,

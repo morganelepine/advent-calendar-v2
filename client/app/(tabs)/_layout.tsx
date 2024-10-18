@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import React from "react";
-
+import { TabBar } from "@/components/navigation/TabBar";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
@@ -10,23 +10,25 @@ export default function TabLayout() {
 
     return (
         <Tabs
+            // tabBar={(props) => <TabBar {...props} />}
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+                // tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+                tabBarActiveTintColor: Colors.green,
                 headerShown: false,
                 tabBarStyle: {
-                    // position: "absolute",
                     // display: "none",
+                    backgroundColor: Colors.snow,
                 },
             }}
         >
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: "Compte à rebours",
-                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
+                    title: "Décompte",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 10 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
-                            name={focused ? "gift" : "gift-outline"}
+                            name={focused ? "sparkles" : "sparkles-outline"}
                             color={color}
                         />
                     ),
@@ -36,7 +38,7 @@ export default function TabLayout() {
                 name="calendar"
                 options={{
                     title: "Calendrier",
-                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 10 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "calendar" : "calendar-outline"}
@@ -49,7 +51,7 @@ export default function TabLayout() {
                 name="score"
                 options={{
                     title: "Score",
-                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 10 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={
@@ -65,8 +67,8 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="informations"
                 options={{
-                    title: "Informations",
-                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 9 },
+                    title: "Infos",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 10 },
                     tabBarIcon: ({ color, focused }) => (
                         <TabBarIcon
                             name={focused ? "snow" : "snow-outline"}
@@ -79,6 +81,7 @@ export default function TabLayout() {
                 name="day"
                 options={{
                     href: null,
+                    title: "Jour",
                 }}
             />
         </Tabs>

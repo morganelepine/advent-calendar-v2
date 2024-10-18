@@ -30,7 +30,7 @@ export function Collapsible({
                     size={18}
                     color={"white"}
                 />
-                <ThemedText type="subtitle">{title}</ThemedText>
+                <ThemedText type="sectionSubtitle">{title}</ThemedText>
             </TouchableOpacity>
             {isOpen && <View style={styles.content}>{children}</View>}
         </View>

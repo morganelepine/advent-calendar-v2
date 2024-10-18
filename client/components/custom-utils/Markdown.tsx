@@ -1,5 +1,6 @@
 import { StyleSheet, TextStyle } from "react-native";
 import Markdown from "react-native-markdown-display";
+import { Colors } from "@/constants/Colors";
 
 interface CustomMarkdownProps {
     children?: React.ReactNode;
@@ -23,7 +24,7 @@ export const CustomMarkdown: React.FC<CustomMarkdownProps> = ({
 
 const styles = StyleSheet.create({
     body: {
-        color: "#22311d",
+        color: Colors.darkGreen,
         textAlign: "center",
         fontFamily: "Poppins",
         fontSize: 16,

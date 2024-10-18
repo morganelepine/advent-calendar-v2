@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
 import { DayHeader } from "@/components/days/Content/DayHeader";
 import { DayContent } from "@/components/days/Content/DayContent";
+import { Colors } from "@/constants/Colors";
 
 interface Content {
     id: number;
@@ -60,16 +61,32 @@ export const Day = () => {
     const insets = useSafeAreaInsets();
 
     return (
-        <SafeAreaView
-            style={{
-                flex: 1,
-                paddingBottom: insets.bottom,
-            }}
+        <ImageBackground
+            source={require("@/assets/images/44.png")}
+            resizeMode="cover"
+            style={styles.imageBackground}
         >
-            <DayHeader dayId={parsedDayId} />
-            <DayContent contents={contents} dayId={parsedDayId} />
-        </SafeAreaView>
+            <SafeAreaView
+                style={{
+                    flex: 1,
+                    // marginTop: insets.top,
+                    paddingBottom: insets.bottom,
+                    // backgroundColor: Colors.snow,
+                    // borderColor: "red",
+                    // borderWidth: 2,
+                }}
+            >
+                <DayHeader dayId={parsedDayId} />
+                <DayContent contents={contents} dayId={parsedDayId} />
+            </SafeAreaView>
+        </ImageBackground>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    imageBackground: {
+        flex: 1,
+        width: "100%",
+        height: "100%",
+    },
+});

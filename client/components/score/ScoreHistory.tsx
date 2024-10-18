@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Score } from "@/components/score/Score";
+import { Colors } from "@/constants/Colors";
 
 interface Score {
     id: number;
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         fontFamily: "Pally",
         fontSize: 16,
         color: "white",
-        backgroundColor: "#165d4b",
+        backgroundColor: Colors.green,
         borderRadius: 50,
         alignSelf: "flex-start",
         paddingHorizontal: 14,

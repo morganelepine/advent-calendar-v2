@@ -60,8 +60,9 @@ export default function CalendarScreen() {
 
     return (
         <ImageBackground
-            source={{ uri: backgroundImage.toURL() }}
-            defaultSource={require("@/assets/images/sapin-rouge.jpg")}
+            // source={{ uri: backgroundImage.toURL() }}
+            source={require("@/assets/images/6.png")}
+            // defaultSource={require("@/assets/images/sapin-rouge.jpg")}
             resizeMode="cover"
             style={{
                 flex: 1,

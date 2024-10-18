@@ -68,8 +68,5 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        width: "31%",
-        justifyContent: "center",
-    },
+    container: { height: 75, width: 75, justifyContent: "center" },
 });
