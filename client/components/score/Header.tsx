@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ setModalVisible }) => {
 const styles = StyleSheet.create({
     header: {
         flexDirection: "row",
-        justifyContent: "flex-start",
+        justifyContent: "flex-end",
         paddingTop: 40,
         paddingBottom: 15,
         paddingHorizontal: 20,
@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
     },
     button: {
         borderRadius: 50,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.pink,
         paddingHorizontal: 10,
         paddingTop: 5,
         paddingBottom: 3,
         alignSelf: "center",
     },
     buttonText: {
-        color: "white",
+        color: Colors.blue,
         fontSize: 12,
         fontFamily: "PoppinsBold",
     },

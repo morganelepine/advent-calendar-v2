@@ -76,7 +76,7 @@ export class DayController {
                 return response.status(404).json({ message: "Day not found" });
             }
 
-            return day.image;
+            return day.background;
         } catch (error) {
             return response
                 .status(500)

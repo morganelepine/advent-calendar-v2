@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         fontFamily: "Pally",
         fontSize: 16,
         color: "white",
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         borderRadius: 50,
         alignSelf: "flex-start",
         paddingHorizontal: 14,

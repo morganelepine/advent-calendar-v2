@@ -32,7 +32,7 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({
 
     return (
         <ImageBackground
-            source={require("@/assets/images/4.png")}
+            source={require("@/assets/images/1.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     title: {
-        paddingTop: 40,
+        paddingTop: 30,
         paddingHorizontal: 20,
     },
     section: {

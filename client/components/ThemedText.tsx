@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: "Poppins",
         textAlign: "center",
-        color: Colors.darkGreen,
+        color: Colors.blue,
     },
     homeTitle: {
         fontSize: 55,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     sectionSubtitle: {
         fontFamily: "PallyBold",
         letterSpacing: 1,
-        color: Colors.green,
+        color: Colors.blue,
         textAlign: "left",
         fontSize: 18,
     },
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: "Poppins",
         textAlign: "left",
-        color: Colors.darkGreen,
+        color: Colors.darkBlue,
     },
     link: {
         fontSize: 20,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     modalTitle: {
-        color: Colors.green,
+        color: Colors.blue,
         fontSize: 32,
         fontFamily: "PallyBold",
         textAlign: "center",
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     modalSubtitle: {
-        color: Colors.darkGreen,
+        color: Colors.darkBlue,
         fontSize: 22,
         fontFamily: "PallyBold",
         textAlign: "center",

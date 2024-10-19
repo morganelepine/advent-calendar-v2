@@ -77,7 +77,7 @@ export const MenuButton = () => {
         <Animated.View style={[styles.secondary, getAnimatedStyle(translateY)]}>
             <Pressable onPress={() => onPress(route)} style={styles.secondary}>
                 <View style={styles.buttonBackground} />
-                <Ionicons name={iconName} size={24} color={Colors.green} />
+                <Ionicons name={iconName} size={24} color={Colors.blue} />
                 <ThemedText style={styles.text}>{label}</ThemedText>
             </Pressable>
         </Animated.View>
@@ -114,7 +114,7 @@ export const MenuButton = () => {
                         <Ionicons
                             name="sparkles-sharp"
                             size={36}
-                            color={Colors.green}
+                            color={Colors.blue}
                         ></Ionicons>
                     </Animated.View>
                 </Pressable>
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 12,
-        color: Colors.green,
+        color: Colors.blue,
         fontFamily: "PoppinsBold",
         paddingTop: 1,
     },

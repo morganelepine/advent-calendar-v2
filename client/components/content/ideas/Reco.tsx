@@ -105,12 +105,12 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     image: {
-        borderColor: Colors.green,
+        borderColor: Colors.blue,
         borderWidth: 0.2,
         marginBottom: 5,
     },
     button: {
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         padding: 10,
         borderRadius: 20,
         marginBottom: 20,

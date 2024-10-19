@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     letter: {
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         borderRadius: 50,
         height: 50,
         width: 50,
         justifyContent: "center",
     },
     clickedLetter: {
-        color: Colors.green,
+        color: Colors.blue,
         backgroundColor: "white",
         opacity: 0.4,
     },

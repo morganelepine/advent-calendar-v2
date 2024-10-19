@@ -4,13 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "expo-router";
 import { getScore } from "../../services/score.service";
-import { ScrollToTopButton } from "@/components/custom-utils/Buttons/ScrollToTopButton";
 import { Header } from "@/components/score/Header";
 import { Rules } from "@/components/score/Rules";
 import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
 import { Score } from "@/components/score/Score";
-import { MenuButton } from "@/components/navigation/MenuButton";
 
 interface Day {
     id: number;
@@ -80,7 +78,7 @@ export default function ScoreScreen() {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/4.png")}
+            source={require("@/assets/images/1.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >
@@ -108,8 +106,6 @@ export default function ScoreScreen() {
                         setModalVisible={setModalVisible}
                     />
                 </ScrollView>
-
-                {/* <ScrollToTopButton ref={scrollViewRef}></ScrollToTopButton> */}
             </SafeAreaView>
         </ImageBackground>
     );

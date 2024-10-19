@@ -51,7 +51,7 @@ export const Home = () => {
                     resizeMode="cover"
                 >
                     <SafeAreaView style={styles.safeArea}>
-                        <MenuButton />
+                        {/* <MenuButton /> */}
 
                         <View style={styles.textContainer}>
                             <ThemedText type="homeTitle" style={styles.text1}>

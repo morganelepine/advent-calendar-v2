@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     longAnswer: {
-        color: Colors.green,
+        color: Colors.blue,
         marginBottom: 10,
     },
 });

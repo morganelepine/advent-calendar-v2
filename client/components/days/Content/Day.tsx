@@ -62,7 +62,7 @@ export const Day = () => {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/44.png")}
+            source={require("@/assets/images/2.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >

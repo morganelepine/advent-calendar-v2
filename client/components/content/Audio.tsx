@@ -64,7 +64,7 @@ export const AudioPlayer = ({}) => {
                 name={isPlaying ? "pause-circle" : "play-circle-outline"}
                 size={40}
                 // color={Colors[colorScheme ?? "light"].tint}
-                color={Colors.green}
+                color={Colors.blue}
             />
         </Pressable>
     );

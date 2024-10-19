@@ -3,10 +3,18 @@ import { StyleSheet, View } from "react-native";
 import { DayButton } from "@/components/days/Button/DayButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Colors } from "@/constants/Colors";
 
 interface Day {
     id: number;
     dayNumber: number;
+    background: string;
+    width: string;
+    height: string;
+    color: string;
+    textColor: string;
+    aspectRatio: number;
+    image: string;
 }
 
 interface DaysProps {
@@ -28,7 +36,7 @@ export const Days: React.FC<DaysProps> = ({ days }) => {
     const insets = useSafeAreaInsets();
 
     return (
-        <View style={[styles.daysContainer, { paddingTop: insets.top }]}>
+        <View style={[styles.daysContainer]}>
             {days.map((day) => (
                 <DayButton key={day.id} day={day} userUuid={userUuid} />
             ))}
@@ -43,7 +51,8 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: "space-between",
         alignContent: "space-between",
-        margin: 10,
-        gap: 10,
+        // gap: 4,
+        backgroundColor: Colors.green,
+        padding: 5,
     },
 });

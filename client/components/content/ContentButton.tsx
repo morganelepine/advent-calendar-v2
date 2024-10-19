@@ -64,6 +64,8 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
         }
     }, []);
     let backgroundImage = cld.image(image);
+    // const version = new Date().getTime(); // Génère un timestamp unique
+    // let backgroundImage = cld.image(image).setVersion(version);
 
     const [userUuid, setUserUuid] = useState<string>("");
     useEffect(() => {

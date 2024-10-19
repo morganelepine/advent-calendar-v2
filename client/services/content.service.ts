@@ -38,16 +38,16 @@ export const getContentBackgroundImage = (
     games: Content[]
 ) => {
     if (ideas.length > 0) {
-        return "se-divertir_oyxijv";
+        return "se-divertir_xvdksq";
     }
     if (games.length > 0) {
-        return "s-amuser_y6vgfx";
+        return "s-amuser_vn8ugi";
     }
     switch (content.type) {
         case "quote":
-            return "s-inspirer_pwl3gx";
+            return "s-inspirer_zwls2a";
         case "anecdote":
-            return "s-instruire_xnjxha";
+            return "s-instruire_xybqas";
     }
 };
 

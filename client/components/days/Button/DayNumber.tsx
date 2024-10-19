@@ -1,51 +1,71 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "cloudinary-react-native";
+
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: "deauthz29",
+    },
+});
 
 interface DayNumberProps {
-    day: { id: number; dayNumber: number };
+    day: {
+        id: number;
+        dayNumber: number;
+        background: string;
+        width: string;
+        height: string;
+        color: string;
+        textColor: string;
+        aspectRatio: number;
+        image: string;
+    };
     dayIsOpen: boolean | null;
 }
 
 export const DayNumber: React.FC<DayNumberProps> = ({ day, dayIsOpen }) => {
+    // const version = new Date().getTime(); // Génère un timestamp unique
+    // const imageUrl = cld.image(day.image).setVersion(version);
     return (
         <>
-            <View
+            <AdvancedImage
+                cldImg={cld.image(day.image)}
                 style={[
-                    styles.background,
+                    styles.itemBackground,
                     {
-                        backgroundColor: dayIsOpen ? Colors.snow : Colors.green,
+                        aspectRatio: day.aspectRatio,
                     },
-                    { opacity: dayIsOpen ? 0.8 : 0.7 },
                 ]}
+                resizeMode="contain"
             />
-            <ThemedText
+            <Text
                 style={[
-                    styles.calendarDay,
-                    { opacity: dayIsOpen ? 0.5 : 1 },
+                    styles.itemText,
                     {
-                        color: dayIsOpen ? Colors.green : Colors.snow,
+                        color: dayIsOpen ? Colors.blue : day.textColor,
                     },
                 ]}
             >
                 {day.dayNumber}
-            </ThemedText>
+            </Text>
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    background: {
-        ...StyleSheet.absoluteFillObject, // Remplit tout l'espace du parent
-        backgroundColor: "white",
-        borderRadius: 50,
-        borderColor: Colors.green,
-        borderWidth: 1,
+    itemBackground: {
+        width: "100%",
+        height: undefined,
     },
-    calendarDay: {
-        fontSize: 45,
+    itemText: {
+        fontSize: 30,
         fontFamily: "Pally",
-        textAlign: "center",
-        paddingBottom: 8,
+        paddingVertical: 2,
+        paddingHorizontal: 5,
+        position: "absolute",
+        top: 0,
+        zIndex: 1,
     },
 });

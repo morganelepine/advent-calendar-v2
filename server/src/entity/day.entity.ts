@@ -12,7 +12,25 @@ export class Day {
     dayNumber: number;
 
     @Column()
+    background: string;
+
+    @Column()
+    width: string;
+
+    @Column()
+    height: string;
+
+    @Column()
+    color: string;
+
+    @Column()
+    textColor: string;
+
+    @Column()
     image: string;
+
+    @Column("float")
+    aspectRatio: number;
 
     @OneToMany(() => Content, (content) => content.day)
     contents: Content[];

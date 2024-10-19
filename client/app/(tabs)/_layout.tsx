@@ -13,7 +13,7 @@ export default function TabLayout() {
             // tabBar={(props) => <TabBar {...props} />}
             screenOptions={{
                 // tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-                tabBarActiveTintColor: Colors.green,
+                tabBarActiveTintColor: Colors.blue,
                 headerShown: false,
                 tabBarStyle: {
                     // display: "none",

@@ -144,7 +144,7 @@ export const Rules: React.FC<RulesProps> = ({
                     <Ionicons
                         name={"close-outline"}
                         size={35}
-                        color={Colors.green}
+                        color={Colors.blue}
                     />
                 </Pressable>
             </View>

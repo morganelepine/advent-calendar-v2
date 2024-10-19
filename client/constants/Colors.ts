@@ -10,8 +10,10 @@ const tintColorLight = "#165d4b";
 const tintColorDark = paleGold;
 
 export const Colors = {
+    blue: "#0b2956",
+    darkBlue: "#010f23",
     red: "#b52936",
-    darkGreen: "#09261f",
+    pink: "#ffc4c4",
     green: "#165d4b",
     snow: "#f7f5f6",
     paleRed: "#b52936",

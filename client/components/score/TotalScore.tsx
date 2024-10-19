@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         alignSelf: "stretch",
         height: "100%",
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.pink,
         borderRadius: 50,
     },
 

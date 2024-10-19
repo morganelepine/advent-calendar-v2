@@ -79,16 +79,14 @@ export const TabBar = ({
                             >
                                 <View style={styles.tab}>
                                     {icon[route.name]({
-                                        color: isFocused
-                                            ? Colors.green
-                                            : "grey",
+                                        color: isFocused ? Colors.blue : "grey",
                                     })}
                                     <Text
                                         style={[
                                             styles.label,
                                             {
                                                 color: isFocused
-                                                    ? Colors.green
+                                                    ? Colors.blue
                                                     : "grey",
                                             },
                                         ]}

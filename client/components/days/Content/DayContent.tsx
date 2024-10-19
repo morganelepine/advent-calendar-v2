@@ -93,8 +93,8 @@ export const DayContent: React.FC<DayContentProps> = ({ contents, dayId }) => {
 const styles = StyleSheet.create({
     contentsContainer: {
         flexGrow: 1,
-        gap: 8,
-        padding: 8,
+        gap: 5,
+        padding: 5,
         // borderWidth: 2,
         // borderColor: "red",
     },

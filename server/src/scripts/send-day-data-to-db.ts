@@ -13,6 +13,12 @@ async function importDayCSV(filePath: string) {
         .on("data", (data) => {
             const day = new Day();
             day.dayNumber = data.dayNumber;
+            day.background = data.background;
+            day.width = data.width;
+            day.height = data.height;
+            day.color = data.color;
+            day.textColor = data.textColor;
+            day.aspectRatio = data.aspectRatio;
             day.image = data.image;
             days.push(day);
         })

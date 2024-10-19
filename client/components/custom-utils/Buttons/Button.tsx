@@ -23,7 +23,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
 const styles = StyleSheet.create({
     button: {
         borderRadius: 50,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         paddingHorizontal: 20,
         paddingVertical: 10,
         marginVertical: 20,

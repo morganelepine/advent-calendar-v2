@@ -74,7 +74,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                             <Ionicons
                                 name={"close-outline"}
                                 size={35}
-                                color={Colors.green}
+                                color={Colors.blue}
                             />
                         </Pressable>
                     </View>

@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: "center",
         letterSpacing: 1,
-        color: Colors.green,
+        color: Colors.blue,
     },
 });
