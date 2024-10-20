@@ -30,9 +30,9 @@ export const Rules: React.FC<RulesProps> = ({
                     <View style={styles.section}>
                         <ThemedText type="sectionText" style={styles.ital}>
                             Chaque jour, vous pouvez accumuler des points pour
-                            tenter d'accéder à une surprise exclusive qui attend
-                            celles et ceux qui auront accumulé assez de points
-                            le 25 décembre !
+                            tenter d'accéder à une surprise qui attend celles et
+                            ceux qui auront accumulé assez de points le 25
+                            décembre !
                         </ThemedText>
                     </View>
 
@@ -68,8 +68,8 @@ export const Rules: React.FC<RulesProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Chaque jour, explorez jusqu'à 5 types de contenus
-                            (une citation, une recette, une anecdote, une
-                            recommandation, un jeu).
+                            (une citation, une anecdote, une recommandation, un
+                            jeu).
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Pour chaque contenu découvert, vous gagnez
@@ -88,12 +88,12 @@ export const Rules: React.FC<RulesProps> = ({
                         <ThemedText type="sectionText">
                             Pour chaque bonne réponse donnée au jeu du jour (3
                             maximum), vous gagnez
-                            <Text style={styles.bold}> 12 points</Text>.
+                            <Text style={styles.bold}> 20 points</Text>.
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Si vous participez aux jeux en retard, vous ne
                             gagnez que
-                            <Text style={styles.bold}> 6 points</Text>.
+                            <Text style={styles.bold}> 10 points</Text>.
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Seuls 12 jours sur 24 vous permettront de gagner des
@@ -107,7 +107,7 @@ export const Rules: React.FC<RulesProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Vous pouvez ainsi accumuler jusqu'à
-                            <Text style={styles.bold}> 121 points </Text>
+                            <Text style={styles.bold}> 130 points </Text>
                             par jour :
                         </ThemedText>
                         <ThemedText type="sectionText">
@@ -119,7 +119,7 @@ export const Rules: React.FC<RulesProps> = ({
                             découvrant chaque contenus
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            ▪️ <Text style={styles.bold}>36 points</Text> en
+                            ▪️ <Text style={styles.bold}>60 points</Text> en
                             répondant correctement aux jeux
                         </ThemedText>
                     </View>
@@ -129,9 +129,10 @@ export const Rules: React.FC<RulesProps> = ({
                             🎅 Objectif atteint
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            Et si le 25 décembre vous avez réussi à atteindre
-                            les <Text style={styles.bold}>2512 points</Text>{" "}
-                            maximum... surprise !
+                            Et si le 25 décembre vous avez réussi à accumuler au
+                            moins
+                            <Text style={styles.bold}> 2512 points</Text>...
+                            surprise !
                         </ThemedText>
                     </View>
                 </CustomScrollView>

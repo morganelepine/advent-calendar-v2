@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ setModalVisible }) => {
 const styles = StyleSheet.create({
     header: {
         flexDirection: "row",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
         paddingTop: 40,
         paddingBottom: 15,
         paddingHorizontal: 20,

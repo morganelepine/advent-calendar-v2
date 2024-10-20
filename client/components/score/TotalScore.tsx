@@ -12,6 +12,7 @@ interface TotalScoreProps {
 
 export const TotalScore: React.FC<TotalScoreProps> = ({ score }) => {
     const minScoreToWin = 2512;
+    // const maxScore = 2800;
 
     const progress = (score / minScoreToWin) * 100;
     const animatedStyle = useAnimatedStyle(() => ({
@@ -24,8 +25,10 @@ export const TotalScore: React.FC<TotalScoreProps> = ({ score }) => {
                 <Text style={styles.bold}>{score}</Text> points
             </ThemedText>
             <View style={styles.pointsContainer}>
-                <ThemedText style={styles.points}>0 point</ThemedText>
-                <ThemedText style={styles.points}>2512 points</ThemedText>
+                {/* <ThemedText style={styles.points}>0 point</ThemedText> */}
+                <ThemedText style={styles.points}>
+                    {minScoreToWin} points
+                </ThemedText>
             </View>
             <View style={styles.barContainer}>
                 <Animated.View style={[styles.completion, animatedStyle]} />
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
 
     pointsContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "flex-end",
         marginBottom: 5,
     },
     points: {

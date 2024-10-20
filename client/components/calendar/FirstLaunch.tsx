@@ -60,28 +60,28 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({
                             ✨ Combien de nuits avant Noël ?
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            Un compte à rebours pour vous faire patienter
-                            jusqu'au 25 décembre.
+                            Un compte à rebours pour patienter jusqu'au 25
+                            décembre.
                         </ThemedText>
                     </View>
 
                     <View style={styles.section}>
                         <ThemedText type="sectionSubtitle">
-                            🎄 Une citation festive
+                            🎄 Une citation
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            Une citation inspirante vous plonger dans l'esprit
+                            Une citation inspirante pour plonger dans l'esprit
                             de Noël.
                         </ThemedText>
                     </View>
 
                     <View style={styles.section}>
                         <ThemedText type="sectionSubtitle">
-                            🎅 Une anecdote de Noël
+                            🎅 Une anecdote
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            Une anecdote sur les traditions et l’histoire de
-                            Noël.
+                            Une anecdote pour découvrir l'origine des traditions
+                            et l’histoire de Noël.
                         </ThemedText>
                     </View>
 
@@ -91,7 +91,7 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Livre, série, activité, recette... : une idée pour
-                            accompagner vos journées et soirées d'hiver.
+                            accompagner les journées et soirées d'hiver.
                         </ThemedText>
                     </View>
 
@@ -112,9 +112,8 @@ export const FirstLaunch: React.FC<FirstLaunchProps> = ({
                         <ThemedText type="sectionText">
                             Ouvrir la case du jour, explorer les contenus, jouer
                             aux jeux... : plus vous participez, plus vous gagnez
-                            des points. Et le 25 décembre, une surprise
-                            exclusive attend celles et ceux qui auront accumulé
-                            assez de points !
+                            des points. Et le 25 décembre, une surprise attend
+                            celles et ceux qui auront accumulé assez de points !
                         </ThemedText>
                     </View>
 

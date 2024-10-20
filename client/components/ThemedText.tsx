@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         color: Colors.blue,
         textAlign: "left",
         fontSize: 18,
+        paddingBottom: 5,
     },
     sectionText: {
         fontSize: 16,
