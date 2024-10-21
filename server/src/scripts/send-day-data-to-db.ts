@@ -20,6 +20,9 @@ async function importDayCSV(filePath: string) {
             day.textColor = data.textColor;
             day.aspectRatio = data.aspectRatio;
             day.image = data.image;
+            day.quote = data.quote;
+            day.quoteAuthor = data.quoteAuthor;
+            day.quoteSource = data.quoteSource;
             days.push(day);
         })
         .on("end", async () => {

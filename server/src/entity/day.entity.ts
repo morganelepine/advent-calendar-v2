@@ -32,6 +32,15 @@ export class Day {
     @Column("float")
     aspectRatio: number;
 
+    @Column()
+    quote: string;
+
+    @Column()
+    quoteAuthor: string;
+
+    @Column()
+    quoteSource: string;
+
     @OneToMany(() => Content, (content) => content.day)
     contents: Content[];
 

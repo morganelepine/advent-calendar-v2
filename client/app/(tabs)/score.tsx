@@ -13,7 +13,18 @@ import { Score } from "@/components/score/Score";
 interface Day {
     id: number;
     dayNumber: number;
+    background: string;
+    width: string;
+    height: string;
+    color: string;
+    textColor: string;
+    image: string;
+    aspectRatio: number;
+    quote: string;
+    quoteAuthor: string;
+    quoteSource: string;
 }
+
 interface Score {
     id: number;
     points: number;

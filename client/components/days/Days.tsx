@@ -13,8 +13,11 @@ interface Day {
     height: string;
     color: string;
     textColor: string;
-    aspectRatio: number;
     image: string;
+    aspectRatio: number;
+    quote: string;
+    quoteAuthor: string;
+    quoteSource: string;
 }
 
 interface DaysProps {

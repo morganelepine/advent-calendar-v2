@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import { Home } from "@/components/calendar/Home";
-import { FirstLaunch } from "@/components/calendar/FirstLaunch";
 import uuid from "react-native-uuid";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { saveUser } from "../../services/user.service";
 import { saveScore } from "../../services/score.service";
+import { FirstLaunchModal } from "@/components/calendar/FirstLaunchModal";
 
 export default function HomeScreen() {
     const today = new Date();
     const day = today.getDate();
 
     const [firstLaunch, setFirstLaunch] = useState<boolean | null>(null);
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
         checkFirstLaunch();
@@ -30,6 +31,7 @@ export default function HomeScreen() {
             await saveScore(newUserUuid, day, 40, "la première connexion");
 
             setFirstLaunch(true);
+            setModalVisible(true);
         } else {
             // await AsyncStorage.removeItem("userUuid");
             setFirstLaunch(false);
@@ -46,14 +48,11 @@ export default function HomeScreen() {
 
     return (
         <>
-            {firstLaunch ? (
-                <FirstLaunch
-                    firstLaunch={firstLaunch}
-                    setFirstLaunch={setFirstLaunch}
-                />
-            ) : (
-                <Home />
-            )}
+            <Home />
+            <FirstLaunchModal
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+            />
         </>
     );
 }

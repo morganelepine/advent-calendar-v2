@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
+import { StyleSheet, Text } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "cloudinary-react-native";

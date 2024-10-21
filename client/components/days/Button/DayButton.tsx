@@ -5,19 +5,25 @@ import { DayNumber } from "@/components/days/Button/DayNumber";
 import { saveScore } from "@/services/score.service";
 import { isDayOpen, addDayOpening } from "@/services/day.service";
 import { Colors } from "@/constants/Colors";
+import { DayModal } from "./DayModal";
+
+interface Day {
+    id: number;
+    dayNumber: number;
+    background: string;
+    width: string;
+    height: string;
+    color: string;
+    textColor: string;
+    image: string;
+    aspectRatio: number;
+    quote: string;
+    quoteAuthor: string;
+    quoteSource: string;
+}
 
 interface DayButtonProps {
-    day: {
-        id: number;
-        dayNumber: number;
-        background: string;
-        width: string;
-        height: string;
-        color: string;
-        textColor: string;
-        aspectRatio: number;
-        image: string;
-    };
+    day: Day;
     userUuid: string;
 }
 
@@ -42,6 +48,7 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
     /*****************************************/
     /********** HANDLE DAY CLICK **********/
     /*****************************************/
+    const [modalVisible, setModalVisible] = useState(false);
 
     const openDay = () => {
         router.push({
@@ -65,27 +72,35 @@ export const DayButton: React.FC<DayButtonProps> = ({ day, userUuid }) => {
                     "l'ouverture de la case du jour"
                 );
             }
-            openDay();
+            setModalVisible(true);
         } else {
             ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);
         }
     };
 
     return (
-        <Pressable
-            onPress={handleDayPress}
-            style={[
-                styles.gridItem,
-                {
-                    width: day.width,
-                    height: day.height,
-                    backgroundColor: dayIsOpen ? Colors.snow : day.color,
-                    opacity: dayIsOpen ? 0.5 : 1,
-                } as ViewStyle,
-            ]}
-        >
-            <DayNumber day={day} dayIsOpen={dayIsOpen} />
-        </Pressable>
+        <>
+            <Pressable
+                onPress={handleDayPress}
+                style={[
+                    styles.gridItem,
+                    {
+                        width: day.width,
+                        height: day.height,
+                        backgroundColor: dayIsOpen ? Colors.snow : day.color,
+                        opacity: dayIsOpen ? 0.5 : 1,
+                    } as ViewStyle,
+                ]}
+            >
+                <DayNumber day={day} dayIsOpen={dayIsOpen} />
+            </Pressable>
+
+            <DayModal
+                day={day}
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+            />
+        </>
     );
 };
 
