@@ -1,10 +1,5 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "./entity/user.entity";
-import { Day } from "./entity/day.entity";
-import { DaysOpening } from "./entity/days-opening.entity";
-import { Content } from "./entity/content.entity";
-import { Score } from "./entity/score.entity";
 import { config } from "dotenv";
 config();
 
@@ -18,9 +13,10 @@ export const AppDataSource = new DataSource({
     username: DB_USERNAME,
     password: DB_PASSWORD,
     database: DB_DATABASE,
-    synchronize: NODE_ENV === "dev",
+    synchronize: true,
     logging: false,
-    entities: [User, Day, DaysOpening, Content, Score], // "entity/*.js"
+    entities:
+        NODE_ENV === "dev" ? ["src/entity/**/*.ts"] : ["dist/entity/**/*.js"],
     migrations: [],
     subscribers: [],
 });
