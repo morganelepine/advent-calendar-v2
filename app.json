@@ -1,0 +1,35 @@
+{
+    "expo": {
+        "name": "Calendrier de l'avent",
+        "slug": "advent-calendar",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/images/icon.png",
+        "scheme": "myapp",
+        "userInterfaceStyle": "automatic",
+        "splash": {
+            "image": "./assets/images/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#f7f5f6"
+        },
+        "ios": {
+            "supportsTablet": true
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/images/adaptive-icon.png",
+                "backgroundColor": "#f7f5f6"
+            }
+        },
+        "web": {
+            "bundler": "metro",
+            "output": "static",
+            "favicon": "./assets/images/favicon.png",
+            "build": { "babel": { "include": ["@ui-kitten/components"] } }
+        },
+        "plugins": ["expo-router"],
+        "experiments": {
+            "typedRoutes": true
+        }
+    }
+}
