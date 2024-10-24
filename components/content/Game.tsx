@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/custom-utils/Modal";
@@ -8,7 +8,6 @@ import { Games } from "@/components/content/games/others/Games";
 import { Quiz } from "@/components/content/games/quiz/Quiz";
 import { classifyGames } from "../../services/content.service";
 import { updateScores } from "../../services/score.service";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface Content {
     id: number;
@@ -23,30 +22,16 @@ interface Content {
 }
 interface GameProps {
     games: Content[];
-    dayId: number | null;
+    dayId: number;
 }
 
 export const Game: React.FC<GameProps> = ({ games, dayId }) => {
-    const [userUuid, setUserUuid] = useState<string>("");
-    useEffect(() => {
-        const getUserUuid = async () => {
-            const uuid = await AsyncStorage.getItem("userUuid");
-            if (uuid) {
-                setUserUuid(uuid);
-            }
-        };
-        getUserUuid();
-    }, []);
-
     const [modalVisible, setModalVisible] = useState(false);
 
     const { gamesByType, type } = classifyGames(games);
 
     const setScore = async () => {
-        const today = new Date();
-        let score = dayId === today.getDate() ? 20 : 10;
-
-        await updateScores(dayId, score, "gameCorrectAnswer");
+        await updateScores(dayId, "gameCorrectAnswer");
     };
 
     return (

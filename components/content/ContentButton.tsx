@@ -32,7 +32,7 @@ interface ContentButtonProps {
     ideas?: Content[];
     games?: Content[];
     setModalVisible: (visible: boolean) => void;
-    dayId: number | null;
+    dayId: number;
 }
 
 export const ContentButton: React.FC<ContentButtonProps> = ({
@@ -81,10 +81,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     }, []);
 
     const handleContentOpening = async () => {
-        const today = new Date();
-        let score = dayId === today.getDate() ? 12 : 6;
-
-        await updateScores(dayId, score, "contentOpening");
+        await updateScores(dayId, "contentOpening");
         setModalVisible(true);
     };
 

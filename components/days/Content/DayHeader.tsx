@@ -4,7 +4,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 
 interface DayHeaderProps {
-    dayId: number | null;
+    dayId: number;
 }
 
 export const DayHeader: React.FC<DayHeaderProps> = ({ dayId }) => {

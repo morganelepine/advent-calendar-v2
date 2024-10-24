@@ -18,7 +18,7 @@ interface AnecdoteProps {
         content4: string;
         content5: string;
     };
-    dayId: number | null;
+    dayId: number;
 }
 
 export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
