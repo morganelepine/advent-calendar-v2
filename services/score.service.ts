@@ -37,11 +37,7 @@ export const saveScores = async (scoresData: any) => {
     await AsyncStorage.setItem("scoresData", JSON.stringify(scoresData));
 };
 
-export const updateScores = async (
-    dayId: number | null,
-    score: number,
-    scoreType: string
-) => {
+export const updateScores = async (dayId: number, scoreType: string) => {
     const scoresData = await loadScores();
 
     const scoreOfTheDay = scoresData.find(
@@ -53,28 +49,25 @@ export const updateScores = async (
         let addedScore = 0;
 
         switch (scoreType) {
-            case "contentOpening": // 12 points * 5 (* 24)
-                if (scoreDetails[2].contentOpening <= 60) {
-                    scoreDetails[2].contentOpening = score;
-                    addedScore = score;
-                }
+            case "contentOpening": // 10 ou 15 points * 4 (* 24)
+                addedScore = await checkContentOpeningScore(
+                    dayId,
+                    scoreOfTheDay
+                );
                 break;
-            case "gameCorrectAnswer": // 20 points * 3 (* 12)
-                if (scoreDetails[3].gameCorrectAnswer <= 60) {
-                    scoreDetails[3].gameCorrectAnswer = score;
-                    addedScore = score;
-                }
+            case "gameCorrectAnswer": // 10 ou 20 points * 3 (* 12)
+                addedScore = await checkGameScore(dayId, scoreOfTheDay);
                 break;
             case "dayOpening": // 25 points (* 24)
                 if (scoreDetails[1].dayOpening <= 25) {
-                    scoreDetails[1].dayOpening = score;
-                    addedScore = score;
+                    scoreDetails[1].dayOpening = 25;
+                    addedScore = 25;
                 }
                 break;
             case "firstLogin": // 40 points (* 1)
                 if (scoreDetails[0].firstLogin === 0) {
-                    scoreDetails[0].firstLogin = score;
-                    addedScore = score;
+                    scoreDetails[0].firstLogin = 40;
+                    addedScore = 40;
                 }
                 break;
         }
@@ -96,4 +89,46 @@ export const getTotalScore = async () => {
     }
 
     return totalScore;
+};
+
+export const checkContentOpeningScore = async (
+    dayId: number,
+    scoreOfTheDay: Score
+) => {
+    const today = new Date().getDate();
+
+    let addedScore = 0;
+    const scoreOnTime = 15;
+    const scoreLate = 10;
+
+    if (today === dayId && scoreOfTheDay.scoreDetails[2].contentOpening < 60) {
+        scoreOfTheDay.scoreDetails[2].contentOpening += scoreOnTime;
+        addedScore += scoreOnTime;
+    } else if (scoreOfTheDay.scoreDetails[2].contentOpening < 40) {
+        scoreOfTheDay.scoreDetails[2].contentOpening += scoreLate;
+        addedScore += scoreLate;
+    }
+
+    return addedScore;
+};
+
+export const checkGameScore = async (dayId: number, scoreOfTheDay: Score) => {
+    const today = new Date().getDate();
+
+    let addedScore = 0;
+    const scoreOnTime = 20;
+    const scoreLate = 10;
+
+    if (
+        today === dayId &&
+        scoreOfTheDay.scoreDetails[3].gameCorrectAnswer < 60
+    ) {
+        scoreOfTheDay.scoreDetails[3].gameCorrectAnswer += scoreOnTime;
+        addedScore += scoreOnTime;
+    } else if (scoreOfTheDay.scoreDetails[3].gameCorrectAnswer < 30) {
+        scoreOfTheDay.scoreDetails[3].gameCorrectAnswer += scoreLate;
+        addedScore += scoreLate;
+    }
+
+    return addedScore;
 };

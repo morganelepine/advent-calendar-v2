@@ -16,7 +16,7 @@ interface QuoteProps {
         content4: string;
         content5: string;
     };
-    dayId: number | null;
+    dayId: number;
 }
 
 export const Quote: React.FC<QuoteProps> = ({ content, dayId }) => {
