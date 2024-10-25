@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Days } from "@/components/days/Days";
 import { daysArray } from "@/data/days_data";
@@ -62,5 +61,3 @@ export default function CalendarScreen() {
         </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({});

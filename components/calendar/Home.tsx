@@ -39,7 +39,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const daysMap = new Map(daysArray.map((day) => [day.dayNumber, day]));
     const day = daysMap.get(todayDay);
 
-    let backgroundImage = day
+    const backgroundImage = day
         ? cld.image(day?.background)
         : cld.image("image6_ccgiqd");
 

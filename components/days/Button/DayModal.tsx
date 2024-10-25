@@ -44,7 +44,7 @@ export const DayModal: React.FC<DayModalProps> = ({
             return () => {
                 setModalVisible(false);
             };
-        }, [day.dayNumber])
+        }, [])
     );
 
     return (

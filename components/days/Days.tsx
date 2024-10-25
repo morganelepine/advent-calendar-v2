@@ -32,14 +32,14 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
 
         const updatedDays = days.map((day) => {
             return day.dayNumber === dayNumber &&
-                (dayNumber === 1 || dayNumber === 2 || dayNumber === today) &&
+                (dayNumber === 1 || dayNumber === 2 || dayNumber <= today) &&
                 !day.isOpen
                 ? { ...day, isOpen: !day.isOpen }
                 : day;
         });
         setDays(updatedDays);
 
-        if (dayNumber === 1 || dayNumber === 2 || dayNumber === today) {
+        if (dayNumber === 1 || dayNumber === 2 || dayNumber <= today) {
             setDayModalVisible(dayNumber);
         } else {
             ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);

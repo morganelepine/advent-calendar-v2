@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { GameIdea } from "@/components/content/games/others/GameIdea";
 import { Joke } from "@/components/content/games/others/Joke";
 
@@ -29,5 +29,3 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({});

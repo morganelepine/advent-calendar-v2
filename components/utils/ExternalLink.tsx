@@ -4,7 +4,7 @@ import { type ComponentProps } from "react";
 import { Platform } from "react-native";
 
 type Props = Omit<ComponentProps<typeof Link>, "href"> & {
-    href: string;
+    href: Href;
 };
 
 export function ExternalLink({ href, ...rest }: Props) {

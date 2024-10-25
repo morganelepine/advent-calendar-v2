@@ -35,7 +35,7 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
         if (selectedAnswer === currentGame.content3) {
             setScore();
         }
-    }, [selectedAnswer]);
+    }, [selectedAnswer, currentGame.content3, setScore]);
 
     const handleNextQuestion = () => {
         setSelectedAnswer(null);

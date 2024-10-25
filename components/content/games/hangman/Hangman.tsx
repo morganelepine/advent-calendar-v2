@@ -36,7 +36,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
         setHiddenWord(currentWord.split("").map(() => "_"));
         setClickedLetters([]);
         setMistakes(0);
-    }, [currentWordIndex]);
+    }, [currentWord]);
 
     const checkLetter = (letter: string) => {
         if (clickedLetters.includes(letter)) {
@@ -81,7 +81,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
             setModalMessage("Félicitations 🥳");
             setModalVisible(true);
         }
-    }, [hiddenWord]);
+    }, [hiddenWord, currentWord, setScore]);
 
     useEffect(() => {
         if (mistakes === maxTries) {

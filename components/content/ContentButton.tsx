@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Pressable, ImageBackground } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemedText } from "@/components/ThemedText";
 import { updateScores } from "../../services/score.service";
 import {
@@ -64,25 +63,14 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
             setImage(backgroundImage);
             setIsImageReady(true);
         }
-    }, []);
-    let backgroundImage = cld.image(image);
+    }, [content, ideas, games]);
+    const backgroundImage = cld.image(image);
     // const version = new Date().getTime();
     // let backgroundImage = cld.image(image).setVersion(version);
 
-    const [userUuid, setUserUuid] = useState<string>("");
-    useEffect(() => {
-        const getUserUuid = async () => {
-            const uuid = await AsyncStorage.getItem("userUuid");
-            if (uuid) {
-                setUserUuid(uuid);
-            }
-        };
-        getUserUuid();
-    }, []);
-
     const handleContentOpening = async () => {
         const today = new Date();
-        let score = dayId === today.getDate() ? 12 : 6;
+        const score = dayId === today.getDate() ? 12 : 6;
 
         await updateScores(dayId, score, "contentOpening");
         setModalVisible(true);

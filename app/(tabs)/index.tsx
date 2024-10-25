@@ -3,20 +3,9 @@ import { StyleSheet, View, ActivityIndicator } from "react-native";
 import { Home } from "@/components/calendar/Home";
 import uuid from "react-native-uuid";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { loadScores, updateScores } from "../../services/score.service";
+import { updateScores } from "../../services/score.service";
 import { FirstLaunchModal } from "@/components/calendar/FirstLaunchModal";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
-interface Score {
-    dayNumber: number;
-    scoreTotal: number;
-    scoreDetails: [
-        { firstLogin: number },
-        { dayOpening: number },
-        { contentOpening: number },
-        { gameCorrectAnswer: number }
-    ];
-}
 
 export default function HomeScreen() {
     const today = new Date();
@@ -24,16 +13,10 @@ export default function HomeScreen() {
 
     const [firstLaunch, setFirstLaunch] = useState<boolean | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
-    const [scoreHistory, setScoreHistory] = useState<Score[]>([]);
 
     useEffect(() => {
-        const getScores = async () => {
-            const scores = await loadScores();
-            setScoreHistory(scores);
-        };
-        getScores();
         checkFirstLaunch();
-    }, []);
+    });
 
     const checkFirstLaunch = async () => {
         const userUuid = await AsyncStorage.getItem("userUuid");

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Dimensions, Image, View } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import { CustomModal } from "@/components/utils/custom/Modal";
 import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
@@ -61,7 +61,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 });
             }
         });
-    }, [ideas]);
+    }, [ideas, screenWidth]);
 
     return (
         <>
@@ -98,5 +98,3 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
         </>
     );
 };
-
-const styles = StyleSheet.create({});

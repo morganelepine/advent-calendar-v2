@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useCallback, useState } from "react";
 
@@ -24,5 +23,3 @@ export const Video: React.FC<VideoProps> = ({ videoId }) => {
         />
     );
 };
-
-const styles = StyleSheet.create({});
