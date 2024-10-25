@@ -24,8 +24,6 @@ export const getContentTitle = (
     switch (content.type) {
         case "quote":
             return "S'inspirer";
-        case "recipe":
-            return "Se régaler";
         case "anecdote":
             return "S'instuire";
         default:
@@ -49,6 +47,8 @@ export const getContentBackgroundImage = (
             return "s-inspirer_zwls2a";
         case "anecdote":
             return "s-instruire_xybqas";
+        default:
+            return "se-regaler_mnonwh";
     }
 };
 

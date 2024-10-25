@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, Dimensions, Image, View } from "react-native";
-import { CustomModal } from "@/components/custom-utils/Modal";
-import { CustomScrollView } from "@/components/custom-utils/ScrollView";
+import { CustomModal } from "@/components/utils/custom/Modal";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Reco } from "@/components/content/ideas/Reco";

@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { Video } from "@/components/custom-utils/Video";
+import { Video } from "@/components/utils/custom/Video";
 import { Colors } from "@/constants/Colors";
 
 interface Content {

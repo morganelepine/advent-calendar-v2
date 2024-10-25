@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { AdvancedImage } from "cloudinary-react-native";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Cloudinary } from "@cloudinary/url-gen";
 
 const cld = new Cloudinary({

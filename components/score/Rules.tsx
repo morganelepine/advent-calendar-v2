@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, Modal, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomScrollView } from "@/components/custom-utils/ScrollView";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 

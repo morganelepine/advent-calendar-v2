@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 

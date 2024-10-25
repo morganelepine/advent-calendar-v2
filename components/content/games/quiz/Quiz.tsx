@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { QuizAnswers } from "@/components/content/games/quiz/QuizAnswers";
 import { QuizExplanation } from "@/components/content/games/quiz/QuizExplanation";
 

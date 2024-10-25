@@ -33,7 +33,7 @@ export const loadScores = async () => {
     return savedScores ? JSON.parse(savedScores) : generateScoresData();
 };
 
-export const saveScores = async (scoresData: any) => {
+export const saveScores = async (scoresData: Score) => {
     await AsyncStorage.setItem("scoresData", JSON.stringify(scoresData));
 };
 

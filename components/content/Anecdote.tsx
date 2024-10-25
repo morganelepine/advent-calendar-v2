@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/custom-utils/Modal";
-import { CustomScrollView } from "@/components/custom-utils/ScrollView";
+import { CustomModal } from "@/components/utils/custom/Modal";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
-import { Video } from "@/components/custom-utils/Video";
+import { Video } from "@/components/utils/custom/Video";
 
 interface AnecdoteProps {
     content: {

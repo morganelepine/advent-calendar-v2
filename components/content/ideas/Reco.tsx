@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { Video } from "@/components/custom-utils/Video";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { Video } from "@/components/utils/custom/Video";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";

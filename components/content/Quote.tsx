@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomModal } from "@/components/utils/custom/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 
 interface QuoteProps {

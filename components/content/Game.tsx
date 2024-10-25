@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomModal } from "@/components/utils/custom/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Hangman } from "@/components/content/games/hangman/Hangman";
 import { Games } from "@/components/content/games/others/Games";
