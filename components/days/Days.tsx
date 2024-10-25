@@ -3,21 +3,8 @@ import { StyleSheet, View, ToastAndroid } from "react-native";
 import { DayButton } from "@/components/days/Button/DayButton";
 import { Colors } from "@/constants/Colors";
 import { updateScores } from "../../services/score.service";
+import { Day } from '../../interfaces/dayInterface';
 
-interface Day {
-    dayNumber: number;
-    isOpen: boolean;
-    background: string;
-    width: string;
-    height: string;
-    color: string;
-    textColor: string;
-    image: string;
-    aspectRatio: number;
-    quote: string;
-    quoteAuthor: string;
-    quoteSource: string;
-}
 
 interface DaysProps {
     days: Day[];

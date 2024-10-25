@@ -2,17 +2,8 @@ import { StyleSheet, View, Text } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { Collapsible } from "../utils/Collapsible";
+import {Score} from '../../interfaces/scoreInterfaces';
 
-interface Score {
-    dayNumber: number;
-    scoreTotal: number;
-    scoreDetails: [
-        { firstLogin: number },
-        { dayOpening: number },
-        { contentOpening: number },
-        { gameCorrectAnswer: number }
-    ];
-}
 
 interface ScoreHistoryProps {
     score: Score;
@@ -28,19 +19,19 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
             </ThemedText>
             <Collapsible title={`${score.scoreTotal} ${point}`}>
                 <>
-                    {score.scoreDetails[0].firstLogin > 0 && (
+                    {score.scoreDetails.firstLogin > 0 && (
                         <ThemedText style={styles.score}>
                             Première connexion :{" "}
                             <Text style={styles.bold}>
-                                {score.scoreDetails[0].firstLogin} points
+                                {score.scoreDetails.firstLogin} points
                             </Text>
                         </ThemedText>
                     )}
                     <ThemedText style={styles.score}>
                         Ouverture du jour :{" "}
                         <Text style={styles.bold}>
-                            {score.scoreDetails[1].dayOpening}{" "}
-                            {score.scoreDetails[1].dayOpening > 0
+                            {score.scoreDetails.dayOpening}{" "}
+                            {score.scoreDetails.dayOpening > 0
                                 ? "points"
                                 : "point"}
                         </Text>
@@ -48,8 +39,8 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                     <ThemedText style={styles.score}>
                         Ouverture des contenus :{" "}
                         <Text style={styles.bold}>
-                            {score.scoreDetails[2].contentOpening}{" "}
-                            {score.scoreDetails[2].contentOpening > 0
+                            {score.scoreDetails.contentOpening}{" "}
+                            {score.scoreDetails.contentOpening > 0
                                 ? "points"
                                 : "point"}
                         </Text>
@@ -57,8 +48,8 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                     <ThemedText style={styles.score}>
                         Bonnes réponses aux jeux :{" "}
                         <Text style={styles.bold}>
-                            {score.scoreDetails[3].gameCorrectAnswer}{" "}
-                            {score.scoreDetails[3].gameCorrectAnswer > 0
+                            {score.scoreDetails.gameCorrectAnswer}{" "}
+                            {score.scoreDetails.gameCorrectAnswer > 0
                                 ? "points"
                                 : "point"}
                         </Text>
