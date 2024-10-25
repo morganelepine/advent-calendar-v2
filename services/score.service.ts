@@ -1,41 +1,41 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+interface ScoreDetail {
+    firstLogin: number;
+    dayOpening: number;
+    contentOpening: number;
+    gameCorrectAnswer: number;
+}
+
 interface Score {
     dayNumber: number;
     scoreTotal: number;
-    scoreDetails: [
-        { firstLogin: number },
-        { dayOpening: number },
-        { contentOpening: number },
-        { gameCorrectAnswer: number }
-    ];
+    scoreDetails: ScoreDetail;
 }
 
-export const generateScoresData = () => {
-    // Ici aussi il faudrait un type pour pouvoir faire : Array<UnType>
-    const scoresData = [];
+export const generateScoresData = (): Score[] => {
+    const scoresData: Score[] = [];
     for (let i = 1; i <= 24; i++) {
         scoresData.push({
             dayNumber: i,
             scoreTotal: 0,
-            scoreDetails: [
-                { firstLogin: 0 },
-                { dayOpening: 0 },
-                { contentOpening: 0 },
-                { gameCorrectAnswer: 0 },
-            ],
+            scoreDetails: {
+                firstLogin: 0,
+                dayOpening: 0,
+                contentOpening: 0,
+                gameCorrectAnswer: 0,
+            },
         });
     }
     return scoresData;
 };
 
-export const loadScores = async () => {
-    // C'est quoi le type de retour ici ?
+export const loadScores = async (): Promise<Score[]> => {
     const savedScores = await AsyncStorage.getItem("scoresData");
     return savedScores ? JSON.parse(savedScores) : generateScoresData();
 };
 
-export const saveScores = async (scoresData: Score) : Promise<void> => {
+export const saveScores = async (scoresData: Score[]): Promise<void> => {
     await AsyncStorage.setItem("scoresData", JSON.stringify(scoresData));
 };
 
@@ -43,7 +43,7 @@ export const updateScores = async (
     dayId: number | null,
     score: number,
     scoreType: string
-) : Promise<void> => {
+): Promise<void> => {
     const scoresData = await loadScores();
 
     const scoreOfTheDay = scoresData.find(
@@ -56,26 +56,26 @@ export const updateScores = async (
 
         switch (scoreType) {
             case "contentOpening": // 12 points * 5 (* 24)
-                if (scoreDetails[2].contentOpening <= 60) {
-                    scoreDetails[2].contentOpening = score;
+                if (scoreDetails.contentOpening <= 60) {
+                    scoreDetails.contentOpening = score;
                     addedScore = score;
                 }
                 break;
             case "gameCorrectAnswer": // 20 points * 3 (* 12)
-                if (scoreDetails[3].gameCorrectAnswer <= 60) {
-                    scoreDetails[3].gameCorrectAnswer = score;
+                if (scoreDetails.gameCorrectAnswer <= 60) {
+                    scoreDetails.gameCorrectAnswer = score;
                     addedScore = score;
                 }
                 break;
             case "dayOpening": // 25 points (* 24)
-                if (scoreDetails[1].dayOpening <= 25) {
-                    scoreDetails[1].dayOpening = score;
+                if (scoreDetails.dayOpening <= 25) {
+                    scoreDetails.dayOpening = score;
                     addedScore = score;
                 }
                 break;
             case "firstLogin": // 40 points (* 1)
-                if (scoreDetails[0].firstLogin === 0) {
-                    scoreDetails[0].firstLogin = score;
+                if (scoreDetails.firstLogin === 0) {
+                    scoreDetails.firstLogin = score;
                     addedScore = score;
                 }
                 break;
@@ -87,7 +87,7 @@ export const updateScores = async (
     saveScores(scoresData);
 };
 
-export const getTotalScore = async () : Promise<number> => {
+export const getTotalScore = async (): Promise<number> => {
     const scores = await loadScores();
     let totalScore: number = 0;
 
