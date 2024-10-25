@@ -26,9 +26,12 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const currentGame = games[currentQuestionIndex];
     const answers = currentGame.content2.split(",");
+    const [answerButtonIsDisabled, setAnswerButtonIsDisabled] =
+        useState<boolean>(false);
 
     const handleAnswer = (answer: string) => {
         setSelectedAnswer(answer);
+        setAnswerButtonIsDisabled(true);
     };
 
     useEffect(() => {
@@ -39,6 +42,7 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
 
     const handleNextQuestion = () => {
         setSelectedAnswer(null);
+        setAnswerButtonIsDisabled(false);
         setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % games.length);
     };
 
@@ -53,6 +57,7 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
                 answers={answers}
                 selectedAnswer={selectedAnswer}
                 handleAnswer={handleAnswer}
+                answerButtonIsDisabled={answerButtonIsDisabled}
             />
 
             {selectedAnswer !== null && (

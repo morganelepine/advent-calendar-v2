@@ -19,6 +19,7 @@ interface QuizAnswersProps {
     answers: string[];
     handleAnswer: (answer: string) => void;
     selectedAnswer: string | null;
+    answerButtonIsDisabled: boolean;
 }
 
 export const QuizAnswers: React.FC<QuizAnswersProps> = ({
@@ -26,10 +27,18 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
     answers,
     handleAnswer,
     selectedAnswer,
+    answerButtonIsDisabled,
 }) => {
     const getStyles = (answer: string) => {
         const isCorrect = answer.trim() === currentGame.content3.trim();
         const isSelected = selectedAnswer !== null;
+
+        let color;
+        if (isCorrect) {
+            color = Colors.snow;
+        } else {
+            color = isSelected ? Colors.red : Colors.snow;
+        }
 
         return {
             buttonStyle: [
@@ -37,11 +46,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
                 isSelected && !isCorrect ? styles.isNotCorrect : null,
             ],
             textStyle: {
-                color: isCorrect
-                    ? Colors.snow
-                    : isSelected
-                    ? Colors.red
-                    : Colors.snow,
+                color: color,
                 fontSize: 16,
             },
         };
@@ -58,6 +63,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
                             handleAnswer(answer);
                         }}
                         style={buttonStyle}
+                        disabled={answerButtonIsDisabled}
                     >
                         <ThemedText style={textStyle}>{answer}</ThemedText>
                     </Pressable>
