@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Score} from '../interfaces/scoreInterfaces';
+import { ScoreType } from "@/enums/enums";
 
 export const generateScoresData = (): Score[] => {
     const scoresData: Score[] = [];
@@ -30,7 +31,7 @@ export const saveScores = async (scoresData: Score[]): Promise<void> => {
 export const updateScores = async (
     dayId: number | null,
     score: number,
-    scoreType: string
+    scoreType: number
 ): Promise<void> => {
     const scoresData = await loadScores();
 
@@ -43,25 +44,25 @@ export const updateScores = async (
         let addedScore = 0;
 
         switch (scoreType) {
-            case "contentOpening": // 12 points * 5 (* 24)
+            case ScoreType.ContentOpening: // 12 points * 5 (* 24)
                 if (scoreDetails.contentOpening <= 60) {
                     scoreDetails.contentOpening = score;
                     addedScore = score;
                 }
                 break;
-            case "gameCorrectAnswer": // 20 points * 3 (* 12)
+            case ScoreType.GameCorrectAnswer: // 20 points * 3 (* 12)
                 if (scoreDetails.gameCorrectAnswer <= 60) {
                     scoreDetails.gameCorrectAnswer = score;
                     addedScore = score;
                 }
                 break;
-            case "dayOpening": // 25 points (* 24)
+            case ScoreType.DayOpening: // 25 points (* 24)
                 if (scoreDetails.dayOpening <= 25) {
                     scoreDetails.dayOpening = score;
                     addedScore = score;
                 }
                 break;
-            case "firstLogin": // 40 points (* 1)
+            case ScoreType.FirstLogin: // 40 points (* 1)
                 if (scoreDetails.firstLogin === 0) {
                     scoreDetails.firstLogin = score;
                     addedScore = score;
