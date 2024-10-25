@@ -1,7 +1,16 @@
 // https://docs.expo.dev/guides/using-eslint/
 module.exports = {
-  extends: 'expo',
-  rules: {
-    '@typescript-eslint/no-unused-vars': 0
-  }
+  extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "expo"
+    ],
+    parser: "@typescript-eslint/parser",
+    parserOptions: { "project": ["./tsconfig.json"] },
+    plugins: [
+        "@typescript-eslint"
+    ],
+    rules: {
+      'consistent-return': 2
+    }
 };
