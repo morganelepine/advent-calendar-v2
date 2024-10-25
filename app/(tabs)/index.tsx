@@ -6,6 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { updateScores } from "../../services/score.service";
 import { FirstLaunchModal } from "@/components/calendar/FirstLaunchModal";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ScoreType } from '../../enums/enums';
 
 export default function HomeScreen() {
     const today = new Date();
@@ -27,7 +28,7 @@ export default function HomeScreen() {
             await AsyncStorage.setItem("userUuid", newUserUuid);
             console.log({ newUserUuid });
 
-            await updateScores(day, 40, "firstLogin");
+            await updateScores(day, 40, ScoreType.FirstLogin);
 
             setFirstLaunch(true);
             setModalVisible(true);

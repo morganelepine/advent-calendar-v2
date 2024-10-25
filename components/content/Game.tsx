@@ -9,6 +9,7 @@ import { Quiz } from "@/components/content/games/quiz/Quiz";
 import { classifyGames } from "../../services/content.service";
 import { updateScores } from "../../services/score.service";
 import { Content } from '../../interfaces/contentInterface';
+import { ScoreType } from "@/enums/enums";
 
 interface GameProps {
     games: Content[];
@@ -24,7 +25,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
         const today = new Date();
         const score = dayId === today.getDate() ? 20 : 10;
 
-        await updateScores(dayId, score, "gameCorrectAnswer");
+        await updateScores(dayId, score, ScoreType.GameCorrectAnswer);
     };
 
     return (

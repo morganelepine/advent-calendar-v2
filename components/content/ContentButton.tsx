@@ -8,6 +8,7 @@ import {
 } from "../../services/content.service";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Content } from '../../interfaces/contentInterface';
+import { ScoreType } from '../../enums/enums';
 const cld = new Cloudinary({
     cloud: {
         cloudName: "deauthz29",
@@ -60,7 +61,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
         const today = new Date();
         const score = dayId === today.getDate() ? 12 : 6;
 
-        await updateScores(dayId, score, "contentOpening");
+        await updateScores(dayId, score, ScoreType.ContentOpening);
         setModalVisible(true);
     };
 
