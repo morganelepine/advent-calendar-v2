@@ -3,18 +3,7 @@ import { Quote } from "@/components/content/Quote";
 import { Anecdote } from "@/components/content/Anecdote";
 import { Idea } from "@/components/content/Idea";
 import { Game } from "@/components/content/Game";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../interfaces/contentInterface';
 
 interface DayContentProps {
     quoteOfTheDay: Content | undefined;

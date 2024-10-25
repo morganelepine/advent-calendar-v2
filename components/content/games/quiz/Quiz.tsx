@@ -3,18 +3,7 @@ import { useEffect, useState } from "react";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { QuizAnswers } from "@/components/content/games/quiz/QuizAnswers";
 import { QuizExplanation } from "@/components/content/games/quiz/QuizExplanation";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../../interfaces/contentInterface';
 
 interface QuizProps {
     games: Content[];

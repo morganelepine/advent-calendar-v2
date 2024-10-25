@@ -8,18 +8,8 @@ import { Games } from "@/components/content/games/others/Games";
 import { Quiz } from "@/components/content/games/quiz/Quiz";
 import { classifyGames } from "../../services/content.service";
 import { updateScores } from "../../services/score.service";
+import { Content } from '../../interfaces/contentInterface';
 
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 interface GameProps {
     games: Content[];
     dayId: number | null;

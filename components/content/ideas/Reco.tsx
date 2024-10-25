@@ -6,24 +6,13 @@ import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
+import { Content } from '../../../interfaces/contentInterface';
 
 const cld = new Cloudinary({
     cloud: {
         cloudName: "deauthz29",
     },
 });
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface RecoProps {
     idea: Content;

@@ -7,18 +7,6 @@ import { anecdotesData } from "@/data/SheetToJSON.Anecdotes";
 import { ideasData } from "@/data/SheetToJSON.Ideas";
 import { gamesData } from "@/data/SheetToJSON.Games";
 
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
-
 export default function DayScreen() {
     const params = useLocalSearchParams();
     const dayParam = Array.isArray(params.dayId)

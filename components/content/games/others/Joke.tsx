@@ -4,18 +4,8 @@ import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { CustomButton } from "@/components/utils/buttons/Button";
 import { useState } from "react";
 import { Colors } from "@/constants/Colors";
+import { Content } from '../../../../interfaces/contentInterface';
 
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface JokeProps {
     game: Content;
