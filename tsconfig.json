@@ -2,6 +2,7 @@
     "extends": "expo/tsconfig.base",
     "compilerOptions": {
         "strict": true,
+        "noImplicitAny": true,
         "paths": {
             "@/*": ["./*"]
         }
@@ -12,6 +13,7 @@
         "declarations.d.ts",
         ".expo/types/**/*.ts",
         "expo-env.d.ts",
-        "**/eslintrc.js"
+        "**/.eslintrc.js",
+        "**/babel.config.js"
     ]
 }
