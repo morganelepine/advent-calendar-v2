@@ -12,6 +12,7 @@ interface Score {
 }
 
 export const generateScoresData = () => {
+    // Ici aussi il faudrait un type pour pouvoir faire : Array<UnType>
     const scoresData = [];
     for (let i = 1; i <= 24; i++) {
         scoresData.push({
@@ -29,11 +30,12 @@ export const generateScoresData = () => {
 };
 
 export const loadScores = async () => {
+    // C'est quoi le type de retour ici ?
     const savedScores = await AsyncStorage.getItem("scoresData");
     return savedScores ? JSON.parse(savedScores) : generateScoresData();
 };
 
-export const saveScores = async (scoresData: Score) => {
+export const saveScores = async (scoresData: Score) : Promise<void> => {
     await AsyncStorage.setItem("scoresData", JSON.stringify(scoresData));
 };
 
@@ -41,7 +43,7 @@ export const updateScores = async (
     dayId: number | null,
     score: number,
     scoreType: string
-) => {
+) : Promise<void> => {
     const scoresData = await loadScores();
 
     const scoreOfTheDay = scoresData.find(
@@ -85,7 +87,7 @@ export const updateScores = async (
     saveScores(scoresData);
 };
 
-export const getTotalScore = async () => {
+export const getTotalScore = async () : Promise<number> => {
     const scores = await loadScores();
     let totalScore: number = 0;
 

@@ -14,7 +14,7 @@ export const getContentTitle = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) => {
+) : string => {
     if (ideas.length > 0) {
         return "Se divertir";
     }
@@ -35,7 +35,7 @@ export const getContentBackgroundImage = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) => {
+) : string => {
     if (ideas.length > 0) {
         return "se-divertir_xvdksq";
     }
@@ -52,7 +52,13 @@ export const getContentBackgroundImage = (
     }
 };
 
-export const classifyGames = (games: Content[]) => {
+export const classifyGames = (games: Content[]) : {
+        // Maybe creer un type pour que ça soit lisible ^^
+        pendu?: Content;
+        jeu?: Content;
+        quizCitation: Content[];
+        quizNoel: Content[];
+    } => {
     const gamesByType: {
         pendu?: Content;
         jeu?: Content;
