@@ -4,21 +4,6 @@ import { Days } from "@/components/days/Days";
 import { daysArray } from "@/data/days_data";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-interface Day {
-    dayNumber: number;
-    isOpen: boolean;
-    background: string;
-    width: string;
-    height: string;
-    color: string;
-    textColor: string;
-    image: string;
-    aspectRatio: number;
-    quote: string;
-    quoteAuthor: string;
-    quoteSource: string;
-}
-
 export default function CalendarScreen() {
     const [days, setDays] = useState<Day[]>([]);
 
