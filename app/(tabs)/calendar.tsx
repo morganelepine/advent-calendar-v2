@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Days } from "@/components/days/Days";
 import { daysArray } from "@/data/days_data";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import { Day } from '../../interfaces/dayInterface';
 export default function CalendarScreen() {
     const [days, setDays] = useState<Day[]>([]);
 
