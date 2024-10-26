@@ -4,6 +4,7 @@ import { DayButton } from "@/components/days/Button/DayButton";
 import { Colors } from "@/constants/Colors";
 import { updateScores } from "../../services/score.service";
 import { Day } from '../../interfaces/dayInterface';
+import { ScoreType } from "@/enums/enums";
 
 
 interface DaysProps {
@@ -33,7 +34,7 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
         }
 
         if (dayNumber === today) {
-            await updateScores(dayNumber, 25, "dayOpening");
+            await updateScores(dayNumber, 25, ScoreType.DayOpening);
         }
     };
 
