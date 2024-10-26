@@ -6,13 +6,14 @@ import { quotesData } from "@/data/SheetToJSON.Quotes";
 import { anecdotesData } from "@/data/SheetToJSON.Anecdotes";
 import { ideasData } from "@/data/SheetToJSON.Ideas";
 import { gamesData } from "@/data/SheetToJSON.Games";
+import { Content } from "@/interfaces/contentInterface";
 
 export default function DayScreen() {
     const params = useLocalSearchParams();
     const dayParam = Array.isArray(params.dayId)
         ? params.dayId[0]
         : params.dayId;
-    const dayId = dayParam ? parseInt(dayParam, 10) : null;
+    const dayId = dayParam ? parseInt(dayParam, 10) : 0;
 
     const quoteOfTheDay: Content | undefined = quotesData.find(
         (quote) => quote.dayNumber === dayId

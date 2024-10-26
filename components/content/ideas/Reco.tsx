@@ -7,6 +7,7 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
 import { Content } from '../../../interfaces/contentInterface';
+import { Href } from "expo-router";
 
 const cld = new Cloudinary({
     cloud: {
@@ -66,7 +67,7 @@ export const Reco: React.FC<RecoProps> = ({
 
             {(idea.content5 === "Une playlist" || idea.content5 === "Un jeu") &&
             idea.content4 ? (
-                <ExternalLink href={idea.content4} style={styles.button}>
+                <ExternalLink href={idea.content4 as Href} style={styles.button}>
                     <ThemedText style={styles.buttonText}>
                         {idea.title.includes("Bingo")
                             ? "Télécharger le bingo"
