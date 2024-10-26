@@ -1,17 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-interface ScoreDetail {
-    firstLogin: number;
-    dayOpening: number;
-    contentOpening: number;
-    gameCorrectAnswer: number;
-}
-
-interface Score {
-    dayNumber: number;
-    scoreTotal: number;
-    scoreDetails: ScoreDetail;
-}
+import {Score} from '../interfaces/scoreInterfaces';
 
 export const generateScoresData = (): Score[] => {
     const scoresData: Score[] = [];
