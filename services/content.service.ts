@@ -43,11 +43,13 @@ export const getContentBackgroundImage = (
 };
 
 export const classifyGames = (games: Content[]) : {
-        // Maybe creer un type pour que ça soit lisible ^^
+    gamesByType : {
         pendu?: Content;
         jeu?: Content;
         quizCitation: Content[];
-        quizNoel: Content[];
+        quizNoel: Content[]
+    },
+    type: string
     } => {
     const gamesByType: {
         pendu?: Content;
