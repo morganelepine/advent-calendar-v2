@@ -9,9 +9,9 @@ export const AudioPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     const playSound = async () => {
-        const { sound } = await Audio.Sound.createAsync({
-            uri: require("../../assets/musics/we-wish-you-a-merry-christmas.mp3"),
-        });
+        const { sound } = await Audio.Sound.createAsync(
+            require("@/assets/musics/we-wish-you-a-merry-christmas.mp3")
+        );
         setSound(sound);
         await sound.playAsync();
         setIsPlaying(true);
