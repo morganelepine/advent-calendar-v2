@@ -1,20 +1,10 @@
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../interfaces/contentInterface';
 
 export const getContentTitle = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) => {
+) : string => {
     if (ideas.length > 0) {
         return "Se divertir";
     }
@@ -24,8 +14,6 @@ export const getContentTitle = (
     switch (content.type) {
         case "quote":
             return "S'inspirer";
-        case "recipe":
-            return "Se régaler";
         case "anecdote":
             return "S'instuire";
         default:
@@ -37,7 +25,7 @@ export const getContentBackgroundImage = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) => {
+) : string => {
     if (ideas.length > 0) {
         return "se-divertir_xvdksq";
     }
@@ -49,10 +37,18 @@ export const getContentBackgroundImage = (
             return "s-inspirer_zwls2a";
         case "anecdote":
             return "s-instruire_xybqas";
+        default:
+            return "se-regaler_mnonwh";
     }
 };
 
-export const classifyGames = (games: Content[]) => {
+export const classifyGames = (games: Content[]) : {
+        // Maybe creer un type pour que ça soit lisible ^^
+        pendu?: Content;
+        jeu?: Content;
+        quizCitation: Content[];
+        quizNoel: Content[];
+    } => {
     const gamesByType: {
         pendu?: Content;
         jeu?: Content;

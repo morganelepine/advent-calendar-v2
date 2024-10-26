@@ -14,7 +14,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 interface CustomModalProps {
     isVisible: boolean;
     onClose: () => void;
-    backgroundImage?: any;
     contentType: string;
     children?: React.ReactNode;
 }
@@ -22,7 +21,6 @@ interface CustomModalProps {
 export const CustomModal: React.FC<CustomModalProps> = ({
     isVisible,
     onClose,
-    backgroundImage = require("@/assets/images/background/modal-background.png"),
     contentType,
     children,
 }) => {
@@ -40,6 +38,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                 return "Jeu du jour";
             case "quiz":
                 return "Quiz du jour";
+            default:
+                return "Contenu du jour";
         }
     };
 
@@ -52,7 +52,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={backgroundImage}
+                source={require("@/assets/images/background/modal-background.png")}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

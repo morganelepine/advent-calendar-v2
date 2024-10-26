@@ -1,25 +1,16 @@
 import { useState } from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomModal } from "@/components/utils/custom/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Hangman } from "@/components/content/games/hangman/Hangman";
 import { Games } from "@/components/content/games/others/Games";
 import { Quiz } from "@/components/content/games/quiz/Quiz";
 import { classifyGames } from "../../services/content.service";
 import { updateScores } from "../../services/score.service";
+import { Content } from '../../interfaces/contentInterface';
+import { ScoreType } from "@/enums/enums";
 
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 interface GameProps {
     games: Content[];
     dayId: number;
@@ -31,7 +22,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
     const { gamesByType, type } = classifyGames(games);
 
     const setScore = async () => {
-        await updateScores(dayId, "gameCorrectAnswer");
+        await updateScores(dayId, ScoreType.GameCorrectAnswer);
     };
 
     return (

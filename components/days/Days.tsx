@@ -3,21 +3,8 @@ import { StyleSheet, View, ToastAndroid } from "react-native";
 import { DayButton } from "@/components/days/Button/DayButton";
 import { Colors } from "@/constants/Colors";
 import { updateScores } from "../../services/score.service";
-
-interface Day {
-    dayNumber: number;
-    isOpen: boolean;
-    background: string;
-    width: string;
-    height: string;
-    color: string;
-    textColor: string;
-    image: string;
-    aspectRatio: number;
-    quote: string;
-    quoteAuthor: string;
-    quoteSource: string;
-}
+import { Day } from "../../interfaces/dayInterface";
+import { ScoreType } from "@/enums/enums";
 
 interface DaysProps {
     days: Day[];
@@ -32,21 +19,21 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
 
         const updatedDays = days.map((day) => {
             return day.dayNumber === dayNumber &&
-                (dayNumber === 1 || dayNumber === 2 || dayNumber === today) &&
+                dayNumber <= today &&
                 !day.isOpen
                 ? { ...day, isOpen: !day.isOpen }
                 : day;
         });
         setDays(updatedDays);
 
-        if (dayNumber === 1 || dayNumber === 2 || dayNumber === today) {
+        if (dayNumber <= today) {
             setDayModalVisible(dayNumber);
         } else {
             ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);
         }
 
         if (dayNumber === today) {
-            await updateScores(dayNumber, "dayOpening");
+            await updateScores(dayNumber, ScoreType.DayOpening);
         }
     };
 

@@ -5,21 +5,7 @@ import { router } from "expo-router";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import { Ionicons } from "@expo/vector-icons";
-
-interface Day {
-    dayNumber: number;
-    isOpen: boolean;
-    background: string;
-    width: string;
-    height: string;
-    color: string;
-    textColor: string;
-    image: string;
-    aspectRatio: number;
-    quote: string;
-    quoteAuthor: string;
-    quoteSource: string;
-}
+import { Day } from '../../../interfaces/dayInterface';
 
 interface DayModalProps {
     day: Day;
@@ -44,7 +30,7 @@ export const DayModal: React.FC<DayModalProps> = ({
             return () => {
                 setModalVisible(false);
             };
-        }, [day.dayNumber])
+        }, [])
     );
 
     return (

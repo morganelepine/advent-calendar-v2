@@ -1,24 +1,15 @@
 import { Pressable, StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
+import { Content } from '../../../../interfaces/contentInterface';
 
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface QuizAnswersProps {
     currentGame: Content;
     answers: string[];
     handleAnswer: (answer: string) => void;
     selectedAnswer: string | null;
+    answerButtonIsDisabled: boolean;
 }
 
 export const QuizAnswers: React.FC<QuizAnswersProps> = ({
@@ -26,10 +17,18 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
     answers,
     handleAnswer,
     selectedAnswer,
+    answerButtonIsDisabled,
 }) => {
     const getStyles = (answer: string) => {
         const isCorrect = answer.trim() === currentGame.content3.trim();
         const isSelected = selectedAnswer !== null;
+
+        let color;
+        if (isCorrect) {
+            color = Colors.snow;
+        } else {
+            color = isSelected ? Colors.red : Colors.snow;
+        }
 
         return {
             buttonStyle: [
@@ -37,11 +36,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
                 isSelected && !isCorrect ? styles.isNotCorrect : null,
             ],
             textStyle: {
-                color: isCorrect
-                    ? Colors.snow
-                    : isSelected
-                    ? Colors.red
-                    : Colors.snow,
+                color: color,
                 fontSize: 16,
             },
         };
@@ -58,6 +53,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
                             handleAnswer(answer);
                         }}
                         style={buttonStyle}
+                        disabled={answerButtonIsDisabled}
                     >
                         <ThemedText style={textStyle}>{answer}</ThemedText>
                     </Pressable>

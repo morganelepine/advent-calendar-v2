@@ -1,26 +1,15 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { AdvancedImage } from "cloudinary-react-native";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { Content } from '../../../../interfaces/contentInterface';
 
 const cld = new Cloudinary({
     cloud: {
         cloudName: "deauthz29",
     },
 });
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface GameIdeaProps {
     game: Content;

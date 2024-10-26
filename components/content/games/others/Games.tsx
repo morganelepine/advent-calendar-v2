@@ -1,18 +1,7 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { GameIdea } from "@/components/content/games/others/GameIdea";
 import { Joke } from "@/components/content/games/others/Joke";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../../interfaces/contentInterface';
 
 interface GamesProps {
     game: Content;
@@ -29,5 +18,3 @@ export const Games: React.FC<GamesProps> = ({ game }) => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({});

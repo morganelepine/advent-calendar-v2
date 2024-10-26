@@ -1,17 +1,16 @@
 import { StyleSheet, Pressable } from "react-native";
 import { Audio, AVPlaybackStatus } from "expo-av";
-import { useCallback, useEffect, useState } from "react";
-import { useFocusEffect } from "expo-router";
+import { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 
-export const AudioPlayer = ({}) => {
+export const AudioPlayer = () => {
     const [sound, setSound] = useState<Audio.Sound | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
     const playSound = async () => {
         const { sound } = await Audio.Sound.createAsync(
-            require("../../assets/musics/we-wish-you-a-merry-christmas.mp3")
+            require("@/assets/musics/we-wish-you-a-merry-christmas.mp3")
         );
         setSound(sound);
         await sound.playAsync();
@@ -42,18 +41,6 @@ export const AudioPlayer = ({}) => {
             }
         };
     }, []);
-
-    // Stop music when returning to the calendar
-    // useFocusEffect(
-    //     useCallback(() => {
-    //         return () => {
-    //             if (sound) {
-    //                 sound.stopAsync();
-    //                 sound.unloadAsync();
-    //             }
-    //         };
-    //     }, [sound])
-    // );
 
     return (
         <Pressable onPress={togglePlayPause} style={styles.iconButton}>

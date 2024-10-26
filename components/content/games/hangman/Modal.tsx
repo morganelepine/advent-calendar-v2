@@ -1,6 +1,6 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/custom-utils/Modal";
+import { CustomModal } from "@/components/utils/custom/Modal";
 import { Colors } from "@/constants/Colors";
 
 interface ModalProps {

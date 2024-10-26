@@ -1,19 +1,8 @@
 import { Pressable, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { Video } from "@/components/custom-utils/Video";
+import { Video } from "@/components/utils/custom/Video";
 import { Colors } from "@/constants/Colors";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../../interfaces/contentInterface';
 
 interface QuizExplanationProps {
     games: Content[];

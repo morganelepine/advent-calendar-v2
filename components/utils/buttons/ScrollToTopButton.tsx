@@ -15,7 +15,7 @@ interface ScrollToTopButtonProps {
 }
 
 export const ScrollToTopButton = forwardRef<ScrollView, ScrollToTopButtonProps>(
-    ({ children, style = {} }, ref) => {
+    function ScrollToTopButton({ children, style = {} }, ref) {
         const scrollToTop = () => {
             if (ref && "current" in ref && ref.current) {
                 ref.current.scrollTo({ y: 0, animated: true });

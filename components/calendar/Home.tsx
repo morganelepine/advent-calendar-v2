@@ -4,6 +4,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { daysArray } from "@/data/days_data";
 import { AudioPlayer } from "@/components/content/Audio";
+import { Colors } from "@/constants/Colors";
 
 const cld = new Cloudinary({
     cloud: {
@@ -20,6 +21,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const today = new Date();
     const todayDay = today.getDate();
     const christmasDay = new Date(today.getFullYear(), 11, 25);
+    const calendarDay = new Date(today.getFullYear(), 11, 1);
     // console.log({ today });
     // console.log({ christmasDay });
 
@@ -30,10 +32,16 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const daysToChristmas = Math.ceil(
         (christmasDay.getTime() - today.getTime()) / MILLISECONDS_IN_A_DAY
     );
+    const daysToCalendar = Math.ceil(
+        (calendarDay.getTime() - today.getTime()) / MILLISECONDS_IN_A_DAY
+    );
 
     const daysMap = new Map(daysArray.map((day) => [day.dayNumber, day]));
     const day = daysMap.get(todayDay);
-    let backgroundImage = cld.image(day?.background);
+
+    const backgroundImage = day
+        ? cld.image(day?.background)
+        : cld.image("image6_ccgiqd");
 
     return (
         <ImageBackground
@@ -57,6 +65,12 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                         {daysToChristmas} nuits
                     </ThemedText>
                     <ThemedText type="homeTitle">avant Noël</ThemedText>
+                    {daysToCalendar > 0 && (
+                        <ThemedText style={styles.text2}>
+                            (et plus que {daysToCalendar} avant le départ du
+                            calendrier !)
+                        </ThemedText>
+                    )}
                 </View>
             </SafeAreaView>
         </ImageBackground>
@@ -81,5 +95,10 @@ const styles = StyleSheet.create({
     },
     text1: {
         letterSpacing: 8,
+    },
+    text2: {
+        paddingTop: 20,
+        color: Colors.snow,
+        fontSize: 14,
     },
 });

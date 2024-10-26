@@ -6,32 +6,8 @@ import { Header } from "@/components/score/Header";
 import { Rules } from "@/components/score/Rules";
 import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
+import { Score } from "@/interfaces/scoreInterfaces";
 
-interface Day {
-    dayNumber: number;
-    isOpen: boolean;
-    background: string;
-    width: string;
-    height: string;
-    color: string;
-    textColor: string;
-    image: string;
-    aspectRatio: number;
-    quote: string;
-    quoteAuthor: string;
-    quoteSource: string;
-}
-
-interface Score {
-    dayNumber: number;
-    scoreTotal: number;
-    scoreDetails: [
-        { firstLogin: number },
-        { dayOpening: number },
-        { contentOpening: number },
-        { gameCorrectAnswer: number }
-    ];
-}
 
 export default function ScoreScreen() {
     const scrollViewRef = useRef<ScrollView>(null);

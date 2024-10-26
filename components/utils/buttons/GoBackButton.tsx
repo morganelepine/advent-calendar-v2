@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, Pressable } from "react-native";
+import { TextStyle, Pressable } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Href, router } from "expo-router";
 import { Colors } from "@/constants/Colors";
@@ -32,13 +32,3 @@ export const GoBackButton: React.FC<GoBackButtonProps> = ({
         </Pressable>
     );
 };
-
-const styles = StyleSheet.create({
-    button: {
-        padding: 8,
-        alignSelf: "center",
-        position: "absolute",
-        bottom: 10,
-        right: 10,
-    },
-});

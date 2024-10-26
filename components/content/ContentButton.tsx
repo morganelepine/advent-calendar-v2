@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Pressable, ImageBackground } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemedText } from "@/components/ThemedText";
 import { updateScores } from "../../services/score.service";
 import {
     getContentTitle,
     getContentBackgroundImage,
 } from "../../services/content.service";
+import { Content } from '../../interfaces/contentInterface';
+import { ScoreType } from '../../enums/enums';
 import { Cloudinary } from "@cloudinary/url-gen";
 
 const cld = new Cloudinary({
@@ -14,18 +15,6 @@ const cld = new Cloudinary({
         cloudName: "deauthz29",
     },
 });
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface ContentButtonProps {
     content?: Content;
@@ -64,24 +53,13 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
             setImage(backgroundImage);
             setIsImageReady(true);
         }
-    }, []);
-    let backgroundImage = cld.image(image);
+    }, [content, ideas, games]);
+    const backgroundImage = cld.image(image);
     // const version = new Date().getTime();
     // let backgroundImage = cld.image(image).setVersion(version);
 
-    const [userUuid, setUserUuid] = useState<string>("");
-    useEffect(() => {
-        const getUserUuid = async () => {
-            const uuid = await AsyncStorage.getItem("userUuid");
-            if (uuid) {
-                setUserUuid(uuid);
-            }
-        };
-        getUserUuid();
-    }, []);
-
     const handleContentOpening = async () => {
-        await updateScores(dayId, "contentOpening");
+        await updateScores(dayId, ScoreType.ContentOpening);
         setModalVisible(true);
     };
 

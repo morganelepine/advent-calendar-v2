@@ -1,20 +1,9 @@
 import { StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
-import { CustomMarkdown } from "@/components/custom-utils/Markdown";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { QuizAnswers } from "@/components/content/games/quiz/QuizAnswers";
 import { QuizExplanation } from "@/components/content/games/quiz/QuizExplanation";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../../interfaces/contentInterface';
 
 interface QuizProps {
     games: Content[];
@@ -26,19 +15,23 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const currentGame = games[currentQuestionIndex];
     const answers = currentGame.content2.split(",");
+    const [answerButtonIsDisabled, setAnswerButtonIsDisabled] =
+        useState<boolean>(false);
 
     const handleAnswer = (answer: string) => {
         setSelectedAnswer(answer);
+        setAnswerButtonIsDisabled(true);
     };
 
     useEffect(() => {
         if (selectedAnswer === currentGame.content3) {
             setScore();
         }
-    }, [selectedAnswer]);
+    }, [selectedAnswer, currentGame.content3, setScore]);
 
     const handleNextQuestion = () => {
         setSelectedAnswer(null);
+        setAnswerButtonIsDisabled(false);
         setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % games.length);
     };
 
@@ -53,6 +46,7 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore }) => {
                 answers={answers}
                 selectedAnswer={selectedAnswer}
                 handleAnswer={handleAnswer}
+                answerButtonIsDisabled={answerButtonIsDisabled}
             />
 
             {selectedAnswer !== null && (

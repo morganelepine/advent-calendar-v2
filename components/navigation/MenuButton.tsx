@@ -47,7 +47,7 @@ export const MenuButton = () => {
             useNativeDriver: true,
         }).start();
         setOpen(!open);
-    }, [open]);
+    }, [open, animation]);
 
     useFocusEffect(
         useCallback(() => {
@@ -61,7 +61,7 @@ export const MenuButton = () => {
                     setOpen(false);
                 }
             };
-        }, [open])
+        }, [open, animation])
     );
 
     const onPress = (route: Href<string | object>) => {

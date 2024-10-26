@@ -4,18 +4,7 @@ import { useEffect, useState } from "react";
 import { Infos } from "@/components/content/games/hangman/Infos";
 import { Alphabet } from "@/components/content/games/hangman/Alphabet";
 import { Modal } from "@/components/content/games/hangman/Modal";
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
+import { Content } from '../../../../interfaces/contentInterface';
 
 interface HangmanProps {
     game: Content;
@@ -36,7 +25,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
         setHiddenWord(currentWord.split("").map(() => "_"));
         setClickedLetters([]);
         setMistakes(0);
-    }, [currentWordIndex]);
+    }, [currentWord]);
 
     const checkLetter = (letter: string) => {
         if (clickedLetters.includes(letter)) {
@@ -81,7 +70,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
             setModalMessage("Félicitations 🥳");
             setModalVisible(true);
         }
-    }, [hiddenWord]);
+    }, [hiddenWord, currentWord, setScore]);
 
     useEffect(() => {
         if (mistakes === maxTries) {

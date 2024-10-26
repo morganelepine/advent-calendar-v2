@@ -1,29 +1,18 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Dimensions, Image, View } from "react-native";
-import { CustomModal } from "@/components/custom-utils/Modal";
-import { CustomScrollView } from "@/components/custom-utils/ScrollView";
+import { Dimensions, Image, View } from "react-native";
+import { CustomModal } from "@/components/utils/custom/Modal";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Reco } from "@/components/content/ideas/Reco";
 import { Recipe } from "@/components/content/ideas/Recipe";
+import { Content } from '../../interfaces/contentInterface';
 
 const cld = new Cloudinary({
     cloud: {
         cloudName: "deauthz29",
     },
 });
-
-interface Content {
-    id: number;
-    dayNumber: number;
-    type: string;
-    title: string;
-    content1: string;
-    content2: string;
-    content3: string;
-    content4: string;
-    content5: string;
-}
 
 interface IdeaProps {
     ideas: Content[];
@@ -61,7 +50,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 });
             }
         });
-    }, [ideas]);
+    }, [ideas, screenWidth]);
 
     return (
         <>
@@ -98,5 +87,3 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
         </>
     );
 };
-
-const styles = StyleSheet.create({});
