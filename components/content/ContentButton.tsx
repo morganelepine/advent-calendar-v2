@@ -6,9 +6,10 @@ import {
     getContentTitle,
     getContentBackgroundImage,
 } from "../../services/content.service";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { Content } from '../../interfaces/contentInterface';
 import { ScoreType } from '../../enums/enums';
+import { Cloudinary } from "@cloudinary/url-gen";
+
 const cld = new Cloudinary({
     cloud: {
         cloudName: "deauthz29",
@@ -20,7 +21,7 @@ interface ContentButtonProps {
     ideas?: Content[];
     games?: Content[];
     setModalVisible: (visible: boolean) => void;
-    dayId: number | null;
+    dayId: number;
 }
 
 export const ContentButton: React.FC<ContentButtonProps> = ({
@@ -58,10 +59,7 @@ export const ContentButton: React.FC<ContentButtonProps> = ({
     // let backgroundImage = cld.image(image).setVersion(version);
 
     const handleContentOpening = async () => {
-        const today = new Date();
-        const score = dayId === today.getDate() ? 12 : 6;
-
-        await updateScores(dayId, score, ScoreType.ContentOpening);
+        await updateScores(dayId, ScoreType.ContentOpening);
         setModalVisible(true);
     };
 

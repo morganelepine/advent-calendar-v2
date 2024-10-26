@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {Score} from '../interfaces/scoreInterfaces';
+import { Score } from "@/interfaces/scoreInterfaces";
 import { ScoreType } from "@/enums/enums";
 
 export const generateScoresData = (): Score[] => {
@@ -29,8 +29,7 @@ export const saveScores = async (scoresData: Score[]): Promise<void> => {
 };
 
 export const updateScores = async (
-    dayId: number | null,
-    score: number,
+    dayId: number,
     scoreType: number
 ): Promise<void> => {
     const scoresData = await loadScores();
@@ -44,28 +43,25 @@ export const updateScores = async (
         let addedScore = 0;
 
         switch (scoreType) {
-            case ScoreType.ContentOpening: // 12 points * 5 (* 24)
-                if (scoreDetails.contentOpening <= 60) {
-                    scoreDetails.contentOpening = score;
-                    addedScore = score;
-                }
+            case ScoreType.ContentOpening: // 10 ou 15 points * 4 (* 24)
+                addedScore = await checkContentOpeningScore(
+                    dayId,
+                    scoreOfTheDay
+                );
                 break;
-            case ScoreType.GameCorrectAnswer: // 20 points * 3 (* 12)
-                if (scoreDetails.gameCorrectAnswer <= 60) {
-                    scoreDetails.gameCorrectAnswer = score;
-                    addedScore = score;
-                }
+            case ScoreType.GameCorrectAnswer: // 10 ou 20 points * 3 (* 12)
+                addedScore = await checkGameScore(dayId, scoreOfTheDay);
                 break;
             case ScoreType.DayOpening: // 25 points (* 24)
                 if (scoreDetails.dayOpening <= 25) {
-                    scoreDetails.dayOpening = score;
-                    addedScore = score;
+                    scoreDetails.dayOpening = 25;
+                    addedScore = 25;
                 }
                 break;
             case ScoreType.FirstLogin: // 40 points (* 1)
                 if (scoreDetails.firstLogin === 0) {
-                    scoreDetails.firstLogin = score;
-                    addedScore = score;
+                    scoreDetails.firstLogin = 40;
+                    addedScore = 40;
                 }
                 break;
         }
@@ -87,4 +83,46 @@ export const getTotalScore = async (): Promise<number> => {
     }
 
     return totalScore;
+};
+
+export const checkContentOpeningScore = async (
+    dayId: number,
+    scoreOfTheDay: Score
+): Promise<number> => {
+    const today = new Date().getDate();
+
+    let addedScore = 0;
+    const scoreOnTime = 15;
+    const scoreLate = 10;
+
+    if (today === dayId && scoreOfTheDay.scoreDetails.contentOpening < 60) {
+        scoreOfTheDay.scoreDetails.contentOpening += scoreOnTime;
+        addedScore += scoreOnTime;
+    } else if (scoreOfTheDay.scoreDetails.contentOpening < 40) {
+        scoreOfTheDay.scoreDetails.contentOpening += scoreLate;
+        addedScore += scoreLate;
+    }
+
+    return addedScore;
+};
+
+export const checkGameScore = async (
+    dayId: number,
+    scoreOfTheDay: Score
+): Promise<number> => {
+    const today = new Date().getDate();
+
+    let addedScore = 0;
+    const scoreOnTime = 20;
+    const scoreLate = 10;
+
+    if (today === dayId && scoreOfTheDay.scoreDetails.gameCorrectAnswer < 60) {
+        scoreOfTheDay.scoreDetails.gameCorrectAnswer += scoreOnTime;
+        addedScore += scoreOnTime;
+    } else if (scoreOfTheDay.scoreDetails.gameCorrectAnswer < 30) {
+        scoreOfTheDay.scoreDetails.gameCorrectAnswer += scoreLate;
+        addedScore += scoreLate;
+    }
+
+    return addedScore;
 };

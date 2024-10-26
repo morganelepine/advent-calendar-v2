@@ -67,17 +67,17 @@ export const Rules: React.FC<RulesProps> = ({
                             📜 Découverte des contenus
                         </ThemedText>
                         <ThemedText type="sectionText">
-                            Chaque jour, explorez jusqu'à 5 types de contenus
+                            Chaque jour, explorez jusqu'à 4 types de contenus
                             (une citation, une anecdote, une recommandation, un
                             jeu).
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Pour chaque contenu découvert, vous gagnez
-                            <Text style={styles.bold}> 12 points</Text>.
+                            <Text style={styles.bold}> 15 points</Text>.
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Si vous les ouvrez en retard, vous ne gagnez que
-                            <Text style={styles.bold}> 6 points</Text>.
+                            <Text style={styles.bold}> 10 points</Text>.
                         </ThemedText>
                     </View>
 

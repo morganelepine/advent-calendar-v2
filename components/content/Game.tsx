@@ -13,7 +13,7 @@ import { ScoreType } from "@/enums/enums";
 
 interface GameProps {
     games: Content[];
-    dayId: number | null;
+    dayId: number;
 }
 
 export const Game: React.FC<GameProps> = ({ games, dayId }) => {
@@ -22,10 +22,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
     const { gamesByType, type } = classifyGames(games);
 
     const setScore = async () => {
-        const today = new Date();
-        const score = dayId === today.getDate() ? 20 : 10;
-
-        await updateScores(dayId, score, ScoreType.GameCorrectAnswer);
+        await updateScores(dayId, ScoreType.GameCorrectAnswer);
     };
 
     return (

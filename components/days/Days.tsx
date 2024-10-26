@@ -33,7 +33,7 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
         }
 
         if (dayNumber === today) {
-            await updateScores(dayNumber, 25, ScoreType.DayOpening);
+            await updateScores(dayNumber, ScoreType.DayOpening);
         }
     };
 

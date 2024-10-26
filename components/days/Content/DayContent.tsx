@@ -10,7 +10,7 @@ interface DayContentProps {
     anecdoteOfTheDay: Content | undefined;
     ideas: Content[];
     games: Content[];
-    dayId: number | null;
+    dayId: number;
 }
 
 export const DayContent: React.FC<DayContentProps> = ({

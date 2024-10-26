@@ -16,7 +16,7 @@ const cld = new Cloudinary({
 
 interface IdeaProps {
     ideas: Content[];
-    dayId: number | null;
+    dayId: number;
 }
 
 export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
