@@ -10,6 +10,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ContentType } from "@/enums/enums";
 
 interface CustomModalProps {
     isVisible: boolean;
@@ -28,15 +29,15 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 
     const getTitle = () => {
         switch (contentType) {
-            case "quote":
+            case ContentType.Quote:
                 return "Citation du jour";
-            case "ideas":
+            case ContentType.Idea:
                 return "Idée du jour";
-            case "anecdote":
+            case ContentType.Anecdote:
                 return "Anecdote du\u00A0jour";
-            case "game":
+            case ContentType.Game:
                 return "Jeu du jour";
-            case "quiz":
+            case ContentType.Quiz:
                 return "Quiz du jour";
             default:
                 return "Contenu du jour";

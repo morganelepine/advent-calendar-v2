@@ -2,6 +2,7 @@ import { StyleSheet, View, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/utils/custom/Modal";
 import { Colors } from "@/constants/Colors";
+import { ContentType } from "@/enums/enums";
 
 interface ModalProps {
     modalVisible: boolean;
@@ -26,7 +27,7 @@ export const Modal: React.FC<ModalProps> = ({
         <CustomModal
             isVisible={modalVisible}
             onClose={() => onClose()}
-            contentType={"game"}
+            contentType={ContentType.Game}
         >
             <View style={styles.modal}>
                 <ThemedText>{modalMessage}</ThemedText>

@@ -1,10 +1,18 @@
-import { Content } from '../interfaces/contentInterface';
+import { Content } from "@/interfaces/contentInterface";
+import { ContentType, GameType } from "@/enums/enums";
+
+interface GamesByType {
+    pendu?: Content;
+    jeu?: Content;
+    quizCitation: Content[];
+    quizNoel: Content[];
+}
 
 export const getContentTitle = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) : string => {
+): string => {
     if (ideas.length > 0) {
         return "Se divertir";
     }
@@ -12,9 +20,9 @@ export const getContentTitle = (
         return "S'amuser";
     }
     switch (content.type) {
-        case "quote":
+        case ContentType.Quote:
             return "S'inspirer";
-        case "anecdote":
+        case ContentType.Anecdote:
             return "S'instuire";
         default:
             return "Contenu du jour";
@@ -25,7 +33,7 @@ export const getContentBackgroundImage = (
     content: Content,
     ideas: Content[],
     games: Content[]
-) : string => {
+): string => {
     if (ideas.length > 0) {
         return "se-divertir_xvdksq";
     }
@@ -33,24 +41,21 @@ export const getContentBackgroundImage = (
         return "s-amuser_vn8ugi";
     }
     switch (content.type) {
-        case "quote":
+        case ContentType.Quote:
             return "s-inspirer_zwls2a";
-        case "anecdote":
+        case ContentType.Anecdote:
             return "s-instruire_xybqas";
         default:
             return "se-regaler_mnonwh";
     }
 };
 
-export const classifyGames = (games: Content[]) : {
-    gamesByType : {
-        pendu?: Content;
-        jeu?: Content;
-        quizCitation: Content[];
-        quizNoel: Content[]
-    },
-    type: string
-    } => {
+export const classifyGames = (
+    games: Content[]
+): {
+    gamesByType: GamesByType;
+    type: string;
+} => {
     const gamesByType: {
         pendu?: Content;
         jeu?: Content;
@@ -62,21 +67,21 @@ export const classifyGames = (games: Content[]) : {
 
     games.forEach((game) => {
         switch (game.content5) {
-            case "pendu":
+            case GameType.Pendu:
                 gamesByType.pendu = game;
-                type = "game";
+                type = ContentType.Game;
                 break;
-            case "jeu":
+            case GameType.Jeu:
                 gamesByType.jeu = game;
-                type = "game";
+                type = ContentType.Game;
                 break;
-            case "quiz-citation":
+            case GameType.QuizCitation:
                 gamesByType.quizCitation.push(game);
-                type = "quiz";
+                type = ContentType.Quiz;
                 break;
-            case "quiz-noel":
+            case GameType.QuizNoel:
                 gamesByType.quizNoel.push(game);
-                type = "quiz";
+                type = ContentType.Quiz;
                 break;
         }
     });

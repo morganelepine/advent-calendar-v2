@@ -2,7 +2,8 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
 import { Colors } from "@/constants/Colors";
-import { Content } from '../../../../interfaces/contentInterface';
+import { Content } from "@/interfaces/contentInterface";
+import { GameType } from "@/enums/enums";
 
 interface QuizExplanationProps {
     games: Content[];
@@ -37,14 +38,14 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
                     </>
                 )}
 
-                {currentGame.content5 === "quiz-noel" &&
+                {currentGame.content5 === GameType.QuizNoel &&
                 currentGame.content4 ? (
                     <ThemedText style={styles.explanations}>
                         {currentGame.content4}
                     </ThemedText>
                 ) : null}
 
-                {currentGame.content5 === "quiz-citation" &&
+                {currentGame.content5 === GameType.QuizCitation &&
                 currentGame.content4 ? (
                     <View style={styles.videoContainer}>
                         <Video videoId={currentGame.content4} />

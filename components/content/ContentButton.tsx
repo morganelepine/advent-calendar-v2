@@ -6,8 +6,8 @@ import {
     getContentTitle,
     getContentBackgroundImage,
 } from "../../services/content.service";
-import { Content } from '../../interfaces/contentInterface';
-import { ScoreType } from '../../enums/enums';
+import { Content } from "../../interfaces/contentInterface";
+import { ScoreType } from "../../enums/enums";
 import { Cloudinary } from "@cloudinary/url-gen";
 
 const cld = new Cloudinary({

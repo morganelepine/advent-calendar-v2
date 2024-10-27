@@ -6,7 +6,8 @@ import { ContentButton } from "@/components/content/ContentButton";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Reco } from "@/components/content/ideas/Reco";
 import { Recipe } from "@/components/content/ideas/Recipe";
-import { Content } from '../../interfaces/contentInterface';
+import { Content } from "@/interfaces/contentInterface";
+import { ContentType, IdeaType } from "@/enums/enums";
 
 const cld = new Cloudinary({
     cloud: {
@@ -30,7 +31,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
 
     useEffect(() => {
         ideas.forEach((idea) => {
-            if (idea.content5 === "Un livre") {
+            if (idea.content5 === IdeaType.Book) {
                 const image = cld.image(idea.content4).toURL();
                 Image.getSize(image, (width, height) => {
                     const ratio = Math.min(
@@ -62,12 +63,12 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
             <CustomModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
-                contentType={"ideas"}
+                contentType={ContentType.Idea}
             >
                 <CustomScrollView>
                     {ideas.map((idea) => (
                         <View key={idea.id}>
-                            {idea.content5 === "Une recette" ? (
+                            {idea.content5 === IdeaType.Recipe ? (
                                 <Recipe content={idea} />
                             ) : (
                                 <Reco
