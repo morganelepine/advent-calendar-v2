@@ -3,19 +3,10 @@ import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/utils/custom/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
+import { Content } from "@/interfaces/contentInterface";
 
 interface QuoteProps {
-    content: {
-        id: number;
-        dayNumber: number;
-        type: string;
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-        content5: string;
-    };
+    content: Content;
     dayId: number;
 }
 

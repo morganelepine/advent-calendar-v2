@@ -5,19 +5,10 @@ import { CustomModal } from "@/components/utils/custom/Modal";
 import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
+import { Content } from "@/interfaces/contentInterface";
 
 interface AnecdoteProps {
-    content: {
-        id: number;
-        dayNumber: number;
-        type: string;
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-        content5: string;
-    };
+    content: Content;
     dayId: number;
 }
 
