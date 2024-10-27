@@ -1,4 +1,5 @@
 import { StyleSheet, View } from "react-native";
+import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
@@ -6,8 +7,8 @@ import { AdvancedImage } from "cloudinary-react-native";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
-import { Content } from '../../../interfaces/contentInterface';
-import { Href } from "expo-router";
+import { Content } from "@/interfaces/contentInterface";
+import { IdeaType } from "@/enums/enums";
 
 const cld = new Cloudinary({
     cloud: {
@@ -42,7 +43,7 @@ export const Reco: React.FC<RecoProps> = ({
                 </ThemedText>
             ) : null}
 
-            {idea.content5 === "Un livre" && idea.content4 ? (
+            {idea.content5 === IdeaType.Book && idea.content4 ? (
                 <View>
                     <AdvancedImage
                         cldImg={cld.image(idea.content4)}
@@ -56,7 +57,8 @@ export const Reco: React.FC<RecoProps> = ({
                 </View>
             ) : null}
 
-            {(idea.content5 === "Une série" || idea.content5 === "Des films") &&
+            {(idea.content5 === IdeaType.TvShow ||
+                idea.content5 === IdeaType.List) &&
             idea.content4 ? (
                 <Video videoId={idea.content4} />
             ) : null}
@@ -65,13 +67,13 @@ export const Reco: React.FC<RecoProps> = ({
                 {idea.content2}
             </CustomMarkdown>
 
-            {(idea.content5 === "Une playlist" || idea.content5 === "Un jeu") &&
-            idea.content4 ? (
-                <ExternalLink href={idea.content4 as Href} style={styles.button}>
+            {idea.content5 === IdeaType.Idea && idea.content4 ? (
+                <ExternalLink
+                    href={idea.content4 as Href}
+                    style={styles.button}
+                >
                     <ThemedText style={styles.buttonText}>
-                        {idea.title.includes("Bingo")
-                            ? "Télécharger le bingo"
-                            : "Écouter la playlist"}
+                        {idea.content3}
                     </ThemedText>
                 </ExternalLink>
             ) : null}

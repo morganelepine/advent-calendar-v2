@@ -7,6 +7,7 @@ import { anecdotesData } from "@/data/SheetToJSON.Anecdotes";
 import { ideasData } from "@/data/SheetToJSON.Ideas";
 import { gamesData } from "@/data/SheetToJSON.Games";
 import { Content } from "@/interfaces/contentInterface";
+import { Day25 } from "@/components/days/Content/Day25";
 
 export default function DayScreen() {
     const params = useLocalSearchParams();
@@ -39,13 +40,17 @@ export default function DayScreen() {
 
     return (
         <View style={styles.background}>
-            <DayContent
-                quoteOfTheDay={quoteOfTheDay}
-                anecdoteOfTheDay={anecdoteOfTheDay}
-                ideas={ideas}
-                games={games}
-                dayId={dayId}
-            />
+            {dayId === 25 ? (
+                <Day25 dayId={dayId} />
+            ) : (
+                <DayContent
+                    quoteOfTheDay={quoteOfTheDay}
+                    anecdoteOfTheDay={anecdoteOfTheDay}
+                    ideas={ideas}
+                    games={games}
+                    dayId={dayId}
+                />
+            )}
         </View>
     );
 }
