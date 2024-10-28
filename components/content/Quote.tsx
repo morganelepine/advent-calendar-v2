@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomModal } from "@/components/utils/custom/Modal";
 import { ContentButton } from "@/components/content/ContentButton";
+import cld from "@/config/cloudinaryConfig";
 
 interface QuoteProps {
     content: {
@@ -22,12 +23,15 @@ interface QuoteProps {
 export const Quote: React.FC<QuoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
+    const backgroundImage = cld.image("s-inspirer_zwls2a");
+
     return (
         <>
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
+                backgroundImage={backgroundImage}
             />
 
             <CustomModal

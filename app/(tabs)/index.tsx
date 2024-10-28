@@ -11,7 +11,6 @@ import { ScoreType } from "@/enums/enums";
 export default function HomeScreen() {
     const today = new Date();
     const day = today.getDate();
-
     const [firstLaunch, setFirstLaunch] = useState<boolean | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
 

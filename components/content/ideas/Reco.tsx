@@ -4,17 +4,11 @@ import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { AdvancedImage } from "cloudinary-react-native";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
 import { Content } from "@/interfaces/contentInterface";
 import { IdeaType } from "@/enums/enums";
-
-const cld = new Cloudinary({
-    cloud: {
-        cloudName: "deauthz29",
-    },
-});
+import cld from "@/config/cloudinaryConfig";
 
 interface RecoProps {
     idea: Content;
@@ -29,22 +23,12 @@ export const Reco: React.FC<RecoProps> = ({
 }) => {
     return (
         <View>
-            <ThemedText type="modalSubtitle">{idea.title}</ThemedText>
+            <ThemedText type="modalSubtitle" style={{ marginBottom: 20 }}>
+                {idea.title}
+            </ThemedText>
 
-            {idea.content1 ? (
-                <CustomMarkdown style={styles.title}>
-                    {idea.content1}
-                </CustomMarkdown>
-            ) : null}
-
-            {idea.content3 ? (
-                <ThemedText style={styles.author}>
-                    de {idea.content3}
-                </ThemedText>
-            ) : null}
-
-            {idea.content5 === IdeaType.Book && idea.content4 ? (
-                <View>
+            {idea.content5 === IdeaType.Book ? (
+                <View style={styles.bookContainer}>
                     <AdvancedImage
                         cldImg={cld.image(idea.content4)}
                         style={[
@@ -54,18 +38,29 @@ export const Reco: React.FC<RecoProps> = ({
                         ]}
                         resizeMode="contain"
                     />
+                    <View style={styles.bookInfos}>
+                        <CustomMarkdown style={styles.bookTitle}>
+                            {idea.content1}
+                        </CustomMarkdown>
+                        <ThemedText style={styles.author}>
+                            de {idea.content3}
+                        </ThemedText>
+                    </View>
                 </View>
             ) : null}
 
-            {(idea.content5 === IdeaType.TvShow ||
-                idea.content5 === IdeaType.List) &&
-            idea.content4 ? (
-                <Video videoId={idea.content4} />
+            {idea.content5 === IdeaType.TvShow ? (
+                <>
+                    <View style={styles.video}>
+                        <Video videoId={idea.content4} />
+                    </View>
+                    <CustomMarkdown style={styles.videoTitle}>
+                        {idea.content1}
+                    </CustomMarkdown>
+                </>
             ) : null}
 
-            <CustomMarkdown style={styles.description}>
-                {idea.content2}
-            </CustomMarkdown>
+            <CustomMarkdown>{idea.content2}</CustomMarkdown>
 
             {idea.content5 === IdeaType.Idea && idea.content4 ? (
                 <ExternalLink
@@ -82,8 +77,13 @@ export const Reco: React.FC<RecoProps> = ({
 };
 
 const styles = StyleSheet.create({
-    title: {
-        marginTop: 15,
+    bookContainer: {
+        flexDirection: "row",
+        marginTop: 10,
+    },
+    bookInfos: { paddingLeft: 15, flex: 1 },
+    bookTitle: {
+        marginTop: -15,
         fontFamily: "PoppinsBold",
     },
     author: {
@@ -93,21 +93,22 @@ const styles = StyleSheet.create({
         fontFamily: "PoppinsItalic",
         textAlign: "left",
     },
-    description: {
-        marginTop: 15,
-        marginBottom: 5,
-    },
     image: {
         borderColor: Colors.blue,
         borderWidth: 0.2,
-        marginBottom: 5,
+        marginBottom: 20,
     },
+
     button: {
         backgroundColor: Colors.blue,
         padding: 10,
         borderRadius: 20,
+        marginTop: 10,
         marginBottom: 20,
         textAlign: "center",
     },
     buttonText: { color: "white" },
+
+    videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
+    video: { marginTop: 10, marginBottom: 20 },
 });

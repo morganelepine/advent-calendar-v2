@@ -29,18 +29,12 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 
     const getTitle = () => {
         switch (contentType) {
-            case ContentType.Quote:
-                return "Citation du jour";
-            case ContentType.Idea:
-                return "Idée du jour";
-            case ContentType.Anecdote:
-                return "Anecdote du\u00A0jour";
             case ContentType.Game:
                 return "Jeu du jour";
             case ContentType.Quiz:
                 return "Quiz du jour";
             default:
-                return "Contenu du jour";
+                return "Jeu du jour";
         }
     };
 
@@ -53,7 +47,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/modal-background.png")}
+                source={require("@/assets/images/background/simple-background.png")}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

@@ -16,7 +16,7 @@ export const Video: React.FC<VideoProps> = ({ videoId }) => {
 
     return (
         <YoutubePlayer
-            height={170}
+            height={180}
             play={playing}
             videoId={videoId}
             onChangeState={onStateChange}

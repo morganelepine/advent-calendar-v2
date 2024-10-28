@@ -49,6 +49,7 @@ export default function RootLayout() {
                     },
                     headerBackTitleVisible: false,
                 }}
+                initialRouteName={"informations"}
             >
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />

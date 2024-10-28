@@ -162,15 +162,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "white",
         borderRadius: 30,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.29,
-        shadowRadius: 4.65,
-
-        elevation: 7,
+        elevation: 5,
     },
     modalTitle: { paddingHorizontal: 15, fontSize: 24 },
     section: {

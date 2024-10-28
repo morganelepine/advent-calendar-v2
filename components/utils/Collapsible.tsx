@@ -1,7 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { PropsWithChildren, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         gap: 6,
     },
-    title: { fontFamily: "PoppinsBold", textAlign: "left", fontSize: 15 },
+    title: { fontFamily: "PoppinsBold", textAlign: "left", fontSize: 16 },
     content: {
         marginTop: 6,
         marginLeft: 25,

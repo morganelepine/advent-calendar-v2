@@ -2,14 +2,8 @@ import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { AdvancedImage } from "cloudinary-react-native";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
-import { Cloudinary } from "@cloudinary/url-gen";
-import { Content } from '../../../../interfaces/contentInterface';
-
-const cld = new Cloudinary({
-    cloud: {
-        cloudName: "deauthz29",
-    },
-});
+import { Content } from "../../../../interfaces/contentInterface";
+import cld from "@/config/cloudinaryConfig";
 
 interface GameIdeaProps {
     game: Content;

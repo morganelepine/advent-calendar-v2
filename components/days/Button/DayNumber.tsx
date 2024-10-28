@@ -1,13 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import { Colors } from "@/constants/Colors";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "cloudinary-react-native";
-
-const cld = new Cloudinary({
-    cloud: {
-        cloudName: "deauthz29",
-    },
-});
+import cld from "@/config/cloudinaryConfig";
 
 interface DayNumberProps {
     day: {

@@ -1,40 +1,35 @@
-import { StyleSheet, ImageBackground } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { FirstLaunch } from "@/components/calendar/FirstLaunch";
+import { StyleSheet, Image } from "react-native";
+import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
+import { FirstLaunch } from "@/components/calendar/FirstLaunch";
+import { Colors } from "@/constants/Colors";
 
 export default function InformationsScreen() {
     return (
-        <ImageBackground
-            source={require("@/assets/images/background/tab-background.png")}
-            resizeMode="cover"
-            style={styles.imageBackground}
+        <ParallaxScrollView
+            headerBackgroundColor={{
+                light: Colors.snow,
+                dark: Colors.darkBlue,
+            }}
+            headerImage={
+                <Image
+                    source={require("@/assets/images/christmas.jpg")}
+                    style={styles.headerImage}
+                    resizeMode="cover"
+                />
+            }
         >
-            <SafeAreaView style={styles.safeArea}>
-                <ThemedText type="modalTitle" style={styles.title}>
-                    Présentation du&nbsp;calendrier
-                </ThemedText>
-                <FirstLaunch />
-            </SafeAreaView>
-        </ImageBackground>
+            <ThemedText type="modalTitle">
+                Présentation du&nbsp;calendrier
+            </ThemedText>
+            <FirstLaunch />
+        </ParallaxScrollView>
     );
 }
 
 const styles = StyleSheet.create({
-    imageBackground: {
-        flex: 1,
-        width: "100%",
+    headerImage: {
         height: "100%",
-    },
-    safeArea: {
-        flex: 1,
-        backgroundColor: "transparent",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-    },
-    title: {
-        paddingTop: 30,
-        paddingHorizontal: 20,
+        width: "100%",
     },
 });

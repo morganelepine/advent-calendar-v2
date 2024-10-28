@@ -1,16 +1,10 @@
 import { StyleSheet, ImageBackground, View } from "react-native";
 import { EdgeInsets, SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { daysArray } from "@/data/days_data";
 import { AudioPlayer } from "@/components/content/Audio";
 import { Colors } from "@/constants/Colors";
-
-const cld = new Cloudinary({
-    cloud: {
-        cloudName: "deauthz29",
-    },
-});
+import cld from "@/config/cloudinaryConfig";
 
 interface HomeProps {
     insets: EdgeInsets;

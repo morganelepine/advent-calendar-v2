@@ -77,17 +77,18 @@ const styles = StyleSheet.create({
     },
     modalTitle: {
         color: Colors.blue,
-        fontSize: 32,
+        fontSize: 30,
         fontFamily: "PallyBold",
         textAlign: "center",
         letterSpacing: 3,
         marginVertical: 20,
+        lineHeight: 34,
     },
     modalSubtitle: {
         color: Colors.darkBlue,
-        fontSize: 22,
+        fontSize: 20,
         fontFamily: "PallyBold",
-        textAlign: "center",
+        textAlign: "left",
         letterSpacing: 1,
     },
 });

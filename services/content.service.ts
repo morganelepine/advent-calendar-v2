@@ -29,27 +29,6 @@ export const getContentTitle = (
     }
 };
 
-export const getContentBackgroundImage = (
-    content: Content,
-    ideas: Content[],
-    games: Content[]
-): string => {
-    if (ideas.length > 0) {
-        return "se-divertir_xvdksq";
-    }
-    if (games.length > 0) {
-        return "s-amuser_vn8ugi";
-    }
-    switch (content.type) {
-        case ContentType.Quote:
-            return "s-inspirer_zwls2a";
-        case ContentType.Anecdote:
-            return "s-instruire_xybqas";
-        default:
-            return "se-regaler_mnonwh";
-    }
-};
-
 export const classifyGames = (
     games: Content[]
 ): {

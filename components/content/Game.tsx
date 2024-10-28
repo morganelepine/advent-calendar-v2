@@ -6,10 +6,11 @@ import { ContentButton } from "@/components/content/ContentButton";
 import { Hangman } from "@/components/content/games/hangman/Hangman";
 import { Games } from "@/components/content/games/others/Games";
 import { Quiz } from "@/components/content/games/quiz/Quiz";
-import { classifyGames } from "../../services/content.service";
-import { updateScores } from "../../services/score.service";
-import { Content } from '../../interfaces/contentInterface';
+import { classifyGames } from "@/services/content.service";
+import { updateScores } from "@/services/score.service";
+import { Content } from "@/interfaces/contentInterface";
 import { ScoreType } from "@/enums/enums";
+import cld from "@/config/cloudinaryConfig";
 
 interface GameProps {
     games: Content[];
@@ -18,6 +19,8 @@ interface GameProps {
 
 export const Game: React.FC<GameProps> = ({ games, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
+
+    const backgroundImage = cld.image("s-amuser_vn8ugi");
 
     const { gamesByType, type } = classifyGames(games);
 
@@ -31,6 +34,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                 games={games}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
+                backgroundImage={backgroundImage}
             />
             <CustomModal
                 isVisible={modalVisible}

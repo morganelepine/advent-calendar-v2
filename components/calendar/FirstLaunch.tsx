@@ -8,7 +8,6 @@ export const FirstLaunch = () => {
     return (
         <ScrollView
             ref={scrollViewRef}
-            style={styles.container}
             persistentScrollbar={true} // Android only
         >
             <View style={styles.section}>
@@ -70,7 +69,7 @@ export const FirstLaunch = () => {
                 </ThemedText>
             </View>
 
-            <View style={[styles.section, { paddingBottom: 20 }]}>
+            <View style={styles.section}>
                 <ThemedText type="sectionText" style={styles.ital}>
                     J'ai mis tout mon amour de Noël dans ce calendrier et
                     j'espère qu'il saura vous transporter dans cette magie des
@@ -82,16 +81,12 @@ export const FirstLaunch = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 20,
-    },
     title: {
         paddingTop: 30,
         paddingHorizontal: 20,
     },
     section: {
-        marginVertical: 10,
+        marginBottom: 20,
     },
     ital: {
         fontFamily: "PoppinsItalic",

@@ -1,9 +1,9 @@
 import { StyleSheet, View } from "react-native";
-import { Quote } from "@/components/content/Quote";
+import { Story } from "@/components/content/Story";
 import { Anecdote } from "@/components/content/Anecdote";
 import { Idea } from "@/components/content/Idea";
 import { Game } from "@/components/content/Game";
-import { Content } from '../../../interfaces/contentInterface';
+import { Content } from "@/interfaces/contentInterface";
 
 interface DayContentProps {
     quoteOfTheDay: Content | undefined;
@@ -24,7 +24,7 @@ export const DayContent: React.FC<DayContentProps> = ({
         <View style={styles.contentsContainer}>
             <View style={styles.contentContainer}>
                 {quoteOfTheDay && (
-                    <Quote content={quoteOfTheDay} dayId={dayId} />
+                    <Story content={quoteOfTheDay} dayId={dayId} />
                 )}
             </View>
 

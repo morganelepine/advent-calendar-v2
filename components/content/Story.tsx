@@ -3,10 +3,9 @@ import { StyleSheet, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { ContentButton } from "@/components/content/ContentButton";
-import { Video } from "@/components/utils/custom/Video";
 import cld from "@/config/cloudinaryConfig";
 
-interface AnecdoteProps {
+interface StoryProps {
     content: {
         id: number;
         dayNumber: number;
@@ -21,10 +20,10 @@ interface AnecdoteProps {
     dayId: number;
 }
 
-export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
+export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
-    const backgroundImage = cld.image("s-inspirer_zwls2a");
+    const backgroundImage = cld.image("s-instruire_xybqas");
 
     return (
         <>
@@ -43,27 +42,19 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
             >
                 <ScrollView
                     persistentScrollbar={true} // Android only
+                    style={{ width: "100%" }}
                 >
                     <ThemedText type="modalSubtitle">
-                        {content.title}
+                        Chapitre {dayId}
                     </ThemedText>
 
                     <ThemedText style={styles.anecdote}>
-                        {content.content1}
+                        Histoire de Vic à venir
                     </ThemedText>
 
-                    {content.content3 ? (
-                        <Video videoId={content.content3} />
-                    ) : null}
-
-                    {content.content4 ? (
-                        <>
-                            <ThemedText style={styles.video}>
-                                Et en version moins classique...
-                            </ThemedText>
-                            <Video videoId={content.content4} />
-                        </>
-                    ) : null}
+                    <ThemedText style={styles.end}>
+                        La suite demain...
+                    </ThemedText>
                 </ScrollView>
             </ModalWithText>
         </>
@@ -75,9 +66,9 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         textAlign: "left",
     },
-    video: {
+    end: {
+        paddingTop: 20,
         fontSize: 14,
         fontFamily: "PoppinsItalic",
-        marginVertical: 10,
     },
 });
