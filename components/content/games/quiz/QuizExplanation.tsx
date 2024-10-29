@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     },
     videoContainer: { marginVertical: 20 },
     nextQuestionButton: {
-        color: Colors.blue,
-        borderColor: Colors.blue,
+        color: Colors.red,
+        borderColor: Colors.red,
         borderWidth: 2,
         borderRadius: 20,
         paddingHorizontal: 20,

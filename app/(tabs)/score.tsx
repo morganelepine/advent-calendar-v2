@@ -8,7 +8,6 @@ import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
 import { Score } from "@/interfaces/scoreInterfaces";
 
-
 export default function ScoreScreen() {
     const scrollViewRef = useRef<ScrollView>(null);
 
@@ -35,7 +34,7 @@ export default function ScoreScreen() {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/background/tab-background.png")}
+            source={require("@/assets/images/background/background.png")}
             resizeMode="cover"
             style={styles.imageBackground}
         >

@@ -47,7 +47,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/simple-background.png")}
+                source={require("@/assets/images/background/hangman-background.png")}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >
@@ -65,10 +65,11 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 
                         {children}
 
-                        <Pressable onPress={onClose} style={styles.closeButton}>
+                        <Pressable onPress={onClose} style={styles.button}>
+                            <View style={styles.buttonBackground} />
                             <Ionicons
                                 name={"close-outline"}
-                                size={35}
+                                size={25}
                                 color={Colors.blue}
                             />
                         </Pressable>
@@ -94,7 +95,21 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         flex: 1,
+        width: "100%",
     },
     modalTitle: { paddingHorizontal: 15 },
-    closeButton: { marginTop: 10 },
+    button: {
+        padding: 6,
+        alignSelf: "center",
+        position: "absolute",
+        top: 30,
+        right: 20,
+        zIndex: 1,
+    },
+    buttonBackground: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: Colors.pink,
+        opacity: 0.5,
+        borderRadius: 50,
+    },
 });

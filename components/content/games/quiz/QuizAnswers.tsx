@@ -1,8 +1,7 @@
 import { Pressable, StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
-import { Content } from '../../../../interfaces/contentInterface';
-
+import { Content } from "@/interfaces/contentInterface";
 
 interface QuizAnswersProps {
     currentGame: Content;
@@ -27,7 +26,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
         if (isCorrect) {
             color = Colors.snow;
         } else {
-            color = isSelected ? Colors.red : Colors.snow;
+            color = isSelected ? Colors.blue : Colors.snow;
         }
 
         return {
@@ -65,7 +64,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
 
 const styles = StyleSheet.create({
     answer: {
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         marginVertical: 5,
         borderRadius: 20,
         paddingHorizontal: 15,
@@ -74,9 +73,9 @@ const styles = StyleSheet.create({
     },
     isNotCorrect: {
         backgroundColor: Colors.snow,
-        color: Colors.red,
+        color: Colors.blue,
         opacity: 0.4,
-        borderColor: Colors.red,
+        borderColor: Colors.blue,
         borderWidth: 0.6,
     },
 });

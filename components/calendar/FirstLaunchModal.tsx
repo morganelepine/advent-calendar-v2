@@ -32,7 +32,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/modal-background.png")}
+                source={require("@/assets/images/background/background.png")}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

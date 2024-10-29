@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Infos } from "@/components/content/games/hangman/Infos";
 import { Alphabet } from "@/components/content/games/hangman/Alphabet";
 import { Modal } from "@/components/content/games/hangman/Modal";
-import { Content } from '../../../../interfaces/contentInterface';
+import { Content } from "@/interfaces/contentInterface";
 
 interface HangmanProps {
     game: Content;
@@ -122,5 +122,5 @@ const styles = StyleSheet.create({
         fontFamily: "PallyBold",
         fontSize: 22,
     },
-    hiddenWord: { fontSize: 30, marginVertical: 20 },
+    hiddenWord: { fontSize: 35, marginVertical: 20 },
 });

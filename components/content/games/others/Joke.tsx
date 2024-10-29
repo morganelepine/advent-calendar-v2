@@ -4,8 +4,7 @@ import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { CustomButton } from "@/components/utils/buttons/Button";
 import { useState } from "react";
 import { Colors } from "@/constants/Colors";
-import { Content } from '../../../../interfaces/contentInterface';
-
+import { Content } from "@/interfaces/contentInterface";
 
 interface JokeProps {
     game: Content;
@@ -64,6 +63,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     longAnswer: {
+        fontFamily: "PoppinsBold",
         color: Colors.blue,
         marginBottom: 10,
     },

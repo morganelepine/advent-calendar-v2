@@ -32,11 +32,11 @@ export default function HomeScreen() {
             setFirstLaunch(true);
             setModalVisible(true);
         } else {
-            // await AsyncStorage.multiRemove([
-            //     "userUuid",
-            //     "calendar",
-            //     "scoresData",
-            // ]);
+            await AsyncStorage.multiRemove([
+                "userUuid",
+                "calendar",
+                "scoresData",
+            ]);
             setFirstLaunch(false);
         }
     };
