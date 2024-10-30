@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     modalButton: {
-        color: Colors.blue,
-        borderColor: Colors.blue,
+        color: Colors.red,
+        borderColor: Colors.red,
         borderWidth: 2,
         margin: 5,
         borderRadius: 20,
@@ -70,5 +70,6 @@ const styles = StyleSheet.create({
         fontFamily: "AnonymousProBold",
         fontSize: 14,
         marginTop: 10,
+        color: Colors.red,
     },
 });

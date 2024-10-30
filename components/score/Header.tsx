@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
     },
     button: {
         borderRadius: 50,
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.red,
         paddingHorizontal: 10,
         paddingTop: 5,
         paddingBottom: 3,
         alignSelf: "center",
     },
     buttonText: {
-        color: Colors.blue,
+        color: Colors.snow,
         fontSize: 12,
         fontFamily: "PoppinsBold",
     },

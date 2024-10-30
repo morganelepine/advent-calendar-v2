@@ -1,9 +1,8 @@
 import { StyleSheet, View, Text } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
-import { Collapsible } from "../utils/Collapsible";
-import {Score} from '../../interfaces/scoreInterfaces';
-
+import { Collapsible } from "@/components/utils/Collapsible";
+import { Score } from "@/interfaces/scoreInterfaces";
 
 interface ScoreHistoryProps {
     score: Score;
@@ -79,6 +78,7 @@ const styles = StyleSheet.create({
     score: {
         textAlign: "left",
         fontSize: 14,
+        color: Colors.blue,
     },
     bold: {
         fontFamily: "PoppinsBold",

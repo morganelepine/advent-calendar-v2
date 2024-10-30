@@ -5,7 +5,7 @@ import { router } from "expo-router";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { Day } from '../../../interfaces/dayInterface';
+import { Day } from "@/interfaces/dayInterface";
 
 interface DayModalProps {
     day: Day;
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     quotationMark: {
         fontSize: 50,
         lineHeight: 50,
+        color: Colors.green,
     },
     quote: {
         fontSize: 20,
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     },
     button: {
         borderRadius: 50,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         paddingHorizontal: 10,
         paddingVertical: 10,
         marginTop: 30,

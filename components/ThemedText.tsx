@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: "Poppins",
         textAlign: "center",
-        color: Colors.blue,
+        color: Colors.darkGreen,
     },
     homeTitle: {
         fontSize: 55,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     modalTitle: {
-        color: Colors.blue,
+        color: Colors.green,
         fontSize: 30,
         fontFamily: "PallyBold",
         textAlign: "center",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         lineHeight: 34,
     },
     modalSubtitle: {
-        color: Colors.darkBlue,
+        color: Colors.darkGreen,
         fontSize: 20,
         fontFamily: "PallyBold",
         textAlign: "left",

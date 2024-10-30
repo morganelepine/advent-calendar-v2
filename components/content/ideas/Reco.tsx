@@ -94,13 +94,13 @@ const styles = StyleSheet.create({
         textAlign: "left",
     },
     image: {
-        borderColor: Colors.blue,
+        borderColor: Colors.green,
         borderWidth: 0.2,
         marginBottom: 20,
     },
 
     button: {
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         padding: 10,
         borderRadius: 20,
         marginTop: 10,

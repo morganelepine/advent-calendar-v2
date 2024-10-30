@@ -1,15 +1,9 @@
-import { useRef } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 
 export const FirstLaunch = () => {
-    const scrollViewRef = useRef<ScrollView>(null);
-
     return (
-        <ScrollView
-            ref={scrollViewRef}
-            persistentScrollbar={true} // Android only
-        >
+        <View style={styles.container}>
             <View style={styles.section}>
                 <ThemedText type="sectionText" style={styles.ital}>
                     Chaque jour, plongez dans la magie de Noël et découvrez :
@@ -69,18 +63,19 @@ export const FirstLaunch = () => {
                 </ThemedText>
             </View>
 
-            <View style={styles.section}>
-                <ThemedText type="sectionText" style={styles.ital}>
-                    J'ai mis tout mon amour de Noël dans ce calendrier et
-                    j'espère qu'il saura vous transporter dans cette magie des
-                    fêtes que j'aime tant.
-                </ThemedText>
-            </View>
-        </ScrollView>
+            <ThemedText type="sectionText" style={styles.ital}>
+                J'ai mis tout mon amour de Noël dans ce calendrier et j'espère
+                qu'il saura vous transporter dans cette magie des fêtes que
+                j'aime tant.
+            </ThemedText>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        marginBottom: 30,
+    },
     title: {
         paddingTop: 30,
         paddingHorizontal: 20,

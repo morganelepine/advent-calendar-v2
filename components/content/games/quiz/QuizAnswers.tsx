@@ -26,7 +26,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
         if (isCorrect) {
             color = Colors.snow;
         } else {
-            color = isSelected ? Colors.blue : Colors.snow;
+            color = isSelected ? Colors.green : Colors.snow;
         }
 
         return {
@@ -64,7 +64,7 @@ export const QuizAnswers: React.FC<QuizAnswersProps> = ({
 
 const styles = StyleSheet.create({
     answer: {
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         marginVertical: 5,
         borderRadius: 20,
         paddingHorizontal: 15,
@@ -73,9 +73,9 @@ const styles = StyleSheet.create({
     },
     isNotCorrect: {
         backgroundColor: Colors.snow,
-        color: Colors.blue,
+        color: Colors.green,
         opacity: 0.4,
-        borderColor: Colors.blue,
+        borderColor: Colors.green,
         borderWidth: 0.6,
     },
 });

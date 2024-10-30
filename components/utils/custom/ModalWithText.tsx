@@ -48,7 +48,7 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
                 <Ionicons
                     name={"close-outline"}
                     size={25}
-                    color={Colors.blue}
+                    color={Colors.green}
                 />
             </Pressable>
 

@@ -2,22 +2,10 @@ import { StyleSheet, Text } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { AdvancedImage } from "cloudinary-react-native";
 import cld from "@/config/cloudinaryConfig";
+import { Day } from "@/interfaces/dayInterface";
 
 interface DayNumberProps {
-    day: {
-        dayNumber: number;
-        isOpen: boolean;
-        background: string;
-        width: string;
-        height: string;
-        color: string;
-        textColor: string;
-        image: string;
-        aspectRatio: number;
-        quote: string;
-        quoteAuthor: string;
-        quoteSource: string;
-    };
+    day: Day;
     dayIsOpen: boolean | null;
 }
 
@@ -38,7 +26,7 @@ export const DayNumber: React.FC<DayNumberProps> = ({ day, dayIsOpen }) => {
                 style={[
                     styles.itemText,
                     {
-                        color: dayIsOpen ? Colors.blue : day.textColor,
+                        color: dayIsOpen ? Colors.green : day.textColor,
                     },
                 ]}
             >

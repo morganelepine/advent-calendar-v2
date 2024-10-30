@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     score: {
         fontSize: 50,
         marginVertical: 10,
+        color: Colors.blue,
     },
 
     pointsContainer: {

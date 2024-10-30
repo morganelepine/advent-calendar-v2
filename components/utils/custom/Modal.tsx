@@ -47,7 +47,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/hangman-background.png")}
+                source={require("@/assets/images/background/games-background.png")}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >
@@ -70,7 +70,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                             <Ionicons
                                 name={"close-outline"}
                                 size={25}
-                                color={Colors.blue}
+                                color={Colors.green}
                             />
                         </Pressable>
                     </View>

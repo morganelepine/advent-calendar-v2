@@ -22,6 +22,7 @@ export const Joke: React.FC<JokeProps> = ({ game }) => {
             <CustomMarkdown>{game.content1}</CustomMarkdown>
 
             <CustomButton
+                style={{ marginVertical: 20 }}
                 onPress={() => {
                     setShowAnswer(!showAnswer);
                 }}
@@ -59,12 +60,13 @@ const styles = StyleSheet.create({
     },
     shortAnswer: {
         fontFamily: "PallyBold",
+        color: Colors.red,
         fontSize: 20,
         marginBottom: 10,
     },
     longAnswer: {
         fontFamily: "PoppinsBold",
-        color: Colors.blue,
+        color: Colors.red,
         marginBottom: 10,
     },
 });

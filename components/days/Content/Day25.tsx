@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: "center",
         letterSpacing: 1,
-        color: Colors.blue,
+        color: Colors.green,
     },
 });

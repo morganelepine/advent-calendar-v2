@@ -72,14 +72,13 @@ const styles = StyleSheet.create({
     response: { fontFamily: "PoppinsBold" },
     explanationsContainer: {
         marginTop: 20,
-        marginBottom: 10,
     },
     explanations: {
         marginTop: 10,
         fontSize: 16,
         textAlign: "left",
     },
-    videoContainer: { marginVertical: 20 },
+    videoContainer: { marginTop: 10 },
     nextQuestionButton: {
         color: Colors.red,
         borderColor: Colors.red,
@@ -89,7 +88,12 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 6,
         fontFamily: "PoppinsBold",
-        marginBottom: 10,
+        marginVertical: 20,
     },
-    finalText: { fontFamily: "AnonymousProBold", fontSize: 14, marginTop: 10 },
+    finalText: {
+        fontFamily: "AnonymousProBold",
+        fontSize: 14,
+        marginVertical: 20,
+        color: Colors.red,
+    },
 });

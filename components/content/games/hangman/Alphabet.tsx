@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     letter: {
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         borderRadius: 50,
         height: 50,
         width: 50,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     clickedLetter: {
         backgroundColor: "white",
         opacity: 0.4,
-        borderColor: Colors.pink,
-        borderWidth: 1,
+        borderColor: Colors.red,
+        borderWidth: 0.5,
     },
 });
