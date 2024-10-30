@@ -12,7 +12,11 @@ export interface Content {
 }
 
 export interface ListOfContents {
+    id: number;
     title: string;
-    url: string;
     description?: string;
+    link?: string;
+    author?: string;
+    url?: string;
+    image?: string;
 }
