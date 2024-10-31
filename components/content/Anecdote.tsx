@@ -4,7 +4,6 @@ import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
-import cld from "@/config/cloudinaryConfig";
 
 interface AnecdoteProps {
     content: {
@@ -24,22 +23,20 @@ interface AnecdoteProps {
 export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
-    const backgroundImage = cld.image("s-inspirer_zwls2a");
-
     return (
         <>
             <ContentButton
                 content={content}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={backgroundImage}
+                backgroundImage={require("@/assets/images/content-background/s-inspirer.jpg")}
             />
 
             <ModalWithText
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
                 contentType={content.type}
-                backgroundImage={backgroundImage}
+                backgroundImage={require("@/assets/images/content-background/s-inspirer.jpg")}
             >
                 <ScrollView
                     persistentScrollbar={true} // Android only

@@ -5,13 +5,12 @@ import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { ContentType } from "@/enums/enums";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
-import { CloudinaryImage } from "@cloudinary/url-gen";
 
 interface ModalWithTextProps {
     isVisible: boolean;
     onClose: () => void;
     contentType: string;
-    backgroundImage: CloudinaryImage;
+    backgroundImage: number;
     children?: React.ReactNode;
 }
 
@@ -59,7 +58,7 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
                 }}
                 headerImage={
                     <Image
-                        source={{ uri: backgroundImage.toURL() }}
+                        source={backgroundImage}
                         style={styles.headerImage}
                         resizeMode="cover"
                     />

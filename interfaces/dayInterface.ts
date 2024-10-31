@@ -1,12 +1,12 @@
 export interface Day {
     dayNumber: number;
     isOpen: boolean;
-    background: string;
+    background: number;
     width: string;
     height: string;
     color: string;
     textColor: string;
-    image: string;
+    image: number;
     aspectRatio: number;
     quote: string;
     quoteAuthor: string;

@@ -1,12 +1,10 @@
 import { Href } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Content } from "@/interfaces/contentInterface";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
-import { AdvancedImage } from "cloudinary-react-native";
-import cld from "@/config/cloudinaryConfig";
 
 interface GameIdeaProps {
     game: Content;
@@ -42,11 +40,8 @@ export const GameIdea: React.FC<GameIdeaProps> = ({ game }) => {
                 </ExternalLink>
             ) : null}
 
-            {game.content4 ? (
-                <AdvancedImage
-                    cldImg={cld.image(game.content4)}
-                    style={styles.image}
-                />
+            {game.image ? (
+                <Image source={game.image} style={styles.image} />
             ) : null}
         </View>
     );

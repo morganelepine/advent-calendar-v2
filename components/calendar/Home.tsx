@@ -4,7 +4,6 @@ import { ThemedText } from "@/components/ThemedText";
 import { daysArray } from "@/data/days_data";
 import { AudioPlayer } from "@/components/content/Audio";
 import { Colors } from "@/constants/Colors";
-import cld from "@/config/cloudinaryConfig";
 
 interface HomeProps {
     insets: EdgeInsets;
@@ -34,12 +33,12 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const day = daysMap.get(todayDay);
 
     const backgroundImage = day
-        ? cld.image(day?.background)
-        : cld.image("image6_ccgiqd");
+        ? day?.background
+        : require("@/assets/images/home/image6.png");
 
     return (
         <ImageBackground
-            source={{ uri: backgroundImage.toURL() }}
+            source={backgroundImage}
             style={styles.background}
             resizeMode="cover"
         >

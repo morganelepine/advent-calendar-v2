@@ -7,7 +7,6 @@ import { FirstLaunch } from "@/components/calendar/FirstLaunch";
 import { Colors } from "@/constants/Colors";
 import { MusicPreference } from "@/types/types";
 import { useFocusEffect } from "expo-router";
-import cld from "@/config/cloudinaryConfig";
 
 export default function InformationsScreen() {
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
@@ -42,9 +41,6 @@ export default function InformationsScreen() {
             };
         }, [])
     );
-
-    const backgroundImage = cld.image("christmas_gssam3");
-
     return (
         <ParallaxScrollView
             headerBackgroundColor={{
@@ -53,7 +49,7 @@ export default function InformationsScreen() {
             }}
             headerImage={
                 <Image
-                    source={{ uri: backgroundImage.toURL() }}
+                    source={require("@/assets/images/background/christmas.jpg")}
                     style={styles.headerImage}
                     resizeMode="cover"
                 />

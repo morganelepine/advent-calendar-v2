@@ -3,27 +3,15 @@ import { StyleSheet, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { ContentButton } from "@/components/content/ContentButton";
-import cld from "@/config/cloudinaryConfig";
+import { Content } from "@/interfaces/contentInterface";
 
 interface StoryProps {
-    content: {
-        id: number;
-        dayNumber: number;
-        type: string;
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-        content5: string;
-    };
+    content: Content;
     dayId: number;
 }
 
 export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
-
-    const backgroundImage = cld.image("s-instruire_xybqas");
 
     return (
         <>
@@ -31,14 +19,14 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
                 content={content}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={backgroundImage}
+                backgroundImage={require("@/assets/images/content-background/s-instruire.jpg")}
             />
 
             <ModalWithText
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
                 contentType={content.type}
-                backgroundImage={backgroundImage}
+                backgroundImage={require("@/assets/images/content-background/s-instruire.jpg")}
             >
                 <ScrollView
                     persistentScrollbar={true} // Android only

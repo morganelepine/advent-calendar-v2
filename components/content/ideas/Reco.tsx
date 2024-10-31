@@ -1,14 +1,12 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
-import { AdvancedImage } from "cloudinary-react-native";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
 import { Content } from "@/interfaces/contentInterface";
 import { IdeaType } from "@/enums/enums";
-import cld from "@/config/cloudinaryConfig";
 
 interface RecoProps {
     idea: Content;
@@ -29,14 +27,14 @@ export const Reco: React.FC<RecoProps> = ({
 
             {idea.content5 === IdeaType.Book ? (
                 <View style={styles.bookContainer}>
-                    <AdvancedImage
-                        cldImg={cld.image(idea.content4)}
+                    <Image
+                        source={idea.image}
                         style={[
                             styles.image,
                             { width: imageWidth },
                             { height: imageHeight },
                         ]}
-                        resizeMode="contain"
+                        resizeMode="cover"
                     />
                     <View style={styles.bookInfos}>
                         <CustomMarkdown style={styles.bookTitle}>
@@ -97,6 +95,10 @@ const styles = StyleSheet.create({
         borderColor: Colors.green,
         borderWidth: 0.2,
         marginBottom: 20,
+    },
+    headerImage: {
+        width: "100%",
+        height: 200,
     },
 
     button: {

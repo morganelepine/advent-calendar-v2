@@ -6,9 +6,7 @@ import { Recipe } from "@/components/content/ideas/Recipe";
 import { Content } from "@/interfaces/contentInterface";
 import { ContentType, IdeaType } from "@/enums/enums";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
-import { List } from "./ideas/List";
-import { CloudinaryImage } from "@cloudinary/url-gen";
-import cld from "@/config/cloudinaryConfig";
+import { List } from "@/components/content/ideas/List";
 
 interface IdeaProps {
     ideas: Content[];
@@ -18,9 +16,9 @@ interface IdeaProps {
 export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
 
-    const backgroundImage = cld.image("se-divertir_xvdksq");
+    const backgroundImage = require("@/assets/images/content-background/se-divertir.jpg");
     const [modalBackground, setModalBackground] =
-        useState<CloudinaryImage>(backgroundImage);
+        useState<number>(backgroundImage);
 
     const [imageDimensions, setImageDimensions] = useState<{
         [key: string]: { width: number; height: number };
@@ -30,25 +28,31 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     const maxHeight = 200;
 
     const formatImage = (idea: Content) => {
-        const image = cld.image(idea.content4).toURL();
-        Image.getSize(image, (width, height) => {
-            const ratio = Math.min(screenWidth / width, maxHeight / height);
-            const adjustedWidth = width * ratio;
-            const adjustedHeight = height * ratio;
+        const imageSource = idea.image
+            ? idea.image
+            : require("@/assets/images/splash.png");
+        const { width, height } = Image.resolveAssetSource(imageSource);
 
-            setImageDimensions((prev) => ({
-                ...prev,
-                [idea.dayNumber]: {
-                    width: adjustedWidth,
-                    height: adjustedHeight,
-                },
-            }));
-        });
+        const ratio = Math.min(screenWidth / width, maxHeight / height);
+        const adjustedWidth = width * ratio;
+        const adjustedHeight = height * ratio;
+
+        setImageDimensions((prev) => ({
+            ...prev,
+            [idea.dayNumber]: {
+                width: adjustedWidth,
+                height: adjustedHeight,
+            },
+        }));
     };
 
     const getmodalImage = (idea: Content) => {
         if (idea.content5 === IdeaType.Recipe) {
-            setModalBackground(cld.image(idea.content3));
+            const imageSource = idea.image
+                ? idea.image
+                : require("@/assets/images/content-background/se-regaler.jpg");
+
+            setModalBackground(imageSource);
         } else {
             setModalBackground(backgroundImage);
         }
@@ -69,7 +73,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 ideas={ideas}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={backgroundImage}
+                backgroundImage={require("@/assets/images/content-background/se-regaler.jpg")}
             />
 
             {ideas.map((idea) => (

@@ -8,6 +8,7 @@ export interface Content {
     content3: string;
     content4: string;
     content5: string;
+    image?: number;
     listOfContents?: ListOfContents[];
 }
 
@@ -18,5 +19,5 @@ export interface ListOfContents {
     link?: string;
     author?: string;
     url?: string;
-    image?: string;
+    image?: number;
 }
