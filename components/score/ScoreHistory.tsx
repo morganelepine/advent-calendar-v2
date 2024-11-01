@@ -20,7 +20,7 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                 title={`${score.scoreTotal} ${point}`}
                 style={{ color: Colors.blue }}
             >
-                <>
+                <View style={styles.dayScoresContainer}>
                     {score.scoreDetails.firstLogin > 0 && (
                         <ThemedText style={styles.score}>
                             Première connexion :{" "}
@@ -56,7 +56,7 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                                 : "point"}
                         </Text>
                     </ThemedText>
-                </>
+                </View>
             </Collapsible>
         </View>
     );
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
         paddingBottom: 7,
         marginBottom: 10,
     },
+    dayScoresContainer: { marginBottom: 10 },
     score: {
         textAlign: "left",
         fontSize: 14,

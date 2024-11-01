@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         gap: 6,
+        height: 48,
     },
     title: { fontFamily: "PoppinsBold", textAlign: "left", fontSize: 16 },
     content: {

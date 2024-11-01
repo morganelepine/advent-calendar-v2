@@ -10,9 +10,9 @@ export const Colors = {
     snow: "#f7f5f6",
     blue: "#0b2956",
     darkBlue: "#010f23",
-    green: "#136F63",
+    green: "#116459", // 136F63
     darkGreen: "#0b2e25",
-    red: "#b52936",
+    red: "#a0222d", // b52936
     pink: "#ffc4c4",
     gold: "#d6ae72",
 

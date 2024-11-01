@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     button: {
         borderRadius: 50,
         paddingHorizontal: 20,
-        paddingVertical: 10,
+        height: 48,
+        justifyContent: "center",
     },
     buttonText: {
-        color: Colors.snow,
+        color: "white",
         textAlign: "center",
     },
 });

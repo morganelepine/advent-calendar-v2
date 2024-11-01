@@ -103,13 +103,13 @@ const styles = StyleSheet.create({
 
     button: {
         backgroundColor: Colors.green,
-        padding: 10,
-        borderRadius: 20,
+        borderRadius: 50,
         marginTop: 10,
         marginBottom: 20,
-        textAlign: "center",
+        height: 48,
+        justifyContent: "center",
     },
-    buttonText: { color: "white" },
+    buttonText: { color: "white", lineHeight: 48 },
 
     videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
     video: { marginTop: 10, marginBottom: 20 },

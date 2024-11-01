@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { StyleSheet, Image, Pressable, View } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
@@ -7,6 +7,7 @@ import { FirstLaunch } from "@/components/calendar/FirstLaunch";
 import { Colors } from "@/constants/Colors";
 import { MusicPreference } from "@/types/types";
 import { useFocusEffect } from "expo-router";
+import { CustomButton } from "@/components/utils/buttons/Button";
 
 export default function InformationsScreen() {
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
@@ -76,17 +77,14 @@ export default function InformationsScreen() {
                                 ouvrirez l'app mais vous pourrez toujours
                                 l'activer dans l'onglet "Décompte".
                             </ThemedText>
-                            <Pressable
+                            <CustomButton
                                 onPress={() => {
                                     handleMusicPreference("no");
                                 }}
                                 style={styles.button}
                             >
-                                <View style={styles.buttonBackground} />
-                                <ThemedText style={{ color: Colors.snow }}>
-                                    Désactiver
-                                </ThemedText>
-                            </Pressable>
+                                Désactiver
+                            </CustomButton>
                         </>
                     ) : (
                         <>
@@ -99,17 +97,14 @@ export default function InformationsScreen() {
                                 l'app, mais vous pourrez l'arrêter à tout moment
                                 dans l'onglet "Décompte".
                             </ThemedText>
-                            <Pressable
+                            <CustomButton
                                 onPress={() => {
                                     handleMusicPreference("yes");
                                 }}
                                 style={styles.button}
                             >
-                                <View style={styles.buttonBackground} />
-                                <ThemedText style={{ color: Colors.snow }}>
-                                    Activer
-                                </ThemedText>
-                            </Pressable>
+                                Activer
+                            </CustomButton>
                         </>
                     )
                 ) : (
@@ -142,12 +137,8 @@ const styles = StyleSheet.create({
         opacity: 0.6,
     },
     button: {
-        padding: 6,
-    },
-    buttonBackground: {
-        ...StyleSheet.absoluteFillObject,
-        borderRadius: 50,
         backgroundColor: Colors.green,
+        marginBottom: 5,
     },
     textExplaination: {
         fontSize: 12,

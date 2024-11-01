@@ -58,8 +58,11 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
                     Ce quiz de Noël est terminé 🎅
                 </ThemedText>
             ) : (
-                <Pressable onPress={handleNextQuestion}>
-                    <ThemedText style={[styles.nextQuestionButton]}>
+                <Pressable
+                    onPress={handleNextQuestion}
+                    style={styles.nextQuestionButton}
+                >
+                    <ThemedText style={styles.nextQuestionText}>
                         Question suivante
                     </ThemedText>
                 </Pressable>
@@ -80,15 +83,17 @@ const styles = StyleSheet.create({
     },
     videoContainer: { marginTop: 10 },
     nextQuestionButton: {
-        color: Colors.red,
         borderColor: Colors.red,
         borderWidth: 2,
-        borderRadius: 20,
+        borderRadius: 50,
         paddingHorizontal: 20,
-        paddingTop: 10,
-        paddingBottom: 6,
-        fontFamily: "PoppinsBold",
+        minHeight: 48,
+        justifyContent: "center",
         marginVertical: 20,
+    },
+    nextQuestionText: {
+        fontFamily: "PoppinsBold",
+        color: Colors.red,
     },
     finalText: {
         fontFamily: "AnonymousProBold",

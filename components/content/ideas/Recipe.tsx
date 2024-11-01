@@ -64,12 +64,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "left",
     },
-    image: {
-        width: "100%",
-        aspectRatio: 1,
-        height: undefined,
-        borderRadius: 40,
-    },
     sourcePhoto: {
         fontSize: 10,
         fontFamily: "AnonymousProItalic",

@@ -86,9 +86,9 @@ const styles = StyleSheet.create({
         fontFamily: "PoppinsBold",
         textAlign: "left",
     },
-    description: { textAlign: "left", fontSize: 15 },
+    description: { textAlign: "left", fontSize: 15, marginBottom: 20 },
     videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
-    video: { marginTop: 10, marginBottom: 30 },
+    video: { marginBottom: 20 },
     image: {
         aspectRatio: 1.3,
         height: undefined,

@@ -3,7 +3,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { useEffect, useState } from "react";
 import { Infos } from "@/components/content/games/hangman/Infos";
 import { Alphabet } from "@/components/content/games/hangman/Alphabet";
-import { Modal } from "@/components/content/games/hangman/Modal";
+import { HangmanModal } from "@/components/content/games/hangman/HangmanModal";
 import { Content } from "@/interfaces/contentInterface";
 
 interface HangmanProps {
@@ -103,7 +103,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
                 checkLetter={checkLetter}
             />
 
-            <Modal
+            <HangmanModal
                 modalVisible={modalVisible}
                 modalMessage={modalMessage}
                 onClose={onClose}

@@ -63,11 +63,10 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: Colors.green,
-        padding: 10,
-        borderRadius: 20,
+        borderRadius: 50,
         marginTop: 10,
         marginBottom: 20,
-        textAlign: "center",
+        height: 48,
     },
-    buttonText: { color: "white" },
+    buttonText: { color: "white", lineHeight: 48 },
 });

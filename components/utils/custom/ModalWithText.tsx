@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Modal, Pressable, Image } from "react-native";
+import { StyleSheet, View, Modal, Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { ContentType } from "@/enums/enums";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
+import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
 
 interface ModalWithTextProps {
     isVisible: boolean;
@@ -42,14 +43,16 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
             onRequestClose={onClose}
             statusBarTranslucent={true}
         >
-            <Pressable onPress={onClose} style={styles.button}>
-                <View style={styles.buttonBackground} />
+            <CloseModalButton
+                onPress={onClose}
+                style={{ backgroundColor: Colors.snow }}
+            >
                 <Ionicons
                     name={"close-outline"}
-                    size={25}
+                    size={35}
                     color={Colors.green}
                 />
-            </Pressable>
+            </CloseModalButton>
 
             <ParallaxScrollView
                 headerBackgroundColor={{
@@ -84,19 +87,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         flex: 1,
-    },
-    button: {
-        padding: 6,
-        alignSelf: "center",
-        position: "absolute",
-        top: 30,
-        right: 20,
-        zIndex: 1,
-    },
-    buttonBackground: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: Colors.snow,
-        opacity: 0.6,
-        borderRadius: 50,
     },
 });

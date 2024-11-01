@@ -1,16 +1,11 @@
 import React from "react";
-import {
-    StyleSheet,
-    View,
-    Modal,
-    Pressable,
-    ImageBackground,
-} from "react-native";
+import { StyleSheet, View, Modal, ImageBackground } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ContentType } from "@/enums/enums";
+import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
 
 interface CustomModalProps {
     isVisible: boolean;
@@ -65,14 +60,16 @@ export const CustomModal: React.FC<CustomModalProps> = ({
 
                         {children}
 
-                        <Pressable onPress={onClose} style={styles.button}>
-                            <View style={styles.buttonBackground} />
+                        <CloseModalButton
+                            onPress={onClose}
+                            style={{ backgroundColor: Colors.pink }}
+                        >
                             <Ionicons
                                 name={"close-outline"}
-                                size={25}
+                                size={35}
                                 color={Colors.green}
                             />
-                        </Pressable>
+                        </CloseModalButton>
                     </View>
                 </View>
             </ImageBackground>
@@ -98,18 +95,4 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     modalTitle: { paddingHorizontal: 15 },
-    button: {
-        padding: 6,
-        alignSelf: "center",
-        position: "absolute",
-        top: 30,
-        right: 20,
-        zIndex: 1,
-    },
-    buttonBackground: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: Colors.pink,
-        opacity: 0.5,
-        borderRadius: 50,
-    },
 });

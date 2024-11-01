@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     button: {
         borderRadius: 50,
         backgroundColor: Colors.red,
-        paddingHorizontal: 10,
-        paddingTop: 5,
-        paddingBottom: 3,
+        paddingHorizontal: 20,
+        minHeight: 48,
         alignSelf: "center",
+        justifyContent: "center",
     },
     buttonText: {
         color: Colors.snow,
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: "PoppinsBold",
     },
 });

@@ -131,8 +131,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     button: {
-        padding: 6,
-        alignSelf: "center",
+        height: 48,
+        width: 48,
+        alignItems: "center",
+        justifyContent: "center",
     },
     buttonBackground: {
         ...StyleSheet.absoluteFillObject,

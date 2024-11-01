@@ -66,10 +66,10 @@ const styles = StyleSheet.create({
     answer: {
         backgroundColor: Colors.green,
         marginVertical: 5,
-        borderRadius: 20,
+        borderRadius: 50,
         paddingHorizontal: 15,
-        paddingVertical: 10,
-        width: "100%",
+        justifyContent: "center",
+        minHeight: 48,
     },
     isNotCorrect: {
         backgroundColor: Colors.snow,
