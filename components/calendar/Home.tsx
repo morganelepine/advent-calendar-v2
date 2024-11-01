@@ -36,6 +36,10 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
         ? day?.background
         : require("@/assets/images/home/image6.png");
 
+    const music = day
+        ? day?.music
+        : require("@/assets/musics/we-wish-you-a-merry-christmas.mp3");
+
     return (
         <ImageBackground
             source={backgroundImage}
@@ -50,7 +54,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                         right: insets.top,
                     }}
                 >
-                    <AudioPlayer />
+                    <AudioPlayer music={music} />
                 </View>
 
                 <View style={styles.textContainer}>

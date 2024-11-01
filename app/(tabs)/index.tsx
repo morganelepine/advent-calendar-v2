@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, ActivityIndicator } from "react-native";
 import { Home } from "@/components/calendar/Home";
 import uuid from "react-native-uuid";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -11,7 +10,6 @@ import { ScoreType } from "@/enums/enums";
 export default function HomeScreen() {
     const today = new Date();
     const day = today.getDate();
-    const [firstLaunch, setFirstLaunch] = useState<boolean | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
@@ -27,30 +25,22 @@ export default function HomeScreen() {
             await AsyncStorage.setItem("userUuid", newUserUuid);
             console.log({ newUserUuid });
 
-            await updateScores(day, ScoreType.FirstLogin);
+            const connexionDay = day > 24 ? 1 : day;
+            await updateScores(connexionDay, ScoreType.FirstLogin);
 
-            setFirstLaunch(true);
             setModalVisible(true);
-        } else {
-            // await AsyncStorage.multiRemove([
-            //     "userUuid",
-            //     "playMusic",
-            //     "calendar",
-            //     "scoresData",
-            // ]);
-            setFirstLaunch(false);
         }
+        // else {
+        //     await AsyncStorage.multiRemove([
+        //         "userUuid",
+        //         "playMusic",
+        //         "calendar",
+        //         "scoresData",
+        //     ]);
+        // }
     };
 
     const insets = useSafeAreaInsets();
-
-    if (firstLaunch === null) {
-        return (
-            <View style={styles.activityIndicator}>
-                <ActivityIndicator size="large" color="white" />
-            </View>
-        );
-    }
 
     return (
         <>
@@ -63,7 +53,3 @@ export default function HomeScreen() {
         </>
     );
 }
-
-const styles = StyleSheet.create({
-    activityIndicator: { justifyContent: "center", flex: 1 },
-});

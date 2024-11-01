@@ -6,16 +6,18 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 import { MusicPreference } from "@/types/types";
 
-export const AudioPlayer = () => {
+interface AudioPlayerProps {
+    music: number;
+}
+
+export const AudioPlayer: React.FC<AudioPlayerProps> = ({ music }) => {
     const [sound, setSound] = useState<Audio.Sound | null>(null);
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
     const playSound = async () => {
         if (!sound) {
-            const { sound: newSound } = await Audio.Sound.createAsync(
-                require("@/assets/musics/we-wish-you-a-merry-christmas.mp3")
-            );
+            const { sound: newSound } = await Audio.Sound.createAsync(music);
             setSound(newSound);
             await newSound.playAsync();
             setIsPlaying(true);

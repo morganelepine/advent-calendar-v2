@@ -11,4 +11,5 @@ export interface Day {
     quote: string;
     quoteAuthor: string;
     quoteSource: string;
+    music: typeof import("*.mp3");
 }

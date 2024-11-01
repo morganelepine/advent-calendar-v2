@@ -92,7 +92,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
 
                         <CustomButton
                             onPress={handleStart}
-                            style={{ marginBottom: 30 }}
+                            style={styles.button}
                         >
                             Commencer l'aventure 🚀
                         </CustomButton>
@@ -112,4 +112,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     modalTitle: { paddingHorizontal: 15, color: Colors.blue },
+    button: { marginBottom: 30, backgroundColor: Colors.blue },
 });

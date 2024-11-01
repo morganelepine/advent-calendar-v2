@@ -16,7 +16,10 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
             <ThemedText style={styles.scoresDate}>
                 {score.dayNumber} décembre
             </ThemedText>
-            <Collapsible title={`${score.scoreTotal} ${point}`}>
+            <Collapsible
+                title={`${score.scoreTotal} ${point}`}
+                style={{ color: Colors.blue }}
+            >
                 <>
                     {score.scoreDetails.firstLogin > 0 && (
                         <ThemedText style={styles.score}>

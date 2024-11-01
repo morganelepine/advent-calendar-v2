@@ -1,13 +1,14 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { PropsWithChildren, useState } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TextStyle, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 
 export function Collapsible({
     children,
+    style = {},
     title,
-}: PropsWithChildren & { title: string }) {
+}: PropsWithChildren & { style?: TextStyle; title: string }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -22,7 +23,9 @@ export function Collapsible({
                     size={18}
                     color={Colors.red}
                 />
-                <ThemedText style={styles.title}>{title}</ThemedText>
+                <ThemedText style={{ ...styles.title, ...style }}>
+                    {title}
+                </ThemedText>
             </TouchableOpacity>
             {isOpen && <View style={styles.content}>{children}</View>}
         </View>

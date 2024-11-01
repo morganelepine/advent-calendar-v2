@@ -22,7 +22,7 @@ export const Joke: React.FC<JokeProps> = ({ game }) => {
             <CustomMarkdown>{game.content1}</CustomMarkdown>
 
             <CustomButton
-                style={{ marginVertical: 20 }}
+                style={{ marginVertical: 20, backgroundColor: Colors.red }}
                 onPress={() => {
                     setShowAnswer(!showAnswer);
                 }}

@@ -24,7 +24,7 @@ export const Rules: React.FC<RulesProps> = ({
         >
             <View style={styles.modalView}>
                 <ThemedText type="modalTitle" style={styles.modalTitle}>
-                    Règles pour gagner des points
+                    Règles pour gagner des&nbsp;points
                 </ThemedText>
                 <CustomScrollView>
                     <View style={styles.section}>
@@ -45,6 +45,12 @@ export const Rules: React.FC<RulesProps> = ({
                             vous ont été attribués lors de votre première
                             connexion.
                         </ThemedText>
+                        <ThemedText type="sectionText" style={styles.ital}>
+                            Si vous avez ouvert le calendrier avant le 1er
+                            décembre, les points seront affichés au 1er
+                            décembre. Sinon, ils seront affichés au jour de
+                            votre première ouverture en décembre.
+                        </ThemedText>
                     </View>
 
                     <View style={styles.section}>
@@ -58,7 +64,8 @@ export const Rules: React.FC<RulesProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Attention : si vous ouvrez la case en retard, vous
-                            ne gagnerez aucun point !
+                            ne gagnerez{" "}
+                            <Text style={styles.bold}> aucun point </Text>!
                         </ThemedText>
                     </View>
 
@@ -68,7 +75,7 @@ export const Rules: React.FC<RulesProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Chaque jour, explorez jusqu'à 4 types de contenus
-                            (une citation, une anecdote, une recommandation, un
+                            (une histoire, une anecdote, une recommandation, un
                             jeu).
                         </ThemedText>
                         <ThemedText type="sectionText">
@@ -95,7 +102,7 @@ export const Rules: React.FC<RulesProps> = ({
                             gagnez que
                             <Text style={styles.bold}> 10 points</Text>.
                         </ThemedText>
-                        <ThemedText type="sectionText">
+                        <ThemedText type="sectionText" style={styles.ital}>
                             Seuls 12 jours sur 24 vous permettront de gagner des
                             points aux jeux.
                         </ThemedText>
@@ -107,7 +114,7 @@ export const Rules: React.FC<RulesProps> = ({
                         </ThemedText>
                         <ThemedText type="sectionText">
                             Vous pouvez ainsi accumuler jusqu'à
-                            <Text style={styles.bold}> 130 points </Text>
+                            <Text style={styles.bold}> 145 points </Text>
                             par jour :
                         </ThemedText>
                         <ThemedText type="sectionText">
@@ -157,14 +164,14 @@ const styles = StyleSheet.create({
     modalView: {
         flex: 1,
         marginHorizontal: 20,
-        marginVertical: 80,
+        marginVertical: 100,
         paddingBottom: 10,
         alignItems: "center",
         backgroundColor: "white",
         borderRadius: 30,
         elevation: 5,
     },
-    modalTitle: { paddingHorizontal: 15, fontSize: 24 },
+    modalTitle: { paddingHorizontal: 15, fontSize: 24, color: Colors.blue },
     section: {
         marginVertical: 15,
     },
