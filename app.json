@@ -16,6 +16,7 @@
             "supportsTablet": true
         },
         "android": {
+            "package": "com.merrymate.moncalendrierdelavent",
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
                 "backgroundColor": "#f7f5f6"
@@ -25,11 +26,20 @@
             "bundler": "metro",
             "output": "static",
             "favicon": "./assets/images/favicon.png",
-            "build": { "babel": { "include": ["@ui-kitten/components"] } }
+            "build": {
+                "babel": {
+                    "include": ["@ui-kitten/components"]
+                }
+            }
         },
         "plugins": ["expo-router"],
         "experiments": {
             "typedRoutes": true
+        },
+        "extra": {
+            "eas": {
+                "projectId": "dd51463c-9f71-4352-bc81-5a8c2a8a0a7d"
+            }
         }
     }
 }
