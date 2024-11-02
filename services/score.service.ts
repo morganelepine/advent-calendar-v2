@@ -53,7 +53,7 @@ export const updateScores = async (
                 addedScore = await checkGameScore(dayId, scoreOfTheDay);
                 break;
             case ScoreType.DayOpening: // 25 points (* 24)
-                if (scoreDetails.dayOpening <= 25) {
+                if (scoreDetails.dayOpening === 0) {
                     scoreDetails.dayOpening = 25;
                     addedScore = 25;
                 }
