@@ -1,6 +1,6 @@
 {
     "short_name": "AdventCalendar",
-    "name": "Calendrier de l'avent",
+    "name": "Mon calendrier de l'avent",
     "icons": [
         {
             "src": "../assets/images/favicon.png",

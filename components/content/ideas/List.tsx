@@ -6,12 +6,23 @@ import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Content } from "@/interfaces/contentInterface";
 import { Collapsible } from "@/components/utils/Collapsible";
 import { ExternalLink } from "@/components/utils/ExternalLink";
+import { useEffect, useState } from "react";
+import { getImageDimensions } from "@/services/image.service";
 
 interface ListProps {
     idea: Content;
 }
 
 export const List: React.FC<ListProps> = ({ idea }) => {
+    const [imageDimensions, setImageDimensions] = useState<{
+        [key: string]: { width: number; height: number };
+    }>({});
+
+    useEffect(() => {
+        const dimensions = getImageDimensions(idea, 300);
+        setImageDimensions(dimensions);
+    }, [idea]);
+
     return (
         <View>
             <ThemedText type="modalSubtitle" style={{ marginBottom: 20 }}>
@@ -28,7 +39,10 @@ export const List: React.FC<ListProps> = ({ idea }) => {
                 {idea.listOfContents?.map((content) => (
                     <View key={content.id}>
                         {content.description ? (
-                            <Collapsible title={content.title}>
+                            <Collapsible
+                                title={content.title}
+                                style={{ width: "90%" }}
+                            >
                                 {content.author ? (
                                     <ThemedText style={styles.description}>
                                         {content.description}
@@ -70,7 +84,19 @@ export const List: React.FC<ListProps> = ({ idea }) => {
                             <View style={styles.video}>
                                 <Image
                                     source={content.image}
-                                    style={styles.image}
+                                    style={[
+                                        styles.image,
+                                        {
+                                            width: imageDimensions[
+                                                idea.dayNumber
+                                            ]?.width,
+                                        },
+                                        {
+                                            height: imageDimensions[
+                                                idea.dayNumber
+                                            ]?.height,
+                                        },
+                                    ]}
                                 />
                             </View>
                         ) : null}
@@ -90,7 +116,6 @@ const styles = StyleSheet.create({
     videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
     video: { marginBottom: 20 },
     image: {
-        aspectRatio: 1.3,
-        height: undefined,
+        aspectRatio: 1,
     },
 });

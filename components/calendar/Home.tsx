@@ -1,4 +1,4 @@
-import { StyleSheet, ImageBackground, View } from "react-native";
+import { StyleSheet, ImageBackground, View, Platform } from "react-native";
 import { EdgeInsets, SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
 import { daysArray } from "@/data/days_data";
@@ -32,9 +32,14 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const daysMap = new Map(daysArray.map((day) => [day.dayNumber, day]));
     const day = daysMap.get(todayDay);
 
-    const backgroundImage = day
-        ? day?.background
-        : require("@/assets/images/home/image6.png");
+    let backgroundImage;
+    if (Platform.OS === "web") {
+        backgroundImage = require("@/assets/images/home/web/image1.png");
+    } else {
+        backgroundImage = day
+            ? day?.background
+            : require("@/assets/images/home/image6.png");
+    }
 
     const music = day
         ? day?.music
@@ -50,8 +55,8 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                 <View
                     style={{
                         position: "absolute",
-                        top: insets.top,
-                        right: insets.top,
+                        top: Platform.OS === "android" ? insets.top : 20,
+                        right: Platform.OS === "android" ? insets.right : 20,
                     }}
                 >
                     <AudioPlayer music={music} />
@@ -61,8 +66,9 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                     <ThemedText type="homeTitle" style={styles.text1}>
                         {daysToChristmas} nuits
                     </ThemedText>
-                    <ThemedText type="homeTitle">avant Noël</ThemedText>
-                    {daysToCalendar > 0 && (
+                    <ThemedText type="homeTitle"> avant Noël</ThemedText>
+
+                    {Platform.OS === "android" && daysToCalendar > 0 && (
                         <ThemedText style={styles.text2}>
                             (et plus que {daysToCalendar} avant le départ du
                             calendrier !)
@@ -89,13 +95,32 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         marginBottom: 180,
+        ...(Platform.OS === "android"
+            ? {
+                  flexDirection: "column",
+              }
+            : {
+                  flexDirection: "row",
+              }),
     },
     text1: {
-        letterSpacing: 8,
+        ...(Platform.OS === "android"
+            ? {
+                  letterSpacing: 8,
+              }
+            : {
+                  letterSpacing: 14,
+              }),
     },
     text2: {
         paddingTop: 20,
         color: Colors.snow,
-        fontSize: 14,
+        ...(Platform.OS === "android"
+            ? {
+                  fontSize: 14,
+              }
+            : {
+                  fontSize: 20,
+              }),
     },
 });

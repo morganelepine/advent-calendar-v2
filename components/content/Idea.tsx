@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { Dimensions, Image, View, ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Reco } from "@/components/content/ideas/Reco";
 import { Recipe } from "@/components/content/ideas/Recipe";
-import { Content } from "@/interfaces/contentInterface";
-import { ContentType, IdeaType } from "@/enums/enums";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { List } from "@/components/content/ideas/List";
+import { Content } from "@/interfaces/contentInterface";
+import { ContentType, IdeaType } from "@/enums/enums";
+import { getImageDimensions } from "@/services/image.service";
 
 interface IdeaProps {
     ideas: Content[];
@@ -24,28 +25,6 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
         [key: string]: { width: number; height: number };
     }>({});
 
-    const screenWidth = Dimensions.get("window").width;
-    const maxHeight = 200;
-
-    const formatImage = (idea: Content) => {
-        const imageSource = idea.image
-            ? idea.image
-            : require("@/assets/images/splash.png");
-        const { width, height } = Image.resolveAssetSource(imageSource);
-
-        const ratio = Math.min(screenWidth / width, maxHeight / height);
-        const adjustedWidth = width * ratio;
-        const adjustedHeight = height * ratio;
-
-        setImageDimensions((prev) => ({
-            ...prev,
-            [idea.dayNumber]: {
-                width: adjustedWidth,
-                height: adjustedHeight,
-            },
-        }));
-    };
-
     const getmodalImage = (idea: Content) => {
         if (idea.content5 === IdeaType.Recipe) {
             const imageSource = idea.image
@@ -61,7 +40,8 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     useEffect(() => {
         ideas.forEach((idea) => {
             if (idea.content5 === IdeaType.Book) {
-                formatImage(idea);
+                const dimensions = getImageDimensions(idea, 200);
+                setImageDimensions(dimensions);
             }
             getmodalImage(idea);
         });

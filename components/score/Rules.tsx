@@ -32,9 +32,8 @@ export const Rules: React.FC<RulesProps> = ({
                         <View style={styles.section}>
                             <ThemedText type="sectionText" style={styles.ital}>
                                 Chaque jour, vous pouvez accumuler des points
-                                pour tenter d'accéder à une surprise qui attend
-                                celles et ceux qui auront accumulé assez de
-                                points le 25 décembre !
+                                pour tenter d'accéder à une petite surprise le
+                                25 décembre !
                             </ThemedText>
                         </View>
 

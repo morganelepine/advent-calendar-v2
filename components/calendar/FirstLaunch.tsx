@@ -58,8 +58,8 @@ export const FirstLaunch = () => {
                 <ThemedText type="sectionText">
                     Ouvrir la case du jour, explorer les contenus, jouer aux
                     jeux... : plus vous participez, plus vous gagnez des points.
-                    Et le 25 décembre, une surprise attend celles et ceux qui
-                    auront accumulé assez de points !
+                    Et le 25 décembre, une petite surprise attend celles et ceux
+                    qui auront accumulé assez de points !
                 </ThemedText>
             </View>
 

@@ -29,16 +29,7 @@ export default function RootLayout() {
         <ThemeProvider
             value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
         >
-            <Stack
-                screenOptions={{
-                    headerTintColor: "#fff",
-                    headerTitleStyle: {
-                        fontFamily: "Pally",
-                    },
-                    headerBackTitleVisible: false,
-                }}
-                initialRouteName={"informations"}
-            >
+            <Stack>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
             </Stack>

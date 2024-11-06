@@ -31,11 +31,17 @@ export default function HomeScreen() {
             setModalVisible(true);
         }
         // else {
-        //     await AsyncStorage.multiRemove([
-        //         "userUuid",
-        //         "playMusic",
-        //         "calendar",
-        //         "scoresData",
+        //     // await AsyncStorage.multiRemove([
+        //     //     "userUuid",
+        //     //     "playMusic",
+        //     //     "calendar",
+        //     //     "scoresData",
+        //     // ]);
+        //     await Promise.all([
+        //         AsyncStorage.removeItem("userUuid"),
+        //         AsyncStorage.removeItem("playMusic"),
+        //         AsyncStorage.removeItem("scoresData"),
+        //         AsyncStorage.removeItem("calendar"),
         //     ]);
         // }
     };
