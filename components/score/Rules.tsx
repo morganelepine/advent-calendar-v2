@@ -39,28 +39,11 @@ export const Rules: React.FC<RulesProps> = ({
 
                         <View style={styles.section}>
                             <ThemedText type="sectionSubtitle">
-                                🎉 Ouverture du calendrier
-                            </ThemedText>
-                            <ThemedText type="sectionText">
-                                <Text style={styles.bold}> 40 points </Text>
-                                vous ont été attribués lors de votre première
-                                connexion.
-                            </ThemedText>
-                            <ThemedText type="sectionText" style={styles.ital}>
-                                Si vous avez ouvert le calendrier avant le 1er
-                                décembre, les points seront affichés au 1er
-                                décembre. Sinon, ils seront affichés au jour de
-                                votre première ouverture en décembre.
-                            </ThemedText>
-                        </View>
-
-                        <View style={styles.section}>
-                            <ThemedText type="sectionSubtitle">
                                 ✨ Ouverture de la case du jour
                             </ThemedText>
                             <ThemedText type="sectionText">
                                 Ouvrir la case du jour vous rapporte
-                                <Text style={styles.bold}> 25 points </Text>
+                                <Text style={styles.bold}> 30 points </Text>
                                 si elle est ouverte le jour même.
                             </ThemedText>
                             <ThemedText type="sectionText">
@@ -115,11 +98,11 @@ export const Rules: React.FC<RulesProps> = ({
                             </ThemedText>
                             <ThemedText type="sectionText">
                                 Vous pouvez ainsi accumuler jusqu'à
-                                <Text style={styles.bold}> 145 points </Text>
+                                <Text style={styles.bold}> 150 points </Text>
                                 par jour :
                             </ThemedText>
                             <ThemedText type="sectionText">
-                                ▪️ <Text style={styles.bold}>25 points</Text> en
+                                ▪️ <Text style={styles.bold}>30 points</Text> en
                                 ouvrant la case du jour
                             </ThemedText>
                             <ThemedText type="sectionText">

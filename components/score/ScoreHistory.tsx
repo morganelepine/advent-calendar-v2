@@ -21,14 +21,6 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                 style={{ color: Colors.blue }}
             >
                 <View style={styles.dayScoresContainer}>
-                    {score.scoreDetails.firstLogin > 0 && (
-                        <ThemedText style={styles.score}>
-                            Première connexion :{" "}
-                            <Text style={styles.bold}>
-                                {score.scoreDetails.firstLogin} points
-                            </Text>
-                        </ThemedText>
-                    )}
                     <ThemedText style={styles.score}>
                         Ouverture du jour :{" "}
                         <Text style={styles.bold}>

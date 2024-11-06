@@ -8,7 +8,6 @@ const createScoreOfTheDay = (): Score => ({
     dayNumber: 24,
     scoreTotal: 25,
     scoreDetails: {
-        firstLogin: 0,
         dayOpening: 25,
         contentOpening: 0,
         gameCorrectAnswer: 0,

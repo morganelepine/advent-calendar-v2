@@ -25,5 +25,4 @@ export enum ScoreType {
     ContentOpening,
     GameCorrectAnswer,
     DayOpening,
-    FirstLogin,
 }

@@ -9,7 +9,6 @@ export const generateScoresData = (): Score[] => {
             dayNumber: i,
             scoreTotal: 0,
             scoreDetails: {
-                firstLogin: 0,
                 dayOpening: 0,
                 contentOpening: 0,
                 gameCorrectAnswer: 0,
@@ -56,12 +55,6 @@ export const updateScores = async (
                 if (scoreDetails.dayOpening === 0) {
                     scoreDetails.dayOpening = 25;
                     addedScore = 25;
-                }
-                break;
-            case ScoreType.FirstLogin: // 40 points (* 1)
-                if (scoreDetails.firstLogin === 0) {
-                    scoreDetails.firstLogin = 40;
-                    addedScore = 40;
                 }
                 break;
         }
