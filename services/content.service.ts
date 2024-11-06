@@ -1,5 +1,7 @@
 import { Content } from "@/interfaces/contentInterface";
 import { ContentType, GameType } from "@/enums/enums";
+import { Colors } from "@/constants/Colors";
+import { StyleSheet } from "react-native";
 
 interface GamesByType {
     pendu?: Content;
@@ -23,7 +25,7 @@ export const getContentTitle = (
         case ContentType.Quote:
             return "S'inspirer";
         case ContentType.Anecdote:
-            return "S'instuire";
+            return "S'instruire";
         default:
             return "Contenu du jour";
     }
@@ -67,3 +69,57 @@ export const classifyGames = (
 
     return { gamesByType, type };
 };
+
+type ButtonStyles = {
+    buttonStyle: (object | null)[];
+    textStyle: {
+        color: string;
+        fontSize: number;
+    };
+};
+
+export const getButtonStyles = (
+    answer: string,
+    selectedAnswer: string | null,
+    goodAnswer: string
+): ButtonStyles => {
+    const isCorrect = answer.trim() === goodAnswer.trim();
+    const isSelected = selectedAnswer !== null;
+
+    let color;
+    if (isCorrect) {
+        color = Colors.snow;
+    } else {
+        color = isSelected ? Colors.green : Colors.snow;
+    }
+
+    return {
+        buttonStyle: [
+            styles.answer,
+            isSelected && !isCorrect ? styles.isNotCorrect : null,
+        ],
+        textStyle: {
+            color: color,
+            fontSize: 16,
+        },
+    };
+};
+
+const styles = StyleSheet.create({
+    answer: {
+        backgroundColor: Colors.green,
+        marginVertical: 5,
+        borderRadius: 50,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
+        justifyContent: "center",
+        minHeight: 48,
+    },
+    isNotCorrect: {
+        backgroundColor: Colors.snow,
+        color: Colors.green,
+        opacity: 0.4,
+        borderColor: Colors.green,
+        borderWidth: 0.6,
+    },
+});

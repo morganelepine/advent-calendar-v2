@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View, Image } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
 import { Colors } from "@/constants/Colors";
@@ -45,6 +45,11 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
                     </ThemedText>
                 ) : null}
 
+                {currentGame.content5 === GameType.QuizNoel &&
+                currentGame.image ? (
+                    <Image source={currentGame.image} style={styles.image} />
+                ) : null}
+
                 {currentGame.content5 === GameType.QuizCitation &&
                 currentGame.content4 ? (
                     <View style={styles.videoContainer}>
@@ -80,6 +85,13 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontSize: 16,
         textAlign: "left",
+    },
+    image: {
+        width: "100%",
+        aspectRatio: 1,
+        height: undefined,
+        marginTop: 10,
+        borderRadius: 30,
     },
     videoContainer: { marginTop: 10 },
     nextQuestionButton: {

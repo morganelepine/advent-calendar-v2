@@ -50,7 +50,9 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                             />
                         )}
 
-                        {gamesByType.jeu && <Games game={gamesByType.jeu} />}
+                        {gamesByType.jeu && (
+                            <Games game={gamesByType.jeu} setScore={setScore} />
+                        )}
 
                         {gamesByType.quizCitation.length > 0 && (
                             <>
