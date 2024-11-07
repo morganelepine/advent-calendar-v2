@@ -43,7 +43,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
 
     const music = day
         ? day?.music
-        : require("@/assets/musics/we-wish-you-a-merry-christmas.mp3");
+        : "https://res.cloudinary.com/deauthz29/video/upload/v1730978205/we-wish-you-a-merry-christmas_fcqhsn.mp3";
 
     return (
         <ImageBackground

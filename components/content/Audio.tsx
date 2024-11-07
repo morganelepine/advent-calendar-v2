@@ -7,7 +7,7 @@ import { Colors } from "@/constants/Colors";
 import { MusicPreference } from "@/types/types";
 
 interface AudioPlayerProps {
-    music: number;
+    music: string;
 }
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ music }) => {
@@ -17,7 +17,9 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ music }) => {
 
     const playSound = async () => {
         if (!sound) {
-            const { sound: newSound } = await Audio.Sound.createAsync(music);
+            const { sound: newSound } = await Audio.Sound.createAsync({
+                uri: music,
+            });
             setSound(newSound);
             await newSound.playAsync();
             setIsPlaying(true);
