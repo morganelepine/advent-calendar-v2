@@ -5,23 +5,37 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Home } from "@/components/calendar/Home";
 import { FirstLaunchModal } from "@/components/calendar/FirstLaunchModal";
 
+async function resetDataIfNeeded() {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+
+    const lastResetYear = await AsyncStorage.getItem("lastResetYear");
+
+    if (
+        (!lastResetYear && today.getMonth() === 11) ||
+        lastResetYear !== currentYear.toString()
+    ) {
+        await AsyncStorage.multiRemove(["playMusic", "calendar", "scoresData"]);
+        await AsyncStorage.setItem("lastResetYear", currentYear.toString());
+    }
+}
+
 export default function HomeScreen() {
+    const insets = useSafeAreaInsets();
     const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
-        checkFirstLaunch();
+        const initializeApp = async () => {
+            await resetDataIfNeeded();
+            await checkFirstLaunch();
+        };
+
+        initializeApp();
     }, []);
 
     const checkFirstLaunch = async () => {
         const userUuid = await AsyncStorage.getItem("userUuid");
         console.log({ userUuid });
-
-        const playMusic = await AsyncStorage.getItem("playMusic");
-        const scoresData = await AsyncStorage.getItem("scoresData");
-        const calendar = await AsyncStorage.getItem("calendar");
-        // console.log({ playMusic });
-        // console.log({ scoresData });
-        // console.log({ calendar });
 
         if (!userUuid) {
             const newUserUuid: string = uuid.v4() as string;
@@ -30,34 +44,16 @@ export default function HomeScreen() {
 
             setModalVisible(true);
         }
-        // else {
-        //     AsyncStorage.removeItem("userUuid");
 
-        //     if (playMusic) {
-        //         await AsyncStorage.removeItem("playMusic");
-        //     }
-        //     if (scoresData) {
-        //         await AsyncStorage.removeItem("scoresData");
-        //     }
-        //     if (calendar) {
-        //         await AsyncStorage.removeItem("calendar");
-        //     }
-        //     // await AsyncStorage.multiRemove([
-        //     //     "userUuid",
-        //     //     "playMusic",
-        //     //     "calendar",
-        //     //     "scoresData",
-        //     // ]);
-        //     // await Promise.all([
-        //     //     AsyncStorage.removeItem("userUuid"),
-        //     //     AsyncStorage.removeItem("playMusic"),
-        //     //     AsyncStorage.removeItem("scoresData"),
-        //     //     AsyncStorage.removeItem("calendar"),
-        //     // ]);
+        // if (userUuid) {
+        //     await AsyncStorage.multiRemove([
+        //         "userUuid",
+        //         "playMusic",
+        //         "calendar",
+        //         "scoresData",
+        //     ]);
         // }
     };
-
-    const insets = useSafeAreaInsets();
 
     return (
         <>

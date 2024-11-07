@@ -1,4 +1,10 @@
-import { StyleSheet, View, Modal, Pressable } from "react-native";
+import {
+    StyleSheet,
+    View,
+    Modal,
+    Pressable,
+    TouchableWithoutFeedback,
+} from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { router } from "expo-router";
@@ -25,6 +31,10 @@ export const DayModal: React.FC<DayModalProps> = ({
         });
     };
 
+    const onClose = () => {
+        setModalVisible(false);
+    };
+
     useFocusEffect(
         useCallback(() => {
             return () => {
@@ -38,44 +48,51 @@ export const DayModal: React.FC<DayModalProps> = ({
             animationType="fade"
             transparent={true}
             visible={modalVisible}
-            onRequestClose={() => {
-                setModalVisible(false);
-            }}
+            onRequestClose={onClose}
         >
-            <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                    <View style={styles.quoteContainer}>
-                        <ThemedText style={styles.quotationMark}>«</ThemedText>
-                        <ThemedText style={styles.quote}>
-                            {day.quote}
-                        </ThemedText>
-                        <ThemedText style={styles.quotationMark}>»</ThemedText>
-                    </View>
+            <TouchableWithoutFeedback onPress={onClose}>
+                <View style={styles.modalContainer}>
+                    <TouchableWithoutFeedback>
+                        <View style={styles.modalView}>
+                            <View style={styles.quoteContainer}>
+                                <ThemedText style={styles.quotationMark}>
+                                    «
+                                </ThemedText>
+                                <ThemedText style={styles.quote}>
+                                    {day.quote}
+                                </ThemedText>
+                                <ThemedText style={styles.quotationMark}>
+                                    »
+                                </ThemedText>
+                            </View>
 
-                    {day.quoteAuthor ? (
-                        <ThemedText style={styles.author}>
-                            {day.quoteAuthor}
-                        </ThemedText>
-                    ) : null}
+                            {day.quoteAuthor ? (
+                                <ThemedText style={styles.author}>
+                                    {day.quoteAuthor}
+                                </ThemedText>
+                            ) : null}
 
-                    <Pressable onPress={openDay} style={styles.button}>
-                        <Ionicons
-                            name={"arrow-forward-outline"}
-                            size={25}
-                            color={Colors.snow}
-                        />
-                    </Pressable>
+                            <Pressable onPress={openDay} style={styles.button}>
+                                <Ionicons
+                                    name={"arrow-forward-outline"}
+                                    size={25}
+                                    color={Colors.snow}
+                                />
+                            </Pressable>
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
         </Modal>
     );
 };
 
 const styles = StyleSheet.create({
-    centeredView: {
+    modalContainer: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
     modalView: {
         margin: 20,
