@@ -10,6 +10,7 @@ import { classifyGames } from "@/services/content.service";
 import { updateScores } from "@/services/score.service";
 import { Content } from "@/interfaces/contentInterface";
 import { ScoreType } from "@/enums/enums";
+import cld from "@/config/cloudinaryConfig";
 
 interface GameProps {
     games: Content[];
@@ -31,7 +32,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                 games={games}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={require("@/assets/images/content-background/s-amuser.jpg")}
+                backgroundImage={cld.image("s-amuser_vn8ugi")}
             />
             <CustomModal
                 isVisible={modalVisible}

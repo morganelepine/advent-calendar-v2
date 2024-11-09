@@ -8,7 +8,7 @@ export interface Content {
     content3: string;
     content4: string;
     content5: string;
-    image?: number;
+    image?: string;
     listOfContents?: ListOfContents[];
 }
 

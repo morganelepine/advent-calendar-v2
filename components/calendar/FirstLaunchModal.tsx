@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { MusicPreferences } from "@/components/calendar/MusicPreferences";
 import { CustomButton } from "@/components/utils/buttons/Button";
 import { Colors } from "@/constants/Colors";
+import cld from "@/config/cloudinaryConfig";
 
 interface FirstLaunchModalProps {
     modalVisible: boolean;
@@ -29,6 +30,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
     insets,
 }) => {
     const scrollViewRef = useRef<ScrollView>(null);
+    const backgroundImage = cld.image("ynohmmigwruoad8a6740");
 
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
 
@@ -64,7 +66,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/background.png")}
+                source={{ uri: backgroundImage.toURL() }}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

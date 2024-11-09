@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "expo-router";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { FirstLaunch } from "@/components/calendar/FirstLaunch";
+import { CustomButton } from "@/components/utils/buttons/Button";
 import { Colors } from "@/constants/Colors";
 import { MusicPreference } from "@/types/types";
-import { useFocusEffect } from "expo-router";
-import { CustomButton } from "@/components/utils/buttons/Button";
+import { AdvancedImage } from "cloudinary-react-native";
+import cld from "@/config/cloudinaryConfig";
 
 export default function InformationsScreen() {
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
@@ -49,8 +51,8 @@ export default function InformationsScreen() {
                 dark: Colors.darkGreen,
             }}
             headerImage={
-                <Image
-                    source={require("@/assets/images/background/christmas.jpg")}
+                <AdvancedImage
+                    cldImg={cld.image("christmas_gssam3")}
                     style={styles.headerImage}
                     resizeMode="cover"
                 />

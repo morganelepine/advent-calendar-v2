@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { Video } from "@/components/utils/custom/Video";
@@ -7,6 +7,8 @@ import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
 import { Content } from "@/interfaces/contentInterface";
 import { IdeaType } from "@/enums/enums";
+import { AdvancedImage } from "cloudinary-react-native";
+import cld from "@/config/cloudinaryConfig";
 
 interface RecoProps {
     idea: Content;
@@ -27,8 +29,8 @@ export const Reco: React.FC<RecoProps> = ({
 
             {idea.content5 === IdeaType.Book ? (
                 <View style={styles.bookContainer}>
-                    <Image
-                        source={idea.image}
+                    <AdvancedImage
+                        cldImg={cld.image(idea.image)}
                         style={[
                             styles.image,
                             { width: imageWidth },

@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, ScrollView, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { loadScores, getTotalScore } from "../../services/score.service";
+import { loadScores, getTotalScore } from "@/services/score.service";
 import { Header } from "@/components/score/Header";
 import { Rules } from "@/components/score/Rules";
 import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
 import { Score } from "@/interfaces/scoreInterfaces";
+import cld from "@/config/cloudinaryConfig";
 
 export default function ScoreScreen() {
     const scrollViewRef = useRef<ScrollView>(null);
+    const backgroundImage = cld.image("ynohmmigwruoad8a6740");
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -34,7 +36,7 @@ export default function ScoreScreen() {
 
     return (
         <ImageBackground
-            source={require("@/assets/images/background/background.png")}
+            source={{ uri: backgroundImage.toURL() }}
             resizeMode="cover"
             style={styles.imageBackground}
         >

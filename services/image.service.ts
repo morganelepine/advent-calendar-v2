@@ -1,30 +1,31 @@
 import { Dimensions, Image } from "react-native";
-import { Content } from "@/interfaces/contentInterface";
+import cld from "@/config/cloudinaryConfig";
 
-export const getImageDimensions = (
-    idea: Content,
-    maxHeight: number
-): {
-    [key: string]: { width: number; height: number };
-} => {
+export const formatImage = (
+    day: number,
+    image: string | undefined,
+    maxHeight: number,
+    setImageDimensions: React.Dispatch<
+        React.SetStateAction<{
+            [key: string]: { width: number; height: number };
+        }>
+    >
+): void => {
     const screenWidth = Dimensions.get("window").width;
 
-    const imageSource = idea.image
-        ? idea.image
-        : require("@/assets/images/splash.png");
+    const imageUrl = cld.image(image).toURL();
 
-    const { width, height } = Image.resolveAssetSource(imageSource);
+    Image.getSize(imageUrl, (width, height) => {
+        const ratio = Math.min(screenWidth / width, maxHeight / height);
+        const adjustedWidth = width * ratio;
+        const adjustedHeight = height * ratio;
 
-    const ratio = Math.min(screenWidth / width, maxHeight / height);
-    const adjustedWidth = width * ratio;
-    const adjustedHeight = height * ratio;
-
-    const imageDimensions = {
-        [idea.dayNumber]: {
-            width: adjustedWidth,
-            height: adjustedHeight,
-        },
-    };
-
-    return imageDimensions;
+        setImageDimensions((prev) => ({
+            ...prev,
+            [day]: {
+                width: adjustedWidth,
+                height: adjustedHeight,
+            },
+        }));
+    });
 };

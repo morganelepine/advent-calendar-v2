@@ -4,24 +4,17 @@ import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
+import { Content } from "@/interfaces/contentInterface";
+import cld from "@/config/cloudinaryConfig";
 
 interface AnecdoteProps {
-    content: {
-        id: number;
-        dayNumber: number;
-        type: string;
-        title: string;
-        content1: string;
-        content2: string;
-        content3: string;
-        content4: string;
-        content5: string;
-    };
+    content: Content;
     dayId: number;
 }
 
 export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
+    const backgroundImage = cld.image("s-inspirer_zwls2a");
 
     return (
         <>
@@ -29,14 +22,14 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                 content={content}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={require("@/assets/images/content-background/s-inspirer.jpg")}
+                backgroundImage={backgroundImage}
             />
 
             <ModalWithText
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
                 contentType={content.type}
-                backgroundImage={require("@/assets/images/content-background/s-inspirer.jpg")}
+                backgroundImage={backgroundImage}
             >
                 <ScrollView
                     persistentScrollbar={true} // Android only

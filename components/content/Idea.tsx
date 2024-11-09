@@ -7,7 +7,9 @@ import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { List } from "@/components/content/ideas/List";
 import { Content } from "@/interfaces/contentInterface";
 import { ContentType, IdeaType } from "@/enums/enums";
-import { getImageDimensions } from "@/services/image.service";
+import { formatImage } from "@/services/image.service";
+import { CloudinaryImage } from "@cloudinary/url-gen";
+import cld from "@/config/cloudinaryConfig";
 
 interface IdeaProps {
     ideas: Content[];
@@ -17,9 +19,9 @@ interface IdeaProps {
 export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
 
-    const backgroundImage = require("@/assets/images/content-background/se-divertir.jpg");
+    const backgroundImage = cld.image("se-regaler_mnonwh"); // se-divertir_xvdksq
     const [modalBackground, setModalBackground] =
-        useState<number>(backgroundImage);
+        useState<CloudinaryImage>(backgroundImage);
 
     const [imageDimensions, setImageDimensions] = useState<{
         [key: string]: { width: number; height: number };
@@ -28,8 +30,8 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     const getmodalImage = (idea: Content) => {
         if (idea.content5 === IdeaType.Recipe) {
             const imageSource = idea.image
-                ? idea.image
-                : require("@/assets/images/content-background/se-regaler.jpg");
+                ? cld.image(idea.image)
+                : cld.image("se-divertir_xvdksq");
 
             setModalBackground(imageSource);
         } else {
@@ -40,8 +42,12 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
     useEffect(() => {
         ideas.forEach((idea) => {
             if (idea.content5 === IdeaType.Book) {
-                const dimensions = getImageDimensions(idea, 200);
-                setImageDimensions(dimensions);
+                formatImage(
+                    idea.dayNumber,
+                    idea.image,
+                    200,
+                    setImageDimensions
+                );
             }
             getmodalImage(idea);
         });
@@ -53,7 +59,7 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                 ideas={ideas}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={require("@/assets/images/content-background/se-regaler.jpg")}
+                backgroundImage={backgroundImage}
             />
 
             {ideas.map((idea) => (

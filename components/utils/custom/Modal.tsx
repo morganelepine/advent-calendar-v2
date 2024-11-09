@@ -6,6 +6,7 @@ import { Colors } from "@/constants/Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ContentType } from "@/enums/enums";
 import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
+import cld from "@/config/cloudinaryConfig";
 
 interface CustomModalProps {
     isVisible: boolean;
@@ -21,6 +22,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
     children,
 }) => {
     const insets = useSafeAreaInsets();
+    const backgroundImage = cld.image("ofcjdqqjsl6qecpcn8xh");
 
     const getTitle = () => {
         switch (contentType) {
@@ -42,7 +44,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
             statusBarTranslucent={true}
         >
             <ImageBackground
-                source={require("@/assets/images/background/games-background.png")}
+                source={{ uri: backgroundImage.toURL() }}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

@@ -1,6 +1,8 @@
-import { StyleSheet, Text, Image } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { Day } from "@/interfaces/dayInterface";
+import { AdvancedImage } from "cloudinary-react-native";
+import cld from "@/config/cloudinaryConfig";
 
 interface DayNumberProps {
     day: Day;
@@ -10,8 +12,8 @@ interface DayNumberProps {
 export const DayNumber: React.FC<DayNumberProps> = ({ day, dayIsOpen }) => {
     return (
         <>
-            <Image
-                source={day.image}
+            <AdvancedImage
+                cldImg={cld.image(day.image)}
                 style={[
                     styles.itemBackground,
                     {

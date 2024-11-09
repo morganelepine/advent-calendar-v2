@@ -6,23 +6,12 @@ import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Content } from "@/interfaces/contentInterface";
 import { Collapsible } from "@/components/utils/Collapsible";
 import { ExternalLink } from "@/components/utils/ExternalLink";
-import { useEffect, useState } from "react";
-import { getImageDimensions } from "@/services/image.service";
 
 interface ListProps {
     idea: Content;
 }
 
 export const List: React.FC<ListProps> = ({ idea }) => {
-    const [imageDimensions, setImageDimensions] = useState<{
-        [key: string]: { width: number; height: number };
-    }>({});
-
-    useEffect(() => {
-        const dimensions = getImageDimensions(idea, 300);
-        setImageDimensions(dimensions);
-    }, [idea]);
-
     return (
         <View>
             <ThemedText type="modalSubtitle" style={{ marginBottom: 20 }}>
@@ -81,22 +70,14 @@ export const List: React.FC<ListProps> = ({ idea }) => {
                         ) : null}
 
                         {content.image ? (
-                            <View style={styles.video}>
+                            <View style={styles.imageContainer}>
                                 <Image
                                     source={content.image}
-                                    style={[
-                                        styles.image,
-                                        {
-                                            width: imageDimensions[
-                                                idea.dayNumber
-                                            ]?.width,
-                                        },
-                                        {
-                                            height: imageDimensions[
-                                                idea.dayNumber
-                                            ]?.height,
-                                        },
-                                    ]}
+                                    style={styles.image}
+                                />
+                                <ExternalLink
+                                    href={content.link as Href}
+                                    style={styles.link}
                                 />
                             </View>
                         ) : null}
@@ -115,7 +96,24 @@ const styles = StyleSheet.create({
     description: { textAlign: "left", fontSize: 15, marginBottom: 20 },
     videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
     video: { marginBottom: 20 },
+    imageContainer: {
+        width: 300,
+        height: 300,
+        position: "relative",
+        overflow: "hidden",
+        marginBottom: 20,
+        alignSelf: "center",
+    },
     image: {
-        aspectRatio: 1,
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        resizeMode: "cover",
+    },
+    link: {
+        ...StyleSheet.absoluteFillObject,
+        zIndex: 1,
     },
 });

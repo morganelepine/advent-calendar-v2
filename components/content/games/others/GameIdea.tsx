@@ -1,10 +1,12 @@
 import { Href } from "expo-router";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { Content } from "@/interfaces/contentInterface";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { Colors } from "@/constants/Colors";
+import { AdvancedImage } from "cloudinary-react-native";
+import cld from "@/config/cloudinaryConfig";
 
 interface GameIdeaProps {
     game: Content;
@@ -41,7 +43,11 @@ export const GameIdea: React.FC<GameIdeaProps> = ({ game }) => {
             ) : null}
 
             {game.image ? (
-                <Image source={game.image} style={styles.image} />
+                <AdvancedImage
+                    cldImg={cld.image(game.image)}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
             ) : null}
         </View>
     );
@@ -64,9 +70,11 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: Colors.green,
         borderRadius: 50,
+        paddingHorizontal: 20,
         marginTop: 10,
         marginBottom: 20,
         height: 48,
+        alignSelf: "center",
     },
     buttonText: { color: "white", lineHeight: 48 },
 });

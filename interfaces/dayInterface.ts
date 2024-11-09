@@ -1,15 +1,15 @@
 export interface Day {
     dayNumber: number;
     isOpen: boolean;
-    background: number;
+    background: string;
     width: string;
     height: string;
     color: string;
     textColor: string;
-    image: number;
+    image: string;
     aspectRatio: number;
     quote: string;
     quoteAuthor: string;
     quoteSource: string;
-    music: typeof import("*.mp3");
+    music: string;
 }
