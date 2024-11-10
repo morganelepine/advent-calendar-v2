@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Colors } from "@/constants/Colors";
 import { Content } from "@/interfaces/contentInterface";
 import { getButtonStyles } from "@/services/content.service";
+import { setGameStatus } from "@/services/score.service";
 
 interface JokeProps {
     game: Content;
@@ -32,6 +33,7 @@ export const Joke: React.FC<JokeProps> = ({ game, setScore }) => {
             } else {
                 setWin(`Raté... la bonne réponse était : ${game.content3}`);
             }
+            setGameStatus(game.dayNumber);
             setShowAnswer(true);
         }
     }, [selectedAnswer]);

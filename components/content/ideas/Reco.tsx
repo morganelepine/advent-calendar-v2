@@ -32,7 +32,7 @@ export const Reco: React.FC<RecoProps> = ({
                     <AdvancedImage
                         cldImg={cld.image(idea.image)}
                         style={[
-                            styles.image,
+                            styles.bookCover,
                             { width: imageWidth },
                             { height: imageHeight },
                         ]}
@@ -47,17 +47,18 @@ export const Reco: React.FC<RecoProps> = ({
                         </ThemedText>
                     </View>
                 </View>
-            ) : null}
+            ) : (
+                <CustomMarkdown
+                    style={{ fontFamily: "PoppinsBold", color: Colors.green }}
+                >
+                    {idea.content1}
+                </CustomMarkdown>
+            )}
 
             {idea.content5 === IdeaType.TvShow ? (
-                <>
-                    <View style={styles.video}>
-                        <Video videoId={idea.content4} />
-                    </View>
-                    <CustomMarkdown style={styles.videoTitle}>
-                        {idea.content1}
-                    </CustomMarkdown>
-                </>
+                <View style={styles.video}>
+                    <Video videoId={idea.content4} />
+                </View>
             ) : null}
 
             <CustomMarkdown>{idea.content2}</CustomMarkdown>
@@ -71,6 +72,16 @@ export const Reco: React.FC<RecoProps> = ({
                         {idea.content3}
                     </ThemedText>
                 </ExternalLink>
+            ) : null}
+
+            {idea.image && idea.content5 !== IdeaType.Book ? (
+                <View style={{ alignItems: "center", marginVertical: 10 }}>
+                    <AdvancedImage
+                        cldImg={cld.image(idea.image)}
+                        style={[{ width: imageWidth }, { height: imageHeight }]}
+                        resizeMode="cover"
+                    />
+                </View>
             ) : null}
         </View>
     );
@@ -93,7 +104,7 @@ const styles = StyleSheet.create({
         fontFamily: "PoppinsItalic",
         textAlign: "left",
     },
-    image: {
+    bookCover: {
         borderColor: Colors.green,
         borderWidth: 0.2,
         marginBottom: 20,
@@ -110,9 +121,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         height: 48,
         justifyContent: "center",
+        textAlign: "center",
     },
     buttonText: { color: "white", lineHeight: 48 },
 
     videoTitle: { fontFamily: "PoppinsBold", fontSize: 18, marginBottom: -5 },
-    video: { marginTop: 10, marginBottom: 20 },
+    video: { marginTop: 10 },
 });

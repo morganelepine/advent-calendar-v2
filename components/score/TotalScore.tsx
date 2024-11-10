@@ -21,7 +21,8 @@ export const TotalScore: React.FC<TotalScoreProps> = ({ score }) => {
     return (
         <View style={styles.container}>
             <ThemedText style={styles.score}>
-                <Text style={styles.bold}>{score}</Text> points
+                <Text style={styles.bold}>{score}</Text>{" "}
+                {score > 1 ? "points" : "point"}
             </ThemedText>
             <View style={styles.pointsContainer}>
                 <ThemedText style={styles.points}>

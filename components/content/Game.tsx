@@ -67,6 +67,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                                 <Quiz
                                     games={gamesByType.quizCitation}
                                     setScore={setScore}
+                                    dayId={dayId}
                                 />
                             </>
                         )}
@@ -79,6 +80,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                                 <Quiz
                                     games={gamesByType.quizNoel}
                                     setScore={setScore}
+                                    dayId={dayId}
                                 />
                             </>
                         )}

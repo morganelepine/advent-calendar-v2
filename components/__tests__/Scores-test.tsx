@@ -1,16 +1,21 @@
 import {
+    updateScores,
     checkContentOpeningScore,
     checkGameScore,
-} from "../../services/score.service";
+} from "@/services/score.service";
 import { Score } from "@/interfaces/scoreInterfaces";
+import { ScoreType } from "@/enums/enums";
 
 const createScoreOfTheDay = (): Score => ({
     dayNumber: 24,
     scoreTotal: 25,
     scoreDetails: {
-        dayOpening: 25,
+        dayOpening: 0,
         contentOpening: 0,
-        gameCorrectAnswer: 0,
+        game: {
+            correctAnswer: 0,
+            played: false,
+        },
     },
 });
 
@@ -77,40 +82,50 @@ describe("Check game score", () => {
     it("Should add 20 points if game is played ON TIME and score is < 60 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer = 40;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 40;
         const addedScore = await checkGameScore(24, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.gameCorrectAnswer).toBe(60);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(60);
         expect(addedScore).toBe(20);
     });
 
     it("Should add only 10 points if game is played LATE and score is < 30 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer = 20;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 20;
         const addedScore = await checkGameScore(20, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.gameCorrectAnswer).toBe(30);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(30);
         expect(addedScore).toBe(10);
     });
 
     it("Should NOT add any points if game is played ON TIME but score is > 60 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer = 60;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 60;
         const addedScore = await checkGameScore(24, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.gameCorrectAnswer).toBe(60);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(60);
         expect(addedScore).toBe(0);
     });
 
     it("Should NOT add any points if game is played LATE and score is > 30 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer = 30;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 30;
         const addedScore = await checkGameScore(20, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.gameCorrectAnswer).toBe(30);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(30);
         expect(addedScore).toBe(0);
+    });
+
+    it("Should NOT add any points if game is ALREADY PLAYED", async () => {
+        mockDate();
+
+        scoreOfTheDay.scoreDetails.game.played = true;
+
+        await updateScores(20, ScoreType.GameCorrectAnswer);
+
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(0);
     });
 });

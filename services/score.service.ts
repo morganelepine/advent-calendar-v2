@@ -11,7 +11,10 @@ export const generateScoresData = (): Score[] => {
             scoreDetails: {
                 dayOpening: 0,
                 contentOpening: 0,
-                gameCorrectAnswer: 0,
+                game: {
+                    correctAnswer: 0,
+                    played: false,
+                },
             },
         });
     }
@@ -37,7 +40,7 @@ export const updateScores = async (
         (score: Score) => score.dayNumber === dayId
     );
 
-    if (scoreOfTheDay) {
+    if (scoreOfTheDay && !scoreOfTheDay.scoreDetails.game.played) {
         const scoreDetails = scoreOfTheDay.scoreDetails;
         let addedScore = 0;
 
@@ -109,13 +112,27 @@ export const checkGameScore = async (
     const scoreOnTime = 20;
     const scoreLate = 10;
 
-    if (today === dayId && scoreOfTheDay.scoreDetails.gameCorrectAnswer < 60) {
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer += scoreOnTime;
+    if (today === dayId && scoreOfTheDay.scoreDetails.game.correctAnswer < 60) {
+        scoreOfTheDay.scoreDetails.game.correctAnswer += scoreOnTime;
         addedScore += scoreOnTime;
-    } else if (scoreOfTheDay.scoreDetails.gameCorrectAnswer < 30) {
-        scoreOfTheDay.scoreDetails.gameCorrectAnswer += scoreLate;
+    } else if (scoreOfTheDay.scoreDetails.game.correctAnswer < 30) {
+        scoreOfTheDay.scoreDetails.game.correctAnswer += scoreLate;
         addedScore += scoreLate;
     }
 
     return addedScore;
+};
+
+export const setGameStatus = async (day: number): Promise<void> => {
+    const scores = await loadScores();
+
+    if (scores) {
+        const scoreOfTheDay = scores.find(
+            (score: Score) => score.dayNumber === day
+        );
+        if (scoreOfTheDay) {
+            scoreOfTheDay.scoreDetails.game.played = true;
+            await saveScores(scores);
+        }
+    }
 };

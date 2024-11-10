@@ -41,11 +41,12 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
 
     useEffect(() => {
         ideas.forEach((idea) => {
-            if (idea.content5 === IdeaType.Book) {
+            if (idea.image) {
+                const maxHeight = idea.content5 === IdeaType.Book ? 200 : 500;
                 formatImage(
                     idea.dayNumber,
                     idea.image,
-                    200,
+                    maxHeight,
                     setImageDimensions
                 );
             }

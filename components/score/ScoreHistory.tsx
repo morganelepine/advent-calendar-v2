@@ -42,8 +42,8 @@ export const ScoreHistory: React.FC<ScoreHistoryProps> = ({ score }) => {
                     <ThemedText style={styles.score}>
                         Bonnes réponses aux jeux :{" "}
                         <Text style={styles.bold}>
-                            {score.scoreDetails.gameCorrectAnswer}{" "}
-                            {score.scoreDetails.gameCorrectAnswer > 0
+                            {score.scoreDetails.game.correctAnswer}{" "}
+                            {score.scoreDetails.game.correctAnswer > 0
                                 ? "points"
                                 : "point"}
                         </Text>

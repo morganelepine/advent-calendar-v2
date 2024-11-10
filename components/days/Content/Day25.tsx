@@ -9,22 +9,22 @@ interface Day25Props {
 }
 
 export const Day25: React.FC<Day25Props> = ({ dayId }) => {
-    const [score, setScore] = useState<number>(0);
+    const [totalScore, setTotalScore] = useState<number>(0);
 
     useEffect(() => {
         const getScoreTotal = async () => {
             const totalScore = await getTotalScore();
-            setScore(totalScore);
+            setTotalScore(totalScore);
         };
         getScoreTotal();
     }, []);
 
     return (
         <View style={styles.container}>
-            {score >= 2512 ? (
+            {totalScore >= 2512 ? (
                 <ThemedText style={styles.title}>
-                    Bravo, vous avez gagné {score} points et pouvez donc accéder
-                    à la surprise !
+                    Bravo, vous avez gagné {totalScore} points et pouvez donc
+                    accéder à la surprise !
                 </ThemedText>
             ) : (
                 <ThemedText style={styles.title}>

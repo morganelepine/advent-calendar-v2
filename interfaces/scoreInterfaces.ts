@@ -7,5 +7,8 @@ export interface Score {
 export interface ScoreDetail {
     dayOpening: number;
     contentOpening: number;
-    gameCorrectAnswer: number;
+    game: {
+        correctAnswer: number;
+        played: boolean;
+    };
 }

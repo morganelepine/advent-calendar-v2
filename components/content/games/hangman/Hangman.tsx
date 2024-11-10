@@ -5,6 +5,7 @@ import { Infos } from "@/components/content/games/hangman/Infos";
 import { Alphabet } from "@/components/content/games/hangman/Alphabet";
 import { HangmanModal } from "@/components/content/games/hangman/HangmanModal";
 import { Content } from "@/interfaces/contentInterface";
+import { setGameStatus } from "@/services/score.service";
 
 interface HangmanProps {
     game: Content;
@@ -15,17 +16,31 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
     const words = game.content1.toUpperCase().split(",");
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const currentWord = words[currentWordIndex];
-
+    const [hiddenWord, setHiddenWord] = useState<string[]>([]);
     const maxTries = 7;
     const [mistakes, setMistakes] = useState(0);
     const [clickedLetters, setClickedLetters] = useState<string[]>([]);
-    const [hiddenWord, setHiddenWord] = useState<string[]>([]);
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
 
     useEffect(() => {
         setHiddenWord(currentWord.split("").map(() => "_"));
         setClickedLetters([]);
         setMistakes(0);
     }, [currentWord]);
+
+    useEffect(() => {
+        if (currentWord === hiddenWord.join("")) {
+            setScore();
+            setModalMessage("Félicitations 🥳");
+            setModalVisible(true);
+        } else if (mistakes === maxTries) {
+            setModalMessage(
+                "Dommage, vous avez atteint le nombre maximum d'essais 😟"
+            );
+            setModalVisible(true);
+        }
+    }, [hiddenWord, mistakes]);
 
     const checkLetter = (letter: string) => {
         if (clickedLetters.includes(letter)) {
@@ -46,9 +61,6 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
         }
     };
 
-    const [modalVisible, setModalVisible] = useState(false);
-    const [modalMessage, setModalMessage] = useState("");
-
     const handleNextQuestion = () => {
         setCurrentWordIndex(currentWordIndex + 1);
         setModalVisible(false);
@@ -56,6 +68,7 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
 
     const onClose = () => {
         if (currentWordIndex === words.length - 1) {
+            setGameStatus(game.dayNumber);
             setCurrentWordIndex(0);
             setModalVisible(false);
         } else {
@@ -63,23 +76,6 @@ export const Hangman: React.FC<HangmanProps> = ({ game, setScore }) => {
             setModalVisible(false);
         }
     };
-
-    useEffect(() => {
-        if (currentWord === hiddenWord.join("")) {
-            setScore();
-            setModalMessage("Félicitations 🥳");
-            setModalVisible(true);
-        }
-    }, [hiddenWord, currentWord, setScore]);
-
-    useEffect(() => {
-        if (mistakes === maxTries) {
-            setModalMessage(
-                "Dommage, vous avez atteint le nombre maximum d'essais 😟"
-            );
-            setModalVisible(true);
-        }
-    }, [mistakes]);
 
     return (
         <View key={game.id}>
