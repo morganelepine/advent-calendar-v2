@@ -22,14 +22,21 @@ export const FirstLaunch = () => {
             <View style={styles.section}>
                 <ThemedText type="sectionSubtitle">🎄 Une citation</ThemedText>
                 <ThemedText type="sectionText">
-                    Une citation inspirante pour plonger dans l'esprit de Noël.
+                    Une citation pour s'imprégner de l'esprit de Noël.
+                </ThemedText>
+            </View>
+
+            <View style={styles.section}>
+                <ThemedText type="sectionSubtitle">📜 Une histoire</ThemedText>
+                <ThemedText type="sectionText">
+                    Un morceau d'une nouvelle de Noël découpée en 24 épisodes.
                 </ThemedText>
             </View>
 
             <View style={styles.section}>
                 <ThemedText type="sectionSubtitle">🎅 Une anecdote</ThemedText>
                 <ThemedText type="sectionText">
-                    Une anecdote pour découvrir l'origine des traditions et
+                    Une anecdote pour découvrir l'origine des traditions et de
                     l’histoire de Noël.
                 </ThemedText>
             </View>
@@ -40,7 +47,7 @@ export const FirstLaunch = () => {
                 </ThemedText>
                 <ThemedText type="sectionText">
                     Livre, série, activité, recette... : une idée pour
-                    accompagner les journées et soirées d'hiver.
+                    accompagner vos journées et soirées d'hiver.
                 </ThemedText>
             </View>
 

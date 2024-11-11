@@ -1,7 +1,8 @@
 import { StyleSheet, ImageBackground, View, Platform } from "react-native";
 import { EdgeInsets, SafeAreaView } from "react-native-safe-area-context";
-import { ThemedText } from "@/components/ThemedText";
+import { Snowfall } from "react-native-snowfall";
 import { daysArray } from "@/data/days_data";
+import { ThemedText } from "@/components/ThemedText";
 import { AudioPlayer } from "@/components/content/Audio";
 import { Colors } from "@/constants/Colors";
 import cld from "@/config/cloudinaryConfig";
@@ -47,6 +48,14 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
             style={styles.background}
             resizeMode="cover"
         >
+            <Snowfall
+                count={75}
+                duration={15000}
+                minSize={5}
+                maxSize={15}
+                imageScale={0.5}
+                imagePath={require("@/assets/images/snow.png")}
+            />
             <SafeAreaView style={styles.safeArea}>
                 <View
                     style={{
