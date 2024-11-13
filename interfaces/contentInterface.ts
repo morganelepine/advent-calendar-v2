@@ -19,5 +19,5 @@ export interface ListOfContents {
     link?: string;
     author?: string;
     url?: string;
-    image?: number;
+    image?: string;
 }

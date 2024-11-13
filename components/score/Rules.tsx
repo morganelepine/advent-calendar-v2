@@ -22,6 +22,7 @@ export const Rules: React.FC<RulesProps> = ({
             transparent={true}
             visible={modalVisible}
             onRequestClose={onClose}
+            statusBarTranslucent={true}
         >
             <View style={styles.modalContainer}>
                 <View style={styles.modalView}>

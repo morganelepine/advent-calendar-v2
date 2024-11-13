@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, Text } from "react-native";
+import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
+import { ExternalLink } from "@/components/utils/ExternalLink";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
 import { Content } from "@/interfaces/contentInterface";
@@ -42,16 +44,29 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                         {content.content1}
                     </ThemedText>
 
-                    {content.content3 ? (
-                        <Video videoId={content.content3} />
+                    {content.content2 ? (
+                        <ExternalLink href={content.content3 as Href}>
+                            <ThemedText style={styles.source}>
+                                Source :{" "}
+                                <Text
+                                    style={{ textDecorationLine: "underline" }}
+                                >
+                                    {content.content2}
+                                </Text>
+                            </ThemedText>
+                        </ExternalLink>
                     ) : null}
 
                     {content.content4 ? (
+                        <Video videoId={content.content4} />
+                    ) : null}
+
+                    {content.content5 ? (
                         <>
                             <ThemedText style={styles.video}>
                                 Et en version moins classique...
                             </ThemedText>
-                            <Video videoId={content.content4} />
+                            <Video videoId={content.content5} />
                         </>
                     ) : null}
                 </ScrollView>
@@ -64,6 +79,10 @@ const styles = StyleSheet.create({
     anecdote: {
         marginVertical: 20,
         textAlign: "left",
+    },
+    source: {
+        fontSize: 12,
+        fontFamily: "PoppinsItalic",
     },
     video: {
         fontSize: 14,
