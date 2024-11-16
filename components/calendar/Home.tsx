@@ -1,8 +1,8 @@
-import { StyleSheet, ImageBackground, View, Platform } from "react-native";
+import { StyleSheet, ImageBackground, View } from "react-native";
 import { EdgeInsets, SafeAreaView } from "react-native-safe-area-context";
-import { Snowfall } from "react-native-snowfall";
 import { daysArray } from "@/data/days_data";
 import { ThemedText } from "@/components/ThemedText";
+import { Snowfall } from "@/components/utils/Snow";
 import { AudioPlayer } from "@/components/content/Audio";
 import { Colors } from "@/constants/Colors";
 import cld from "@/config/cloudinaryConfig";
@@ -44,24 +44,19 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
 
     return (
         <ImageBackground
+            // source={require("@/assets/images/4.jpeg")}
             source={{ uri: backgroundImage.toURL() }}
             style={styles.background}
             resizeMode="cover"
         >
-            <Snowfall
-                count={75}
-                duration={15000}
-                minSize={5}
-                maxSize={15}
-                imageScale={0.5}
-                imagePath={require("@/assets/images/snow.png")}
-            />
+            <Snowfall count={100} />
+
             <SafeAreaView style={styles.safeArea}>
                 <View
                     style={{
                         position: "absolute",
-                        top: Platform.OS === "android" ? insets.top : 20,
-                        right: Platform.OS === "android" ? insets.right : 20,
+                        top: insets.top,
+                        right: insets.right,
                     }}
                 >
                     <AudioPlayer music={music} />
@@ -72,11 +67,9 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                         {daysToChristmas} nuits
                     </ThemedText>
                     <ThemedText type="homeTitle"> avant Noël</ThemedText>
-
-                    {Platform.OS === "android" && daysToCalendar > 0 && (
+                    {daysToCalendar > 0 && (
                         <ThemedText style={styles.text2}>
-                            (et plus que {daysToCalendar} avant le départ du
-                            calendrier !)
+                            (et {daysToCalendar} avant le départ du calendrier)
                         </ThemedText>
                     )}
                 </View>
@@ -99,33 +92,15 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     textContainer: {
-        marginBottom: 180,
-        ...(Platform.OS === "android"
-            ? {
-                  flexDirection: "column",
-              }
-            : {
-                  flexDirection: "row",
-              }),
+        marginBottom: 220,
+        flexDirection: "column",
     },
     text1: {
-        ...(Platform.OS === "android"
-            ? {
-                  letterSpacing: 8,
-              }
-            : {
-                  letterSpacing: 14,
-              }),
+        letterSpacing: 8,
     },
     text2: {
         paddingTop: 20,
         color: Colors.snow,
-        ...(Platform.OS === "android"
-            ? {
-                  fontSize: 14,
-              }
-            : {
-                  fontSize: 20,
-              }),
+        fontSize: 14,
     },
 });

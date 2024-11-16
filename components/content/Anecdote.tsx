@@ -44,19 +44,6 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                         {content.content1}
                     </ThemedText>
 
-                    {content.content2 ? (
-                        <ExternalLink href={content.content3 as Href}>
-                            <ThemedText style={styles.source}>
-                                Source :{" "}
-                                <Text
-                                    style={{ textDecorationLine: "underline" }}
-                                >
-                                    {content.content2}
-                                </Text>
-                            </ThemedText>
-                        </ExternalLink>
-                    ) : null}
-
                     {content.content4 ? (
                         <Video videoId={content.content4} />
                     ) : null}
@@ -68,6 +55,19 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                             </ThemedText>
                             <Video videoId={content.content5} />
                         </>
+                    ) : null}
+
+                    {content.content2 ? (
+                        <ExternalLink href={content.content3 as Href}>
+                            <ThemedText style={styles.source}>
+                                Source :{" "}
+                                <Text
+                                    style={{ textDecorationLine: "underline" }}
+                                >
+                                    {content.content2}
+                                </Text>
+                            </ThemedText>
+                        </ExternalLink>
                     ) : null}
                 </ScrollView>
             </ModalWithText>
