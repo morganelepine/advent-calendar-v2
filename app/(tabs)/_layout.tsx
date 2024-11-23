@@ -41,6 +41,23 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="bingo"
+                options={{
+                    title: "Bingo",
+                    tabBarLabelStyle: { fontFamily: "Poppins", fontSize: 10 },
+                    tabBarIcon: ({ color, focused }) => (
+                        <TabBarIcon
+                            name={
+                                focused
+                                    ? "heart-circle"
+                                    : "heart-circle-outline"
+                            }
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
                 name="score"
                 options={{
                     title: "Score",
