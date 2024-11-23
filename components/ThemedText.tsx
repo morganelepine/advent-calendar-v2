@@ -1,4 +1,4 @@
-import { Text, type TextProps, StyleSheet, Platform } from "react-native";
+import { Text, type TextProps, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { useThemeColor } from "@/hooks/useThemeColor";
 
@@ -51,13 +51,7 @@ const styles = StyleSheet.create({
         color: Colors.darkGreen,
     },
     homeTitle: {
-        ...(Platform.OS === "android"
-            ? {
-                  fontSize: 55,
-              }
-            : {
-                  fontSize: 100,
-              }),
+        fontSize: 55,
         fontFamily: "PallyBold",
         textAlign: "center",
         color: "white",

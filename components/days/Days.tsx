@@ -38,7 +38,7 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
     };
 
     return (
-        <View style={[styles.daysContainer]}>
+        <View style={styles.daysContainer}>
             {days.map((day) => (
                 <DayButton
                     key={day.dayNumber}

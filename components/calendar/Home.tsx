@@ -44,7 +44,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
 
     return (
         <ImageBackground
-            // source={require("@/assets/images/4.jpeg")}
+            // source={require("@/assets/images/3.jpeg")}
             source={{ uri: backgroundImage.toURL() }}
             style={styles.background}
             resizeMode="cover"
@@ -55,8 +55,8 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                 <View
                     style={{
                         position: "absolute",
-                        top: insets.top,
-                        right: insets.right,
+                        top: insets.top + 10,
+                        right: 10,
                     }}
                 >
                     <AudioPlayer music={music} />
@@ -66,7 +66,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                     <ThemedText type="homeTitle" style={styles.text1}>
                         {daysToChristmas} nuits
                     </ThemedText>
-                    <ThemedText type="homeTitle"> avant Noël</ThemedText>
+                    <ThemedText type="homeTitle">avant Noël</ThemedText>
                     {daysToCalendar > 0 && (
                         <ThemedText style={styles.text2}>
                             (et {daysToCalendar} avant le départ du calendrier)
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     },
     safeArea: {
         flex: 1,
-        backgroundColor: "transparent",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     text1: {
-        letterSpacing: 8,
+        letterSpacing: 9,
     },
     text2: {
         paddingTop: 20,

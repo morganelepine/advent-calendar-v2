@@ -3,6 +3,7 @@ import { StyleSheet, ScrollView, Text } from "react-native";
 import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
@@ -40,9 +41,9 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                         {content.title}
                     </ThemedText>
 
-                    <ThemedText style={styles.anecdote}>
+                    <CustomMarkdown style={styles.anecdote}>
                         {content.content1}
-                    </ThemedText>
+                    </CustomMarkdown>
 
                     {content.content4 ? (
                         <Video videoId={content.content4} />

@@ -30,7 +30,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
     insets,
 }) => {
     const scrollViewRef = useRef<ScrollView>(null);
-    const backgroundImage = cld.image("ynohmmigwruoad8a6740");
+    const backgroundImage = cld.image("Fond_1_s84lam");
 
     const [playMusic, setPlayMusic] = useState<MusicPreference>(null);
 

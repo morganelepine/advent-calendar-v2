@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, Pressable } from "react-native";
+import { StyleSheet, Pressable, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio, AVPlaybackStatus } from "expo-av";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -71,17 +71,28 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ music }) => {
     }, [playMusic]);
 
     return (
-        <Pressable onPress={togglePlayPause} style={styles.iconButton}>
+        <Pressable onPress={togglePlayPause} style={styles.button}>
+            <View style={styles.buttonBackground} />
             <Ionicons
-                name={isPlaying ? "pause-circle" : "play-circle"}
-                size={60}
-                color={Colors.snow}
-                style={styles.iconButton}
-            />
+                name={isPlaying ? "pause" : "play"}
+                size={30}
+                color={Colors.blue}
+            ></Ionicons>
         </Pressable>
     );
 };
 
 const styles = StyleSheet.create({
-    iconButton: {},
+    buttonBackground: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: Colors.snow,
+        borderRadius: 50,
+        opacity: 0.8,
+    },
+    button: {
+        height: 48,
+        width: 48,
+        alignItems: "center",
+        justifyContent: "center",
+    },
 });

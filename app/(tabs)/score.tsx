@@ -11,7 +11,7 @@ import cld from "@/config/cloudinaryConfig";
 
 export default function ScoreScreen() {
     const scrollViewRef = useRef<ScrollView>(null);
-    const backgroundImage = cld.image("ynohmmigwruoad8a6740");
+    const backgroundImage = cld.image("Fond_1_s84lam");
 
     const [modalVisible, setModalVisible] = useState(false);
 
