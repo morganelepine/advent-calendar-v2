@@ -75,7 +75,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ music }) => {
             <View style={styles.buttonBackground} />
             <Ionicons
                 name={isPlaying ? "pause" : "play"}
-                size={30}
+                size={26}
                 color={Colors.blue}
             ></Ionicons>
         </Pressable>

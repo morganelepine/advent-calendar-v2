@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { EdgeInsets } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
-import { FirstLaunch } from "@/components/calendar/FirstLaunch";
+import { AppContent } from "@/components/informations/AppContent";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { MusicPreferences } from "@/components/calendar/MusicPreferences";
 import { CustomButton } from "@/components/utils/buttons/Button";
@@ -85,7 +85,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
                         style={{ paddingHorizontal: 20 }}
                         // persistentScrollbar={true} // Android only
                     >
-                        <FirstLaunch />
+                        <AppContent />
 
                         <MusicPreferences
                             setPlayMusic={setPlayMusic}

@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 
-export const FirstLaunch = () => {
+export const AppContent = () => {
     return (
         <View style={styles.container}>
             <View style={styles.section}>

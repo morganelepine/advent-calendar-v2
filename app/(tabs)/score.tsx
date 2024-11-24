@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { StyleSheet, ScrollView, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { loadScores, getTotalScore } from "@/services/score.service";
-import { Header } from "@/components/score/Header";
-import { Rules } from "@/components/score/Rules";
+import { RulesButton } from "@/components/score/RulesButton";
+import { RulesModal } from "@/components/score/RulesModal";
 import { TotalScore } from "@/components/score/TotalScore";
 import { ScoreHistory } from "@/components/score/ScoreHistory";
 import { Score } from "@/interfaces/scoreInterfaces";
@@ -41,7 +41,7 @@ export default function ScoreScreen() {
             style={styles.imageBackground}
         >
             <SafeAreaView style={styles.safeArea}>
-                <Header setModalVisible={setModalVisible} />
+                <RulesButton setModalVisible={setModalVisible} />
 
                 <TotalScore score={score} />
 
@@ -54,7 +54,7 @@ export default function ScoreScreen() {
                         <ScoreHistory key={score.dayNumber} score={score} />
                     ))}
 
-                    <Rules
+                    <RulesModal
                         modalVisible={modalVisible}
                         setModalVisible={setModalVisible}
                     />
