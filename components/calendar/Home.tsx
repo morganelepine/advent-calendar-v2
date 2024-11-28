@@ -17,8 +17,6 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     const todayDay = today.getDate();
     const christmasDay = new Date(today.getFullYear(), 11, 25);
     const calendarDay = new Date(today.getFullYear(), 11, 1);
-    // console.log({ today });
-    // console.log({ christmasDay });
 
     if (today > christmasDay) {
         christmasDay.setFullYear(christmasDay.getFullYear() + 1);
@@ -36,20 +34,19 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
 
     const backgroundImage = day
         ? cld.image(day?.background)
-        : cld.image("image6_ccgiqd");
+        : cld.image("11_pfqcwp");
 
     const music = day
         ? day?.music
-        : "https://res.cloudinary.com/deauthz29/video/upload/v1730978205/we-wish-you-a-merry-christmas_fcqhsn.mp3";
+        : "https://res.cloudinary.com/deauthz29/video/upload/v1730978205/silent-night_ff2gwk.mp3";
 
     return (
         <ImageBackground
-            // source={require("@/assets/images/3.jpeg")}
             source={{ uri: backgroundImage.toURL() }}
             style={styles.background}
             resizeMode="cover"
         >
-            <Snowfall count={100} />
+            <Snowfall count={today === christmasDay ? 500 : 100} />
 
             <SafeAreaView style={styles.safeArea}>
                 <View
@@ -63,13 +60,33 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                 </View>
 
                 <View style={styles.textContainer}>
-                    <ThemedText type="homeTitle" style={styles.text1}>
-                        {daysToChristmas} nuits
-                    </ThemedText>
-                    <ThemedText type="homeTitle">avant Noël</ThemedText>
-                    {daysToCalendar > 0 && (
-                        <ThemedText style={styles.text2}>
-                            (et {daysToCalendar} avant le départ du calendrier)
+                    {today === christmasDay && (
+                        <ThemedText
+                            type="homeTitle"
+                            style={styles.christmasText}
+                        >
+                            Joyeux Noël
+                        </ThemedText>
+                    )}
+
+                    {today < christmasDay && (
+                        <>
+                            <ThemedText type="homeTitle" style={styles.text1}>
+                                {daysToChristmas} nuits
+                            </ThemedText>
+                            <ThemedText type="homeTitle">avant Noël</ThemedText>
+                            {daysToCalendar > 0 && (
+                                <ThemedText style={styles.text2}>
+                                    (et {daysToCalendar} avant le départ du
+                                    calendrier)
+                                </ThemedText>
+                            )}
+                        </>
+                    )}
+
+                    {today > christmasDay && (
+                        <ThemedText type="homeTitle" style={{ fontSize: 38 }}>
+                            Rendez-vous l'année prochaine !
                         </ThemedText>
                     )}
                 </View>
@@ -91,7 +108,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     textContainer: {
-        marginBottom: 220,
+        marginBottom: 250,
         flexDirection: "column",
     },
     text1: {
@@ -101,5 +118,14 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         color: Colors.snow,
         fontSize: 14,
+    },
+    christmasText: {
+        marginTop: 100,
+        fontSize: 75,
+        lineHeight: 80,
+        color: Colors.blue,
+        textShadowColor: Colors.snow,
+        textShadowOffset: { width: 3, height: 3 },
+        textShadowRadius: 1,
     },
 });
