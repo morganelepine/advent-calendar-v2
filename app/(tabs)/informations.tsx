@@ -7,6 +7,7 @@ import { Collapsible } from "@/components/utils/Collapsible";
 import { ThemedText } from "@/components/ThemedText";
 import { AppContent } from "@/components/informations/AppContent";
 import { MusicPref } from "@/components/informations/MusicPref";
+import { Copyrights } from "@/components/informations/Copyrights";
 import { BingoRules } from "@/components/bingo/BingoRules";
 import { Rules } from "@/components/score/Rules";
 import { Colors } from "@/constants/Colors";
@@ -89,6 +90,10 @@ export default function InformationsScreen() {
                     playMusic={playMusic}
                     handleMusicPreference={handleMusicPreference}
                 />
+            </Collapsible>
+
+            <Collapsible title={"Remerciements"} style={styles.title}>
+                <Copyrights />
             </Collapsible>
         </ParallaxScrollView>
     );
