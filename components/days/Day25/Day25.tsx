@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
+import { Day25Win } from "@/components/days/Day25/Day25Win";
+import { Day25Lost } from "@/components/days/Day25/Day25Lost";
 import { Colors } from "@/constants/Colors";
 import { getTotalScore } from "@/services/score.service";
 
@@ -22,16 +23,9 @@ export const Day25: React.FC<Day25Props> = ({ dayId }) => {
     return (
         <View style={styles.container}>
             {totalScore >= 2512 ? (
-                <ThemedText style={styles.title}>
-                    Bravo, vous avez gagné {totalScore} points et pouvez donc
-                    accéder à la surprise !
-                </ThemedText>
+                <Day25Win totalScore={totalScore} />
             ) : (
-                <ThemedText style={styles.title}>
-                    Dommage, vous n'avez pas réussi à atteindre les 2512 points
-                    requis pour accéder à la surprise... Retentez votre chance
-                    l'année prochaine !
-                </ThemedText>
+                <Day25Lost />
             )}
         </View>
     );
@@ -43,13 +37,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         padding: 20,
-    },
-    title: {
-        fontFamily: "PallyBold",
-        paddingTop: 2,
-        fontSize: 20,
-        textAlign: "center",
-        letterSpacing: 1,
-        color: Colors.green,
+        backgroundColor: Colors.blue,
     },
 });

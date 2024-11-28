@@ -91,7 +91,12 @@ export default function TabLayout() {
                 name="day"
                 options={{
                     href: null,
-                    title: "Jour",
+                }}
+            />
+            <Tabs.Screen
+                name="day25"
+                options={{
+                    href: null,
                 }}
             />
         </Tabs>
