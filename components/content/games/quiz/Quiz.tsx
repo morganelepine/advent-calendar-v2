@@ -1,10 +1,11 @@
-import { StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
+import { ThemedText } from "@/components/ThemedText";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { QuizAnswers } from "@/components/content/games/quiz/QuizAnswers";
 import { QuizExplanation } from "@/components/content/games/quiz/QuizExplanation";
 import { Content } from "@/interfaces/contentInterface";
 import { setGameStatus } from "@/services/score.service";
+import { GameType } from "@/enums/enums";
 
 interface QuizProps {
     games: Content[];
@@ -48,7 +49,27 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
 
     return (
         <>
-            <CustomMarkdown style={styles.question}>
+            {currentGame.content5 === GameType.QuizEmojis && (
+                <ThemedText style={{ marginVertical: 10 }}>
+                    Retrouvez dans quelle chanson se trouve ce refrain en émojis
+                    :
+                </ThemedText>
+            )}
+
+            <CustomMarkdown
+                style={{
+                    marginVertical:
+                        currentGame.content5 === GameType.QuizEmojis ? 0 : 20,
+                    fontSize:
+                        currentGame.content5 === GameType.QuizEmojis ? 26 : 16,
+                    lineHeight:
+                        currentGame.content5 === GameType.QuizEmojis ? 48 : 26,
+                    alignSelf:
+                        currentGame.content5 === GameType.QuizEmojis
+                            ? "center"
+                            : "flex-start",
+                }}
+            >
                 {currentGame.content1}
             </CustomMarkdown>
 
@@ -72,9 +93,3 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
         </>
     );
 };
-
-const styles = StyleSheet.create({
-    question: {
-        marginVertical: 20,
-    },
-});

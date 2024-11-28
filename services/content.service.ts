@@ -8,6 +8,7 @@ interface GamesByType {
     jeu?: Content;
     quizCitation: Content[];
     quizNoel: Content[];
+    quizEmojis: Content[];
 }
 
 export const getContentTitle = (
@@ -22,7 +23,7 @@ export const getContentTitle = (
         return "S'amuser";
     }
     switch (content.type) {
-        case ContentType.Quote:
+        case ContentType.Story:
             return "S'inspirer";
         case ContentType.Anecdote:
             return "S'instruire";
@@ -42,7 +43,8 @@ export const classifyGames = (
         jeu?: Content;
         quizCitation: Content[];
         quizNoel: Content[];
-    } = { quizCitation: [], quizNoel: [] };
+        quizEmojis: Content[];
+    } = { quizCitation: [], quizNoel: [], quizEmojis: [] };
 
     let type = "";
 
@@ -62,6 +64,10 @@ export const classifyGames = (
                 break;
             case GameType.QuizNoel:
                 gamesByType.quizNoel.push(game);
+                type = ContentType.Quiz;
+                break;
+            case GameType.QuizEmojis:
+                gamesByType.quizEmojis.push(game);
                 type = ContentType.Quiz;
                 break;
         }

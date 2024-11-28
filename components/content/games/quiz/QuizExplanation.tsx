@@ -40,8 +40,9 @@ export const QuizExplanation: React.FC<QuizExplanationProps> = ({
                     </>
                 )}
 
-                {currentGame.content5 === GameType.QuizNoel &&
-                currentGame.content4 ? (
+                {currentGame.content5 === GameType.QuizNoel ||
+                (currentGame.content5 === GameType.QuizEmojis &&
+                    currentGame.content4) ? (
                     <ThemedText style={styles.explanations}>
                         {currentGame.content4}
                     </ThemedText>

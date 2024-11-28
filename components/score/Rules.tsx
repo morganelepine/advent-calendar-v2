@@ -58,8 +58,8 @@ export const Rules = () => {
                     <Text style={styles.bold}> 10 points</Text>.
                 </ThemedText>
                 <ThemedText type="sectionText" style={styles.ital}>
-                    Seuls 13 jours sur 24 vous permettront de gagner des points
-                    aux jeux.
+                    21 jours sur 24 vous permettront de gagner des points aux
+                    jeux.
                 </ThemedText>
             </View>
 
