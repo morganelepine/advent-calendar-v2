@@ -26,7 +26,7 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
 }) => {
     const getTitle = () => {
         switch (contentType) {
-            case ContentType.Quote:
+            case ContentType.Story:
                 return "Histoire du jour";
             case ContentType.Anecdote:
                 return "Anecdote du\u00A0jour";

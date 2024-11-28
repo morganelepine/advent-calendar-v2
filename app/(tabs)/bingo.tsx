@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { BingoCell } from "@/components/bingo/BingoCell";
 import { BingoHeader } from "@/components/bingo/BingoHeader";
-import { bingo } from "@/data/bingo";
+import { bingo } from "@/data/bingo_data";
 import cld from "@/config/cloudinaryConfig";
 
 export default function BingoScreen() {

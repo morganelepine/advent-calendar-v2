@@ -4,6 +4,7 @@ export enum ContentType {
     Anecdote = "anecdote",
     Game = "game",
     Quiz = "quiz",
+    Story = "story",
 }
 
 export enum IdeaType {
@@ -19,6 +20,7 @@ export enum GameType {
     Jeu = "jeu",
     QuizCitation = "quiz-citation",
     QuizNoel = "quiz-noel",
+    QuizEmojis = "quiz-emojis",
 }
 
 export enum ScoreType {

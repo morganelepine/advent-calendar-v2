@@ -35,11 +35,11 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
                     style={{ width: "100%" }}
                 >
                     <ThemedText type="modalSubtitle">
-                        Chapitre {dayId}
+                        {content.content1}
                     </ThemedText>
 
-                    <ThemedText style={styles.anecdote}>
-                        Histoire de Vic à venir
+                    <ThemedText style={styles.text}>
+                        {content.content2}
                     </ThemedText>
 
                     <ThemedText style={styles.end}>
@@ -52,7 +52,7 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
 };
 
 const styles = StyleSheet.create({
-    anecdote: {
+    text: {
         marginVertical: 20,
         textAlign: "left",
     },

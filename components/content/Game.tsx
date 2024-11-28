@@ -84,6 +84,19 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                                 />
                             </>
                         )}
+
+                        {gamesByType.quizEmojis.length > 0 && (
+                            <>
+                                <ThemedText type="modalSubtitle">
+                                    Êtes-vous incollable sur&nbsp;Noël&nbsp;?
+                                </ThemedText>
+                                <Quiz
+                                    games={gamesByType.quizEmojis}
+                                    setScore={setScore}
+                                    dayId={dayId}
+                                />
+                            </>
+                        )}
                     </View>
                 </ScrollView>
             </CustomModal>

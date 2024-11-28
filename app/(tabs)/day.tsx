@@ -1,13 +1,13 @@
 import { StyleSheet, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import { Day25 } from "@/components/days/Day25/Day25";
 import { DayContent } from "@/components/days/Content/DayContent";
-import { quotesData } from "@/data/SheetToJSON.Quotes";
 import { anecdotesData } from "@/data/SheetToJSON.Anecdotes";
 import { ideasData } from "@/data/SheetToJSON.Ideas";
 import { gamesData } from "@/data/SheetToJSON.Games";
+import { storyData } from "@/data/SheetToJSON.Story";
 import { Content } from "@/interfaces/contentInterface";
-import { Day25 } from "@/components/days/Content/Day25";
 
 export default function DayScreen() {
     const params = useLocalSearchParams();
@@ -16,12 +16,12 @@ export default function DayScreen() {
         : params.dayId;
     const dayId = dayParam ? parseInt(dayParam, 10) : 0;
 
-    const quoteOfTheDay: Content | undefined = quotesData.find(
-        (quote) => quote.dayNumber === dayId
-    );
-
     const anecdoteOfTheDay: Content | undefined = anecdotesData.find(
         (anecdote) => anecdote.dayNumber === dayId
+    );
+
+    const storyOfTheDay: Content | undefined = storyData.find(
+        (story) => story.dayNumber === dayId
     );
 
     const ideas: Content[] = [];
@@ -44,8 +44,8 @@ export default function DayScreen() {
                 <Day25 dayId={dayId} />
             ) : (
                 <DayContent
-                    quoteOfTheDay={quoteOfTheDay}
                     anecdoteOfTheDay={anecdoteOfTheDay}
+                    storyOfTheDay={storyOfTheDay}
                     ideas={ideas}
                     games={games}
                     dayId={dayId}
