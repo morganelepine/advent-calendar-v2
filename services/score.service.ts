@@ -45,7 +45,7 @@ export const updateScores = async (
         let addedScore = 0;
 
         switch (scoreType) {
-            case ScoreType.ContentOpening: // 10 ou 15 points * 4 (* 24)
+            case ScoreType.ContentOpening: // 10 ou 20 points * 4 (* 24)
                 addedScore = await checkContentOpeningScore(
                     dayId,
                     scoreOfTheDay
@@ -54,10 +54,10 @@ export const updateScores = async (
             case ScoreType.GameCorrectAnswer: // 10 ou 20 points * 3 (* 12)
                 addedScore = await checkGameScore(dayId, scoreOfTheDay);
                 break;
-            case ScoreType.DayOpening: // 25 points (* 24)
+            case ScoreType.DayOpening: // 40 points (* 24)
                 if (scoreDetails.dayOpening === 0) {
-                    scoreDetails.dayOpening = 25;
-                    addedScore = 25;
+                    scoreDetails.dayOpening = 40;
+                    addedScore = 40;
                 }
                 break;
         }
@@ -88,10 +88,10 @@ export const checkContentOpeningScore = async (
     const today = new Date().getDate();
 
     let addedScore = 0;
-    const scoreOnTime = 15;
+    const scoreOnTime = 20;
     const scoreLate = 10;
 
-    if (today === dayId && scoreOfTheDay.scoreDetails.contentOpening < 60) {
+    if (today === dayId && scoreOfTheDay.scoreDetails.contentOpening < 80) {
         scoreOfTheDay.scoreDetails.contentOpening += scoreOnTime;
         addedScore += scoreOnTime;
     } else if (scoreOfTheDay.scoreDetails.contentOpening < 40) {

@@ -29,7 +29,7 @@ export const AppContent = () => {
             <View style={styles.section}>
                 <ThemedText type="sectionSubtitle">📜 Une histoire</ThemedText>
                 <ThemedText type="sectionText">
-                    Un morceau d'une nouvelle de Noël découpée en 24 épisodes.
+                    Un chapitre d'une nouvelle de Noël découpée en 24 épisodes.
                 </ThemedText>
             </View>
 

@@ -17,7 +17,7 @@ export const Rules = () => {
                 </ThemedText>
                 <ThemedText type="sectionText">
                     Ouvrir la case du jour vous rapporte
-                    <Text style={styles.bold}> 30 points </Text>
+                    <Text style={styles.bold}> 40 points </Text>
                     si elle est ouverte le jour même.
                 </ThemedText>
                 <ThemedText type="sectionText">
@@ -36,7 +36,7 @@ export const Rules = () => {
                 </ThemedText>
                 <ThemedText type="sectionText">
                     Pour chaque contenu découvert, vous gagnez
-                    <Text style={styles.bold}> 15 points</Text>.
+                    <Text style={styles.bold}> 20 points</Text>.
                 </ThemedText>
                 <ThemedText type="sectionText">
                     Si vous les ouvrez en retard, vous ne gagnez que
@@ -69,15 +69,15 @@ export const Rules = () => {
                 </ThemedText>
                 <ThemedText type="sectionText">
                     Vous pouvez ainsi accumuler jusqu'à
-                    <Text style={styles.bold}> 150 points </Text>
+                    <Text style={styles.bold}> 180 points </Text>
                     par jour :
                 </ThemedText>
                 <ThemedText type="sectionText">
-                    ▪️ <Text style={styles.bold}>30 points</Text> en ouvrant la
+                    ▪️ <Text style={styles.bold}>40 points</Text> en ouvrant la
                     case du jour
                 </ThemedText>
                 <ThemedText type="sectionText">
-                    ▪️ <Text style={styles.bold}>60 points</Text> en découvrant
+                    ▪️ <Text style={styles.bold}>80 points</Text> en découvrant
                     chaque contenus
                 </ThemedText>
                 <ThemedText type="sectionText">

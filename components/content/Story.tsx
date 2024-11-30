@@ -2,8 +2,10 @@ import { useState } from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
+import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Content } from "@/interfaces/contentInterface";
+import { Colors } from "@/constants/Colors";
 import cld from "@/config/cloudinaryConfig";
 
 interface StoryProps {
@@ -35,16 +37,24 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
                     style={{ width: "100%" }}
                 >
                     <ThemedText type="modalSubtitle">
-                        {content.content1}
+                        {content.title}
                     </ThemedText>
 
-                    <ThemedText style={styles.text}>
+                    {content.content1 && (
+                        <CustomMarkdown style={styles.subtitle}>
+                            {content.content1}
+                        </CustomMarkdown>
+                    )}
+
+                    <CustomMarkdown style={styles.text}>
                         {content.content2}
-                    </ThemedText>
+                    </CustomMarkdown>
 
-                    <ThemedText style={styles.end}>
-                        La suite demain...
-                    </ThemedText>
+                    {content.dayNumber < 24 && (
+                        <ThemedText style={styles.end}>
+                            La suite demain...
+                        </ThemedText>
+                    )}
                 </ScrollView>
             </ModalWithText>
         </>
@@ -52,13 +62,14 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
 };
 
 const styles = StyleSheet.create({
+    subtitle: { fontFamily: "PoppinsItalic", textAlign: "left", marginTop: -5 },
     text: {
-        marginVertical: 20,
         textAlign: "left",
     },
     end: {
-        paddingTop: 20,
+        paddingVertical: 20,
         fontSize: 14,
         fontFamily: "PoppinsItalic",
+        color: Colors.green,
     },
 });

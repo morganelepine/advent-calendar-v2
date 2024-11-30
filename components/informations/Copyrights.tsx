@@ -42,8 +42,15 @@ export const Copyrights = () => {
             </View>
 
             <ThemedText type="sectionText" style={styles.ital}>
-                Et merci également aux personnes qui ont testé mon application
-                et qui m'ont donné des idées pour l'améliorer encore !
+                Merci également aux personnes qui ont testé mon application et
+                qui m'ont donné des idées pour l'améliorer encore !
+            </ThemedText>
+            <ThemedText
+                type="sectionText"
+                style={[styles.ital, { marginTop: 10 }]}
+            >
+                Et une mention spéciale à Jean et Annaëlle : merci pour votre
+                enthousiasme infaillible 🤍
             </ThemedText>
         </View>
     );

@@ -56,18 +56,21 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
                 </ThemedText>
             )}
 
-            <CustomMarkdown
-                style={{
-                    marginVertical:
-                        currentGame.content5 === GameType.QuizEmojis ? 0 : 20,
-                    fontSize:
-                        currentGame.content5 === GameType.QuizEmojis ? 26 : 16,
-                    lineHeight:
-                        currentGame.content5 === GameType.QuizEmojis ? 48 : 26,
-                }}
-            >
-                {currentGame.content1}
-            </CustomMarkdown>
+            {currentGame.content5 === GameType.QuizEmojis ? (
+                <CustomMarkdown
+                    style={{
+                        fontSize: 26,
+                        lineHeight: 48,
+                        alignSelf: "center",
+                    }}
+                >
+                    {currentGame.content1}
+                </CustomMarkdown>
+            ) : (
+                <CustomMarkdown style={{ marginVertical: 20 }}>
+                    {currentGame.content1}
+                </CustomMarkdown>
+            )}
 
             <QuizAnswers
                 currentGame={currentGame}
