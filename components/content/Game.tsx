@@ -32,7 +32,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                 games={games}
                 setModalVisible={setModalVisible}
                 dayId={dayId}
-                backgroundImage={cld.image("s-amuser_vn8ugi")}
+                backgroundImage={cld.image("christmas_a5bsoi")}
             />
             <CustomModal
                 isVisible={modalVisible}

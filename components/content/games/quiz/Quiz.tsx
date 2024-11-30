@@ -64,10 +64,6 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
                         currentGame.content5 === GameType.QuizEmojis ? 26 : 16,
                     lineHeight:
                         currentGame.content5 === GameType.QuizEmojis ? 48 : 26,
-                    alignSelf:
-                        currentGame.content5 === GameType.QuizEmojis
-                            ? "center"
-                            : "flex-start",
                 }}
             >
                 {currentGame.content1}

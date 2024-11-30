@@ -7,7 +7,7 @@ import { Content } from "@/interfaces/contentInterface";
 
 interface DayContentProps {
     anecdoteOfTheDay: Content | undefined;
-    storyOfTheDay: Content;
+    storyOfTheDay: Content | undefined;
     ideas: Content[];
     games: Content[];
     dayId: number;
@@ -29,13 +29,13 @@ export const DayContent: React.FC<DayContentProps> = ({
             </View>
 
             <View style={styles.contentContainer}>
-                {anecdoteOfTheDay && (
-                    <Anecdote content={anecdoteOfTheDay} dayId={dayId} />
-                )}
+                {ideas.length > 0 && <Idea ideas={ideas} dayId={dayId} />}
             </View>
 
             <View style={styles.contentContainer}>
-                {ideas.length > 0 && <Idea ideas={ideas} dayId={dayId} />}
+                {anecdoteOfTheDay && (
+                    <Anecdote content={anecdoteOfTheDay} dayId={dayId} />
+                )}
             </View>
 
             <View style={styles.contentContainer}>

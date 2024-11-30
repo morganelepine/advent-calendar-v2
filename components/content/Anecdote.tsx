@@ -17,7 +17,7 @@ interface AnecdoteProps {
 
 export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
     const [modalVisible, setModalVisible] = useState(false);
-    const backgroundImage = cld.image("s-inspirer_zwls2a");
+    const backgroundImage = cld.image("kiwi1_r7kihz");
 
     return (
         <>

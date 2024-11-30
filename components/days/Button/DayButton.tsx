@@ -1,7 +1,7 @@
 import { StyleSheet, Pressable, ViewStyle } from "react-native";
 import { DayNumber } from "@/components/days/Button/DayNumber";
 import { Colors } from "@/constants/Colors";
-import { DayModal } from "./DayModal";
+import { DayModal } from "@/components/days/Button/DayModal";
 import { Day } from "@/interfaces/dayInterface";
 
 interface DayButtonProps {
