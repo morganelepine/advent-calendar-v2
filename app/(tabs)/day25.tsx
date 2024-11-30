@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Wallpapers } from "@/components/days/Day25/Wallpapers";
+import { Poem } from "@/components/days/Day25/Poem";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { Colors } from "@/constants/Colors";
@@ -44,23 +45,7 @@ export default function Day25Screen() {
 
                 <View style={styles.section}>
                     <ThemedText type="sectionSubtitle">
-                        🖼️ Six fonds d'écran
-                    </ThemedText>
-                    <ThemedText type="sectionText">
-                        Ces dessins ont été créés par une amie pour pouvoir
-                        profiter encore un peu de l'ambiance de Noël.
-                    </ThemedText>
-                    <ThemedText type="sectionText" style={styles.explanations}>
-                        Cliquez sur une image pour l'afficher en grand puis
-                        faites une capture d'écran et redimensionnez si
-                        nécessaire !
-                    </ThemedText>
-                    <Wallpapers />
-                </View>
-
-                <View style={styles.section}>
-                    <ThemedText type="sectionSubtitle">
-                        ✒️ Une carte de vœux
+                        🎨 Une carte de vœux
                     </ThemedText>
                     <ThemedText type="sectionText">
                         Une aquarelle réalisée par une amie pour souhaiter une
@@ -90,6 +75,31 @@ export default function Day25Screen() {
                             l'imprimer au format A4 !
                         </ThemedText>
                     </View>
+                </View>
+
+                <View style={styles.section}>
+                    <ThemedText type="sectionSubtitle">✒️ Un poème</ThemedText>
+                    <ThemedText type="sectionText">
+                        Un joli texte écrit par mon copain, à retranscrire sur
+                        une carte de vœux pour souhaiter la bonne année ?
+                    </ThemedText>
+                    <Poem />
+                </View>
+
+                <View style={styles.section}>
+                    <ThemedText type="sectionSubtitle">
+                        🖼️ Six fonds d'écran
+                    </ThemedText>
+                    <ThemedText type="sectionText">
+                        Ces dessins ont été créés par une amie pour pouvoir
+                        profiter encore un peu de l'ambiance de Noël.
+                    </ThemedText>
+                    <ThemedText type="sectionText" style={styles.explanations}>
+                        Cliquez sur une image pour l'afficher en grand puis
+                        faites une capture d'écran et redimensionnez si
+                        nécessaire !
+                    </ThemedText>
+                    <Wallpapers />
                 </View>
 
                 <View style={styles.section}>
