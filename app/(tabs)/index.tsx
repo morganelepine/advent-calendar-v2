@@ -5,20 +5,52 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Home } from "@/components/calendar/Home";
 import { FirstLaunchModal } from "@/components/calendar/FirstLaunchModal";
 
+const today = new Date();
+const currentYear = today.getFullYear();
+
 async function resetDataIfNeeded() {
-    const today = new Date();
-    const currentYear = today.getFullYear();
+    try {
+        const lastResetYear = await AsyncStorage.getItem("lastResetYear");
+        if (!lastResetYear || lastResetYear !== currentYear.toString()) {
+            const storage = await AsyncStorage.multiGet([
+                "calendar",
+                "scoresData",
+            ]);
 
-    const lastResetYear = await AsyncStorage.getItem("lastResetYear");
+            if (storage) {
+                await AsyncStorage.multiRemove(["calendar", "scoresData"]);
+            }
 
-    if (
-        (!lastResetYear && today.getMonth() === 11) ||
-        lastResetYear !== currentYear.toString()
-    ) {
-        await AsyncStorage.multiRemove(["playMusic", "calendar", "scoresData"]);
-        await AsyncStorage.setItem("lastResetYear", currentYear.toString());
+            await AsyncStorage.setItem("lastResetYear", currentYear.toString());
+        }
+        console.log({ lastResetYear });
+    } catch (error) {
+        console.error("Error resetting data: ", error);
     }
 }
+
+const checkFirstLaunch = async (setModalVisible: (arg: boolean) => void) => {
+    const userUuid = await AsyncStorage.getItem("userUuid");
+    console.log({ userUuid });
+
+    if (!userUuid) {
+        const newUserUuid: string = uuid.v4() as string;
+        await AsyncStorage.setItem("userUuid", newUserUuid);
+        console.log({ newUserUuid });
+
+        setModalVisible(true);
+    }
+
+    // if (userUuid) {
+    //     await AsyncStorage.multiRemove([
+    //         "userUuid",
+    //         "playMusic",
+    //         "calendar",
+    //         "scoresData",
+    //         "lastResetYear",
+    //     ]);
+    // }
+};
 
 export default function HomeScreen() {
     const insets = useSafeAreaInsets();
@@ -27,33 +59,11 @@ export default function HomeScreen() {
     useEffect(() => {
         const initializeApp = async () => {
             await resetDataIfNeeded();
-            await checkFirstLaunch();
+            await checkFirstLaunch(setModalVisible);
         };
 
         initializeApp();
     }, []);
-
-    const checkFirstLaunch = async () => {
-        const userUuid = await AsyncStorage.getItem("userUuid");
-        console.log({ userUuid });
-
-        if (!userUuid) {
-            const newUserUuid: string = uuid.v4() as string;
-            await AsyncStorage.setItem("userUuid", newUserUuid);
-            console.log({ newUserUuid });
-
-            setModalVisible(true);
-        }
-
-        // if (userUuid) {
-        //     await AsyncStorage.multiRemove([
-        //         "userUuid",
-        //         "playMusic",
-        //         "calendar",
-        //         "scoresData",
-        //     ]);
-        // }
-    };
 
     return (
         <>

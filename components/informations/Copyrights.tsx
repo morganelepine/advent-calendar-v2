@@ -6,7 +6,7 @@ export const Copyrights = () => {
         <View style={styles.container}>
             <View style={styles.section}>
                 <ThemedText type="sectionText" style={styles.ital}>
-                    Cette application est un projet collaboratif : 3 personnes
+                    Cette application est un projet collaboratif : 4 personnes
                     ont accepté de mettre leurs talents artistiques à
                     disposition pour rendre cette application encore plus
                     magique.
@@ -19,17 +19,24 @@ export const Copyrights = () => {
             <View style={styles.section}>
                 <ThemedText type="sectionSubtitle">🎨 Annaëlle</ThemedText>
                 <ThemedText type="sectionText">
-                    ...qui a dessiné 12 magnifiques fonds d'écran pour l'onglet
+                    ...qui a dessiné 12 superbes fonds d'écran pour l'onglet
                     Décompte (jours 3, 4, 6, 7, 9, 11, 13, 14, 17, 19, 24, 25)
                     et qui a participé à la surprise du 25 décembre.
                 </ThemedText>
             </View>
 
             <View style={styles.section}>
-                <ThemedText type="sectionSubtitle">✒️ Victoria</ThemedText>
+                <ThemedText type="sectionSubtitle">📚 Victoria</ThemedText>
                 <ThemedText type="sectionText">
                     ...qui a imaginé et écrit la magique nouvelle de Noël dont
                     vous pourrez découvrir chaque jour un nouveau chapitre.
+                </ThemedText>
+            </View>
+
+            <View style={styles.section}>
+                <ThemedText type="sectionSubtitle">✒️ Arthur</ThemedText>
+                <ThemedText type="sectionText">
+                    ...qui a participé à la surprise du 25 décembre.
                 </ThemedText>
             </View>
 
@@ -50,7 +57,7 @@ export const Copyrights = () => {
                 style={[styles.ital, { marginTop: 10 }]}
             >
                 Et une mention spéciale à Jean et Annaëlle : merci pour votre
-                enthousiasme infaillible 🤍
+                enthousiasme débordant 🤍
             </ThemedText>
         </View>
     );

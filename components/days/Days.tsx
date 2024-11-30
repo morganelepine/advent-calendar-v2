@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View, ToastAndroid } from "react-native";
 import { DayButton } from "@/components/days/Button/DayButton";
 import { Colors } from "@/constants/Colors";
-import { updateScores } from "../../services/score.service";
-import { Day } from "../../interfaces/dayInterface";
+import { updateScores } from "@/services/score.service";
+import { Day } from "@/interfaces/dayInterface";
 import { ScoreType } from "@/enums/enums";
 
 interface DaysProps {
@@ -15,24 +15,26 @@ export const Days: React.FC<DaysProps> = ({ days, setDays }) => {
     const [dayModalVisible, setDayModalVisible] = useState<number | null>(null);
 
     const handleDayOpening = async (dayNumber: number) => {
-        const today = new Date().getDate();
+        const todayDay = new Date().getDate();
+        const todayMonth = new Date().getMonth();
 
         const updatedDays = days.map((day) => {
-            return day.dayNumber === dayNumber &&
-                dayNumber <= today &&
+            return todayMonth === 11 &&
+                day.dayNumber === dayNumber &&
+                dayNumber <= todayDay &&
                 !day.isOpen
                 ? { ...day, isOpen: !day.isOpen }
                 : day;
         });
         setDays(updatedDays);
 
-        if (dayNumber <= today) {
+        if (todayMonth === 11 && dayNumber <= todayDay) {
             setDayModalVisible(dayNumber);
         } else {
             ToastAndroid.show("Un peu de patience...", ToastAndroid.SHORT);
         }
 
-        if (dayNumber === today) {
+        if (todayMonth === 11 && dayNumber === todayDay) {
             await updateScores(dayNumber, ScoreType.DayOpening);
         }
     };
