@@ -2,6 +2,7 @@ import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Wallpapers } from "@/components/days/Day25/Wallpapers";
 import { Poem } from "@/components/days/Day25/Poem";
+import { RateButton } from "@/components/utils/buttons/RateButton";
 import { ExternalLink } from "@/components/utils/ExternalLink";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
 import { Colors } from "@/constants/Colors";
@@ -35,9 +36,17 @@ export default function Day25Screen() {
                         et à vous plonger dans l'ambiance de Noël ☃️
                     </ThemedText>
                     <ThemedText style={styles.text}>
-                        En espérant vous retrouver l'année prochaine pour de
-                        nouvelles surprises et encore plus de magie ✨
+                        Si vous avez apprécié mon application, rendez-vous
+                        l'année prochaine pour de nouvelles surprises et encore
+                        plus de magie ✨
                     </ThemedText>
+
+                    <ThemedText style={styles.text}>
+                        Mais avant ça, cela me toucherait énormément si vous
+                        preniez le temps de laisser un avis sur le Play Store :
+                    </ThemedText>
+                    <RateButton style={styles.button}>J'y vais !</RateButton>
+
                     <ThemedText style={styles.text}>
                         Et maintenant, place aux cadeaux ! 🎁
                     </ThemedText>
@@ -157,6 +166,7 @@ const styles = StyleSheet.create({
     section: {
         marginBottom: 20,
     },
+    button: { marginTop: 10, marginBottom: 20, alignSelf: "center" },
     imageContainer: { flexDirection: "row", marginVertical: 10 },
     image: { marginRight: 10 },
     thumbnail: {

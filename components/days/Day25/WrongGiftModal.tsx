@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     closeButton: {
-        marginTop: 10,
+        marginVertical: 10,
         height: 48,
         width: 48,
         justifyContent: "center",

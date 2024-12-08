@@ -1,6 +1,5 @@
 import { StyleSheet, TextStyle, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { Colors } from "@/constants/Colors";
 
 interface CustomButtonProps {
     children?: React.ReactNode;
