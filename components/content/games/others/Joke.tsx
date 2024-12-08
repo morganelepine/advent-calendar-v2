@@ -26,16 +26,19 @@ export const Joke: React.FC<JokeProps> = ({ game, setScore }) => {
     };
 
     useEffect(() => {
-        if (selectedAnswer !== null) {
-            if (selectedAnswer === game.content3) {
-                setScore();
-                setWin("Bonne réponse !");
-            } else {
-                setWin(`Raté... la bonne réponse était : ${game.content3}`);
+        const handleScoreUpdate = async () => {
+            if (selectedAnswer !== null) {
+                if (selectedAnswer === game.content3) {
+                    await setScore();
+                    setWin("Bonne réponse !");
+                } else {
+                    setWin(`Raté... la bonne réponse était : ${game.content3}`);
+                }
+                await setGameStatus(game.dayNumber);
+                setShowAnswer(true);
             }
-            setGameStatus(game.dayNumber);
-            setShowAnswer(true);
-        }
+        };
+        handleScoreUpdate();
     }, [selectedAnswer]);
 
     return (

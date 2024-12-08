@@ -7,7 +7,7 @@ import { Hangman } from "@/components/content/games/hangman/Hangman";
 import { Games } from "@/components/content/games/others/Games";
 import { Quiz } from "@/components/content/games/quiz/Quiz";
 import { classifyGames } from "@/services/content.service";
-import { updateScores } from "@/services/score.service";
+import { updateScore } from "@/services/score.service";
 import { Content } from "@/interfaces/contentInterface";
 import { ScoreType } from "@/enums/enums";
 import cld from "@/config/cloudinaryConfig";
@@ -23,7 +23,7 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
     const { gamesByType, type } = classifyGames(games);
 
     const setScore = async () => {
-        await updateScores(dayId, ScoreType.GameCorrectAnswer);
+        await updateScore(dayId, ScoreType.GameCorrectAnswer);
     };
 
     return (

@@ -8,7 +8,7 @@ import { ScoreType } from "@/enums/enums";
 
 const createScoreOfTheDay = (): Score => ({
     dayNumber: 24,
-    scoreTotal: 25,
+    scoreTotal: 40,
     scoreDetails: {
         dayOpening: 0,
         contentOpening: 0,
@@ -31,14 +31,14 @@ describe("Check content opening score", () => {
         scoreOfTheDay = createScoreOfTheDay();
     });
 
-    it("Should add 15 points if content is opened ON TIME and score is < 60 ", async () => {
+    it("Should add 20 points if content is opened ON TIME and score is < 80 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.contentOpening = 30;
+        scoreOfTheDay.scoreDetails.contentOpening = 40;
         const addedScore = await checkContentOpeningScore(24, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.contentOpening).toBe(45);
-        expect(addedScore).toBe(15);
+        expect(scoreOfTheDay.scoreDetails.contentOpening).toBe(60);
+        expect(addedScore).toBe(20);
     });
 
     it("Should add only 10 points if content is opened LATE and score is < 40 ", async () => {
@@ -51,13 +51,13 @@ describe("Check content opening score", () => {
         expect(addedScore).toBe(10);
     });
 
-    it("Should NOT add any points if content is opened ON TIME but score is > 60 ", async () => {
+    it("Should NOT add any points if content is opened ON TIME but score is > 80 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.contentOpening = 60;
+        scoreOfTheDay.scoreDetails.contentOpening = 80;
         const addedScore = await checkContentOpeningScore(24, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.contentOpening).toBe(60);
+        expect(scoreOfTheDay.scoreDetails.contentOpening).toBe(80);
         expect(addedScore).toBe(0);
     });
 
@@ -82,20 +82,20 @@ describe("Check game score", () => {
     it("Should add 20 points if game is played ON TIME and score is < 60 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.game.correctAnswer = 40;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 0;
         const addedScore = await checkGameScore(24, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(60);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(20);
         expect(addedScore).toBe(20);
     });
 
     it("Should add only 10 points if game is played LATE and score is < 30 ", async () => {
         mockDate();
 
-        scoreOfTheDay.scoreDetails.game.correctAnswer = 20;
+        scoreOfTheDay.scoreDetails.game.correctAnswer = 0;
         const addedScore = await checkGameScore(20, scoreOfTheDay);
 
-        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(30);
+        expect(scoreOfTheDay.scoreDetails.game.correctAnswer).toBe(10);
         expect(addedScore).toBe(10);
     });
 

@@ -30,6 +30,13 @@ export const saveScores = async (scoresData: Score[]): Promise<void> => {
     await AsyncStorage.setItem("scoresData", JSON.stringify(scoresData));
 };
 
+export const updateScore = async (
+    dayId: number,
+    scoreType: number
+): Promise<void> => {
+    await updateScores(dayId, scoreType);
+};
+
 export const updateScores = async (
     dayId: number,
     scoreType: number
@@ -40,7 +47,7 @@ export const updateScores = async (
         (score: Score) => score.dayNumber === dayId
     );
 
-    if (scoreOfTheDay && !scoreOfTheDay.scoreDetails.game.played) {
+    if (scoreOfTheDay) {
         const scoreDetails = scoreOfTheDay.scoreDetails;
         let addedScore = 0;
 
@@ -52,7 +59,9 @@ export const updateScores = async (
                 );
                 break;
             case ScoreType.GameCorrectAnswer: // 10 ou 20 points * 3 (* 12)
-                addedScore = await checkGameScore(dayId, scoreOfTheDay);
+                if (!scoreOfTheDay.scoreDetails.game.played) {
+                    addedScore = await checkGameScore(dayId, scoreOfTheDay);
+                }
                 break;
             case ScoreType.DayOpening: // 40 points (* 24)
                 if (scoreDetails.dayOpening === 0) {

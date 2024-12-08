@@ -33,19 +33,18 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
     };
 
     useEffect(() => {
-        if (selectedAnswer === currentGame.content3) {
-            setScore();
-        }
-    }, [selectedAnswer]);
+        const handleScoreUpdate = async () => {
+            if (selectedAnswer === currentGame.content3) {
+                await setScore();
 
-    useEffect(() => {
-        if (currentQuestionIndex === games.length - 1) {
-            const game = games.find((game) => game.dayNumber === dayId);
-            if (game) {
-                setGameStatus(game.dayNumber);
+                if (currentQuestionIndex === games.length - 1) {
+                    await setGameStatus(currentGame.dayNumber);
+                }
             }
-        }
-    }, [currentQuestionIndex]);
+        };
+
+        handleScoreUpdate();
+    }, [selectedAnswer, currentQuestionIndex]);
 
     return (
         <>
