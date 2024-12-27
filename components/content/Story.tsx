@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Content } from "@/interfaces/contentInterface";
 import { Colors } from "@/constants/Colors";
@@ -32,19 +33,16 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
                 contentType={content.type}
                 backgroundImage={backgroundImage}
             >
-                <ScrollView
-                    persistentScrollbar={true} // Android only
-                    style={{ width: "100%" }}
-                >
+                <CustomScrollView>
                     <ThemedText type="modalSubtitle">
                         {content.title}
                     </ThemedText>
 
-                    {content.content1 && (
+                    {content.content1 ? (
                         <CustomMarkdown style={styles.subtitle}>
                             {content.content1}
                         </CustomMarkdown>
-                    )}
+                    ) : null}
 
                     <CustomMarkdown style={styles.text}>
                         {content.content2}
@@ -55,7 +53,7 @@ export const Story: React.FC<StoryProps> = ({ content, dayId }) => {
                             La suite demain...
                         </ThemedText>
                     )}
-                </ScrollView>
+                </CustomScrollView>
             </ModalWithText>
         </>
     );

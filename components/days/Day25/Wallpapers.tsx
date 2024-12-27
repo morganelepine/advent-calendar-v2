@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { StyleSheet, Pressable, View, Modal, Dimensions } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Pressable, View, Dimensions } from "react-native";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { wallpapers } from "@/data/wallpapers_data";
 import { AdvancedImage } from "cloudinary-react-native";
 import cld from "@/config/cloudinaryConfig";
@@ -25,11 +26,9 @@ export const Wallpapers = () => {
                 ))}
             </View>
 
-            <Modal
+            <CustomModal
                 visible={!!selectedImage}
-                animationType="fade"
                 onRequestClose={() => setSelectedImage(null)}
-                statusBarTranslucent={true}
             >
                 <View style={styles.modalContainer}>
                     <Pressable onPress={() => setSelectedImage(null)}>
@@ -45,7 +44,7 @@ export const Wallpapers = () => {
                         )}
                     </Pressable>
                 </View>
-            </Modal>
+            </CustomModal>
         </>
     );
 };

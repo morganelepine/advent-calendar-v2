@@ -1,17 +1,19 @@
 import React from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, TextStyle } from "react-native";
 
 interface CustomScrollViewProps {
     children?: React.ReactNode;
+    style?: TextStyle;
 }
 
 export const CustomScrollView: React.FC<CustomScrollViewProps> = ({
     children,
+    style = {},
 }) => {
     return (
         <ScrollView
             persistentScrollbar={true} // Android only
-            style={styles.container}
+            style={{ ...styles.container, ...style }}
         >
             {children}
         </ScrollView>
@@ -20,6 +22,8 @@ export const CustomScrollView: React.FC<CustomScrollViewProps> = ({
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20,
+        flex: 1,
+        width: "100%",
+        minWidth: "100%",
     },
 });

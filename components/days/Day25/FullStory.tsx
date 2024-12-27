@@ -1,7 +1,8 @@
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 import { Collapsible } from "@/components/utils/Collapsible";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { storyData } from "@/data/SheetToJSON.Story";
 import cld from "@/config/cloudinaryConfig";
 import { Colors } from "@/constants/Colors";
@@ -22,10 +23,7 @@ export const FullStory: React.FC<FullStoryProps> = ({
             contentType={"story"}
             backgroundImage={cld.image("s-instruire_xybqas")}
         >
-            <ScrollView
-                persistentScrollbar={true} // Android only
-                style={{ width: "100%" }}
-            >
+            <CustomScrollView>
                 {storyData.map((story) => (
                     <Collapsible
                         key={story.id}
@@ -42,7 +40,7 @@ export const FullStory: React.FC<FullStoryProps> = ({
                         </CustomMarkdown>
                     </Collapsible>
                 ))}
-            </ScrollView>
+            </CustomScrollView>
         </ModalWithText>
     );
 };

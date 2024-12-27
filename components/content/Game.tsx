@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import { CustomModal } from "@/components/utils/custom/Modal";
+import { GameModal } from "@/components/utils/custom/GameModal";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Hangman } from "@/components/content/games/hangman/Hangman";
 import { Games } from "@/components/content/games/others/Games";
@@ -34,15 +35,12 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                 dayId={dayId}
                 backgroundImage={cld.image("christmas_a5bsoi")}
             />
-            <CustomModal
+            <GameModal
                 isVisible={modalVisible}
                 onClose={() => setModalVisible(false)}
                 contentType={type}
             >
-                <ScrollView
-                    persistentScrollbar={true} // Android only
-                    style={{ minWidth: "100%" }}
-                >
+                <CustomScrollView>
                     <View style={styles.container}>
                         {gamesByType.pendu && (
                             <Hangman
@@ -98,8 +96,8 @@ export const Game: React.FC<GameProps> = ({ games, dayId }) => {
                             </>
                         )}
                     </View>
-                </ScrollView>
-            </CustomModal>
+                </CustomScrollView>
+            </GameModal>
         </>
     );
 };

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { StyleSheet, Pressable, View, Modal } from "react-native";
+import { StyleSheet, Pressable, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ExternalLink } from "@/components/utils/ExternalLink";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
 import { Colors } from "@/constants/Colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -37,11 +38,9 @@ export const Poem = () => {
                 </ThemedText>
             </View>
 
-            <Modal
+            <CustomModal
                 visible={modalVisible}
-                animationType="fade"
                 onRequestClose={() => setModalVisible(false)}
-                statusBarTranslucent={true}
             >
                 <CloseModalButton
                     onPress={() => setModalVisible(false)}
@@ -138,7 +137,7 @@ export const Poem = () => {
                         </View>
                     </ExternalLink>
                 </View>
-            </Modal>
+            </CustomModal>
         </>
     );
 };

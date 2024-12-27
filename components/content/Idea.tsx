@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { ScrollView, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View } from "react-native";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Reco } from "@/components/content/ideas/Reco";
 import { Recipe } from "@/components/content/ideas/Recipe";
-import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { List } from "@/components/content/ideas/List";
+import { ModalWithText } from "@/components/utils/custom/ModalWithText";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { Content } from "@/interfaces/contentInterface";
 import { ContentType, IdeaType } from "@/enums/enums";
 import { formatImage } from "@/services/image.service";
@@ -71,25 +72,32 @@ export const Idea: React.FC<IdeaProps> = ({ ideas, dayId }) => {
                     backgroundImage={modalBackground}
                     key={idea.id}
                 >
-                    <ScrollView style={{ width: "100%" }}>
+                    <CustomScrollView>
                         <View>
-                            {idea.content5 === IdeaType.Recipe ? (
+                            {idea.content5 === IdeaType.Recipe && (
                                 <Recipe content={idea} />
-                            ) : idea.content5 === IdeaType.List ? (
-                                <List idea={idea} />
-                            ) : (
-                                <Reco
-                                    idea={idea}
-                                    imageWidth={
-                                        imageDimensions[idea.dayNumber]?.width
-                                    }
-                                    imageHeight={
-                                        imageDimensions[idea.dayNumber]?.height
-                                    }
-                                />
                             )}
+
+                            {idea.content5 === IdeaType.List && (
+                                <List idea={idea} />
+                            )}
+
+                            {idea.content5 !== IdeaType.Recipe &&
+                                idea.content5 !== IdeaType.List && (
+                                    <Reco
+                                        idea={idea}
+                                        imageWidth={
+                                            imageDimensions[idea.dayNumber]
+                                                ?.width
+                                        }
+                                        imageHeight={
+                                            imageDimensions[idea.dayNumber]
+                                                ?.height
+                                        }
+                                    />
+                                )}
                         </View>
-                    </ScrollView>
+                    </CustomScrollView>
                 </ModalWithText>
             ))}
         </>

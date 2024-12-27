@@ -1,15 +1,15 @@
+import { useCallback } from "react";
 import {
     StyleSheet,
     View,
-    Modal,
     Pressable,
     TouchableWithoutFeedback,
 } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
-import { Colors } from "@/constants/Colors";
 import { router } from "expo-router";
 import { useFocusEffect } from "@react-navigation/native";
-import { useCallback } from "react";
+import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
+import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Day } from "@/interfaces/dayInterface";
 
@@ -44,12 +44,7 @@ export const DayModal: React.FC<DayModalProps> = ({
     );
 
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={onClose}
-        >
+        <CustomModal visible={modalVisible} onRequestClose={onClose}>
             <TouchableWithoutFeedback onPress={onClose}>
                 <View style={styles.modalContainer}>
                     <TouchableWithoutFeedback>
@@ -83,7 +78,7 @@ export const DayModal: React.FC<DayModalProps> = ({
                     </TouchableWithoutFeedback>
                 </View>
             </TouchableWithoutFeedback>
-        </Modal>
+        </CustomModal>
     );
 };
 

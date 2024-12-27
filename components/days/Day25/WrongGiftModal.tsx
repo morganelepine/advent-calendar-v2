@@ -1,5 +1,6 @@
-import { StyleSheet, View, Modal, Pressable } from "react-native";
+import { StyleSheet, View, Pressable } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 
@@ -16,13 +17,7 @@ export const WrongGiftModal: React.FC<WrongGiftModalProps> = ({
         setModalVisible(false);
     };
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={onClose}
-            statusBarTranslucent={true}
-        >
+        <CustomModal visible={modalVisible} onRequestClose={onClose}>
             <View style={styles.modalContainer}>
                 <View style={styles.modalView}>
                     <ThemedText style={styles.title}>
@@ -43,7 +38,7 @@ export const WrongGiftModal: React.FC<WrongGiftModalProps> = ({
                     </Pressable>
                 </View>
             </View>
-        </Modal>
+        </CustomModal>
     );
 };
 

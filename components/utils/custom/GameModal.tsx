@@ -1,21 +1,22 @@
 import React from "react";
-import { StyleSheet, View, Modal, ImageBackground } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { ThemedText } from "@/components/ThemedText";
-import { Colors } from "@/constants/Colors";
+import { StyleSheet, View, ImageBackground } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ContentType } from "@/enums/enums";
+import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
+import { Colors } from "@/constants/Colors";
+import { ContentType } from "@/enums/enums";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import cld from "@/config/cloudinaryConfig";
 
-interface CustomModalProps {
+interface GameModalProps {
     isVisible: boolean;
     onClose: () => void;
     contentType: string;
     children?: React.ReactNode;
 }
 
-export const CustomModal: React.FC<CustomModalProps> = ({
+export const GameModal: React.FC<GameModalProps> = ({
     isVisible,
     onClose,
     contentType,
@@ -36,13 +37,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
     };
 
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={isVisible}
-            onRequestClose={onClose}
-            statusBarTranslucent={true}
-        >
+        <CustomModal visible={isVisible} onRequestClose={onClose}>
             <ImageBackground
                 source={{ uri: backgroundImage.toURL() }}
                 resizeMode="cover"
@@ -75,7 +70,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({
                     </View>
                 </View>
             </ImageBackground>
-        </Modal>
+        </CustomModal>
     );
 };
 

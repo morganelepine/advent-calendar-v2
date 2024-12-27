@@ -1,9 +1,10 @@
-import { StyleSheet, View, Modal, Pressable } from "react-native";
+import { StyleSheet, View, Pressable } from "react-native";
+import { Rules } from "@/components/score/Rules";
 import { ThemedText } from "@/components/ThemedText";
 import { CustomScrollView } from "@/components/utils/custom/ScrollView";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
-import { Rules } from "@/components/score/Rules";
 
 interface RulesModalProps {
     modalVisible: boolean;
@@ -18,21 +19,17 @@ export const RulesModal: React.FC<RulesModalProps> = ({
         setModalVisible(false);
     };
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={onClose}
-            statusBarTranslucent={true}
-        >
+        <CustomModal visible={modalVisible} onRequestClose={onClose}>
             <View style={styles.modalContainer}>
                 <View style={styles.modalView}>
                     <ThemedText type="modalTitle" style={styles.modalTitle}>
                         Règles pour gagner des&nbsp;points
                     </ThemedText>
-                    <CustomScrollView>
+
+                    <CustomScrollView style={{ paddingHorizontal: 20 }}>
                         <Rules />
                     </CustomScrollView>
+
                     <Pressable
                         onPress={() => {
                             setModalVisible(false);
@@ -47,7 +44,7 @@ export const RulesModal: React.FC<RulesModalProps> = ({
                     </Pressable>
                 </View>
             </View>
-        </Modal>
+        </CustomModal>
     );
 };
 

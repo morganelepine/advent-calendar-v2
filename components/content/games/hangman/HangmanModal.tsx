@@ -2,11 +2,11 @@ import {
     StyleSheet,
     View,
     Pressable,
-    Modal,
     Text,
     TouchableWithoutFeedback,
 } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { Colors } from "@/constants/Colors";
 
 interface ModalProps {
@@ -29,13 +29,7 @@ export const HangmanModal: React.FC<ModalProps> = ({
     handleNextQuestion,
 }) => {
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            statusBarTranslucent={true}
-            onRequestClose={onClose}
-        >
+        <CustomModal visible={modalVisible} onRequestClose={onClose}>
             <TouchableWithoutFeedback onPress={onClose}>
                 <View style={styles.modalContainer}>
                     <TouchableWithoutFeedback>
@@ -65,7 +59,7 @@ export const HangmanModal: React.FC<ModalProps> = ({
                     </TouchableWithoutFeedback>
                 </View>
             </TouchableWithoutFeedback>
-        </Modal>
+        </CustomModal>
     );
 };
 

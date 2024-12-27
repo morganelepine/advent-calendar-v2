@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Modal } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import { ContentType } from "@/enums/enums";
 import ParallaxScrollView from "@/components/utils/ParallaxScrollView";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { CloseModalButton } from "@/components/utils/buttons/CloseModalButton";
 import { AdvancedImage } from "cloudinary-react-native";
 import { CloudinaryImage } from "@cloudinary/url-gen";
@@ -44,13 +45,7 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
     };
 
     return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={isVisible}
-            onRequestClose={onClose}
-            statusBarTranslucent={true}
-        >
+        <CustomModal visible={isVisible} onRequestClose={onClose}>
             <CloseModalButton
                 onPress={onClose}
                 style={{ backgroundColor: Colors.snow }}
@@ -81,7 +76,7 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
                     {children}
                 </View>
             </ParallaxScrollView>
-        </Modal>
+        </CustomModal>
     );
 };
 

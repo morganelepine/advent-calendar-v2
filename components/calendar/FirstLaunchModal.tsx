@@ -1,17 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { router } from "expo-router";
-import {
-    StyleSheet,
-    View,
-    Modal,
-    ImageBackground,
-    ScrollView,
-} from "react-native";
+import { StyleSheet, View, ImageBackground, ScrollView } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { EdgeInsets } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
 import { AppContent } from "@/components/informations/AppContent";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { MusicPreferences } from "@/components/calendar/MusicPreferences";
+import { CustomModal } from "@/components/utils/custom/CustomModal";
 import { CustomButton } from "@/components/utils/buttons/Button";
 import { Colors } from "@/constants/Colors";
 import cld from "@/config/cloudinaryConfig";
@@ -57,13 +52,11 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
     };
 
     return (
-        <Modal
-            transparent={true}
+        <CustomModal
             visible={modalVisible}
             onRequestClose={() => {
                 setModalVisible(false);
             }}
-            statusBarTranslucent={true}
         >
             <ImageBackground
                 source={{ uri: backgroundImage.toURL() }}
@@ -101,7 +94,7 @@ export const FirstLaunchModal: React.FC<FirstLaunchModalProps> = ({
                     </ScrollView>
                 </View>
             </ImageBackground>
-        </Modal>
+        </CustomModal>
     );
 };
 

@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { StyleSheet, ScrollView, Text } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text } from "react-native";
 import { Href } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { ModalWithText } from "@/components/utils/custom/ModalWithText";
 import { CustomMarkdown } from "@/components/utils/custom/Markdown";
 import { ExternalLink } from "@/components/utils/ExternalLink";
+import { CustomScrollView } from "@/components/utils/custom/ScrollView";
 import { ContentButton } from "@/components/content/ContentButton";
 import { Video } from "@/components/utils/custom/Video";
 import { Content } from "@/interfaces/contentInterface";
@@ -34,9 +35,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                 contentType={content.type}
                 backgroundImage={backgroundImage}
             >
-                <ScrollView
-                    persistentScrollbar={true} // Android only
-                >
+                <CustomScrollView>
                     <ThemedText type="modalSubtitle">
                         {content.title}
                     </ThemedText>
@@ -70,7 +69,7 @@ export const Anecdote: React.FC<AnecdoteProps> = ({ content, dayId }) => {
                             </ThemedText>
                         </ExternalLink>
                     ) : null}
-                </ScrollView>
+                </CustomScrollView>
             </ModalWithText>
         </>
     );
