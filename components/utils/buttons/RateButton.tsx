@@ -14,9 +14,7 @@ export const RateButton: React.FC<RateButtonProps> = ({
 }) => {
     return (
         <ExternalLink
-            href={
-                "https://play.google.com/store/apps/details?id=com.merrymate.moncalendrierdelavent"
-            }
+            href={"https://bit.ly/3BBayBy"}
             style={{ ...style, ...styles.button }}
         >
             <ThemedText style={styles.buttonText}>{children}</ThemedText>
@@ -30,6 +28,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         paddingHorizontal: 20,
         height: 48,
+        textAlign: "center",
     },
     buttonText: { color: "white", lineHeight: 48 },
 });

@@ -24,7 +24,13 @@ export const ModalWithText: React.FC<ModalWithTextProps> = ({
     backgroundImage,
     children,
 }) => {
+    const today = new Date().getDate();
+
     const getTitle = () => {
+        if (contentType === ContentType.Story && today > 24) {
+            return "Les souliers rouges";
+        }
+
         switch (contentType) {
             case ContentType.Story:
                 return "Histoire du jour";

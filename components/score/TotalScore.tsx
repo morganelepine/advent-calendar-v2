@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import Animated, {
@@ -24,17 +25,37 @@ export const TotalScore: React.FC<TotalScoreProps> = ({ score }) => {
                 <Text style={styles.bold}>{score}</Text>{" "}
                 {score > 1 ? "points" : "point"}
             </ThemedText>
-            <View style={styles.pointsContainer}>
-                <ThemedText style={styles.points}>
-                    {minScoreToWin} points
-                </ThemedText>
-            </View>
-            <View style={styles.barContainer}>
-                <Animated.View style={[styles.completion, animatedStyle]} />
-            </View>
-            <ThemedText style={styles.goal}>
-                {Math.round(progress)}% de l'objectif atteint 🥳
-            </ThemedText>
+
+            {score >= minScoreToWin ? (
+                <>
+                    <ThemedText>Objectif atteint 🥳</ThemedText>
+                    <ThemedText
+                        style={{
+                            marginBottom: 30,
+                            fontFamily: "PoppinsItalic",
+                            fontSize: 12,
+                        }}
+                    >
+                        Rendez-vous le 25 décembre pour la surprise !
+                    </ThemedText>
+                </>
+            ) : (
+                <>
+                    <View style={styles.pointsContainer}>
+                        <ThemedText style={{ fontSize: 12 }}>
+                            Objectif : {minScoreToWin} points
+                        </ThemedText>
+                    </View>
+                    <View style={styles.barContainer}>
+                        <Animated.View
+                            style={[styles.completion, animatedStyle]}
+                        />
+                    </View>
+                    <ThemedText style={{ marginBottom: 20 }}>
+                        {Math.round(progress)}% de l'objectif atteint 🥳
+                    </ThemedText>
+                </>
+            )}
         </View>
     );
 };
@@ -59,9 +80,6 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end",
         marginBottom: 5,
     },
-    points: {
-        fontSize: 12,
-    },
 
     barContainer: {
         position: "relative",
@@ -78,6 +96,4 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.pink,
         borderRadius: 50,
     },
-
-    goal: { marginBottom: 20 },
 });

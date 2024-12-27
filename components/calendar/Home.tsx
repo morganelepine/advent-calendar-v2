@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, ImageBackground, View } from "react-native";
 import { EdgeInsets, SafeAreaView } from "react-native-safe-area-context";
 import { daysArray } from "@/data/days_data";
@@ -14,13 +15,16 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ insets }) => {
     const MILLISECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
     const today = new Date();
-    const todayDay = today.getDate();
     const christmasDay = new Date(today.getFullYear(), 11, 25);
     const calendarDay = new Date(today.getFullYear(), 11, 1);
 
-    if (today > christmasDay) {
-        christmasDay.setFullYear(christmasDay.getFullYear() + 1);
-    }
+    const isChristmas =
+        today.getDate() === christmasDay.getDate() &&
+        today.getMonth() === christmasDay.getMonth();
+
+    const isAfterChristmas =
+        today.getDate() > christmasDay.getDate() &&
+        today.getMonth() === christmasDay.getMonth();
 
     const daysToChristmas = Math.ceil(
         (christmasDay.getTime() - today.getTime()) / MILLISECONDS_IN_A_DAY
@@ -30,7 +34,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
     );
 
     const daysMap = new Map(daysArray.map((day) => [day.dayNumber, day]));
-    const day = daysMap.get(todayDay);
+    const day = daysMap.get(today.getDate());
 
     const backgroundImage = day
         ? cld.image(day?.background)
@@ -46,7 +50,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
             style={styles.background}
             resizeMode="cover"
         >
-            <Snowfall count={today === christmasDay ? 500 : 100} />
+            <Snowfall count={isChristmas ? 500 : 100} />
 
             <SafeAreaView style={styles.safeArea}>
                 <View
@@ -60,7 +64,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                 </View>
 
                 <View style={styles.textContainer}>
-                    {today === christmasDay && (
+                    {isChristmas && (
                         <ThemedText
                             type="homeTitle"
                             style={styles.christmasText}
@@ -69,10 +73,11 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                         </ThemedText>
                     )}
 
-                    {today < christmasDay && (
+                    {!isChristmas && !isAfterChristmas && (
                         <>
                             <ThemedText type="homeTitle" style={styles.text1}>
-                                {daysToChristmas} nuits
+                                {daysToChristmas}{" "}
+                                {daysToChristmas > 1 ? "nuits" : "nuit"}
                             </ThemedText>
                             <ThemedText type="homeTitle">avant Noël</ThemedText>
                             {daysToCalendar > 0 && (
@@ -84,7 +89,7 @@ export const Home: React.FC<HomeProps> = ({ insets }) => {
                         </>
                     )}
 
-                    {today > christmasDay && (
+                    {isAfterChristmas && (
                         <ThemedText type="homeTitle" style={{ fontSize: 38 }}>
                             Rendez-vous l'année prochaine !
                         </ThemedText>

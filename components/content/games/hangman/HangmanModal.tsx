@@ -33,6 +33,7 @@ export const HangmanModal: React.FC<ModalProps> = ({
             animationType="fade"
             transparent={true}
             visible={modalVisible}
+            statusBarTranslucent={true}
             onRequestClose={onClose}
         >
             <TouchableWithoutFeedback onPress={onClose}>

@@ -36,15 +36,15 @@ export const Quiz: React.FC<QuizProps> = ({ games, setScore, dayId }) => {
         const handleScoreUpdate = async () => {
             if (selectedAnswer === currentGame.content3) {
                 await setScore();
+            }
 
-                if (currentQuestionIndex === games.length - 1) {
-                    await setGameStatus(currentGame.dayNumber);
-                }
+            if (selectedAnswer && currentQuestionIndex === games.length - 1) {
+                await setGameStatus(currentGame.dayNumber);
             }
         };
 
         handleScoreUpdate();
-    }, [selectedAnswer, currentQuestionIndex]);
+    }, [selectedAnswer]);
 
     return (
         <>

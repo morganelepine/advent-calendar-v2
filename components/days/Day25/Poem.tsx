@@ -110,9 +110,7 @@ export const Poem = () => {
                     </View>
 
                     <ExternalLink
-                        href={
-                            "https://res.cloudinary.com/deauthz29/image/upload/v1732957524/poeme_bjmaqy.png"
-                        }
+                        href={"https://bit.ly/poeme-arthur"}
                         style={styles.button}
                     >
                         <ThemedText style={styles.buttonText}>
@@ -130,11 +128,7 @@ export const Poem = () => {
                         </ThemedText>
                     </ExternalLink>
 
-                    <ExternalLink
-                        href={
-                            "https://res.cloudinary.com/deauthz29/image/upload/v1732957524/poeme_bjmaqy.png"
-                        }
-                    >
+                    <ExternalLink href={"https://bit.ly/poeme-arthur"}>
                         <View style={styles.thumbnail}>
                             <AdvancedImage
                                 cldImg={cld.image("poeme_bjmaqy")}
